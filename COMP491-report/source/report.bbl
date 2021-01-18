@@ -1,0 +1,17 @@
+\begin{thebibliography}{}
+
+\bibitem[Chan and Fan, 2019]{chan-fan-2019-recurrent}
+Chan, Y.-H. and Fan, Y.-C. (2019).
+\newblock A recurrent {BERT}-based model for question generation.
+\newblock In {\em Proceedings of the 2nd Workshop on Machine Reading for
+  Question Answering}, pages 154--162, Hong Kong, China. Association for
+  Computational Linguistics.
+
+\bibitem[Duan et~al., 2017]{duan2017question}
+Duan, N., Tang, D., Chen, P., and Zhou, M. (2017).
+\newblock Question generation for question answering.
+\newblock In {\em Proceedings of the 2017 Conference on Empirical Methods in
+  Natural Language Processing}, pages 866--874, Copenhagen, Denmark.
+  Association for Computational Linguistics.
+
+\end{thebibliography}

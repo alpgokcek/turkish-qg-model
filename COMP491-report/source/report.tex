@@ -1,0 +1,322 @@
+\documentclass{mefsdp}
+ 
+
+\setauthors{Alp Gokcek, Erdal Sidal Dogan }
+\settitle{TURKISH QUESTION GENERATION MODEL}
+\setcourseno{I}
+\setmonth{December}
+\setyear{2020}
+\setfaculty{Engineering}
+\setdepartment{Computer Engineering}
+\setchair{Prof. Muhittin Gokmen}
+\setdate{04/12/2020}
+\setadvisor{Asst. Prof. Seniz Demir}
+
+\settitleTR{TÜRKÇE SORU OLUŞTURMA MODELİ}
+\setmonthTR{Aralık}
+\setfacultyTR{Mühendislik}
+\setdepartmentTR{Bilgisayar Mühendisliği}
+\setadvisorTR{Dr. Şeniz Demir}
+
+\setfigurepath{../figures/}
+
+
+\newacronym{svm}{SVM}{Support Vector Machines}
+\newacronym{ml}{ML}{Machine Learning}
+\newacronym{dl}{DL}{Deep Learning}
+
+\renewcommand{\footnote}{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{black},
+	%
+	labelposition=topline,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+
+\begin{document}
+	
+	\makestandards
+	
+	\begin{abstract}
+		% TO-DO
+		Your abstract goes here. Make sure that you follow the guidelines. This \LaTeX{} template carries out much of the formatting for you. During the design of the template, it has been aimed to compensate for the user errors for formatting. However, it has not been tested rigorously. \newline \par
+		
+		First paragraphs also get indentation. You can't switch it off since the original template asserts.
+	
+		\keywords{Finite State Machine, Natural Language Processing, Language Model, Word Semantics, Virtual Reality}
+	\end{abstract}
+	
+		
+	\begin{abstractTR}
+		% TO-DO
+		Özet buraya yazılır. Lütfen şablon yapısına uygun bir rapor hazırladığınızdan emin olunuz. Bu \LaTeX{} şablonu formatlamanın büyük kısmını sizin için halleder. Bu şablon tasarlanırken kullanıcı hatalarını telafi edecek şekilde tasarlandı. Ancak, detaylı bir şekilde test edilmemiştir. \newline \par
+		
+		İlk paragraflarda da girdi olur. Asıl şablon gereği bu seçeneği değiştirebileceğiniz bir ayar bulunmamaktadır.
+		
+		\anahtarkelimeler{Sonlu Durum Makineleri, Doğal Dil İşleme, Dil Modeli, Kelimeden Anlam Çıkartmak, Yapay Gerçeklik}
+	\end{abstractTR}
+	
+	\makelists
+
+	\section{Introduction}
+	Artificial Intelligence is one of the promising research fields of the computer science. Scientists and researchers are working for developing novel or more efficient ways to teach computers how to achieve humanly-kinds of tasks.\\
+	
+	Over time, developments in this area yield to whole new class of possibilities and of course problems that require brand new methodologies to be applied for reaching to the solution. With the emergence of Machine Learning, computers became to be able to parse data, learn from the data and apply their findings from it in a way that they are told to.\\
+	
+	In the recent years, researchers came up with a more niche way of handling Machine Learning (ML) tasks, creating a structure that imitates the Neurons in our brains. This new subclass of ML is named Deep Learning (DL). Compared to ML, it is capable of handling much more complex task due to its multi-layered structure.\\
+	
+	Developments in this area enabled researches from numerous fields to move their research a step further. Today, Deep Learning is ubiquitous in computer applications. It is utilized for Computer Vision, Natural Language Processing, Biotechnology and so on. In this project, methods and techniques that are results of the studies conducted in the research area of Natural Language Processing are used heavily along with various Machine Learning and Deep Learning models. Consequently, Turkish Question Generation is invigorated by the state-of-art Deep Learning and Language Models.\\
+	
+	Turkish Question Generation Model aims to generate natural language questions from a given content, such as paragraphs, where the questions can be answered solely by the content.   As the authors, we find this task worth tackling since there are not many examples of comprehensive studies on the topic and the outcomes of this project will empower development of more-capable-than-ever Question Answering Systems for Turkish Language. 
+	\newpage
+	
+	\subsection{Motivation}
+	
+	As humans we are constantly learn, adapt to changes or make decisions on everyday basis. Even if we don’t realize, we usually are dependent on other humans and their knowledge and expertise even for most trivial things we do in our daily lives.\\
+	
+	For instance, a student feels in need for an instructor or others than can address his/her questions about a topic, an individual may be in a hurry to find out whether he/she can perform SWIFT transaction from his bank, or simply a person can ask about the weather forecast to the voice assistant on a smartphone. All of these examples are having a common point that they are all based on Question Answering (QA) Systems.\\
+	
+	As we have discussed, QA Systems are being getting more and more space in our lives and presents wide range of opportunities. With these systems, we are able to get answers to our question at no time, without any human interaction at all. This feature enables humans to reach to even the most isolated information in the context a matter of time upon request.\\
+	
+	Unfortunately, given that almost every human spoken language has specific set of rules, grammar and vocabulary, QA systems needs to be developed for each language separately. Development of such systems are not easiest thing to do, first of all, even if the developer(s) has all the competency in the technical skills required, there is a need for clear, labeled, reliable and excessively large dataset. The dataset must contain questions and possible answers to that question. Creating such dataset manually is almost unattainable, therefore there is a need for a system that can automate this process.  Question Generation systems are perfect for meeting such need. Output of the QG system can be used as the dataset for development.\\
+	
+	On top of that, QG systems can be utilized in the education field also. Given a passage, instructor may want to create various questions for the class automatically without putting any effort. Same application can be used by a student for practicing the learnings from a section.
+
+	
+	\subsection{Broad impact}
+	\subsubsection{Global Impact of the solution}
+	Online courses are gaining getting more and more popular each and every year. While their high-quality content available on web, for those people who are not able to understand English or mainstream languages of a specific subject, it is harder to keep up with the recent developments in the area. Up to this point, MOOC platforms offer translation and subtitles for such users. The Question Generation systems, along with Question Answering systems might be used for the purposes of creating an artificial interactive environment between the instructor and the student. Consequently, helping the information to spread around the world.
+	
+	\subsubsection{Economic Impact of the solution}
+	This project enables us to move faster to the point where we can automate almost every Question-Answer process where the data is assumed to be available to computer system, there is not an ambiguity amongst possible answers and the answers are static and clearly defined or quantitative.\\
+	
+	Initial assumption would be that such system would decrease the human dependency and reduce the number of jobs consequently. However, given that the same approach is applicable to almost every new technology/product emerges in the market, it is shown that they also create new opportunities. 
+	
+	
+	\subsubsection{Environmental Impact of the solution}
+	Since the project will be software based, no significant effect on environment will be observed. Of course, one can discuss that keeping the servers on, utilizing their resources to the maximum level continually will increase the total electricity consumption. 
+	
+	\subsubsection{Societal Impacts of the solution}
+	% TO-DO
+	What are the societal impacts of the project?
+	
+	
+	\subsubsection{Legal Issues related to the project}
+	Such as any system that is designed to present information to the user, Question Answering systems, which our project Question Generation system will yield to development of, requires the necessary information for answering the question. Under this circumstances, source of this information is critically important. Consent of the creator must be obtained before developing such system. \\
+	
+	Also, the system must not give inaccurate information to the user, since they may depend on the system on a critical task which fault can’t be tolerated at all.
+	
+	\section{Project Definition and Planning}
+	Turkish Question Generation Model is a neural network-based model that is capable of generating questions from a given piece of text in Turkish Language. This project implements such model using \textit{Recurrent Neural Network (RNN)} and/or \textit{Convolutional Neural Network (CNN)}.
+	
+	\subsection{Project Definition}
+	Main feature of the project will be accepting an input, create possible questions from that input while assigning probability scores to each of the generated questions. Questions are delivered in easily parsable file format such as JSON, XML, HTML, CSV, TSV etc.\\
+	
+	There is not a GUI is planned for the QG project, however it is going to be presented as CLI and \textit{Python Module}\footnotemark \footnotetext{An importable Python file that contains the functions for incorporating Turkish Question Generation for further research.} servers. for public use if allowed.\\
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=.8]{qg-system-schema}
+		\caption{Question Generation system schema}
+	\end{figure}
+
+	\subsubsection{Dataset}
+	There are lots of publicly available datasets for natural language processing tasks. However, for this project our main constraint was to build our system on top of a Turkish Dataset. Some other constraints we had was that the data must consist of correctly structured sentences in grammatical aspect, it must be labeled, come from a reliable source with the consent of the owner(s) and must be very large, given that larger dataset yields better models.
+	
+	\subsubsection{Programming Languages and Frameworks}
+	This project is developed with \textit{Python 3}. It has chosen because it is relatively simple and allows us to focus on the project rather than computational concerns, it has a very large community for troubleshooting, which also decreases the chances of having issue about the language.\\
+	
+	Furthermore, Python is adapted by the AI researchers and there are numerous resources, frameworks and libraries that is developed for Python in which we utilize heavily. Framework we are going to be using is PyTorch. This framework recently developed and provides state-of-art parallel processing of tenors on GPU. Also, there are other libraries that are developed for scientific computing and has been used in this project such as pandas, NumPy etc.\\
+	
+	\subsection{Project Planning}
+	\begin{table}[ht!]
+		\caption{Project plan for 14 weeks}
+		\centering
+		\includegraphics[scale=.8]{gantt}
+	\end{table}
+	\newpage
+	\subsubsection{Aim of the project}
+	Turkish Question Generation Model aims to create a Deep Learning model that given a paragraph, passage or an entity in Turkish, it presents the possible questions that can be answered solely by the given content to the system.
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=.37]{turkish_qg_system}
+		\caption{Question Generation Model diagram}
+	\end{figure}
+
+	\subsubsection{Project Coverage}
+	The project consists of sequential stages where the given input is passed over from one to other. These stages can be classified as the main content of the project. Initially, there will be a pre-processing stage for the data, this pre-process might be tweaking the string or simplifying the sentence. Then, BERT language model will be fine-tuned upon retrieving the input string.\\
+	
+	Project is based on software; outcome and the deliverables will consist of soft materials. Outcome of the project will be an executable file and/or importable Python module that can be used by other researchers.
+	
+	
+	\subsubsection{Use Cases}
+	% TO-DO
+	Provide UML use case diagrams by specifying systems, actors, use cases and relationships. \cite{kahneman2011thinking}
+	\newpage
+	
+	\subsubsection{Success Criteria}
+	Outcomes of the project will be evaluated by couple of metrics. Given that the outputs will be natural language instances, existing methods and algorithms specifically designed for evaluation of generated natural language examples will be utilized. There are multiple algorithms and methods available, which consider different aspects of the outcome. Some of them are:
+	\begin{itemize}
+		\item BLEU
+		\item ROUGE
+		\item METEOR\\
+	\end{itemize}
+	
+	Each of the enumerated methods are taking different aspects into account, while \textit{BLEU} score is calculated with best match length is prominent, \textit{ROGUE} is based on recall score. They all have their tradeoffs and neither of them is merely strong indicator of success.
+	
+	\subsubsection{Project time and resource estimation}
+	The project is estimated to take 16 weeks for 2 undergraduate students that are novices to topic. While estimating, course load and other external factors are taken into account. Detailed timeline can be seen from Table 1 at the previous page. \\
+	
+	Assuming that each member spends 8 hours a week working on issues that are related to this project, it makes approximately 128 hours per person, 256 hours spent in total. Also, it has been mentioned that computing resources will be required for the project. If we use cloud computing provider’s (AWS for this particular example) rates for this estimation, we observe that hourly price is ~\$2 for a server that we need to run. Considering the fact that these are very intensive applications, it might be the cases that server will be up and making computations for long hours, 20 hours a week. This estimation sums up to \$600 in server running costs and 256 men hours. Notice that not any access to books, online courses or any other learning material has not been included.
+	
+	
+	\subsubsection{Solution Strategies and Applicable Methods}
+	For the project we decided to use off-the-shelf language models by fine-tuning them according to our data. Of course, we could’ve tried to achieve it without using such advanced models, however, in this case there would be risk of not being able to complete the project in time or a flawed model could have been produced.\\
+	
+	We had an option to use another main-stream language model such as ELECTRA or RASA. Given that BERT was adopted by the community, faster to train and documentation is provided is more comprehensive than other, we decided to use BERT model.
+	
+	
+	\subsubsection{Risk Analysis}
+	One of the major risks that may occur is that the model is giving questions that are not directly related to given inputs or contain grammatical/structural errors. There are not any risks.
+	
+	\subsubsection{Tools Needed}
+	The project requires the development of Machine and Deep Learning Models from scratch. Due to wide selection of libraries for this purpose, community behind it and being the de-facto standard of the AI research and scientific development, it has been decided that \textit{Python Programming Language} will be used for development and implementation during this project.\\
+	
+	Specifically, for the model development, an up-to-date, state-of-art library named \textit{PyTorch} will be used extensively. Also, development of such models and processing large amounts of data requires computing resources. Therefore, servers that are configured with GPU optimization in mind will be required for faster development process.
+	
+	
+	
+	\section{Theoretical Background}
+	You will define your problem in this section and add subheadings as needed. If you give your problem description and solution methodology in this section, you may need to change the title of this section. We usually write a couple of sentence in this part that explains what we will discuss in this section. For example: We will first provide the problem definition of our study (write you topic here), and then give the mathematical model that we propose as a solution method in this section.
+	
+	\subsection{Literature Survey}
+	In this section, a survey of the literature from multiple sources could be found.
+	\subsubsection{Question Answering}
+	Question Answering (QA) is problem of automatically presenting the answers of the question that is asked by users without any human interaction. In a QA model, it is expected that the system has access to the necessary information to answer the question.\\
+	In order to develop such model, we need excessively large data that consists of Questions and their Answers, a duple that we will denote by <Q, A>. Unfortunately, labeling this kind of data manually or creating answers from scratch for an Artificial Intelligence based solution is not the most efficient way.
+	They address these problems by;
+	\begin{enumerate}
+		\item Large scale high-quality dataset from Community-QA websites such as Yahoo, Quora etc. is obtained, since they provide large scale QA pairs generated by real users.
+		\item Two ways of accomplishing such task is implemented and compared. One is a retrieval based method using Convolutional Neural Networks(CNN) and other is generation-based method using Recurrent Neural Network (RNN).
+		\item Outcomes of the QG model is integrated with end-to-end QA task. It is evaluated on three state-of-art datasets, SQuAD, MS MARCO, and WikiQA. Results show that generated questions can improve QA quality on all these three datasets.
+	\end{enumerate}
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=.8]{sample-qg}
+		\caption{Sample Question Answering model}
+	\end{figure}
+
+	\subsubsection{Question Generation}
+	In their paper, research engineers from Microsoft Research proposed a way of extracting question from a given piece of text. \cite{duan2017question} While they used NLP methodologies and Neural Networks for their paper, they didn’t include the semantics of words in their paper.\\
+	
+	QG Engine is consist of four components:
+	\begin{enumerate}
+		\item Question Pattern Mining
+		\item Question Pattern Prediction
+		\item Question Topic Selection
+		\item Question Ranking
+	\end{enumerate}
+	\subsubsection{BERT Language Model}
+	We have encountered a language model called BERT which is also known as Bidirectional Encoder Representation from Transformers developed by Google (Attention is all you need). It uses a machine learning model called Transformers. We have researched other language models and for the language translation problem, we have found two techniques which are LSTM and Transformers.\\
+	
+	First of all, we have found out that LSTMs are slow to train, words are passed sequentially and words are getting generated sequentially which can take significant time for the neural network to learn the language. And LSTMs are not truly bidirectional, they learn left to right and right to left separately and simply concatenate afterwards. This is where Transformers come. Transformers are faster because they can process words simultaneously and deeply bidirectional since they can learn in both directions. \\
+	
+	On the Figure \ref{transformer}, you can see the architecture of a transformer. It is formed by two components which are encoder and decoder.\\
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=.8]{transformers}
+		\caption{Architecture of a \textit{Transformer}\label{transformer}}
+	\end{figure}
+
+	As the BERT’s name suggests, if we put encoders on after another, we will obtain the BERT language model. The architecture of BERT language model could be found on figure \ref{bert-architecture}. It is the current state-of-the-art language model for NLP tasks. \cite{chan-fan-2019-recurrent}
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=.8]{bert-model-architecture}
+		\caption{BERT language model architecture\label{bert-architecture}}
+	\end{figure}
+	We have found a paper that uses this language model to solve our problem and they have made sequentially improved 3 models which are BERT-QG (BERT Question Generation), BERT-SQG (BERT Sequential Question Generation) and BERT-HLSQG (BERT Highlight Sequential Question Generation) models. QG is the simplest model that this paper introduces. It is the initial attempt to create a powerful Question Generation Model using BERT. As proposed by researchers, considering the previous decoded results significantly improve the quality of the model. However, in BERT-QG, token generation is performed without considering the previous states or decoded results. Due to this consideration, BERT-SQG is developed. BERT-SQG addressed the problem of ignoring the previous decodes in the BERT-QG model. However, researchers researched and concluded that BERT-SQG is not capable of producing quality questions in lengthy situations and if an answer phase appears multiple times it struggles to decide which one to decide. As a result, BERT-SQG is restructured and BERT-HLSQG, a model outperforming BERG-SQG is obtained.\\
+	
+	They have compared these models with the known to be best question generation models which were NQG-RC and PLQG. NQG-RC is a seq2seq question model based on bidirectional LSTMs. PLQG is a seq2seq network which is capable of handling long text input. This model is known to be the state-of-the-art models for QG tasks. As shown in table \ref{recurrent-comparison}, their models have outperformed the state-of-the-art models on every metric.\\
+	\begin{table}[ht!]
+		\caption{Performance comparison of Question Generation models on different datasets\label{recurrent-comparison}}
+		\centering
+		\includegraphics[scale=.7]{recurrent-comparison}
+	\end{table}
+	
+	\subsection{Question Generation Model with BERT Language Model}
+	As a result of this literature survey, we have decided to go with the BERT language model. BERT language model shows significant performance over various NLP tasks, such as classification, summarization, translation etc. It has a powerful architecture behind it which is transformers. We have searched a pre-trained Turkish model of BERT and we found a repository on GitHub for it. Starting from next week, we will start using this model as well.\\
+	
+	As the dataset, we have decided to go with Turkish Wikipedia dataset. There are several reasons behind it. Since the data of Wikipedia is close to textbook data, it should be beneficial to train our model with this dataset. And our advisor, Seniz Demir, had a Wikipedia Parser project. Thus, we will use Turkish Wikipedia dataset.
+	
+	
+	
+	\section{Analysis and Modeling}
+	We first give details about the project that we selected. We define the scope of the project, functional and non-functional requirements. Then, we give details of the problem that the company was experiencing. Finally, we provide detailed analysis that we conducted by using real-life data obtained from the company. 
+	
+	\subsection{System Factors}
+	Explain factors that can affect the system.
+	
+	\subsection{How System Works}
+	Explain how your system will work
+	
+	\subsubsection{Modelling}
+	Explanation of system model.
+	
+	\subsubsection{System Architecture }
+	Explanation of system architecture.
+	
+	\subsubsection{UML (Unified Modeling Language) Diagrams}
+	
+	\section{Design, implementation and testing}
+	Explain design, implementation and testing of your system in detail.
+	
+	\subsection{Design}
+	Explanation of the design of your system.
+	
+	\subsection{Implementation}
+	Explanation of the implementation of your system.
+	
+	\subsection{Testing}
+	Explanation of the testing of your system.
+	
+	\section{Results}
+	Explain your results.
+	
+	\section{Conclusion}
+	Briefly explain the problem you studied, the solution method you proposed and your experience in the implementation. Then, please proceed to subsections and explain the requirements in details. 
+	
+	\subsection{Life-Long Learning}
+	Identify additional knowledge, skills, and attitudes that you needed to complete the project. In the context of the project, which tools and methods did you learn by yourself?  From which sources did you learn them? How difficult was for you to learn these topics by yourself? How did you manage to collect the relevant information? Answer all the questions.
+	
+	\subsection{Professional and ethical responsibilities of engineers}
+	Define professional and ethical responsibilities you followed during your design process. What are the professional and ethical standards you used in the project? Is there an ethics code or code of conduct? Answer all the questions.
+	
+	\subsection{Contemporary Issues}
+	Evaluate you project experience in terms of contemporary issues related to the problem that you studied. What kind of contemporary tools you have used throughout your project? Analyze the contemporary issues related to the future of the field that you work in this project. What will change in the products, services, or processes in the next ten, twenty, or fifty years, with emerging technologies such as 3D printers, big data analytics, nanotechnology, internet of things, quantum computing, biotechnology, artificial intelligence, cognitive science, and robotics?
+	
+	\subsection{Team Work}
+	During your design project experience, describe the team work that you have participated. Give positions and majors of the people in the company that you worked with. Evaluate the composition, organization, and performance of your team. Describe how you shared the load in terms of the project tasks. 
+	
+	\begin{appendix}[A]
+		Your Appendix goes here
+	\end{appendix}
+
+	\begin{appendix}[B]
+		Your Appendix goes here
+	\end{appendix}
+	
+	\begin{acknowledgments}
+		Your acknowledgments goes here
+	\end{acknowledgments}
+	
+	\bibliographystyle{apalike}
+	\bibliography{../bibliography/references}
+\end{document}
