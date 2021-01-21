@@ -7,7 +7,7 @@ class QuestionPatterns:
                 "{name}'{~}n rütbesi",
                 "{name}'{~}n rütbesi neydi?",
                 "{name} rütbe",
-                "{name} hangi rütbe"
+                "{name} hangi rütbeye sahiptir?"
             ],
             "doğumyeri": [
                 "{name} nerede doğmuştur?",
@@ -53,7 +53,7 @@ class QuestionPatterns:
                 "{name} doğum yılı ne zaman",
                 "{name} doğum günü ne zaman",
                 "{name} doğum günü nedir",
-                "{name} ne zaman doğmuştur",
+                "{name} ne zaman doğmuştur?",
                 "{name} ne zaman doğdu",
                 "{name} doğum zamanı",
             ],
@@ -184,6 +184,16 @@ class QuestionPatterns:
                 "{name} altındaki askerler"
                 "",
             ],
+            "madalya": [
+                "{name} hangi madalyalara sahiptir?",
+                "{name} hangi madalyaları almıştır?",
+                "{name} aldığı madalyalar?",
+                "{name} sahip olduğu madalyalar nelerdir?",
+                "{name}'{#} takdim edilen madalyalar nelerdir?",
+                "{name}'{#} verilen madalyalar nelerdir?",
+                "{name}'{~}n kazandığı madalyalar nelerdir?",
+                "{name}'{~}n sahip olduğu madalyalar nelerdir?",
+            ]
         },
          "Basketbolcu": {},
          "Bilim adamı": {},
