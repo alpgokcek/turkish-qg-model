@@ -555,10 +555,18 @@ class QuestionPatterns:
                 "{name}'{~}n ne tarzlarda müzik yapar?"
             ],
             "etkinyıllar":[
-
+                "{name} hangi yıllarda aktif olarak müzik yapmıştır?",
+                "{name} hangi yıllarda aktif olarak müzik yapmıştı?",
+                "{name} hangi yıllarda aktif olarak müzik yapmıştır?"
             ],
             "meslek":[
-
+                "{name}'{~}n mesleği",
+                "{name}'{~}n mesleği nedir?",
+                "{name}'{~}n mesleği ne",
+                "{name}'{~}n mesleği neydi",
+                "{name}'{~}n gerçek mesleği",
+                "{name}'{~}n gerçek mesleği nedir?",
+                "{name}'{~}n gerçek mesleği neydi"
             ],
             "plakşirketi":[
 
