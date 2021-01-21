@@ -15,20 +15,7 @@ patterns = QuestionPatterns.patterns
 full_wiki = open("wiki_new1.html").read()
 soup = BeautifulSoup(full_wiki, "html.parser")
 
-'''
-{
-    data: [
-        {
-        description: str,
-        data: [
-            {
-                questions: [str],
-                answer: str
-            }
-        }
-    ]
-}
-'''
+
 output_dict = {'data': list()}
 print("Total persons: ", parser.get_person_count())
 print("\nTop Occupations and their attributes: ")
@@ -36,14 +23,14 @@ persons = parser.get_persons()
 occupations = parser.get_occupations()
 occupations_with_attr = parser.get_top_occupations_and_attributes(top=10)
 
-def main(index, start, end):
+def main():
     out = open("output_files/out_data_{}.txt".format(index), 'w')
-    # pprint(occupations_with_attr)
-    i = 0
+    i, file_index = 0, 0
+    FILE_COUNT = 50
     total_count = parser.get_person_count()
-    divide, remainder = int(total_count/50), total_count % 50
+    divide, remainder = int(total_count/FILE_COUNT), total_count % FILE_COUNT
     NEXT_END = divide + remainder
-    #for p in persons[start:end]:
+
     for p in persons:
         print(i)
         i+=1
@@ -77,25 +64,20 @@ def main(index, start, end):
             NEXT_END += divide
 
 
-
-
 if __name__ == '__main__':
-    total_count = parser.get_person_count()
+    main()
 
-    '''
-    CORE_COUNT = 5
-    processes = []
-    total_count = parser.get_person_count()
-    divide, remainder = int(total_count/CORE_COUNT), total_count % CORE_COUNT
-    start, end = 0, divide
-    for i in range(CORE_COUNT):
-        prpcess = multiprocessing.Process(target=main, args=(i, start, end))
-        processes.append(prpcess)
-        prpcess.start()
-        start, end = end, end+divide
-        if i == CORE_COUNT-1:
-            end += remainder
-    for process in processes:
-        process.join()
-    '''
-    main(0, 0, total_count)
+'''
+{
+    data: [
+        {
+        description: str,
+        data: [
+            {
+                questions: [str],
+                answer: str
+            }
+        }
+    ]
+}
+'''
