@@ -7,7 +7,7 @@ import json
 class Parser:
     def __init__(self, path):
         self.path = path
-        self.string = open("everyone.txt", 'r').read().rstrip()
+        self.string = open(path, 'r').read().rstrip()
         self.paragraphs = []
         self.persons: List[Person] = []
         self.occupations: Dict[str, int] = {}
@@ -17,6 +17,7 @@ class Parser:
         paragraphs = self.string.split('\n\n')
         for par in paragraphs:
             attributes = par.split('#')
+            doc_id = attributes[0]
             name = attributes[1]
             occup = attributes[2]
             self.occupations[occup] = self.occupations.get(occup, 0) + 1
@@ -24,8 +25,7 @@ class Parser:
             self.drop_key(attr, "ad")
             self._add_attr_to_occupations(occup, attr)
             short_desc = attributes[7]
-            self.persons.append(Person(name, occup, attr, short_desc))
-
+            self.persons.append(Person(doc_id, name, occup, attr, short_desc))
     def get_occupations(self):
         return self.occupations
 
