@@ -25,18 +25,6 @@
 \newacronym{ml}{ML}{Machine Learning}
 \newacronym{dl}{DL}{Deep Learning}
 
-\renewcommand{\footnote}{fontsize=\footnotesize,
-	%
-	frame=lines,  % top and bottom rule only
-	framesep=2em, % separation between frame and text
-	rulecolor=\color{black},
-	%
-	labelposition=topline,
-	%
-	commandchars=\|\(\), % escape character and argument delimiters for
-	% commands within the verbatim
-	commentchar=*        % comment character
-}
 
 \begin{document}
 	
@@ -44,21 +32,20 @@
 	
 	\begin{abstract}
 		% TO-DO
-		Your abstract goes here. Make sure that you follow the guidelines. This \LaTeX{} template carries out much of the formatting for you. During the design of the template, it has been aimed to compensate for the user errors for formatting. However, it has not been tested rigorously. \newline \par
-		
-		First paragraphs also get indentation. You can't switch it off since the original template asserts.
+		Our goal in this project is to develop a Turkish Question Generation System using available online sources such as Wikipedia. Question Generation Systems are capable of generate various logical questions from the given text input. QG Systems are prevalent in several computer applications such as chatbots, automated grading systems etc. Development of such a system is particularly important since there are not any examples of online tools and available datasets in Turkish. However, QG research has already reached a notable level in other languages such as English and there are available datasets for this task. For instance, SQuAD by Stanford University is one of the well- known datasets used for this task in English.\newline \par
+		In this project, we are aiming to create the first Turkish Question Generation Dataset of moderate size. This step is required for developing learning-based solutions that we’re going to apply in this project. We plan to apply different machine learning based techniques for questions of generating varying forms (Who-What-When etc.) and assess their performances on the dataset we’ll gather.\newline \par
 	
-		\keywords{Finite State Machine, Natural Language Processing, Language Model, Word Semantics, Virtual Reality}
+		\keywords{
+			Automatic speech recognition, Natural Language Processing, Deep Learning, Sentiment Analysis, MOOC\footnote{Massive Open Online Courses}}
 	\end{abstract}
 	
 		
 	\begin{abstractTR}
 		% TO-DO
-		Özet buraya yazılır. Lütfen şablon yapısına uygun bir rapor hazırladığınızdan emin olunuz. Bu \LaTeX{} şablonu formatlamanın büyük kısmını sizin için halleder. Bu şablon tasarlanırken kullanıcı hatalarını telafi edecek şekilde tasarlandı. Ancak, detaylı bir şekilde test edilmemiştir. \newline \par
+		Bu projedeki amacımız, Wikipedia gibi mevcut çevrimiçi kaynakları kullanarak bir Türkçe Soru Oluşturma Sistemi geliştirmektir. Soru Üretme Sistemleri, verilen metin girişinden çeşitli mantıksal sorular üretebilir. QG Sistemleri, sohbet robotları, otomatik derecelendirme sistemleri vb. Gibi birçok bilgisayar uygulamasında yaygındır. Bu tür bir sistemin geliştirilmesi, Türkçe'de herhangi bir çevrimiçi araç ve veri seti örneği bulunmadığından özellikle önemlidir. Bununla birlikte, QG araştırması İngilizce gibi diğer dillerde çoktan kayda değer bir seviyeye ulaştı ve bu görev için mevcut veri kümeleri var. Örneğin, Stanford Üniversitesi tarafından SQuAD, bu görev için İngilizce olarak kullanılan iyi bilinen veri kümelerinden biridir. \newline \par
+		Bu projede, orta büyüklükte ilk Türkçe Soru Üretme Veri Kümesini oluşturmayı hedefliyoruz. Bu adım, bu projede uygulayacağımız öğrenmeye dayalı çözümler geliştirmek için gereklidir. Çeşitli formlar (Kim-Ne-Ne Zaman vb.) Üretme soruları için farklı makine öğrenimi tabanlı teknikler uygulamayı ve toplayacağımız veri kümesindeki performanslarını değerlendirmeyi planlıyoruz.
 		
-		İlk paragraflarda da girdi olur. Asıl şablon gereği bu seçeneği değiştirebileceğiniz bir ayar bulunmamaktadır.
-		
-		\anahtarkelimeler{Sonlu Durum Makineleri, Doğal Dil İşleme, Dil Modeli, Kelimeden Anlam Çıkartmak, Yapay Gerçeklik}
+		\anahtarkelimeler{Doğal Dil İşleme, Derin Öğrenme, Duygu Analizi}
 	\end{abstractTR}
 	
 	\makelists
@@ -117,7 +104,8 @@
 	\subsection{Project Definition}
 	Main feature of the project will be accepting an input, create possible questions from that input while assigning probability scores to each of the generated questions. Questions are delivered in easily parsable file format such as JSON, XML, HTML, CSV, TSV etc.\\
 	
-	There is not a GUI is planned for the QG project, however it is going to be presented as CLI and \textit{Python Module}\footnotemark \footnotetext{An importable Python file that contains the functions for incorporating Turkish Question Generation for further research.} servers. for public use if allowed.\\
+	There is not a GUI is planned for the QG project, however it is going to be presented as CLI and \textit{Python Module}\footnotemark \footnotetext{An importable Python file that contains the functions for incorporating Turkish Question Generation for further research.} servers. for public use if allowed.
+\\
 	
 	\begin{figure}[ht!]
 		\centering
@@ -157,7 +145,7 @@
 	
 	\subsubsection{Use Cases}
 	% TO-DO
-	Provide UML use case diagrams by specifying systems, actors, use cases and relationships. \cite{kahneman2011thinking}
+	Provide UML use case diagrams by specifying systems, actors, use cases and relationships.
 	\newpage
 	
 	\subsubsection{Success Criteria}
@@ -317,6 +305,6 @@
 		Your acknowledgments goes here
 	\end{acknowledgments}
 	
-	\bibliographystyle{apalike}
+	\bibliographystyle{IEEEtran}
 	\bibliography{../bibliography/references}
 \end{document}
