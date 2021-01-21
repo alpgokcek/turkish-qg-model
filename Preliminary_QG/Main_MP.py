@@ -11,7 +11,7 @@ THRESHOLD = 70
 parser = Parser("everyone.txt")
 parser.parse()
 
-
+counter = 0
 patterns = QuestionPatterns.patterns
 
 out = open("out_data.txt", 'w')
@@ -41,10 +41,14 @@ occupations_with_attr = parser.get_top_occupations_and_attributes(top=10)
 # pprint(occupations_with_attr)
 
 def process(p):
+    global counter
+    counter += 1
+    print(counter)
     temp_dict = dict()
     description_tag = soup.find("div", {"id": int(p.doc_id)})
     if description_tag:
-        description = description_tag.get_text()
+        description = description_tag.get_text().replace('\n', '')
+        del description_tag
         temp_dict['description'] = description
         temp_dict['data'] = list()
         for pattern_type in patterns[p.occupation].keys():
@@ -57,13 +61,16 @@ def process(p):
                         if ratio > THRESHOLD:
                             temp_dict1['questions'].append(question.format(name=p.name))
                 if len(temp_dict1['questions']) > 0:
-                    temp_dict['data'].append(temp_dict1)
-
-        out.write(json.dumps(temp_dict, ensure_ascii=False))
+                        temp_dict['data'].append(temp_dict1)
+                else:
+                    del temp_dict1
+        if len(temp_dict['data']) > 0:
+            out.write(json.dumps(temp_dict, ensure_ascii=False) + ", \n")
+        del temp_dict
 
 
 
 
 if __name__ == '__main__':
     pool = Pool(os.cpu_count()) # Create a multiprocessing Pool
-    pool.map(process, persons)
+    pool.map(process, range(10))
