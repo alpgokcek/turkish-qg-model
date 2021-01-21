@@ -1037,10 +1037,7 @@ class QuestionPatterns:
             ],
             "ünlüyapıtları": [
 
-            ],
-            "dogumadı": [
-
-            ],
+            ]
         },
         "Sporcu": {
             "doğumtarihi": [
@@ -1104,9 +1101,6 @@ class QuestionPatterns:
 
             ],
             "kei": [
-
-            ],
-            "resimaltı": [
 
             ],
             "ağırlık": [
@@ -1244,6 +1238,10 @@ class QuestionPatterns:
 
             ],
             "kulüptakım": [
+                "{name} hangi takımlarda oynamıştır?",
+                "{name} hangi takımlarda oynamıştı?",
+                "{name} hangi takımlarda oynamıştır?",
+                "{name} hangi takımlarda oynamıştır?",
 
             ],
             "bulunduğukulüp": [
@@ -1379,9 +1377,6 @@ class QuestionPatterns:
                 "{name} hangi ülkede öldü",
                 "{name} öldüğü ülke",
                 "{name}'{~}n öldüğü ülke"
-            ],
-            "başlık": [
-
             ],
             "tür": [
                 "{name} hangi türde eser vermiştir?",

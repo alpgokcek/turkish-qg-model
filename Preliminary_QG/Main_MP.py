@@ -18,32 +18,17 @@ out = open("out_data.txt", 'w')
 full_wiki = open("wiki_new1.html").read()
 soup = BeautifulSoup(full_wiki, "html.parser")
 
-'''
-{
-    data: [
-        {
-        description: str,
-        data: [
-            {
-                questions: [str],
-                answer: str
-            }
-        }
-    ]
-}
-'''
+
 output_dict = {'data': list()}
 print("Total persons: ", parser.get_person_count())
 print("\nTop Occupations and their attributes: ")
 persons = parser.get_persons()
 occupations = parser.get_occupations()
 occupations_with_attr = parser.get_top_occupations_and_attributes(top=10)
-# pprint(occupations_with_attr)
 
-def process(p):
-    global counter
-    counter += 1
-    print(counter)
+def process(enum):
+    index, p = enum
+    print(index)
     temp_dict = dict()
     description_tag = soup.find("div", {"id": int(p.doc_id)})
     if description_tag:
@@ -73,4 +58,6 @@ def process(p):
 
 if __name__ == '__main__':
     pool = Pool(os.cpu_count()) # Create a multiprocessing Pool
-    pool.map(process, range(10))
+    pool.map(process, enumerate(persons))
+    pool.close()
+    pool.join()
