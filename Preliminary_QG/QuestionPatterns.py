@@ -207,12 +207,413 @@ class QuestionPatterns:
          "Kraliyet": {},
          "Makam sahibi": {},
          "Manken": {},
-         "Müzik sanatçısı": {},
-         "Oyuncu": {},
-         "Profesyonel güreşçi": {},
-         "Sanatçı": {},
-         "Sporcu": {},
-         "Tenis sporcu": {},
+         "Müzik sanatçısı": {
+             
+         },
+         "Oyuncu": {
+             "yer": [
+                
+            ],
+             "doğumtarihi": [
+                "{name}'{~}n doğum tarihi",
+                "{name}'{~}n doğum tarihi nedir",
+                "{name}'{~}n doğum tarihi ne zaman",
+                "{name}'{~}n doğum yılı",
+                "{name}'{~}n doğum yılı nedir",
+                "{name}'{~}n doğum yılı ne zaman",
+                "{name}'{~}n doğum günü ne zaman",
+                "{name}'{~}n doğum günü nedir",
+                "{name} doğum tarihi",
+                "{name} doğum tarihi nedir",
+                "{name} doğum tarihi ne zaman",
+                "{name} doğum yılı",
+                "{name} doğum yılı nedir",
+                "{name} doğum yılı ne zaman",
+                "{name} doğum günü ne zaman",
+                "{name} doğum günü nedir",
+                "{name} ne zaman doğmuştur?",
+                "{name} ne zaman doğdu",
+                "{name} doğum zamanı",
+            ],
+            "meslek": [
+                
+            ],
+            "etkinyılları": [
+                
+            ],
+            "doğumadı": [
+                
+            ],
+            "altyazı": [
+                
+            ],
+            "evlilik": [
+                
+            ],
+            "ulus": [
+                
+            ],
+            "ölümtarihi": [
+                "{name}'{~}n ölüm tarihi",
+                "{name}'{~}n ölüm tarihi nedir",
+                "{name}'{~}n ölüm tarihi ne zaman",
+                "{name}'{~}n ölüm yılı",
+                "{name}'{~}n ölüm yılı nedir",
+                "{name}'{~}n ölüm yılı ne zaman",
+                "{name}'{~}n ölüm günü ne zaman",
+                "{name}'{~}n ölüm günü nedir",
+                "{name} ölüm tarihi",
+                "{name} ölüm tarihi nedir",
+                "{name} ölüm tarihi ne zaman",
+                "{name} ölüm yılı",
+                "{name} ölüm yılı nedir",
+                "{name} ölüm yılı ne zaman",
+                "{name} ölüm günü ne zaman",
+                "{name} ölüm günü nedir",
+                "{name} ne zaman ölmüştür",
+                "{name} ne zaman ölüm",
+                "{name} ölüm zamanı",
+                "{name}'{~}n ölüm zamanı",
+            ],
+            "ölümyeri": [
+                "{name} nerede ölmüştür",
+                "{name} nerede öldü",
+                "{name} ölüm yeri",
+                "{name}'{~}n ölüm yeri",
+                "{name} ölüm yeri neresi",
+                "{name}'{~}n ölüm yeri neresi",
+                "{name}'{~}n ölüm yeri neresidir",
+                "{name} ölüm yeri neresidir",
+                "{name} öldüğü yer",
+                "{name}'{~}n öldüğü yer",
+                "{name} öldüğü yer neresidir",
+                "{name}'{~}n öldüğü yer neresidir",
+                "{name} öldüğü yer neresi",
+                "{name}'{~}n ölüdüğü yer neresi",
+                "{name} doğduğu il",
+                "{name}'{~}n ölüdüğü il",
+                "{name} hangi ilde öldü",
+                "{name} hangi ülkede öldü",
+                "{name} öldüğü ülke",
+                "{name}'{~}n öldüğü ülke",
+            ]
+         },
+         "Profesyonel güreşçi": {
+             "doğumyeri": [
+                "{name} nerede doğmuştur?",
+                "{name} nerede doğdu",
+                "{name} doğum yeri",
+                "{name}'{~}n doğum yeri",
+                "{name} doğum yeri neresi",
+                "{name}'{~}n doğum yeri neresi",
+                "{name}'{~}n doğum yeri neresidir",
+                "{name} doğum yeri neresidir",
+                "{name} nereli",
+                "{name} memleketi",
+                "{name}'{~}n memleketi",
+                "{name} memleketi nedir",
+                "{name}'{~}n memleketi nedir",
+                "{name} doğduğu yer",
+                "{name}'{~}n doğduğu yer",
+                "{name} doğduğu yer neresidir",
+                "{name}'{~}n doğduğu yer neresidir",
+                "{name} doğduğu yer neresi",
+                "{name}'{~}n doğduğu yer neresi",
+                "{name} doğduğu il",
+                "{name}'{~}n doğduğu il",
+                "{name} hangi ilde doğdu",
+                "{name} hangi ülkede doğdu",
+                "{name} doğduğu ülke",
+                "{name}'{~}n doğduğu ülke",
+            ],
+            "başlık": [
+                
+            ],
+            "debut": [
+                
+            ],
+            "doğumadı": [
+                
+            ],
+            "doğumtarihi": [
+                "{name}'{~}n doğum tarihi",
+                "{name}'{~}n doğum tarihi nedir",
+                "{name}'{~}n doğum tarihi ne zaman",
+                "{name}'{~}n doğum yılı",
+                "{name}'{~}n doğum yılı nedir",
+                "{name}'{~}n doğum yılı ne zaman",
+                "{name}'{~}n doğum günü ne zaman",
+                "{name}'{~}n doğum günü nedir",
+                "{name} doğum tarihi",
+                "{name} doğum tarihi nedir",
+                "{name} doğum tarihi ne zaman",
+                "{name} doğum yılı",
+                "{name} doğum yılı nedir",
+                "{name} doğum yılı ne zaman",
+                "{name} doğum günü ne zaman",
+                "{name} doğum günü nedir",
+                "{name} ne zaman doğmuştur?",
+                "{name} ne zaman doğdu",
+                "{name} doğum zamanı",
+            ],
+            "ringadları": [
+                
+            ],
+            "eğiten": [
+                
+            ],
+            "eş": [
+                
+            ],
+            "eğitildiğiyer": [
+                
+            ],
+            "çocuklar": [
+                
+            ]
+         },
+         "Sanatçı": {
+             "doğumtarihi": [
+                "{name}'{~}n doğum tarihi",
+                "{name}'{~}n doğum tarihi nedir",
+                "{name}'{~}n doğum tarihi ne zaman",
+                "{name}'{~}n doğum yılı",
+                "{name}'{~}n doğum yılı nedir",
+                "{name}'{~}n doğum yılı ne zaman",
+                "{name}'{~}n doğum günü ne zaman",
+                "{name}'{~}n doğum günü nedir",
+                "{name} doğum tarihi",
+                "{name} doğum tarihi nedir",
+                "{name} doğum tarihi ne zaman",
+                "{name} doğum yılı",
+                "{name} doğum yılı nedir",
+                "{name} doğum yılı ne zaman",
+                "{name} doğum günü ne zaman",
+                "{name} doğum günü nedir",
+                "{name} ne zaman doğmuştur?",
+                "{name} ne zaman doğdu",
+                "{name} doğum zamanı",
+            ],
+            "alanı": [
+                
+            ],
+            "ölümtarihi": [
+                "{name}'{~}n ölüm tarihi",
+                "{name}'{~}n ölüm tarihi nedir",
+                "{name}'{~}n ölüm tarihi ne zaman",
+                "{name}'{~}n ölüm yılı",
+                "{name}'{~}n ölüm yılı nedir",
+                "{name}'{~}n ölüm yılı ne zaman",
+                "{name}'{~}n ölüm günü ne zaman",
+                "{name}'{~}n ölüm günü nedir",
+                "{name} ölüm tarihi",
+                "{name} ölüm tarihi nedir",
+                "{name} ölüm tarihi ne zaman",
+                "{name} ölüm yılı",
+                "{name} ölüm yılı nedir",
+                "{name} ölüm yılı ne zaman",
+                "{name} ölüm günü ne zaman",
+                "{name} ölüm günü nedir",
+                "{name} ne zaman ölmüştür",
+                "{name} ne zaman ölüm",
+                "{name} ölüm zamanı",
+                "{name}'{~}n ölüm zamanı",
+            ],
+            "ölümyeri": [
+                "{name} nerede ölmüştür",
+                "{name} nerede öldü",
+                "{name} ölüm yeri",
+                "{name}'{~}n ölüm yeri",
+                "{name} ölüm yeri neresi",
+                "{name}'{~}n ölüm yeri neresi",
+                "{name}'{~}n ölüm yeri neresidir",
+                "{name} ölüm yeri neresidir",
+                "{name} öldüğü yer",
+                "{name}'{~}n öldüğü yer",
+                "{name} öldüğü yer neresidir",
+                "{name}'{~}n öldüğü yer neresidir",
+                "{name} öldüğü yer neresi",
+                "{name}'{~}n ölüdüğü yer neresi",
+                "{name} doğduğu il",
+                "{name}'{~}n ölüdüğü il",
+                "{name} hangi ilde öldü",
+                "{name} hangi ülkede öldü",
+                "{name} öldüğü ülke",
+                "{name}'{~}n öldüğü ülke",
+            ],
+            "doğumyeri": [
+                "{name} nerede doğmuştur?",
+                "{name} nerede doğdu",
+                "{name} doğum yeri",
+                "{name}'{~}n doğum yeri",
+                "{name} doğum yeri neresi",
+                "{name}'{~}n doğum yeri neresi",
+                "{name}'{~}n doğum yeri neresidir",
+                "{name} doğum yeri neresidir",
+                "{name} nereli",
+                "{name} memleketi",
+                "{name}'{~}n memleketi",
+                "{name} memleketi nedir",
+                "{name}'{~}n memleketi nedir",
+                "{name} doğduğu yer",
+                "{name}'{~}n doğduğu yer",
+                "{name} doğduğu yer neresidir",
+                "{name}'{~}n doğduğu yer neresidir",
+                "{name} doğduğu yer neresi",
+                "{name}'{~}n doğduğu yer neresi",
+                "{name} doğduğu il",
+                "{name}'{~}n doğduğu il",
+                "{name} hangi ilde doğdu",
+                "{name} hangi ülkede doğdu",
+                "{name} doğduğu ülke",
+                "{name}'{~}n doğduğu ülke",
+            ],
+            "milliyeti": [
+                
+            ],
+            "yer": [
+                
+            ],
+            "resimaltı": [
+                
+            ],
+            "ünlüyapıtları": [
+                
+            ],
+            "dogumadı": [
+                
+            ],
+         },
+         "Sporcu": {
+             "doğumtarihi": [
+                "{name}'{~}n doğum tarihi",
+                "{name}'{~}n doğum tarihi nedir?",
+                "{name}'{~}n doğum tarihi ne zaman",
+                "{name}'{~}n doğum yılı",
+                "{name}'{~}n doğum yılı nedir",
+                "{name}'{~}n doğum yılı ne zaman",
+                "{name}'{~}n doğum günü ne zaman",
+                "{name}'{~}n doğum günü nedir",
+                "{name} doğum tarihi",
+                "{name} doğum tarihi nedir",
+                "{name} doğum tarihi ne zaman",
+                "{name} doğum yılı",
+                "{name} doğum yılı nedir",
+                "{name} doğum yılı ne zaman",
+                "{name} doğum günü ne zaman",
+                "{name} doğum günü nedir",
+                "{name} ne zaman doğmuştur?",
+                "{name} ne zaman doğdu",
+                "{name} doğum zamanı",
+            ],
+             "doğumyeri": [
+                "{name} nerede doğmuştur?",
+                "{name} nerede doğdu",
+                "{name} doğum yeri",
+                "{name}'{~}n doğum yeri",
+                "{name} doğum yeri neresi",
+                "{name}'{~}n doğum yeri neresi",
+                "{name}'{~}n doğum yeri neresidir",
+                "{name} doğum yeri neresidir",
+                "{name} nereli",
+                "{name} memleketi",
+                "{name}'{~}n memleketi",
+                "{name} memleketi nedir",
+                "{name}'{~}n memleketi nedir",
+                "{name} doğduğu yer",
+                "{name}'{~}n doğduğu yer",
+                "{name} doğduğu yer neresidir",
+                "{name}'{~}n doğduğu yer neresidir",
+                "{name} doğduğu yer neresi",
+                "{name}'{~}n doğduğu yer neresi",
+                "{name} doğduğu il",
+                "{name}'{~}n doğduğu il",
+                "{name} hangi ilde doğdu",
+                "{name} hangi ülkede doğdu",
+                "{name} doğduğu ülke",
+                "{name}'{~}n doğduğu ülke",
+            ],
+            "ülke": [
+                
+            ],
+            "spor": [
+                
+            ],
+            "yarışma": [
+                
+            ],
+            "uyruk": [
+                
+            ],
+            "kei": [
+                
+            ],
+            "resimaltı": [
+                
+            ],
+            "ağırlık": [
+                
+            ],
+            "ölümtarihi": [
+                
+            ],
+         },
+         "Tenis sporcu": {
+             "doğumyeri": [
+                "{name} nerede doğmuştur?",
+                "{name} nerede doğdu",
+                "{name} doğum yeri",
+                "{name}'{~}n doğum yeri",
+                "{name} doğum yeri neresi",
+                "{name}'{~}n doğum yeri neresi",
+                "{name}'{~}n doğum yeri neresidir",
+                "{name} doğum yeri neresidir",
+                "{name} nereli",
+                "{name} memleketi",
+                "{name}'{~}n memleketi",
+                "{name} memleketi nedir",
+                "{name}'{~}n memleketi nedir",
+                "{name} doğduğu yer",
+                "{name}'{~}n doğduğu yer",
+                "{name} doğduğu yer neresidir",
+                "{name}'{~}n doğduğu yer neresidir",
+                "{name} doğduğu yer neresi",
+                "{name}'{~}n doğduğu yer neresi",
+                "{name} doğduğu il",
+                "{name}'{~}n doğduğu il",
+                "{name} hangi ilde doğdu",
+                "{name} hangi ülkede doğdu",
+                "{name} doğduğu ülke",
+                "{name}'{~}n doğduğu ülke",
+            ],
+            "vatandaşlık": [
+                
+            ],
+            "enyükseksıralama": [
+                
+            ],
+            "oyunstili": [
+                
+            ],
+            "wimbledonsonuçları": [
+                
+            ],
+            "amerikaaçıksonuçları": [
+                
+            ],
+            "fransaaçıksonuçları": [
+                
+            ],
+            "avustralyaaçıksonuçları": [
+                
+            ],
+            "toplamkupa": [
+                
+            ],
+            "yaşadığıyer": [
+                
+            ]
+         },
          "Voleybolcu": {
              "doğumtarihi": [
                 "{name}'{~}n doğum tarihi",
@@ -318,7 +719,7 @@ class QuestionPatterns:
             ],
             "meslek": [
 
-            ]
+            ],
              "doğumtarihi": [
                 "{name}'{~}n doğum tarihi",
                 "{name}'{~}n doğum tarihi nedir?",
