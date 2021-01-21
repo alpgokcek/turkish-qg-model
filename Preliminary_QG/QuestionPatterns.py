@@ -322,7 +322,52 @@ class QuestionPatterns:
          "Makam sahibi": {},
          "Manken": {},
          "Müzik sanatçısı": {
-             
+             "artalan": [
+                "{name}'{~}n art alanı nedir?",
+                "{name}'{~}n art alanı ne"
+            ],
+            "tarz":[
+                "{name} hangi tür müzik yapar?",
+                "{name} hangi tür müzik yaptı?",
+                "{name} hangi tür müzik yapmaktadır?",
+                "{name}'{~}n hangi tarzda müzik yapmaktadır?",
+                "{name}'{~}n hangi tarzda müzik yapmakta",
+                "{name}'{~}n hangi tarzda müzik yapar?",
+                "{name}'{~}n hangi tarzlarda müzik yapmaktadır?",
+                "{name}'{~}n hangi tarzlarda müzik yapmakta",
+                "{name}'{~}n hangi tarzlarda müzik yapar?",
+                "{name}'{~}n ne tarzda müzik yapmaktadır?",
+                "{name}'{~}n ne tarzda müzik yapmaktadır?",
+                "{name}'{~}n ne tarzda müzik yapar?",
+                "{name}'{~}n ne tarzlarda müzik yapmaktadır?",
+                "{name}'{~}n ne tarzlarda müzik yapmaktadır?",
+                "{name}'{~}n ne tarzlarda müzik yapar?"
+            ],
+            "etkinyıllar":[
+
+            ],
+            "meslek":[
+
+            ],
+            "plakşirketi":[
+
+            ],
+            "doğumadı":[
+
+            ],
+            "köken":[
+
+            ],
+            "yer":[
+
+            ],
+            "doğum":[
+
+            ],
+            "çalgı":[
+
+            ]
+
          },
          "Oyuncu": {
              "yer": [
