@@ -3,7 +3,7 @@ from fuzzywuzzy import fuzz
 from PersonDataParser import Parser
 from QuestionPatterns import QuestionPatterns
 
-THRESHOLD = 60
+THRESHOLD = 70
 
 
 def main():
