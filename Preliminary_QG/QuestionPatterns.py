@@ -524,9 +524,163 @@ class QuestionPatterns:
 
          },
          "Filozof": {},
-         "Futbolcu": {},
-         "Güreşçi": {},
-         "Hakem": {},
+         "Futbolcu": {
+             "doğumyeri": [
+                "{name} nerede doğmuştur?",
+                "{name} nerede doğdu",
+                "{name} doğum yeri",
+                "{name}'{~}n doğum yeri",
+                "{name} doğum yeri neresi",
+                "{name}'{~}n doğum yeri neresi",
+                "{name}'{~}n doğum yeri neresidir",
+                "{name} doğum yeri neresidir",
+                "{name} nereli",
+                "{name} memleketi",
+                "{name}'{~}n memleketi",
+                "{name} memleketi nedir",
+                "{name}'{~}n memleketi nedir",
+                "{name} doğduğu yer",
+                "{name}'{~}n doğduğu yer",
+                "{name} doğduğu yer neresidir",
+                "{name}'{~}n doğduğu yer neresidir",
+                "{name} doğduğu yer neresi",
+                "{name}'{~}n doğduğu yer neresi",
+                "{name} doğduğu il",
+                "{name}'{~}n doğduğu il",
+                "{name} hangi ilde doğdu",
+                "{name} hangi ülkede doğdu",
+                "{name} doğduğu ülke",
+                "{name}'{~}n doğduğu ülke"
+            ],
+            "pozisyon": [
+                 "{name} hangi pozisyonda oynamaktadır?",
+                 "{name} hangi pozisyonda oynar?",
+                 "{name} hangi pozisyonda oynuyor?",
+                 "{name} hangi mevkiide oynamaktadır?",
+                 "{name} hangi mevkiide oynar?",
+                 "{name} hangi mevkiide oynuyor?",
+                 "{name}'{~}n oynadığı pozisyon nedir?",
+                 "{name}'{~}n oynamakta olduğu pozisyon nedir?",
+                 "{name}'{~}n pozisyonu nedir?",
+                 "{name}'{~}n oyun pozisyonu nedir?",
+                 "{name}'{~}n maçlardaki pozisyonu nedir?"
+             ],
+             "doğumtarihi": [
+                "{name}'{~}n doğum tarihi",
+                "{name}'{~}n doğum tarihi nedir",
+                "{name}'{~}n doğum tarihi ne zaman",
+                "{name}'{~}n doğum yılı",
+                "{name}'{~}n doğum yılı nedir",
+                "{name}'{~}n doğum yılı ne zaman",
+                "{name}'{~}n doğum günü ne zaman",
+                "{name}'{~}n doğum günü nedir",
+                "{name} doğum tarihi",
+                "{name} doğum tarihi nedir",
+                "{name} doğum tarihi ne zaman",
+                "{name} doğum yılı",
+                "{name} doğum yılı nedir",
+                "{name} doğum yılı ne zaman",
+                "{name} doğum günü ne zaman",
+                "{name} doğum günü nedir",
+                "{name} ne zaman doğmuştur?",
+                "{name} ne zaman doğdu",
+                "{name} doğum zamanı"
+            ],
+            "tamadı": [
+                "{name}'{~}n tam adı nedir?",
+                "{name}'{~}n tam adı neydi",
+                "{name}'{~}n tam adı ne",
+                "{name}'{~}n tam adı ne idi"
+            ],
+            "kulüp1":[
+                "{name}'{~}n ilk oynadığı takım hangisidir?",
+                "{name}'{~}n oynadığı ilk takım hangisidir?",
+                "{name}'{~}n ilk takımı hangisi?",
+                "{name}'{~}n ilk takımı hangisidir?",
+                "{name}'{~}n kariyerine başladığı takım hangisidir?",
+                "{name}'{~}n kariyerindeki ilk takım hangisidir?",
+                "{name} profesyonel kariyerine hangi takımda başlamıştır?",
+                "{name} profesyonel kariyerine hangi takımla başlamıştır?",
+                "{name} profesyonel kariyerine hangi takımla adım atmıştır?",
+                "{name}'{~}n profesyonel kariyerindeki ilk takım hangisidir?",
+                "{name}'{~}n profesyonel kariyerindeki ilk takım hangisiydi?",
+                "{name}'{~}n profesyonel kariyerindeki ilk takım hangisi?",
+                "{name}'{~}n profesyonel kariyerindeki ilk takım neydi?",
+                "{name}'{~}n profesyonel kariyerindeki ilk takım nedir?",
+                "{name}'{~}n ilk oynadığı kulüp hangisidir?",
+                "{name}'{~}n oynadığı ilk kulüp hangisidir?",
+                "{name}'{~}n ilk kulübü hangisi?",
+                "{name}'{~}n ilk kulübü hangisidir?",
+                "{name}'{~}n kariyerine başladığı kulüp hangisidir?",
+                "{name}'{~}n kariyerindeki ilk kulüp hangisidir?",
+                "{name} profesyonel kariyerine hangi kulüpte başlamıştır?",
+                "{name} profesyonel kariyerine hangi kulüple başlamıştır?",
+                "{name} profesyonel kariyerine hangi kulüple adım atmıştır?",
+                "{name}'{~}n profesyonel kariyerindeki ilk kulüp hangisidir?",
+                "{name}'{~}n profesyonel kariyerindeki ilk kulüp hangisiydi?",
+                "{name}'{~}n profesyonel kariyerindeki ilk kulüp hangisi?",
+                "{name}'{~}n profesyonel kariyerindeki ilk kulüp neydi?",
+                "{name}'{~}n profesyonel kariyerindeki ilk kulüp nedir?"
+            ],
+            "kulüpyıl1": [
+                 "{name} profesyonel kariyerine ne zaman başlamıştır?",
+                 "{name}'{~}n profesyonel kariyerine başlangıcı ne zamandır?",
+                 "{name}'{~}n profesyonel kariyerine başlangıcı ne zamandı",
+                 "{name}'{~}n profesyonel kariyerine başlangıcı ne zaman",
+                 "{name}'{~}n profesyonel kariyerine başlangıcı ne zaman oldu?",
+                 "{name}'{~}n profesyonel kariyerine başlangıcı ne zaman olmuştur?",
+                 "{name} profesyonel kariyerine hangi yılda başladı?",
+                 "{name} profesyonel kariyerine hangi yılda başlamıştı?",
+                 "{name} profesyonel kariyerine hangi yılda başlamıştır?",
+                 "{name} profesyonel kariyerine ne zaman başladı?",
+                 "{name} profesyonel kariyerine ne zaman başlamıştı?",
+                 "{name} profesyonel kariyerine ne zaman başlamıştır?",
+                 "{name}'{~}n ilk takımında ne zaman oynamıştır?",
+                 "{name}'{~}n ilk takımında ne zamanlar oynamıştır?",
+                 "{name}'{~}n ilk takımında hangi yıllar oynamıştır?",
+                 "{name}'{~}n ilk takımında hangi yıllar oynadı?",
+                 "{name}'{~}n ilk takımında oynadığı zaman aralığı nedir?",
+                 "{name}'{~}n ilk takımında oynadığı zaman aralığı nedir?",
+                 "{name}'{~}n ilk oynadığı takımda ne zaman oynamıştır?",
+                 "{name}'{~}n ilk oynadığı takımda hangi yıllar arasında oynamıştır?",
+                 "{name}'{~}n ilk oynadığı takımda hangi yıllar arasında oynamıştı?",
+                 "{name}'{~}n ilk oynadığı takımda hangi yıllar arasında oynadı?"
+             ],
+             "kulüp2": [
+                 "{name}'{~}n ikinci oynadığı takım hangisidir?",
+                 "{name}'{~}n oynadığı ikinci takım hangisidir?",
+                 "{name}'{~}n oynadığı ikinci takım nedir?",
+                 "{name}'{~}n oynadığı ikinci takımı ne",
+                 "{name}'{~}n ikinci takımı nedir?",
+                 "{name}'{~}n ikinci takımı hangisi?",
+                 "{name}'{~}n ikinci takımı hangisidir?",
+                 "{name}'{~}n kariyerindeki ikinci takım hangisidir?",
+                 "{name}'{~}n kariyerindeki ikinci takım nedir?",
+                 "{name}'{~}n profesyonel kariyerindeki ikinci takım hangisidir?",
+                 "{name}'{~}n profesyonel kariyerindeki ikinci takım hangisiydi?",
+                 "{name}'{~}n profesyonel kariyerindeki ikinci takım hangisi?",
+                 "{name}'{~}n profesyonel kariyerindeki ikinci takım neydi?",
+                 "{name}'{~}n profesyonel kariyerindeki ikinci takım nedir?"
+             ],
+             "kulüpyıl2": [
+                 "{name}'{~}n ikinci takımında ne zaman oynamıştır?",
+                 "{name}'{~}n ikinci takımında ne zamanlar oynamıştır?",
+                 "{name} ikinci takımında hangi yıllar oynamıştır?",
+                 "{name} ikinci takımında hangi yıllar oynadı?",
+                 "{name}'{~}n ikinci takımında oynadığı zaman aralığı nedir?",
+                 "{name} ikinci takımında oynadığı zaman aralığı nedir?",
+                 "{name}'{~}n ikinci oynadığı takımda ne zaman oynamıştır?",
+                 "{name} ikinci oynadığı takımda ne zaman oynamıştır?",
+                 "{name}'{~}n ikinci oynadığı takımda hangi yıllar arasında oynamıştır?",
+                 "{name}'{~}n ikinci oynadığı takımda hangi yıllar arasında oynamıştı?",
+                 "{name}'{~}n ikinci oynadığı takımda hangi yıllar arasında oynadı?",
+                 "{name}'{~}n oynadığı ikinci takımda hangi yıllar arasında oynadı?",
+                 "{name}'{~}n oynadığı ikinci takımda hangi yıllar arasında oynamıştır?",
+                 "{name}'{~}n oynadığı ikinci takımda hangi yıllar arasında oynamıştı?",
+                 "{name}'{~}n oynadığı ikinci takımda hangi periyotta oynamıştı?",
+                 "{name}'{~}n oynadığı ikinci takımda hangi periyotta oynamıştır?"
+             ]
+         },
          "Kişi": {},
          "Kraliyet": {},
          "Makam sahibi": {},
@@ -560,30 +714,41 @@ class QuestionPatterns:
             ],
             "meslek":[
                 "{name}'{~}n mesleği",
-                "{name}'{~}n mesleği nedir?",
                 "{name}'{~}n mesleği ne",
                 "{name}'{~}n mesleği neydi",
                 "{name}'{~}n gerçek mesleği",
                 "{name}'{~}n gerçek mesleği nedir?",
-                "{name}'{~}n gerçek mesleği neydi"
+                "{name}'{~}n gerçek mesleği neydi",
+                "{name}'{~}n mesleği nedir?",
+                "{name} mesleği nedir?",
+                "{name} mesleği ne idi?",
+                "{name} hangi mesleğe mensuptur?",
+                "{name} hangi mesleğe mensup?",
+                "{name} hangi mesleği yapıyordu?",
+                "{name} hangi işi yapıyor?",
+                "{name} hangi işi yapıyordu?"
             ],
             "plakşirketi":[
-
-            ],
-            "doğumadı":[
-
+                "{name} hangi plak şirketiyle çalışmaktadır?",
+                "{name} hangi plak şirketiyle çalışıyordu?",
+                "{name} hangi plak şirketiyle çalışıyor?",
             ],
             "köken":[
-
-            ],
-            "yer":[
-
-            ],
-            "doğum":[
-
+                "{name} nerelidir?",
+                "{name} hangi ülke asıllıdır?",
+                "{name} hangi millettendir?",
+                "{name}'{~}n hangi millettendir?",
+                "{name} kökeni nedir?",
+                "{name} kökeni ne",
+                "{name} kökeni neydi",
             ],
             "çalgı":[
-
+                "{name} hangi çalgıyı çalmaktadır?",
+                "{name} hangi çalgıyı çalar?",
+                "{name} hangi çalgıyı çalıyor?",
+                "{name} hangi müzik aletini çalmaktadır?",
+                "{name} hangi müzik aletini çalar?",
+                "{name} hangi müzik aletini çalıyor?"
             ]
 
          },
@@ -591,7 +756,7 @@ class QuestionPatterns:
              "yer": [
                 
             ],
-             "doğumtarihi": [
+            "doğumtarihi": [
                 "{name}'{~}n doğum tarihi",
                 "{name}'{~}n doğum tarihi nedir",
                 "{name}'{~}n doğum tarihi ne zaman",
@@ -613,7 +778,20 @@ class QuestionPatterns:
                 "{name} doğum zamanı"
             ],
             "meslek": [
-                
+                "{name}'{~}n mesleği",
+                "{name}'{~}n mesleği ne",
+                "{name}'{~}n mesleği neydi",
+                "{name}'{~}n gerçek mesleği",
+                "{name}'{~}n gerçek mesleği nedir?",
+                "{name}'{~}n gerçek mesleği neydi",
+                "{name}'{~}n mesleği nedir?",
+                "{name} mesleği nedir?",
+                "{name} mesleği ne idi?",
+                "{name} hangi mesleğe mensuptur?",
+                "{name} hangi mesleğe mensup?",
+                "{name} hangi mesleği yapıyordu?",
+                "{name} hangi işi yapıyor?",
+                "{name} hangi işi yapıyordu?"
             ],
             "etkinyılları": [
                 
@@ -1119,6 +1297,12 @@ class QuestionPatterns:
                 "{name}'{~}n doğduğu ülke"
             ],
             "meslek": [
+                "{name}'{~}n mesleği",
+                "{name}'{~}n mesleği ne",
+                "{name}'{~}n mesleği neydi",
+                "{name}'{~}n gerçek mesleği",
+                "{name}'{~}n gerçek mesleği nedir?",
+                "{name}'{~}n gerçek mesleği neydi",
                 "{name}'{~}n mesleği nedir?",
                 "{name} mesleği nedir?",
                 "{name} mesleği ne idi?",
