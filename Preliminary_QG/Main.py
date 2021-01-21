@@ -11,7 +11,7 @@ parser.parse()
 
 patterns = QuestionPatterns.patterns
 
-out = open("out_data.txt", 'w')
+out = open("out_data.txt", 'a')
 full_wiki = open("wiki_new1.html").read()
 soup = BeautifulSoup(full_wiki, "html.parser")
 
@@ -58,7 +58,7 @@ def main():
                                 temp_dict1['questions'].append(question.format(name=p.name))
                     if len(temp_dict1['questions']) > 0:
                         temp_dict['data'].append(temp_dict1)
-            out.write(json.dumps(temp_dict))
+            out.write(json.dumps(temp_dict, ensure_ascii=False))
 
 
 
