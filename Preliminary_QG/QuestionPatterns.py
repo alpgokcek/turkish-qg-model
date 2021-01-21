@@ -34,7 +34,7 @@ class QuestionPatterns:
                 "{name} hangi ilde doğdu",
                 "{name} hangi ülkede doğdu",
                 "{name} doğduğu ülke",
-                "{name}'{~}n doğduğu ülke",
+                "{name}'{~}n doğduğu ülke"
             ],
             "doğumtarihi": [
                 "{name}'{~}n doğum tarihi",
@@ -55,7 +55,7 @@ class QuestionPatterns:
                 "{name} doğum günü nedir",
                 "{name} ne zaman doğmuştur?",
                 "{name} ne zaman doğdu",
-                "{name} doğum zamanı",
+                "{name} doğum zamanı"
             ],
             "hizmetyılları": [
                 "{name}'{~}n hizmet yılları",
@@ -90,7 +90,7 @@ class QuestionPatterns:
                 "{name} askerlik dönemi",
                 "{name} ordu dönemi",
                 "{name} ordudaki dönemi",
-                "{name} ne zaman ordudaydı",
+                "{name} ne zaman ordudaydı"
             ],
             "bağlılığı": [
                 "{name} hangi ordudaydı",
@@ -102,7 +102,7 @@ class QuestionPatterns:
                 "{name} hangi orduya bağlı görev almıştır",
                 "{name} hangi ülke ordusundadır",
                 "{name} hangi ülke ordusundaydı",
-                "{name} hangi ülkenin ordusundaydı",
+                "{name} hangi ülkenin ordusundaydı"
             ],
             "ölümyeri": [
                 "{name} nerede ölmüştür",
@@ -124,7 +124,7 @@ class QuestionPatterns:
                 "{name} hangi ilde öldü",
                 "{name} hangi ülkede öldü",
                 "{name} öldüğü ülke",
-                "{name}'{~}n öldüğü ülke",
+                "{name}'{~}n öldüğü ülke"
             ],
             "savaşları": [
                 "{name} nerede savaştı",
@@ -149,7 +149,7 @@ class QuestionPatterns:
                 "{name}'{~}n savaştığı yerler hangileridir",
                 "{name}'{~}n savaştığı yerler hangileriydi",
                 "{name}'{~}n savaştığı yer hangileriydi",
-                "{name}'{~}n savaştığı yer hangileri",
+                "{name}'{~}n savaştığı yer hangileri"
             ],
             "ölümtarihi": [
                 "{name}'{~}n ölüm tarihi",
@@ -171,7 +171,7 @@ class QuestionPatterns:
                 "{name} ne zaman ölmüştür",
                 "{name} ne zaman ölüm",
                 "{name} ölüm zamanı",
-                "{name}'{~}n ölüm zamanı",
+                "{name}'{~}n ölüm zamanı"
             ],
             "komutaettikleri": [
                 "{name}'{~}n komuta ettikleri",
@@ -182,7 +182,6 @@ class QuestionPatterns:
                 "{name} komuta altındaki askerler"
                 "{name}'{~}n komutası altındaki askerler"
                 "{name} altındaki askerler"
-                "",
             ],
             "madalya": [
                 "{name} hangi madalyalara sahiptir?",
@@ -192,7 +191,7 @@ class QuestionPatterns:
                 "{name}'{#} takdim edilen madalyalar nelerdir?",
                 "{name}'{#} verilen madalyalar nelerdir?",
                 "{name}'{~}n kazandığı madalyalar nelerdir?",
-                "{name}'{~}n sahip olduğu madalyalar nelerdir?",
+                "{name}'{~}n sahip olduğu madalyalar nelerdir?"
             ]
         },
          "Basketbolcu": {
@@ -207,7 +206,7 @@ class QuestionPatterns:
                  "{name}'{~}n oynamakta olduğu pozisyon nedir?",
                  "{name}'{~}n pozisyonu nedir?",
                  "{name}'{~}n oyun pozisyonu nedir?",
-                 "{name}'{~}n maçlardaki pozisyonu nedir?",
+                 "{name}'{~}n maçlardaki pozisyonu nedir?"
              ],
              "doğumtarihi": [
                  "{name}'{~}n doğum tarihi",
@@ -228,7 +227,7 @@ class QuestionPatterns:
                  "{name} doğum günü nedir",
                  "{name} ne zaman doğmuştur?",
                  "{name} ne zaman doğdu",
-                 "{name} doğum zamanı",
+                 "{name} doğum zamanı"
              ],
              "doğumyeri": [
                  "{name} nerede doğmuştur?",
@@ -255,7 +254,7 @@ class QuestionPatterns:
                  "{name} hangi ilde doğdu",
                  "{name} hangi ülkede doğdu",
                  "{name} doğduğu ülke",
-                 "{name}'{~}n doğduğu ülke",
+                 "{name}'{~}n doğduğu ülke"
              ],
              "takım1": [
                  "{name}'{~}n ilk oynadığı takım hangisidir?",
@@ -271,7 +270,7 @@ class QuestionPatterns:
                  "{name}'{~}n profesyonel kariyerindeki ilk takım hangisiydi?",
                  "{name}'{~}n profesyonel kariyerindeki ilk takım hangisi?",
                  "{name}'{~}n profesyonel kariyerindeki ilk takım neydi?",
-                 "{name}'{~}n profesyonel kariyerindeki ilk takım nedir?",
+                 "{name}'{~}n profesyonel kariyerindeki ilk takım nedir?"
              ],
              "takımyıl1": [
                  "{name} profesyonel kariyerine ne zaman başlamıştır?",
@@ -295,7 +294,7 @@ class QuestionPatterns:
                  "{name}'{~}n ilk oynadığı takımda ne zaman oynamıştır?",
                  "{name}'{~}n ilk oynadığı takımda hangi yıllar arasında oynamıştır?",
                  "{name}'{~}n ilk oynadığı takımda hangi yıllar arasında oynamıştı?",
-                 "{name}'{~}n ilk oynadığı takımda hangi yıllar arasında oynadı?",
+                 "{name}'{~}n ilk oynadığı takımda hangi yıllar arasında oynadı?"
              ],
              "takım2": [
                  "{name}'{~}n ikinci oynadığı takım hangisidir?",
@@ -311,7 +310,7 @@ class QuestionPatterns:
                  "{name}'{~}n profesyonel kariyerindeki ikinci takım hangisiydi?",
                  "{name}'{~}n profesyonel kariyerindeki ikinci takım hangisi?",
                  "{name}'{~}n profesyonel kariyerindeki ikinci takım neydi?",
-                 "{name}'{~}n profesyonel kariyerindeki ikinci takım nedir?",
+                 "{name}'{~}n profesyonel kariyerindeki ikinci takım nedir?"
              ],
              "takımyıl2": [
                  "{name}'{~}n ikinci takımında ne zaman oynamıştır?",
@@ -329,7 +328,7 @@ class QuestionPatterns:
                  "{name}'{~}n oynadığı ikinci takımda hangi yıllar arasında oynamıştır?",
                  "{name}'{~}n oynadığı ikinci takımda hangi yıllar arasında oynamıştı?",
                  "{name}'{~}n oynadığı ikinci takımda hangi periyotta oynamıştı?",
-                 "{name}'{~}n oynadığı ikinci takımda hangi periyotta oynamıştır?",
+                 "{name}'{~}n oynadığı ikinci takımda hangi periyotta oynamıştır?"
              ],
              "takım": [
                  "{name} hangi takımda oynamaktadır?",
@@ -343,7 +342,7 @@ class QuestionPatterns:
                  "{name}'{~}n oynadığı takım hangisidir?",
                  "{name}'{~}n takımı hangisidir?",
                  "{name}'{~}n güncel takımı hangisidir?",
-                 "{name}'{~}n şu an oynadığı takım hangisidir?",
+                 "{name}'{~}n şu an oynadığı takım hangisidir?"
              ],
              "lig": [
                  "{name} hangi ligde oynamaktadır?",
@@ -358,7 +357,7 @@ class QuestionPatterns:
                  "{name}'{~}n oynadığı lig hangisidir?",
                  "{name}'{~}n ligi hangisidir?",
                  "{name}'{~}n güncel ligi hangisidir?",
-                 "{name}'{~}n şu an oynadığı takım hangisidir?",
+                 "{name}'{~}n şu an oynadığı takım hangisidir?"
              ]
          },
          "Bilim adamı": {
@@ -387,7 +386,7 @@ class QuestionPatterns:
                  "{name} hangi ilde doğdu",
                  "{name} hangi ülkede doğdu",
                  "{name} doğduğu ülke",
-                 "{name}'{~}n doğduğu ülke",
+                 "{name}'{~}n doğduğu ülke"
              ],
              "doğumtarihi": [
                  "{name}'{~}n doğum tarihi",
@@ -408,7 +407,7 @@ class QuestionPatterns:
                  "{name} doğum günü nedir",
                  "{name} ne zaman doğmuştur?",
                  "{name} ne zaman doğdu",
-                 "{name} doğum zamanı",
+                 "{name} doğum zamanı"
              ],
              "ölümyeri": [
                  "{name} nerede ölmüştür",
@@ -430,7 +429,7 @@ class QuestionPatterns:
                  "{name} hangi ilde öldü",
                  "{name} hangi ülkede öldü",
                  "{name} öldüğü ülke",
-                 "{name}'{~}n öldüğü ülke",
+                 "{name}'{~}n öldüğü ülke"
              ],
              "ölümtarihi": [
                  "{name}'{~}n ölüm tarihi",
@@ -452,13 +451,13 @@ class QuestionPatterns:
                  "{name} ne zaman ölmüştür",
                  "{name} ne zaman ölüm",
                  "{name} ölüm zamanı",
-                 "{name}'{~}n ölüm zamanı",
+                 "{name}'{~}n ölüm zamanı"
              ],
              "milliyeti": [
                  "{name} nerelidir?",
                  "{name} hangi ülke asıllıdır?",
                  "{name} hangi millettendir?",
-                 "{name}'{~}n hangi millettendir?",
+                 "{name}'{~}n hangi millettendir?"
              ],
              "çalıştığıyerler": [
                  "{name}'{~}n çalıştığı yerler nedir?"
@@ -479,7 +478,7 @@ class QuestionPatterns:
                 "{name}'{#} takdim edilen ödüller nelerdir?",
                 "{name}'{#} verilen ödüller nelerdir?",
                 "{name}'{~}n kazandığı ödüller nelerdir?",
-                "{name}'{~}n sahip olduğu ödüller nelerdir?",
+                "{name}'{~}n sahip olduğu ödüller nelerdir?"
             ],
             "önemlibaşarıları": [
                 "{name}'{~}n önemli başarıları nelerdir?"
@@ -497,7 +496,7 @@ class QuestionPatterns:
                  "{name}'{~}n vatandaşı olduğu ülke hangisidir?",
                  "{name}'{~}n vatandaşı olduğu ülke nedir?",
                  "{name}'{~}n vatandaşlığına sahip olduğu ülke nedir?",
-                 "{name}'{~}n vatandaşlığına sahip olduğu ülke hangisidir?",
+                 "{name}'{~}n vatandaşlığına sahip olduğu ülke hangisidir?"
              ]
          },
          "Buz patencisi": {
@@ -514,13 +513,13 @@ class QuestionPatterns:
                  "{name}'{~}n vatandaşı olduğu ülke hangisidir?",
                  "{name}'{~}n vatandaşı olduğu ülke nedir?",
                  "{name}'{~}n vatandaşlığına sahip olduğu ülke nedir?",
-                 "{name}'{~}n vatandaşlığına sahip olduğu ülke hangisidir?",
+                 "{name}'{~}n vatandaşlığına sahip olduğu ülke hangisidir?"
              ],
              "koç": [
                  "{name}'{~}n koçu kimdir?",
                  "{name}'{~}n koçu kim?",
                  "{name}'{~}n koçu kimdi?",
-                 "{name}'{~}n spor koçu kimdi?",
+                 "{name}'{~}n spor koçu kimdi?"
              ],
 
          },
@@ -603,7 +602,7 @@ class QuestionPatterns:
                 "{name} doğum günü nedir",
                 "{name} ne zaman doğmuştur?",
                 "{name} ne zaman doğdu",
-                "{name} doğum zamanı",
+                "{name} doğum zamanı"
             ],
             "meslek": [
                 
@@ -643,7 +642,7 @@ class QuestionPatterns:
                 "{name} ne zaman ölmüştür",
                 "{name} ne zaman ölüm",
                 "{name} ölüm zamanı",
-                "{name}'{~}n ölüm zamanı",
+                "{name}'{~}n ölüm zamanı"
             ],
             "ölümyeri": [
                 "{name} nerede ölmüştür",
@@ -665,7 +664,7 @@ class QuestionPatterns:
                 "{name} hangi ilde öldü",
                 "{name} hangi ülkede öldü",
                 "{name} öldüğü ülke",
-                "{name}'{~}n öldüğü ülke",
+                "{name}'{~}n öldüğü ülke"
             ]
          },
          "Profesyonel güreşçi": {
@@ -694,7 +693,7 @@ class QuestionPatterns:
                 "{name} hangi ilde doğdu",
                 "{name} hangi ülkede doğdu",
                 "{name} doğduğu ülke",
-                "{name}'{~}n doğduğu ülke",
+                "{name}'{~}n doğduğu ülke"
             ],
             "başlık": [
                 
@@ -724,7 +723,7 @@ class QuestionPatterns:
                 "{name} doğum günü nedir",
                 "{name} ne zaman doğmuştur?",
                 "{name} ne zaman doğdu",
-                "{name} doğum zamanı",
+                "{name} doğum zamanı"
             ],
             "ringadları": [
                 
@@ -762,7 +761,7 @@ class QuestionPatterns:
                 "{name} doğum günü nedir",
                 "{name} ne zaman doğmuştur?",
                 "{name} ne zaman doğdu",
-                "{name} doğum zamanı",
+                "{name} doğum zamanı"
             ],
             "alanı": [
                 
@@ -787,7 +786,7 @@ class QuestionPatterns:
                 "{name} ne zaman ölmüştür",
                 "{name} ne zaman ölüm",
                 "{name} ölüm zamanı",
-                "{name}'{~}n ölüm zamanı",
+                "{name}'{~}n ölüm zamanı"
             ],
             "ölümyeri": [
                 "{name} nerede ölmüştür",
@@ -809,7 +808,7 @@ class QuestionPatterns:
                 "{name} hangi ilde öldü",
                 "{name} hangi ülkede öldü",
                 "{name} öldüğü ülke",
-                "{name}'{~}n öldüğü ülke",
+                "{name}'{~}n öldüğü ülke"
             ],
             "doğumyeri": [
                 "{name} nerede doğmuştur?",
@@ -836,7 +835,7 @@ class QuestionPatterns:
                 "{name} hangi ilde doğdu",
                 "{name} hangi ülkede doğdu",
                 "{name} doğduğu ülke",
-                "{name}'{~}n doğduğu ülke",
+                "{name}'{~}n doğduğu ülke"
             ],
             "milliyeti": [
                 
@@ -874,7 +873,7 @@ class QuestionPatterns:
                 "{name} doğum günü nedir",
                 "{name} ne zaman doğmuştur?",
                 "{name} ne zaman doğdu",
-                "{name} doğum zamanı",
+                "{name} doğum zamanı"
             ],
              "doğumyeri": [
                 "{name} nerede doğmuştur?",
@@ -901,7 +900,7 @@ class QuestionPatterns:
                 "{name} hangi ilde doğdu",
                 "{name} hangi ülkede doğdu",
                 "{name} doğduğu ülke",
-                "{name}'{~}n doğduğu ülke",
+                "{name}'{~}n doğduğu ülke"
             ],
             "ülke": [
                 
@@ -954,7 +953,7 @@ class QuestionPatterns:
                 "{name} hangi ilde doğdu",
                 "{name} hangi ülkede doğdu",
                 "{name} doğduğu ülke",
-                "{name}'{~}n doğduğu ülke",
+                "{name}'{~}n doğduğu ülke"
             ],
             "vatandaşlık": [
                 
@@ -1004,7 +1003,7 @@ class QuestionPatterns:
                 "{name} doğum günü nedir",
                 "{name} ne zaman doğmuştur?",
                 "{name} ne zaman doğdu",
-                "{name} doğum zamanı",
+                "{name} doğum zamanı"
             ],
             "doğumyeri": [
                 "{name} nerede doğmuştur?",
@@ -1031,7 +1030,7 @@ class QuestionPatterns:
                 "{name} hangi ilde doğdu",
                 "{name} hangi ülkede doğdu",
                 "{name} doğduğu ülke",
-                "{name}'{~}n doğduğu ülke",
+                "{name}'{~}n doğduğu ülke"
             ],
              "pozisyon": [
                  "{name} hangi pozisyonda oynamaktadır?",
@@ -1044,13 +1043,13 @@ class QuestionPatterns:
                  "{name}'{~}n oynamakta olduğu pozisyon nedir?",
                  "{name}'{~}n pozisyonu nedir?",
                  "{name}'{~}n oyun pozisyonu nedir?",
-                 "{name}'{~}n maçlardaki pozisyonu nedir?",
+                 "{name}'{~}n maçlardaki pozisyonu nedir?"
              ],
              "milliyeti": [
                  "{name} nerelidir?",
                  "{name} hangi ülke asıllıdır?",
                  "{name} hangi millettendir?",
-                 "{name}'{~}n hangi millettendir?",
+                 "{name}'{~}n hangi millettendir?"
              ],
             "kulüpyıl": [
                 
@@ -1070,7 +1069,7 @@ class QuestionPatterns:
                  "{name}'{~}n oynadığı takım hangisidir?",
                  "{name}'{~}n takımı hangisidir?",
                  "{name}'{~}n güncel takımı hangisidir?",
-                 "{name}'{~}n şu an oynadığı takım hangisidir?",
+                 "{name}'{~}n şu an oynadığı takım hangisidir?"
              ],
             "numarası": [
                 
@@ -1109,7 +1108,7 @@ class QuestionPatterns:
                 "{name} hangi ilde doğdu",
                 "{name} hangi ülkede doğdu",
                 "{name} doğduğu ülke",
-                "{name}'{~}n doğduğu ülke",
+                "{name}'{~}n doğduğu ülke"
             ],
             "meslek": [
                 "{name}'{~}n mesleği nedir?",
@@ -1119,7 +1118,7 @@ class QuestionPatterns:
                 "{name} hangi mesleğe mensup?",
                 "{name} hangi mesleği yapıyordu?",
                 "{name} hangi işi yapıyor?",
-                "{name} hangi işi yapıyordu?",
+                "{name} hangi işi yapıyordu?"
             ],
              "doğumtarihi": [
                 "{name}'{~}n doğum tarihi",
@@ -1140,7 +1139,7 @@ class QuestionPatterns:
                 "{name} doğum günü nedir",
                 "{name} ne zaman doğmuştur?",
                 "{name} ne zaman doğdu",
-                "{name} doğum zamanı",
+                "{name} doğum zamanı"
             ],
             "ölümtarihi": [
                 "{name}'{~}n ölüm tarihi",
@@ -1162,7 +1161,7 @@ class QuestionPatterns:
                 "{name} ne zaman ölmüştür",
                 "{name} ne zaman ölüm",
                 "{name} ölüm zamanı",
-                "{name}'{~}n ölüm zamanı",
+                "{name}'{~}n ölüm zamanı"
             ],
             "ölümyeri": [
                 "{name} nerede ölmüştür",
@@ -1184,7 +1183,7 @@ class QuestionPatterns:
                 "{name} hangi ilde öldü",
                 "{name} hangi ülkede öldü",
                 "{name} öldüğü ülke",
-                "{name}'{~}n öldüğü ülke",
+                "{name}'{~}n öldüğü ülke"
             ],
             "başlık": [
 
@@ -1198,14 +1197,14 @@ class QuestionPatterns:
                 "{name}'{~}n eser türleri?",
                 "{name}'{~}n eserleri hangi türdedir?",
                 "{name}'{~}n eserleri hangi türdeydi?",
-                "{name}'{~}n eser türü nedir?",
+                "{name}'{~}n eser türü nedir?"
             ],
             "dönem": [
                 "{name} hangi dönemde eser vermiştir?",
                 "{name} hangi dönemde eserler vermiştir?",
                 "{name} hangi dönem yazarıdır?",
                 "{name} eser verdiği dönem nedir?",
-                "{name} eser verdiği dönem hangisidir?",
+                "{name} eser verdiği dönem hangisidir?"
             ],
             "ilkeser": [
                 "{name}'{~}n ilk eseri nedir?",
@@ -1214,7 +1213,7 @@ class QuestionPatterns:
                 "{name}'{~}n ilk eserinin adı nedir?",
                 "{name}'{~}n verdiği ilk eserinin adı nedir?",
                 "{name}'{~}n verdiği ilk eseri nedir?",
-                "{name}'{~}n verdiği ilk eseri hangisidir?",
+                "{name}'{~}n verdiği ilk eseri hangisidir?"
             ]
          }
     }
