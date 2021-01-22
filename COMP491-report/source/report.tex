@@ -21,10 +21,10 @@
 \setfigurepath{../figures/}
 
 
-\newacronym{svm}{SVM}{Support Vector Machines}
-\newacronym{ml}{ML}{Machine Learning}
 \newacronym{dl}{DL}{Deep Learning}
 \newacronym{qg}{QG}{Question Generation}
+\newacronym{nlp}{NLP}{Natural Language Processing}
+
 \usepackage{xcolor}
 \usepackage{fancyvrb}
 \usepackage{fvextra}
@@ -50,8 +50,21 @@
 	
 	\begin{abstract}
 		% TO-DO
-		Our goal in this project is to develop a Turkish Question Generation System using available online sources such as Wikipedia. Question Generation Systems are capable of generate various logical questions from the given text input. QG Systems are prevalent in several computer applications such as chatbots, automated grading systems etc. Development of such a system is particularly important since there are not any examples of online tools and available datasets in Turkish. However, QG research has already reached a notable level in other languages such as English and there are available datasets for this task. For instance, SQuAD by Stanford University is one of the well- known datasets used for this task in English.\newline \par
-		In this project, we are aiming to create the first Turkish Question Generation Dataset of moderate size. This step is required for developing learning-based solutions that we’re going to apply in this project. We plan to apply different machine learning based techniques for questions of generating varying forms (Who-What-When etc.) and assess their performances on the dataset we’ll gather.\newline \par
+		In the last decade, computers and software we use has gained humanitarian characteristics. We talk with them, create chatbots that answer the question of the user as a real assistant and many more. All of this features are invigorated by the Artificial Intelligence research which has showed significant improvements over the past decade.
+		
+		With the emergence of the \gls{dl} systems, other sub-fields of AI such as \gls{nlp}  made leaps in short amount of time as well. Today, results of the studies of these fields are ubiquitous. \newline \par
+		
+		Development of such applications require extensively large datasets for the training of \gls{dl} models. These applications are helping us in many ways. They enable us to solve our problems with less effort in shorter amount of time, reduce the work loads on humans etc. \newline \par
+		
+		Development such applications require extensively large datasets. Datasets are crucial for a \gls{dl} model to be trained. Capability and the reliability of these applications are highly dependent on the data they have been trained on. \newline \par
+		
+		In this project, we aim to develop a Question Generation Model in Turkish Language.
+		
+		Furthermore, for an application to be developed in any language, training dataset must contain the examples from that language as well. Sourcing such data in languages such as English, German, French etc. is not a hard task. However, labeled data in Turkish language is scarce, hence, development of smart applications such as question bots, personal assistants etc. in Turkish requires significantly more effort comparing to other languages.
+		
+		 
+		
+		
 	
 		\keywords{
 			Automatic speech recognition, Natural Language Processing, Deep Learning, Sentiment Analysis, MOOC\footnote{Massive Open Online Courses}}
@@ -60,7 +73,7 @@
 		
 	\begin{abstractTR}
 		% TO-DO
-		Bu projedeki amacımız, Wikipedia gibi mevcut çevrimiçi kaynakları kullanarak bir Türkçe Soru Oluşturma Sistemi geliştirmektir. Soru Üretme Sistemleri, verilen metin girişinden çeşitli mantıksal sorular üretebilir. QG Sistemleri, sohbet robotları, otomatik derecelendirme sistemleri vb. Gibi birçok bilgisayar uygulamasında yaygındır. Bu tür bir sistemin geliştirilmesi, Türkçe'de herhangi bir çevrimiçi araç ve veri seti örneği bulunmadığından özellikle önemlidir. Bununla birlikte, QG araştırması İngilizce gibi diğer dillerde çoktan kayda değer bir seviyeye ulaştı ve bu görev için mevcut veri kümeleri var. Örneğin, Stanford Üniversitesi tarafından SQuAD, bu görev için İngilizce olarak kullanılan iyi bilinen veri kümelerinden biridir. \newline \par
+		Bu projenin amacı Wikipedia gibi mevcut çevrimiçi kaynakları kullanarak Türkçe Soru Üretme Sistemi geliştirmektir. Soru Üretme Sistemleri, verilen metin girişinden çeşitli mantıksal sorular üretebilen sistemlerdir. Bu sistemler, sohbet robotları, otomatik değerlendirme sistemleri vb. birçok bilgisayar uygulamasında yaygın olarak kullanılmaktadır. Bu tip uygulamaların Türkçe destekli olarak geliştirilmesinde çok önemli bir yeri bulunan Türkçe veri seti örneği bulunmadığından,. Bununla birlikte, QG araştırması İngilizce gibi diğer dillerde çoktan kayda değer bir seviyeye ulaştı ve bu görev için mevcut veri kümeleri var. Örneğin, Stanford Üniversitesi tarafından SQuAD, bu görev için İngilizce olarak kullanılan iyi bilinen veri kümelerinden biridir. \newline \par
 		Bu projede, orta büyüklükte ilk Türkçe Soru Üretme Veri Kümesini oluşturmayı hedefliyoruz. Bu adım, bu projede uygulayacağımız öğrenmeye dayalı çözümler geliştirmek için gereklidir. Çeşitli formlar (Kim-Ne-Ne Zaman vb.) Üretme soruları için farklı makine öğrenimi tabanlı teknikler uygulamayı ve toplayacağımız veri kümesindeki performanslarını değerlendirmeyi planlıyoruz.
 		
 		\anahtarkelimeler{Doğal Dil İşleme, Derin Öğrenme, Duygu Analizi}
@@ -263,13 +276,26 @@
 	
 	
 	\section{Analysis and Modeling}
-	We first give details about the project that we selected. We define the scope of the project, functional and non-functional requirements. Then, we give details of the problem that the company was experiencing. Finally, we provide detailed analysis that we conducted by using real-life data obtained from the company. 
+	
+	Aim of this project is to develop a Turkish Question Generation Model. Given a paragraph or a piece of text, our model creates the possible questions that can be answered with the information given in that paragraph. \newline \par
+	
+	However, development of such model requires an extensively large and labeled dataset that consist of paragraphs, corresponding question and answers to those questions. Unfortunately, such dataset is not available in Turkish Language. There are examples of it, but they neither contain large amounts of information nor we find the data reliable. \newline \par
+	
+	For the reasons described above, we decided to compose our own dataset. Our dataset consist of paragraphs from Turkish Wikipedia. By using the Person entities from the Turkish Wikipedia, we can create the question patterns for each attributes of a person. Later, these questions patterns are completed by substituting the person's name with the placeholders. At this step, we have our questions and the description paragraph of the person available to us.
+	
+	However, we must also confirm that the answer to the question is also found in the paragraph. For this reason, we use a fuzzy search algorithm in order to determine if the answer is in the paragraph or not. If it is, we add the questions to our dataset, if not we skip to next question. \newline \par
+	
+	Apart from the dataset, main goal of the project is to create the \gls{qg} model. Given that this model \gls{qg} model will be developed based on the dataset, first stage of this project has been dedicated to production of the dataset. 
 	
 	\subsection{System Factors}
-	Explain factors that can affect the system.
+	Since our work is based on the data acquired from Wikipedia and its manipulation, source data is highly effective on the outcome. While creating the dataset we always aim to create grammatically flawless questions while covering the variety of inputs that may come from the end-user
 	
 	\subsection{How System Works}
-	Explain how your system will work
+	Input data consists of ~53,000 person entities from Turkish Wikipedia. Occupations of each person and their attributes are also presented. For instance, for a 'Soldier', given attributes are: 'Rank', 'Wars', 'Nationality', 'Commanders' etc. Given that most of these attributes are also mentioned in the description paragraph of the corresponding person, when we create the questions that asks about these attributes, we will have the description paragraph and the questions together. 
+	
+	Initially, each question patterns for attributes are created manually containing a placeholder for the person's name. Later, by iterating over each person and substituting names for the their attributes we create an example of question. 
+	
+	When we iterate over every person, we accumulate a dataset which consist of paragraphs that describe the person, and questions about the attributes of the person which also is contained in the paragraph as well.  
 	
 	\subsubsection{Modelling}
 	Explanation of system model.
