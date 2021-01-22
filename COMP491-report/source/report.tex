@@ -24,7 +24,25 @@
 \newacronym{svm}{SVM}{Support Vector Machines}
 \newacronym{ml}{ML}{Machine Learning}
 \newacronym{dl}{DL}{Deep Learning}
+\newacronym{qg}{QG}{Question Generation}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
 
+% redefine \VerbatimInput
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{black},
+	%
+	labelposition=topline,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
 
 \begin{document}
 	
@@ -181,8 +199,6 @@
 	
 	
 	\section{Theoretical Background}
-	You will define your problem in this section and add subheadings as needed. If you give your problem description and solution methodology in this section, you may need to change the title of this section. We usually write a couple of sentence in this part that explains what we will discuss in this section. For example: We will first provide the problem definition of our study (write you topic here), and then give the mathematical model that we propose as a solution method in this section.
-	
 	\subsection{Literature Survey}
 	In this section, a survey of the literature from multiple sources could be found.
 	\subsubsection{Question Answering}
@@ -264,19 +280,52 @@
 	\subsubsection{UML (Unified Modeling Language) Diagrams}
 	
 	\section{Design, implementation and testing}
-	Explain design, implementation and testing of your system in detail.
-	
+	During the design phase of our project, we had two different components that have to be completed. These are:
+	\begin{itemize}
+		\item A Turkish question answering dataset that will be used to train the \gls{qg} model.
+		\item A \gls{qg} model.
+	\end{itemize}
+	In this section, we will explain that what kind of design process we have followed during the design, implementation and testing of these two components separately.
 	\subsection{Design}
-	Explanation of the design of your system.
+	\subsubsection{Dataset}
+	Before creating our dataset, we have researched if any of the datasets are suitable and sufficient. We have found one dataset that is suitable for our model. That dataset has around 2.2k questions, and the descriptive texts were about Turkish \& Islamic Science History, which is not completely suitable and sufficient. Hence, we have decided to create our dataset. During the design phase of the dataset, we have used 2 Wikipedia datasets. The first data was semi-cleaned scrapped Turkish Wikipedia data. Data we had has the short descriptions and the table contents. An example of the table content could be found in Figure \ref{wiki-table-content}. 
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.3]{wiki-table-content}
+		\caption{Sample Wikipedia table content\label{wiki-table-content}}
+	\end{figure}
+
+	However, this data was not sufficient for our dataset since most of the table contents' data does not appear on the short description. Thus, we had to use long descriptions for each of them. After that, we also matched the whole Wikipedia Turkish dump we found from Kaggle with our first data. This data had long descriptions of every document that is currently available on Wikipedia. During the matching phase, we have decided to match each document by their id's.\\
 	
+	After finishing the data part, we have started to analyze our data. We have grouped each person according to their occupation. After grouping, we have found out that we have twenty different occupations. Each occupation has its own table attributes. Our main goal is to generate question patterns according to their occupations and the most used 10 attributes for that specific occupation. Our analysis on the Wikipedia persons data could be found on Appendix A.\\
+	
+	Finally, we have started to generate the question patterns according to the occupation and the attributes. During this process, we have decided to the question pattern styling.\\
+	
+	\subsubsection{Question Generation Model}
+	In the design process of Question Generation Model, we have followed the architecture of the \cite{chan-fan-2019-recurrent}. According to their architecture, we will use an sequential-to-sequential model. For the given paragraph $C=[c_1, c_2, ..., c_n]$, the answer phase $A=[a_1, a_2, ..., a_n]$ and the question $\hat{Q} = [\hat{q_1}, ..., \hat{q_i}]$, the input sequence $X_i$ will be shown as follows.
+	\begin{equation}
+		X_i =  ([CLS], C, [SEP], A, [SEP], \hat{q_1}, ..., \hat{q_i}, [MASK])\label{formula1}
+	\end{equation}
+
+	 There are 3 different tokens in that sequence. These can be summarized as follows:
+	\begin{itemize}
+		\item \textit{$[CLS]$}: Token shows the beginning of a sequence.
+		\item \textit{$[SEP]$}: Token separates the answer from the context and the generated question.
+		\item \textit{$[MASK]$}: Token shows the ending of a sequence.
+	\end{itemize}
+
 	\subsection{Implementation}
-	Explanation of the implementation of your system.
 	
+	\subsubsection{Dataset}
+	
+	Explanation of the implementation of your system.
+	created We have generated around 1700 question patterns by hand.
+	\subsubsection{Question Generation Model}
 	\subsection{Testing}
 	Explanation of the testing of your system.
 	
 	\section{Results}
-	Explain your results.
+	
 	
 	\section{Conclusion}
 	Briefly explain the problem you studied, the solution method you proposed and your experience in the implementation. Then, please proceed to subsections and explain the requirements in details. 
@@ -294,7 +343,7 @@
 	During your design project experience, describe the team work that you have participated. Give positions and majors of the people in the company that you worked with. Evaluate the composition, organization, and performance of your team. Describe how you shared the load in terms of the project tasks. 
 	
 	\begin{appendix}[A]
-		Your Appendix goes here
+		\VerbatimInput[breaklines=true, label=attributes.txt\label{attributes}]{./attributes.txt}
 	\end{appendix}
 
 	\begin{appendix}[B]
