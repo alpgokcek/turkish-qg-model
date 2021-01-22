@@ -298,10 +298,44 @@
 	When we iterate over every person, we accumulate a dataset which consist of paragraphs that describe the person, and questions about the attributes of the person which also is contained in the paragraph as well.  
 	
 	\subsubsection{Modelling}
-	Explanation of system model.
 	
+	System can be inspected under two groups; Dataset Production and Development of the Question Generation Model. \newline \par
+	
+	Figure 6 shows the relationship between person entities, their attributes and the question patterns. Each person has set of attributes and each attribute has set of question patterns. \newline \par
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=.5]{architecture.pdf}
+		\caption{System Entities\label{per-attr-qp}}
+	\end{figure}
+	
+
+	
+	Figure 7 shows the relationship between an attribute and the questions. For an attribute, there are multiple question patterns. When the questions are generated using the pattern, cumulatively these patterns create questions about an attribute of the person. \newline \par
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=.5]{attr_questions.pdf}
+		\caption{Relationship of an attribute to Questions\label{attr-qg}}
+	\end{figure}
+
+
+	Figure 8 shows the relationship between the person entity and how the output data for a single person is generated. Each person has a description paragraph and set of attributes. These attributes yield to set of questions that the description paragraph can answer. When the paragraph and the questions are coupled together, we get a paragraph-questions pair for our dataset. \newline \par
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=.5]{person_output.pdf}
+		\caption{Relationship of an attribute to Questions}
+	\end{figure}
+		
+	\newpage
 	\subsubsection{System Architecture }
 	Explanation of system architecture.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.17]{bert_sqg.png}
+		\caption{BERT-SQG Architecture \cite{chan-fan-2019-bert}\label{bertsqg-arch}}
+	\end{figure}
 	
 	\subsubsection{UML (Unified Modeling Language) Diagrams}
 	
