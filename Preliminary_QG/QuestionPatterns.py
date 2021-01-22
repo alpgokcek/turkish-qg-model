@@ -1382,7 +1382,9 @@ class QuestionPatterns:
                 "{name}'{~}n en iyi derecesi ne"
             ],
             "ağırlık": [
-
+                "{name}'{~}n kilosu kaçtır?",
+                "{name}'{~}n kilosu nedir?",
+                "{name}'{~}n kilosu ne?"
             ]
         },
         "Tenis sporcu": {
@@ -1414,13 +1416,25 @@ class QuestionPatterns:
                 "{name}'{~}n doğduğu ülke"
             ],
             "vatandaşlık": [
-
+                "{name} hangi ülke vatandaşıdır?",
+                "{name} hangi ülkenin vatandaşıdır?",
+                "{name} nerenin vatandaşıdır?",
+                "{name} vatandaşlığı hangi ülkedendir?",
+                "{name}'{~}n vatandaşlığı hangi ülkedendir?",
+                "{name}'{~}n vatandaşı olduğu ülke hangisidir?",
+                "{name}'{~}n vatandaşı olduğu ülke nedir?",
+                "{name}'{~}n vatandaşlığına sahip olduğu ülke nedir?",
+                "{name}'{~}n vatandaşlığına sahip olduğu ülke hangisidir?"
             ],
             "enyükseksıralama": [
-
+                "{name}'{~}n en iyi derecesi nedir?",
+                "{name}'{~}n en iyi derecesi ne",
+                "{name}'{~}n en yüksek sıralaması nedir?",
+                "{name}'{~}n en yüksek sıralaması ne"
             ],
             "oyunstili": [
-
+                "{name}'{~}n oyun stili nedir?",
+                "{name}'{~}n oyun stili ne?"
             ],
             "wimbledonsonuçları": [
                 "{name}'{~}n Amerika açık sonuçları nedir?",
@@ -1443,10 +1457,14 @@ class QuestionPatterns:
                 "{name}'{~}n Avustralya açık sonuçları nasıl?"
             ],
             "toplamkupa": [
-                
+                "{name}'{~}n kazandığı toplam kupa nedir?",
+                "{name}'{~}n kazandığı toplam kupa kaçtır?",
+                "{name}'{~}n kazandığı toplam kupa kaç?"
             ],
             "yaşadığıyer": [
-
+                "{name} nerede yaşamaktadır?",
+                "{name} yaşadığı yer neresidir?",
+                "{name} yaşadığı yer neresi"
             ]
         },
         "Voleybolcu": {
@@ -1517,9 +1535,6 @@ class QuestionPatterns:
                 "{name} hangi millettendir?",
                 "{name}'{~}n hangi millettendir?"
             ],
-            "kulüpyıl": [
-
-            ],
             "kulüptakım": [
                 "{name} hangi takımlarda oynamıştır?",
                 "{name} hangi takımlarda oynamıştı?",
@@ -1568,10 +1583,6 @@ class QuestionPatterns:
                 "{name} nerenin milli takımında oynuyor?",
                 "{name} nerenin milli takımında oynadı?"
             ],
-            "milliyıl": [
-
-            ]
-
         },
         "Yazar": {
             "doğumyeri": [
