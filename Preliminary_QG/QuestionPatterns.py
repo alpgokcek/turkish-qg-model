@@ -684,9 +684,85 @@ class QuestionPatterns:
                 "{name}'{~}n oynadığı ikinci takımda hangi periyotta oynamıştır?"
             ]
         },
-        "Kişi": {},
-        "Kraliyet": {},
-        "Makam sahibi": {},
+        "Kişi": {
+            "meslek":[
+                "{name}'{~}n mesleği nedir?",
+                "{name}'{~}n mesleği neydi",
+                "{name} ne iş yapar?",
+                "{name} işi ne?",
+                "{name} işi nedir?"
+            ],
+            "aktifyılları":[
+                "{name} hangi yıllar arası aktifti?",
+                "{name} hangi yıllar arası aktif kalmıştır?",
+                "{name}'{~}n aktif yılları nedir?"
+            ],
+            "yer":[
+                "{name} nerede yaşamaktadır?",
+                "{name} yaşadığı yer neresidir?",
+                "{name} yaşadığı yer neresi"
+            ],
+            "etinyılları":[
+                "{name} hangi yıllar arası etkindi?",
+                "{name} hangi yıllar arası etkin kalmıştır?",
+                "{name}'{~}n etkin yılları nedir?"
+            ],
+        },
+        "Kraliyet": {
+            "hükümsüresi":[
+                "{name} hangi yıllar arası hüküm sürmüştür?",
+                "{name} hangi yıllar arası hüküm sürdü?",
+                "{name} hangi yıllar arasında hüküm sürdü?",
+                "{name} hangi yıllar arasında hüküm sürmüştür?"
+            ],
+            "sonragelen":[
+                "{name}'{den} sonra gelen hükümdar kim?",
+            ],
+            "ölümtarihi":[],
+            "öncegelen":[
+                "{name}'{den} önce gelen hükümdar kimdir?",
+                "{name}'{den} önce gelen hükümdar kim?",
+            ],
+            "babası":[
+                "{name}'{~}n babası kimdir?",
+                "{name}'{~}n babası kim?"
+            ],
+            "hanedan":[
+                "{name}'{~}n hanedanı nedir?",
+                "{name}'{~}n hanedanı ne?",
+                "{name} hangi hanedandandır?",
+                "{name} hangi hanedandan?",
+            ],
+            "annesi":[
+                "{name}'{~}n annesi kimdir?",
+                "{name}'{~}n annesi kim?"
+            ],
+            "ölümyeri": [
+                "{name} nerede ölmüştür",
+                "{name} nerede öldü",
+                "{name} ölüm yeri",
+                "{name}'{~}n ölüm yeri",
+                "{name} ölüm yeri neresi",
+                "{name}'{~}n ölüm yeri neresi",
+                "{name}'{~}n ölüm yeri neresidir",
+                "{name} ölüm yeri neresidir",
+                "{name} öldüğü yer",
+                "{name}'{~}n öldüğü yer",
+                "{name} öldüğü yer neresidir",
+                "{name}'{~}n öldüğü yer neresidir",
+                "{name} öldüğü yer neresi",
+                "{name}'{~}n ölüdüğü yer neresi",
+                "{name} doğduğu il",
+                "{name}'{~}n ölüdüğü il",
+                "{name} hangi ilde öldü",
+                "{name} hangi ülkede öldü",
+                "{name} öldüğü ülke",
+                "{name}'{~}n öldüğü ülke"
+            ],
+        },
+        "Makam sahibi": {
+
+        },
         "Manken": {},
         "Müzik sanatçısı": {
             "artalan": [
@@ -757,7 +833,9 @@ class QuestionPatterns:
         },
         "Oyuncu": {
             "yer": [
-
+                "{name} nerede yaşamaktadır?",
+                "{name} yaşadığı yer neresidir?",
+                "{name} yaşadığı yer neresi"
             ],
             "doğumtarihi": [
                 "{name}'{~}n doğum tarihi",
@@ -796,20 +874,20 @@ class QuestionPatterns:
                 "{name} hangi işi yapıyor?",
                 "{name} hangi işi yapıyordu?"
             ],
-            "etkinyılları": [
-
-            ],
-            "doğumadı": [
-
-            ],
-            "altyazı": [
-
+            "etkinyıllar": [
+                "{name} hangi yıllarda aktif olarak oyunculuk yapmıştır?",
+                "{name} hangi yıllarda aktif olarak oyunculuk yapmıştı?",
+                "{name} hangi yıllarda aktif olarak oyunculuk yapmıştır?"
             ],
             "evlilik": [
-
+                "{name} kimle evlidir?",
+                "{name} evli olduğu kişi kimdir?"
             ],
             "ulus": [
-
+                "{name} nerelidir?",
+                "{name} hangi ülke asıllıdır?",
+                "{name} hangi millettendir?",
+                "{name}'{~}n hangi millettendir?"
             ],
             "ölümtarihi": [
                 "{name}'{~}n ölüm tarihi",
@@ -888,10 +966,10 @@ class QuestionPatterns:
 
             ],
             "debut": [
-
-            ],
-            "doğumadı": [
-
+                "{name}'{~}n ilk ringe çıkışı ne zamandır?",
+                "{name}'{~}n ilk maça çıkışı ne zamandır?",
+                "{name} ilk maçına ne zaman çıkmıştır?",
+                "{name} ilk olarak ringe ne zaman çıkmıştır?"
             ],
             "doğumtarihi": [
                 "{name}'{~}n doğum tarihi",
@@ -915,19 +993,31 @@ class QuestionPatterns:
                 "{name} doğum zamanı"
             ],
             "ringadları": [
-
+                "{name}'{~}n ring adları nelerdir?",
+                "{name}'{~}n ring adları nedir?",
+                "{name}'{~}n ring adı nedir?"
             ],
             "eğiten": [
-
+                "{name}'{~} eğiten kişiler kimlerdir?",
+                "{name}'{~} eğiten kişiler kimler?",
+                "{name}'{~} eğiten kişilerin adları nelerdir?",
+                "{name}'{~} eğiten kişilerin adları ne?"
             ],
             "eş": [
-
+                "{name} kimle evlidir?",
+                "{name}'{~}n evli olduğu kişi kimdir?",
             ],
             "eğitildiğiyer": [
-
+                "{name} nerede eğitilmiştir?",
+                "{name} nerede eğitildi?",
+                "{name} eğitildiği yer neresidir?",
+                "{name} eğitildiği yer neresi"
             ],
             "çocuklar": [
-
+                "{name}'{~}n çocukları kimlerdir?",
+                "{name}'{~}n çocukları kim?",
+                "{name}'{~}n çocuklarının adları nedir?",
+                "{name}'{~}n çocuklarının adları nelerdir?"
             ]
         },
         "Sanatçı": {
@@ -953,7 +1043,11 @@ class QuestionPatterns:
                 "{name} doğum zamanı"
             ],
             "alanı": [
-
+                "{name}'{~}n alanı nedir?",
+                "{name}'{~}n alanı ne",
+                "{name} hangi alanda sanat yapmaktadır?",
+                "{name} hangi alanda sanat yapmaktaydı?",
+                "{name} hangi alanda sanat yapıyor?",
             ],
             "ölümtarihi": [
                 "{name}'{~}n ölüm tarihi",
@@ -1030,13 +1124,15 @@ class QuestionPatterns:
 
             ],
             "yer": [
-
-            ],
-            "resimaltı": [
-
+                "{name} nerede yaşamaktadır?",
+                "{name} yaşadığı yer neresidir?",
+                "{name} yaşadığı yer neresi"
             ],
             "ünlüyapıtları": [
-
+                "{name}'{~}n ünlü yapıtları nelerdir?",
+                "{name}'{~}n ünlü yapıtları nedir?",
+                "{name}'{~}n yarattığı ünlü yapıtlar nelerdir?",
+                "{name}'{~}n yarattığı ünlü yapıtlar nedir?",
             ]
         },
         "Sporcu": {
@@ -1089,26 +1185,30 @@ class QuestionPatterns:
                 "{name}'{~}n doğduğu ülke"
             ],
             "ülke": [
-
+                "{name} hangi ülke adına ter dökmektedir?",
+                "{name} hangi ülkenin sporcusudur?",
+                "{name} hangi ülkenin sporcusu?",
+                "{name} hangi ülke adına yarışmaktadır?",
+                "{name}'{~}n doğduğu yer"
             ],
             "spor": [
-
-            ],
-            "yarışma": [
-
+                "{name} hangi spor dalındadır?",
+                "{name} hangi spor dalında mücadele etmektedir?",
+                "{name} hangi sporu yapar?"
             ],
             "uyruk": [
-
+                "{name} nerelidir?",
+                "{name} hangi ülke asıllıdır?",
+                "{name} hangi millettendir?",
+                "{name}'{~}n hangi millettendir?"
             ],
             "kei": [
-
+                "{name}'{~}n en iyi derecesi nedir?",
+                "{name}'{~}n en iyi derecesi ne"
             ],
             "ağırlık": [
 
-            ],
-            "ölümtarihi": [
-
-            ],
+            ]
         },
         "Tenis sporcu": {
             "doğumyeri": [
@@ -1148,19 +1248,27 @@ class QuestionPatterns:
 
             ],
             "wimbledonsonuçları": [
-
+                "{name}'{~}n Amerika açık sonuçları nedir?",
+                "{name}'{~}n Amerika açık sonuçları nelerdir?",
+                "{name}'{~}n Amerika açık sonuçları nasıl?"
             ],
             "amerikaaçıksonuçları": [
-
+                "{name}'{~}n Amerika açık sonuçları nedir?",
+                "{name}'{~}n Amerika açık sonuçları nelerdir?",
+                "{name}'{~}n Amerika açık sonuçları nasıl?"
             ],
             "fransaaçıksonuçları": [
-
+                "{name}'{~}n Fransa açık sonuçları nedir?",
+                "{name}'{~}n Fransa açık sonuçları nelerdir?",
+                "{name}'{~}n Fransa açık sonuçları nasıl?"
             ],
             "avustralyaaçıksonuçları": [
-
+                "{name}'{~}n Avustralya açık sonuçları nedir?",
+                "{name}'{~}n Avustralya açık sonuçları nelerdir?",
+                "{name}'{~}n Avustralya açık sonuçları nasıl?"
             ],
             "toplamkupa": [
-
+                
             ],
             "yaşadığıyer": [
 
