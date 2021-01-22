@@ -339,8 +339,6 @@
 	\end{figure}
 	
 	\subsubsection{UML (Unified Modeling Language) Diagrams}
-	
-	
 	\begin{figure}[h!]
 		\centering
 		\begin{minipage}[c]{0.45\textwidth}
@@ -361,13 +359,17 @@
 			\includegraphics[scale=.5]{UML_diagrams/Person.png}
 			\caption{Person Class\label{fig:dataset_person}}
 	\end{figure}
+
+	
 	\begin{figure}[ht!]
 			\centering
 			\includegraphics[scale=.35]{UML_diagrams/PersonDataParser.png}
 			\caption{PersonDataParser Class\label{fig:dataset_persondataparser}}
 	\end{figure}
-	
+
+	\pagebreak
 	\newpage
+	
 	\section{Design, implementation and testing}
 	During the design phase of our project, we had two different components that have to be completed. These are:
 	\begin{itemize}
@@ -427,9 +429,10 @@
 	Another important aspect of the implementation part was the speed. There were around fifty-three thousand person in the first data, and the whole Wikipedia data which is around five hundred megabytes of data.  Our computers were not sufficient for this processing so we have decided to use cloud services from Amazon Web Services called EC2 which enables us to use a virtual machine instance with 96 Intel Xeon 2.90GHz CPU’s and 192 GB of RAM’s. We have used our previous knowledge on multiprocessing from Operating Systems and tweaked our code to work with multiple CPU’s using a Pool. But still our data processing procedure takes a long time, it takes around 1 hour with the setup mentioned. 
 	
 	\subsubsection{Question Generation Model}
-	During the implentation phase of the Question Generation Model, we already mentioned that we have used the architecture from \cite{chan-fan-2019-recurrent}. During the implementation, we have used the \textit{transformers} from Huggingface and \textit{PyTorch} packages which is needed to accomplish our goal.  We have started to implement the BERT SQG model by creating the classes in figure \ref{fig:bert_sqg} and figure \ref{fig:bert_dataset_loader}. 
+	During the implentation phase of the Question Generation Model, we already mentioned that we have used the architecture from \cite{chan-fan-2019-recurrent}. During the implementation, we have used the \textit{transformers} from Huggingface and \textit{PyTorch} packages which is needed to accomplish our goal. Also, we use the pre-trained model for Turkish which is created by Stefan Schweter, a well-known Computational Linguistic, provided $BERT_{base}$ Turkish cased model (12 layers, 768 hidden dimensions.) We have started to implement the BERT SQG model by creating the classes in figure \ref{fig:bert_sqg} and figure \ref{fig:bert_dataset_loader}. After that, we have implemented the formula \ref{formula1} and created an SQG model with it. However, we could not accomplish our goal this semester. In the following semester, we will start with fixing and completing this model.
+	
 	\subsection{Testing}
-	Explanation of the testing of your system.
+	Similar to the previous parts, we have developed and implemented each component separately. During the testing part, for the dataset, we have run our code several times and the output was as expected. The dataset, have been created according to the question patterns that we have generated. Thus, we did not encounter any problems. For the QG Model, since we could not complete our development process, we could not test the system. In the next semester, we will use several evaluation metrics such as BLEU, METEOR, ROUGE etc.
 	
 	\section{Results}
 	
