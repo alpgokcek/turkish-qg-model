@@ -61,20 +61,33 @@
 		
 		Furthermore, for an application to be developed in any language, training dataset must contain the examples from that language as well. Sourcing such data in languages such as English, German, French etc. is not a hard task. However, labeled data in Turkish language is scarce, hence, development of smart applications such as question bots, personal assistants etc. in Turkish requires significantly more effort comparing to other languages.
 		
+	We believe that the development of this dataset will have an significant contribution to development process of such applications.
+		
 		 
 		
 		
 	
 		\keywords{
-			Automatic speech recognition, Natural Language Processing, Deep Learning, Sentiment Analysis, MOOC\footnote{Massive Open Online Courses}}
+			Natural Language Processing, Deep Learning, Question Generation}
 	\end{abstract}
 	
 		
 	\begin{abstractTR}
-		Bu projenin amacı Wikipedia gibi mevcut çevrimiçi kaynakları kullanarak Türkçe Soru Üretme Sistemi geliştirmektir. Soru Üretme Sistemleri, verilen metin girişinden çeşitli mantıksal sorular üretebilen sistemlerdir. Bu sistemler, sohbet robotları, otomatik değerlendirme sistemleri vb. birçok bilgisayar uygulamasında yaygın olarak kullanılmaktadır. Bu tip uygulamaların Türkçe destekli olarak geliştirilmesinde çok önemli bir yeri bulunan Türkçe veri seti örneği bulunmadığından,. Bununla birlikte, QG araştırması İngilizce gibi diğer dillerde çoktan kayda değer bir seviyeye ulaştı ve bu görev için mevcut veri kümeleri var. Örneğin, Stanford Üniversitesi tarafından SQuAD, bu görev için İngilizce olarak kullanılan iyi bilinen veri kümelerinden biridir. \newline \par
-		Bu projede, orta büyüklükte ilk Türkçe Soru Üretme Veri Kümesini oluşturmayı hedefliyoruz. Bu adım, bu projede uygulayacağımız öğrenmeye dayalı çözümler geliştirmek için gereklidir. Çeşitli formlar (Kim-Ne-Ne Zaman vb.) Üretme soruları için farklı makine öğrenimi tabanlı teknikler uygulamayı ve toplayacağımız veri kümesindeki performanslarını değerlendirmeyi planlıyoruz.
+	Son on yılda kullandığımız bilgisayarlar ve yazılımlar insani özellikler kazandı. Onlarla konuşuyoruz, kullanıcının sorusuna gerçek bir asistan olarak cevap veren sohbetler ve çok daha fazlasını oluşturuyoruz. Tüm bu özellikler, son on yılda önemli gelişmeler gösteren Yapay Zeka araştırmasıyla canlandırıldı.
+	
+	\gls{dl} sistemlerinin ortaya çıkmasıyla birlikte, \gls{nlp} gibi diğer AI alt alanları da kısa sürede sıçramalar yaptı. Günümüzde bu alanlarla ilgili çalışmaların sonuçları her yerde bulunmaktadır. \newline \par
+	
+	Bu tür uygulamaların geliştirilmesi, \gls{dl} modellerinin eğitimi için oldukça büyük veri kümeleri gerektirir. Bu uygulamalar bize birçok yönden yardımcı oluyor. Sorunlarımızı daha az çabayla, daha kısa sürede çözmemizi, insanların üzerindeki iş yüklerini azaltmamızı sağlar, vb. \newline \par
+	
+	Bu tür uygulamaların geliştirilmesi, oldukça büyük veri kümeleri gerektirir. Bir \gls{dl} modelinin eğitilmesi için veri kümeleri çok önemlidir. Bu uygulamaların kapasitesi ve güvenilirliği, üzerinde eğitim aldıkları verilere büyük ölçüde bağlıdır. \newline \par
+	
+	Bu projede Türk Dilinde Soru Üretme Modeli geliştirmeyi hedefliyoruz.
+	
+	Ayrıca bir uygulamanın herhangi bir dilde geliştirilebilmesi için eğitim veri setinin o dilden örnekler de içermesi gerekir. Bu tür verileri İngilizce, Almanca, Fransızca vb. Dillerde temin etmek zor bir iş değildir. Ancak, Türkçe etiketli veriler az olduğundan, soru botları, kişisel asistanlar gibi akıllı uygulamaların Türkçe'de geliştirilmesi diğer dillere göre çok daha fazla çaba gerektirmektedir.
+	
+	Bu veri setinin geliştirilmesinin bu tür uygulamaların geliştirme sürecine önemli bir katkı sağlayacağına inanıyoruz.
 		
-		\anahtarkelimeler{Doğal Dil İşleme, Derin Öğrenme, Duygu Analizi}
+		\anahtarkelimeler{Doğal Dil İşleme, Derin Öğrenme, Soru Üretme}
 	\end{abstractTR}
 	
 	\makelists
@@ -437,11 +450,14 @@
 	\section{Results}
 	We started this project aiming to develop a Turkish Question Generation Model. Later on, we found ourselves in a situation that we had to produce our own dataset for the development. \newline \par
 	
-	In order to build up a dataset, we had access to Turkish Wikipedia data. This data presented us the person entities along with their description paragraphs and the attributes of the person.  \newline \par
+	In order to build up a dataset, we had access to Turkish Wikipedia data. This data presented us the person entities along with their description paragraphs and the attributes of the person. In total, there are 20 occupations and we picked most frequent 10 attributes for each occupation to be included in our dataset. Results of the analysis that we carried out can be seen from the Appendix A.\newline \par
 	
 	Dataset that we created using the Person entities from Turkish Wikipedia enabled us to create +53,000 paragraphs along with the 10 attributes each. Consequently, we produced a dataset that contains paragraphs from wide-range of person with numerous attributes with their questions-answer pair. In the near future, we expect to increase the number of questions in the dataset in order to make room for further developments. We aim to increase the count of the questions by 40\% by the second semester. \newline \par
 	
-	Currently, our dataset is approximately 400MB .txt file stored in JSON format.
+	Currently, our dataset is approximately 400MB .txt file stored in JSON format.\newline \par
+	
+	Furthermore, we studied the development of Question Generation Model. However, since the dataset was not completed, we did not had the chance to test the system. In the following semester, to evaluate our system rigorously, most popular evaluation metrics such as BLEU will be utilized.
+	\newline \par
 	
 	
 	\section{Conclusion}
