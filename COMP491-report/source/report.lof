@@ -1,6 +1,16 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Question Generation system schema\relax }}{5}{figure.caption.7}%
 \contentsline {figure}{\numberline {2}{\ignorespaces Question Generation Model diagram\relax }}{7}{figure.caption.9}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Sample Question Answering model\relax }}{11}{figure.caption.10}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Architecture of a \textit {Transformer}\relax }}{12}{figure.caption.11}%
-\contentsline {figure}{\numberline {5}{\ignorespaces BERT language model architecture\relax }}{12}{figure.caption.12}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Sample Wikipedia table content\relax }}{17}{figure.caption.14}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Use case diagram of our QG system\relax }}{8}{figure.caption.10}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Sample Question Answering model\relax }}{12}{figure.caption.11}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Architecture of a \textit {Transformer}\relax }}{13}{figure.caption.12}%
+\contentsline {figure}{\numberline {6}{\ignorespaces BERT language model architecture\relax }}{13}{figure.caption.13}%
+\contentsline {figure}{\numberline {7}{\ignorespaces System Entities\relax }}{17}{figure.caption.15}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Relationship of an attribute to Questions\relax }}{18}{figure.caption.16}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Relationship of an attribute to Questions\relax }}{18}{figure.caption.17}%
+\contentsline {figure}{\numberline {10}{\ignorespaces BERT-SQG Architecture \cite {chan-fan-2019-bert}\relax }}{19}{figure.caption.18}%
+\contentsline {figure}{\numberline {11}{\ignorespaces BERT-SQG Class\relax }}{19}{figure.caption.19}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Dataset\_loader Class\relax }}{19}{figure.caption.19}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Person Class\relax }}{20}{figure.caption.20}%
+\contentsline {figure}{\numberline {14}{\ignorespaces PersonDataParser Class\relax }}{21}{figure.caption.21}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Sample Wikipedia table content\relax }}{22}{figure.caption.22}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Sample Question Generation patterns\relax }}{24}{figure.caption.23}%
