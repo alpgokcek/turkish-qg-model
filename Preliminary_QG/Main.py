@@ -46,7 +46,7 @@ def main():
                     answer = p.attributes[pattern_type]
                     temp_dict1 = {'answer': answer, 'questions': list()}
                     for question in patterns[p.occupation][pattern_type]:                
-                        if '~' not in question and '#' not in question: 
+                        if '_suffix1' not in question and '_suffix2' not in question and '_suffix3' not in question: 
                             ratio = fuzz.partial_ratio(description, p.attributes[pattern_type])
                             if ratio > THRESHOLD:
                                 temp_dict1['questions'].append(question.format(name=p.name))
