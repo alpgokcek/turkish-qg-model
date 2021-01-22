@@ -178,9 +178,9 @@ class QuestionPatterns:
                 "{name} komuta ettikleri",
                 "{name} kimleri komuta etti",
                 "{name} kimleri komuta etmiştir",
-                "{name} altındaki askerler"
-                "{name} komuta altındaki askerler"
-                "{name}'{~}n komutası altındaki askerler"
+                "{name} altındaki askerler",
+                "{name} komuta altındaki askerler",
+                "{name}'{~}n komutası altındaki askerler",
                 "{name} altındaki askerler"
             ],
             "madalya": [
@@ -460,15 +460,15 @@ class QuestionPatterns:
                 "{name}'{~}n hangi millettendir?"
             ],
             "çalıştığıyerler": [
-                "{name}'{~}n çalıştığı yerler nedir?"
-                "{name}'{~}n çalıştığı yerler nerelerdir?"
-                "{name} nerelerde çalışmıştır?"
-                "{name} nerelerde çalıştı?"
-                "{name} nerelerde çalışmıştı?"
-                "{name}'{~}n çalıştığı kurumlar"
-                "{name}'{~}n çalıştığı kurumlar nerelerdir?"
-                "{name} hangi kurumlarda çalışmıştır?"
-                "{name}'{~}n çalıştığı kurumlar nedir?"
+                "{name}'{~}n çalıştığı yerler nedir?",
+                "{name}'{~}n çalıştığı yerler nerelerdir?",
+                "{name} nerelerde çalışmıştır?",
+                "{name} nerelerde çalıştı?",
+                "{name} nerelerde çalışmıştı?",
+                "{name}'{~}n çalıştığı kurumlar",
+                "{name}'{~}n çalıştığı kurumlar nerelerdir?",
+                "{name} hangi kurumlarda çalışmıştır?",
+                "{name}'{~}n çalıştığı kurumlar nedir?",
             ],
             "ödüller": [
                 "{name} hangi ödüllere sahiptir?",
@@ -481,10 +481,10 @@ class QuestionPatterns:
                 "{name}'{~}n sahip olduğu ödüller nelerdir?"
             ],
             "önemlibaşarıları": [
-                "{name}'{~}n önemli başarıları nelerdir?"
-                "{name}'{~}n sahip olduğu önemli başarılar nelerdir?"
-                "{name}'{~}n elde ettiği önemli başarılar nelerdir?"
-                "{name}'{~}n en önemli başarıları nelerdir?"
+                "{name}'{~}n önemli başarıları nelerdir?",
+                "{name}'{~}n sahip olduğu önemli başarılar nelerdir?",
+                "{name}'{~}n elde ettiği önemli başarılar nelerdir?",
+                "{name}'{~}n en önemli başarıları nelerdir?",
                 "{name} en önemli başarıları nelerdir?"
             ],
             "vatandaşlığı": [
@@ -526,7 +526,6 @@ class QuestionPatterns:
         "Filozof": {},
         "Hakem": {},
         "Güreşçi": {},
-        "Profesyonel güreşçi": {},
         "Futbolcu": {
             "doğumyeri": [
                 "{name} nerede doğmuştur?",
@@ -713,7 +712,11 @@ class QuestionPatterns:
             "etkinyıllar": [
                 "{name} hangi yıllarda aktif olarak müzik yapmıştır?",
                 "{name} hangi yıllarda aktif olarak müzik yapmıştı?",
-                "{name} hangi yıllarda aktif olarak müzik yapmıştır?"
+                "{name} aktif yılları nelerdir?"
+                "{name} aktif yılları nedir?"
+                "{name} etkin yılları nelerdir?"
+                "{name} etkin yılları nedir?"
+                "{name} etkin olduğu yıllar nedir?"
             ],
             "meslek": [
                 "{name}'{~}n mesleği",
@@ -796,8 +799,15 @@ class QuestionPatterns:
                 "{name} hangi işi yapıyor?",
                 "{name} hangi işi yapıyordu?"
             ],
-            "etkinyılları": [
-
+            "etkinyıllar": [
+                "{name} hangi yıllarda aktif olarak rol almıştır?",
+                "{name} hangi yıllarda aktif olarak rol almıştı?",
+                "{name} hangi yıllarda aktif olarak rol almıştı?",
+                "{name} aktif yılları nelerdir?"
+                "{name} aktif yılları nedir?"
+                "{name} etkin yılları nelerdir?"
+                "{name} etkin yılları nedir?"
+                "{name} etkin olduğu yıllar nedir?"
             ],
             "doğumadı": [
 
@@ -806,7 +816,10 @@ class QuestionPatterns:
 
             ],
             "evlilik": [
-
+                "{name} eşi kimdir?"
+                "{name}'{~}n eşi kimdir?",
+                "{name} kiminle evlidir?",
+                "{name} kiminle evlendi?"
             ],
             "ulus": [
 
@@ -927,7 +940,9 @@ class QuestionPatterns:
 
             ],
             "çocuklar": [
-
+                "{name} çocukları kimdir?"
+                "{name} çocuklarının isimleri nedir?"
+                "{name} çocuklarının isimleri?"
             ]
         },
         "Sanatçı": {
@@ -953,7 +968,8 @@ class QuestionPatterns:
                 "{name} doğum zamanı"
             ],
             "alanı": [
-
+                "{name}'{~}n alanı nedir",
+                "{name} hangi alanda eser vermektedir",
             ],
             "ölümtarihi": [
                 "{name}'{~}n ölüm tarihi",
@@ -1027,7 +1043,10 @@ class QuestionPatterns:
                 "{name}'{~}n doğduğu ülke"
             ],
             "milliyeti": [
-
+                "{name} nerelidir?",
+                "{name} hangi ülke asıllıdır?",
+                "{name} hangi millettendir?",
+                "{name}'{~}n hangi millettendir?"
             ],
             "yer": [
 
@@ -1259,10 +1278,31 @@ class QuestionPatterns:
                 "{name}'{~}n şu an oynadığı takım hangisidir?"
             ],
             "numarası": [
-
+                "{name}'{~}n forma numarası nedir?",
+                "{name}'{~}n forması kaç numara?",
+                "{name}'{~}n forması kaç numaradır?",
+                "{name}'{~}n forması kaç numaraydı?",
+                "{name} kaç numaralı formayı giymektedir?",
+                "{name} kaç numaralı formayı giymişti?",
+                "{name} hangi forma numarasına sahiptir?",
+                "{name} sahip olduğu forma numarası nedir?"
             ],
             "millitakım": [
-
+                "{name} hangi milli takımda oynamaktadır?",
+                "{name} hangi milli takımda oynuyor?",
+                "{name} hangi milli takımda oynamakta?",
+                "{name} hangi ülkenin milli takımında oynamaktadır?",
+                "{name} hangi ülkenin milli takımında oynadı?",
+                "{name} oynadığı milli takım hangisidir?",
+                "{name}'{~}n oynadığı milli takım hangisidir?",
+                "{name} oynadığı milli takım hangisi?",
+                "{name}'{~}n oynadığı milli takım hangisi?",
+                "{name} oynadığı milli takım nedir?",
+                "{name}'{~}n oynadığı milli takım nedir?",
+                "{name} nerenin milli takımında oynamaktadır?",
+                "{name} nerenin milli takımında oynamıştı?",
+                "{name} nerenin milli takımında oynuyor?",
+                "{name} nerenin milli takımında oynadı?"
             ],
             "milliyıl": [
 
