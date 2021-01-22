@@ -346,29 +346,25 @@
 		\begin{minipage}[c]{0.45\textwidth}
 			\centering
 			\includegraphics[scale=.5]{UML_diagrams/Bert_SQG.png}
-			\caption{BERT-SQG Class}
-			\label{fig:sample_figure}
+			\caption{BERT-SQG Class\label{fig:bert_sqg}}
 		\end{minipage}
 		\begin{minipage}[c]{0.45\textwidth}
 			\centering
 			\includegraphics[scale=.35]{UML_diagrams/Dataset_loader.png}
-			\caption{Dataset\_loader Class}
-			\label{fig:sample_figure}
+			\caption{Dataset\_loader Class\label{fig:bert_dataset_loader}}
 		\end{minipage}
 	\end{figure}
 
-	\begin{figure}[h!]
+	\begin{figure}[ht!]
 		\centering
 			\centering
 			\includegraphics[scale=.5]{UML_diagrams/Person.png}
-			\caption{Person Class}
-			\label{fig:sample_figure}
+			\caption{Person Class\label{fig:dataset_person}}
 	\end{figure}
-	\begin{figure}[h!]
+	\begin{figure}[ht!]
 			\centering
 			\includegraphics[scale=.35]{UML_diagrams/PersonDataParser.png}
-			\caption{PersonDataParser Class}
-			\label{fig:sample_figure}
+			\caption{PersonDataParser Class\label{fig:dataset_persondataparser}}
 	\end{figure}
 	
 	\newpage
@@ -380,7 +376,7 @@
 	\end{itemize}
 	In this section, we will explain that what kind of design process we have followed during the design, implementation and testing of these two components separately.
 	\subsection{Design}
-	\subsubsection{Dataset}
+	\subsubsection{Dataset}\label{dataset-design}
 	Before creating our dataset, we have researched if any of the datasets are suitable and sufficient. We have found one dataset that is suitable for our model. That dataset has around 2.2k questions, and the descriptive texts were about Turkish \& Islamic Science History, which is not completely suitable and sufficient. Hence, we have decided to create our dataset. During the design phase of the dataset, we have used 2 Wikipedia datasets. The first data was semi-cleaned scrapped Turkish Wikipedia data. Data we had has the short descriptions and the table contents. An example of the table content could be found in Figure \ref{wiki-table-content}. 
 	\begin{figure}[h!]
 		\centering
@@ -394,7 +390,7 @@
 	
 	Finally, we have started to generate the question patterns according to the occupation and the attributes. During this process, we have decided to the question pattern styling.\\
 	
-	\subsubsection{Question Generation Model}
+	\subsubsection{Question Generation Model}\label{qgmodel-design}
 	In the design process of Question Generation Model, we have followed the architecture of the \cite{chan-fan-2019-recurrent}. According to their architecture, we will use an sequential-to-sequential model. For the given paragraph $C=[c_1, c_2, ..., c_n]$, the answer phase $A=[a_1, a_2, ..., a_n]$ and the question $\hat{Q} = [\hat{q_1}, ..., \hat{q_i}]$, the input sequence $X_i$ will be shown as follows.
 	\begin{equation}
 		X_i =  ([CLS], C, [SEP], A, [SEP], \hat{q_1}, ..., \hat{q_i}, [MASK])\label{formula1}
@@ -416,11 +412,22 @@
 	\end{equation}
 	Later on, on each iteration, the newly generated token $\hat{q_i}$ will be appended into X and the generation process will be continued until \textit{$[SEP]$} is predicted. Thus, in the end, we will have our question.
 	\subsection{Implementation}
-	Similar to the design part, we have developed each component separately.
+	Similar to the design part, we have developed and implemented each component separately. We have implemented these components with the Python Programming Language.
 	\subsubsection{Dataset}
+	While creating the dataset, we first created our classes according to the data's that we have. The classes have been created according to the data could be found in figure \ref{fig:dataset_person} and figure \ref{fig:dataset_persondataparser}.\\
 	
-	created We have generated around 1700 question patterns by hand.
+	As we have mentioned in Section \ref{dataset-design}, we have already decided on the question patterns on the designing phase. In the implementation phase, we have generated around 1700 question patterns by hand. Sample question patterns that we have generated could be found in figure \ref{qg-patterns}.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.5]{qg-patterns}
+		\caption{Sample Question Generation patterns\label{qg-patterns}}
+	\end{figure}
+	After generating the question patterns, we needed to implement a fuzzy search mechanism while searching an attribute in the long description. We have researched and found out that in fuzzy search algorithms, the Lavensthein’s distance formula. After that, we found an package that is the implementation of that formula called \textit{fuzzywuzzy}. We pass the long description and the answer that we want to generate a question from then the method returns us a ratio. We have decided to use 0.7 as the threshold for this ratio. If the ratio is higher than our threshold value, then we generate the questions.\\
+	
+	Another important aspect of the implementation part was the speed. There were around fifty-three thousand person in the first data, and the whole Wikipedia data which is around five hundred megabytes of data.  Our computers were not sufficient for this processing so we have decided to use cloud services from Amazon Web Services called EC2 which enables us to use a virtual machine instance with 96 Intel Xeon 2.90GHz CPU’s and 192 GB of RAM’s. We have used our previous knowledge on multiprocessing from Operating Systems and tweaked our code to work with multiple CPU’s using a Pool. But still our data processing procedure takes a long time, it takes around 1 hour with the setup mentioned. 
+	
 	\subsubsection{Question Generation Model}
+	During the implentation phase of the Question Generation Model, we already mentioned that we have used the architecture from \cite{chan-fan-2019-recurrent}. During the implementation, we have used the \textit{transformers} from Huggingface and \textit{PyTorch} packages which is needed to accomplish our goal.  We have started to implement the BERT SQG model by creating the classes in figure \ref{fig:bert_sqg} and figure \ref{fig:bert_dataset_loader}. 
 	\subsection{Testing}
 	Explanation of the testing of your system.
 	
