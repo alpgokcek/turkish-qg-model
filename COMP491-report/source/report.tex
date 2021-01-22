@@ -49,7 +49,6 @@
 	\makestandards
 	
 	\begin{abstract}
-		% TO-DO
 		In the last decade, computers and software we use has gained humanitarian characteristics. We talk with them, create chatbots that answer the question of the user as a real assistant and many more. All of this features are invigorated by the Artificial Intelligence research which has showed significant improvements over the past decade.
 		
 		With the emergence of the \gls{dl} systems, other sub-fields of AI such as \gls{nlp}  made leaps in short amount of time as well. Today, results of the studies of these fields are ubiquitous. \newline \par
@@ -72,7 +71,6 @@
 	
 		
 	\begin{abstractTR}
-		% TO-DO
 		Bu projenin amacı Wikipedia gibi mevcut çevrimiçi kaynakları kullanarak Türkçe Soru Üretme Sistemi geliştirmektir. Soru Üretme Sistemleri, verilen metin girişinden çeşitli mantıksal sorular üretebilen sistemlerdir. Bu sistemler, sohbet robotları, otomatik değerlendirme sistemleri vb. birçok bilgisayar uygulamasında yaygın olarak kullanılmaktadır. Bu tip uygulamaların Türkçe destekli olarak geliştirilmesinde çok önemli bir yeri bulunan Türkçe veri seti örneği bulunmadığından,. Bununla birlikte, QG araştırması İngilizce gibi diğer dillerde çoktan kayda değer bir seviyeye ulaştı ve bu görev için mevcut veri kümeleri var. Örneğin, Stanford Üniversitesi tarafından SQuAD, bu görev için İngilizce olarak kullanılan iyi bilinen veri kümelerinden biridir. \newline \par
 		Bu projede, orta büyüklükte ilk Türkçe Soru Üretme Veri Kümesini oluşturmayı hedefliyoruz. Bu adım, bu projede uygulayacağımız öğrenmeye dayalı çözümler geliştirmek için gereklidir. Çeşitli formlar (Kim-Ne-Ne Zaman vb.) Üretme soruları için farklı makine öğrenimi tabanlı teknikler uygulamayı ve toplayacağımız veri kümesindeki performanslarını değerlendirmeyi planlıyoruz.
 		
@@ -101,7 +99,7 @@
 	
 	As we have discussed, QA Systems are being getting more and more space in our lives and presents wide range of opportunities. With these systems, we are able to get answers to our question at no time, without any human interaction at all. This feature enables humans to reach to even the most isolated information in the context a matter of time upon request.\\
 	
-	Unfortunately, given that almost every human spoken language has specific set of rules, grammar and vocabulary, QA systems needs to be developed for each language separately. Development of such systems are not easiest thing to do, first of all, even if the developer(s) has all the competency in the technical skills required, there is a need for clear, labeled, reliable and excessively large dataset. The dataset must contain questions and possible answers to that question. Creating such dataset manually is almost unattainable, therefore there is a need for a system that can automate this process.  Question Generation systems are perfect for meeting such need. Output of the QG system can be used as the dataset for development.\\
+	Unfortunately, given that almost every human spoken language has specific set of rules, grammar and vocabulary, QA systems needs to be developed for each language separately. Development of such systems are not easiest thing to do, first of all, even if the developer(s) has all the competency in the technical skills required, there is a need for clear, labeled, reliable and excessively large dataset. The dataset must contain questions and possible answers to that question. Creating such dataset manually is almost unattainable, therefore there is a need for a system that can automate this process. Question Generation systems are perfect for meeting such need. Output of the QG system can be used as the dataset for development.\\
 	
 	On top of that, QG systems can be utilized in the education field also. Given a passage, instructor may want to create various questions for the class automatically without putting any effort. Same application can be used by a student for practicing the learnings from a section.
 
@@ -120,8 +118,7 @@
 	Since the project will be software based, no significant effect on environment will be observed. Of course, one can discuss that keeping the servers on, utilizing their resources to the maximum level continually will increase the total electricity consumption. 
 	
 	\subsubsection{Societal Impacts of the solution}
-	% TO-DO
-	What are the societal impacts of the project?
+	This project has many social impacts, though not directly. With the solution we developed, strengthening the question-answering model carried out in connection with this project, we will aid to the process of knowledge acquisitions for the learners.
 	
 	
 	\subsubsection{Legal Issues related to the project}
@@ -340,11 +337,18 @@
 		\item \textit{$[MASK]$}: Token shows the ending of a sequence.
 	\end{itemize}
 
+	After that, we take the final hidden state for the last token \textit{$[MASK]$} in the input sequence. We denote the final hidden vector of \textit{$[MASK]$} as $\textbf{h}[MASK] \in \textit{R}^{h}$. After that BERT model will be adapted by adding an affine layer $\textbf{W}_{SQG} \in \textit{R}^{h×|V|}$ to the output of the \textit{$[MASK]$} token. The label probabilities  $Pr(w|X_i) \in \textit{R}^{|V|}$ are computed by a soft-max function as follows. 
+	\begin{equation}
+		Pr(w|X_i) = softmax(\textbf{h}[MASK] * \textbf{W}_{SQG} + \textbf{b}_{SQG})
+	\end{equation}
+	\begin{equation}
+		\hat{q_i} = argmax_{w}Pr(w|X_i)
+	\end{equation}
+	Later on, on each iteration, the newly generated token $\hat{q_i}$ will be appended into X and the generation process will be continued until \textit{$[SEP]$} is predicted. Thus, in the end, we will have our question.
 	\subsection{Implementation}
-	
+	Similar to the design part, we have developed each component separately.
 	\subsubsection{Dataset}
 	
-	Explanation of the implementation of your system.
 	created We have generated around 1700 question patterns by hand.
 	\subsubsection{Question Generation Model}
 	\subsection{Testing}
