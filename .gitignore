@@ -1,9 +1,8 @@
 Preliminary_QG/.DS_Store
-Preliminary_QG/everyone.txt
+Preliminary_QG/data/wiki_persons.txt
 Preliminary_QG/.idea/
 Preliminary_QG/__pycache__/
-Preliminary_QG/tonyblair.txt
-Preliminary_QG/wiki_new1.html
+Preliminary_QG/data/wiki_whole_data.html
 Preliminary_QG/out_data.txt
 Preliminary_QG/temp_files/
 

@@ -8,14 +8,14 @@ import os
 from multiprocessing import Pool
 
 THRESHOLD = 70
-parser = Parser("everyone.txt")
+parser = Parser("data/wiki_persons.txt")
 parser.parse()
 
 counter = 0
 patterns = QuestionPatterns.patterns
 
 out = open("out_data.txt", 'w')
-full_wiki = open("wiki_new1.html").read()
+full_wiki = open("data/wiki_whole_data.html").read()
 soup = BeautifulSoup(full_wiki, "html.parser")
 
 
@@ -55,8 +55,6 @@ def process(enum):
         if len(temp_dict['data']) > 0:
             out.write(json.dumps(temp_dict, ensure_ascii=False) + ", \n")
         del temp_dict
-
-
 
 
 if __name__ == '__main__':

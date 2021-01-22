@@ -7,13 +7,13 @@ import json
 import multiprocessing
 
 THRESHOLD = 70
-parser = Parser("everyone.txt")
+parser = Parser("data/wiki_persons.txt")
 parser.parse()
 patterns = QuestionPatterns.patterns
 _suffix1, _suffix2, _suffix3 = "_suffix1", "_suffix2", "_suffix3"
 
 
-full_wiki = open("wiki_new1.html").read()
+full_wiki = open("data/wiki_whole_data.html").read()
 soup = BeautifulSoup(full_wiki, "html.parser")
 
 
@@ -83,18 +83,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-'''
-{
-    data: [
-        {
-        description: str,
-        data: [
-            {
-                questions: [str],
-                answer: str
-            }
-        }
-    ]
-}
-'''
