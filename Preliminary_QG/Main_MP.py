@@ -26,6 +26,9 @@ persons = parser.get_persons()
 occupations = parser.get_occupations()
 occupations_with_attr = parser.get_top_occupations_and_attributes(top=10)
 
+_suffix1, _suffix2, _suffix3 = "_suffix1", "_suffix2", "_suffix3"
+
+
 def process(enum):
     index, p = enum
     print(index)
@@ -41,7 +44,7 @@ def process(enum):
                 answer = p.attributes[pattern_type]
                 temp_dict1 = {'answer': answer, 'questions': list()}
                 for question in patterns[p.occupation][pattern_type]:                
-                    if '~' not in question and '#' not in question: 
+                    if _suffix1 not in question and _suffix2 not in question and _suffix3 not in question: 
                         ratio = fuzz.partial_ratio(description, p.attributes[pattern_type])
                         if ratio > THRESHOLD:
                             temp_dict1['questions'].append(question.format(name=p.name))
