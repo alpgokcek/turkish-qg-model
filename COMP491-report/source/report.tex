@@ -432,6 +432,13 @@
 	Explanation of the testing of your system.
 	
 	\section{Results}
+	We started this project aiming to develop a Turkish Question Generation Model. Later on, we found ourselves in a situation that we had to produce our own dataset for the development. \newline \par
+	
+	In order to build up a dataset, we had access to Turkish Wikipedia data. This data presented us the person entities along with their description paragraphs and the attributes of the person.  \newline \par
+	
+	Dataset that we created using the Person entities from Turkish Wikipedia enabled us to create +53,000 paragraphs along with the 10 attributes each. Consequently, we produced a dataset that contains paragraphs from wide-range of person with numerous attributes with their questions-answer pair. In the near future, we expect to increase the number of questions in the dataset in order to make room for further developments. We aim to increase the count of the questions by 40\% by the second semester. \newline \par
+	
+	Currently, our dataset is approximately 400MB .txt file stored in JSON format.
 	
 	
 	\section{Conclusion}
@@ -443,11 +450,11 @@
 	\subsection{Life-Long Learning}
 	At the beginning of the project both of us were novels about the topic of Artificial Intelligence and Natural Language Processing. Initially, we gathered information about the extent of these research areas from various sources such as academic survey papers, online discussion forums, blog posts etc. \newline \par
 	
-	During the initial stages, we also started to study the popular frameworks and libraries that is used for developing learning models. We started out with the \textit{PyTorch} library developed for Python Language. We used online courses, textbooks and official documentation along with inspecting the application available on GitHub while studying the PyTorch framework.
+	During the initial stages, we also started to study the popular frameworks and libraries that is used for developing learning models. We started out with the \textit{PyTorch} library developed for Python Language. We used online courses, textbooks and official documentation along with inspecting the application available on GitHub while studying the PyTorch framework. \newline \par
 	
-	Another topic we had to study was the Language Models. Given that there are not a lot more reliable sources at this topic, we mostly used the official documentation of the academic papers.
+	Another topic we had to study was the Language Models. Given that there are not a lot more reliable sources at this topic, we mostly used the official documentation of the academic papers.\newline \par
 	
-	Later on, we started to work on large amounts of data. At some point our computing resources were not sufficient for such process, hence we used remote servers from the \textit{Amazon Web Services}. In order to utilize multi-cpu servers to their full capabilities, we applied our knowledge from operating systems course for parallelism. 
+	Later on, we started to work on large amounts of data. At some point our computing resources were not sufficient for such process, hence we used remote servers from the \textit{Amazon Web Services}. In order to utilize multi-cpu servers to their full capabilities, we applied our knowledge from operating systems course for parallelism. \newline \par
 	
 	\subsection{Professional and ethical responsibilities of engineers}
 	
@@ -488,13 +495,6 @@
 		\VerbatimInput[breaklines=true, label=attributes.txt\label{attributes}]{./attributes.txt}
 	\end{appendix}
 
-	\begin{appendix}[B]
-		Your Appendix goes here
-	\end{appendix}
-	
-	\begin{acknowledgments}
-		Your acknowledgments goes here
-	\end{acknowledgments}
 	
 	\bibliographystyle{IEEEtranN}
 	\bibliography{../bibliography/references}
