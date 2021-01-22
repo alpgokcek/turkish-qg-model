@@ -1,7 +1,6 @@
 from transformers import AutoModelForTokenClassification, BertTokenizer, pipeline, BertModel
 import pickle, json, re, torch
 from tqdm import notebook
-from torch.utils.data import Dataset, DataLoader
 from Dataset_loader import Dataset_loader
 from Bert_SQG import Bert_SQG
 
@@ -9,7 +8,7 @@ epoch_count = 10
 base_path, device = "data", "cuda"
 
 # static paths
-berturk_path, pretrained_path, dataset_path = "{}/bert-base-turkish-cased".format(base_path), "{}/pretrained".format(base_path), '{}/optimized_out_data.txt'.format(base_path)
+berturk_path, pretrained_path, dataset_path = "{}/bert-base-turkish-cased".format(base_path), "{}/pretrained".format(base_path), '{}/TurQuAD-v1.txt'.format(base_path)
 
 # load the language model
 tokenizer, model = BertTokenizer.from_pretrained(berturk_path), BertModel.from_pretrained(berturk_path)

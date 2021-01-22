@@ -1,3 +1,4 @@
+from torch.utils.data import Dataset
 class Dataset_loader(Dataset):
     def __init__(self, file_path):
         self.file_path = file_path
