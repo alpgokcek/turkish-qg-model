@@ -6,7 +6,7 @@
 \contentsline {subsubsection}{\numberline {1.2.1.}Global Impact of the solution}{3}{subsubsection.0.1.2.1}%
 \contentsline {subsubsection}{\numberline {1.2.2.}Economic Impact of the solution}{3}{subsubsection.0.1.2.2}%
 \contentsline {subsubsection}{\numberline {1.2.3.}Environmental Impact of the solution}{3}{subsubsection.0.1.2.3}%
-\contentsline {subsubsection}{\numberline {1.2.4.}Societal Impacts of the solution}{3}{subsubsection.0.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.4.}Social Impacts of the solution}{3}{subsubsection.0.1.2.4}%
 \contentsline {subsubsection}{\numberline {1.2.5.}Legal Issues related to the project}{4}{subsubsection.0.1.2.5}%
 \contentsline {section}{\numberline {2.}Project Definition and Planning}{5}{section.0.2}%
 \contentsline {subsection}{\numberline {2.1.}Project Definition}{5}{subsection.0.2.1}%
@@ -29,7 +29,7 @@
 \contentsline {subsection}{\numberline {3.2.}Question Generation Model with BERT Language Model}{14}{subsection.0.3.2}%
 \contentsline {section}{\numberline {4.}Analysis and Modeling}{16}{section.0.4}%
 \contentsline {subsection}{\numberline {4.1.}System Factors}{16}{subsection.0.4.1}%
-\contentsline {subsection}{\numberline {4.2.}How System Works}{17}{subsection.0.4.2}%
+\contentsline {subsection}{\numberline {4.2.}How System Works}{16}{subsection.0.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1.}Modelling}{17}{subsubsection.0.4.2.1}%
 \contentsline {subsubsection}{\numberline {4.2.2.}System Architecture }{19}{subsubsection.0.4.2.2}%
 \contentsline {subsubsection}{\numberline {4.2.3.}UML (Unified Modeling Language) Diagrams}{19}{subsubsection.0.4.2.3}%
@@ -44,9 +44,7 @@
 \contentsline {section}{\numberline {6.}Results}{26}{section.0.6}%
 \contentsline {section}{\numberline {7.}Conclusion}{27}{section.0.7}%
 \contentsline {subsection}{\numberline {7.1.}Life-Long Learning}{27}{subsection.0.7.1}%
-\contentsline {subsection}{\numberline {7.2.}Professional and ethical responsibilities of engineers}{27}{subsection.0.7.2}%
+\contentsline {subsection}{\numberline {7.2.}Professional and ethical responsibilities of engineers}{28}{subsection.0.7.2}%
 \contentsline {subsection}{\numberline {7.3.}Contemporary Issues}{28}{subsection.0.7.3}%
-\contentsline {subsection}{\numberline {7.4.}Team Work}{28}{subsection.0.7.4}%
+\contentsline {subsection}{\numberline {7.4.}Team Work}{29}{subsection.0.7.4}%
 \contentsline {section}{APPENDIX A}{30}{subsection.0.7.4}%
-\contentsline {section}{APPENDIX B}{35}{subsection.0.7.4}%
-\contentsline {section}{ACKNOWLEDGMENTS}{36}{subsection.0.7.4}%
