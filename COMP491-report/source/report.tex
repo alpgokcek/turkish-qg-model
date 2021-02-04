@@ -24,6 +24,9 @@
 \newacronym{dl}{DL}{Deep Learning}
 \newacronym{qg}{QG}{Question Generation}
 \newacronym{nlp}{NLP}{Natural Language Processing}
+\newacronym{do}{DÖ}{Derin Öğrenme}
+\newacronym{su}{SÜ}{Soru Üretme}
+\newacronym{ddi}{DDİ}{Doğal Dil İşleme}
 
 \usepackage{xcolor}
 \usepackage{fancyvrb}
@@ -49,45 +52,29 @@
 	\makestandards
 	
 	\begin{abstract}
-		In the last decade, computers and software we use have gained humanitarian characteristics. We talk with them, create chatbots that answer the user's question as a real assistant and many more. These features are invigorated by the Artificial Intelligence research, which has shown significant improvements over the past decade.
+		Over the last years, software we use has gained humanitarian characteristics. All of this features are invigorated by the Artificial Intelligence research which has showed significant improvements over the past decade. With the emergence of \gls{dl}, other sub-fields of AI such as \gls{nlp} made leaps in short amount of time as well. Today, results of the studies of these fields are ubiquitous. \newline \par
 		
-		With the emergence of the \gls{dl} systems, other sub-fields of AI such as \gls{nlp}  made leaps in a short amount of time as well. Today, the results of the studies of these fields are ubiquitous. \newline \par
+		Development of such applications require extensively large datasets for the training of \gls{dl} models. Furthermore, capability and the reliability of these applications are highly dependent on the data they have been trained on. \newline \par
 		
-		Development of such applications requires extensively large datasets for the training of \gls{dl} models. These applications are helping us in many ways. They enable us to solve our problems with less effort in a shorter amount of time, reduce the workloads on humans and much more. \newline \par
+		Labeled data in Turkish language is scarce, hence, development of AI-based applications in Turkish is bottle necked by the absence of data and requires significantly more effort comparing to other languages. \newline \par
 		
-		Development such applications require extensively large datasets. Datasets are crucial for a \gls{dl} model to be trained. Capability and the reliability of these applications are highly dependent on the data they have been trained on. \newline \par
+		In this project we present the initial steps toward developing a \gls{qg} Model based on \gls{dl}. This paper includes the hard-coded training dataset generation for the \gls{dl} model to be developed in later stages.
 		
-		In this project, we aim to develop a Question Generation Model in the Turkish language.
-		
-		Furthermore, for an application to be developed in any language, training dataset must contain the examples from that language. Sourcing such data in languages such as English, German, French is not a challenging task. However, labelled data in the Turkish language is scarce; hence, the development of smart applications such as question bots, personal assistants in Turkish requires significantly more effort comparing to other languages.
-		
-		We believe that this dataset's development will significantly contribute to the development process of such applications.
-		
-		
-		
-		
-		
-		\keywords{
-			Natural Language Processing, Deep Learning, Question Generation}
+
+		\keywords{Artificial Intelligence, Natural Language Processing, Deep Learning, Question Generation}
 	\end{abstract}
 	
-	
+		
 	\begin{abstractTR}
-		Son on yılda kullandığımız bilgisayarlar ve yazılımlar insani özellikler kazandı. Onlarla konuşuyoruz, kullanıcının sorusuna gerçek bir asistan olarak cevap veren sohbetler ve çok daha fazlasını oluşturuyoruz. Tüm bu özellikler, son on yılda önemli gelişmeler gösteren Yapay Zeka araştırmasıyla canlandırıldı.
+	Son yıllarda kullandığımız yazılımlar insani özellikler kazandı. Tüm bu özellikler, son on yılda önemli gelişmeler gösteren Yapay Zeka araştırmalarının bulgularıyla mümkün olabildi. \gls{do}'nin ortaya çıkmasıyla birlikte, \gls{ddi} gibi yapay zeka'nın  diğer alt alanları da kısa sürede sıçramalar yaptı. Günümüzde bu alanlarla ilgili çalışmaların sonuçlarını bir çok yerde görebiliriz. \newline \par
+	
+	Bu tür uygulamaların geliştirilmesi, \gls{do} modellerinin eğitimi için oldukça büyük veri kümeleri gerektirir. Ayrıca, bu uygulamaların kapasitesi ve güvenilirliği, eğitim aldıkları verilere büyük ölçüde bağlıdır. \newline \par
+	
+	Türkçe'de etiketlenmiş veri bulmak kolay olmadığından, yapay zeka tabanlı uygulamaların geliştirilmesi veri yokluğu nedeniyle zorlaşmaktadır ve diğer dillere kıyasla çok daha fazla çaba gerektirir. \newline \par
+	
+	Bu projede, \gls{do}'ye dayalı bir \gls{su} Modeli geliştirmeye yönelik ilk adımları sunuyoruz. Bu belge, sonraki aşamalarda geliştirilecek \gls{do} modeli için sabit kodlanmış eğitim veri kümesi oluşturmanın detaylarını göstermektedir. 
 		
-		\gls{dl} sistemlerinin ortaya çıkmasıyla birlikte, \gls{nlp} gibi diğer AI alt alanları da kısa sürede sıçramalar yaptı. Günümüzde bu alanlarla ilgili çalışmaların sonuçları her yerde bulunmaktadır. \newline \par
-		
-		Bu tür uygulamaların geliştirilmesi, \gls{dl} modellerinin eğitimi için oldukça büyük veri kümeleri gerektirir. Bu uygulamalar bize birçok yönden yardımcı oluyor. Sorunlarımızı daha az çabayla, daha kısa sürede çözmemizi, insanların üzerindeki iş yüklerini azaltmamızı sağlar, vb. \newline \par
-		
-		Bu tür uygulamaların geliştirilmesi, oldukça büyük veri kümeleri gerektirir. Bir \gls{dl} modelinin eğitilmesi için veri kümeleri çok önemlidir. Bu uygulamaların kapasitesi ve güvenilirliği, üzerinde eğitim aldıkları verilere büyük ölçüde bağlıdır. \newline \par
-		
-		Bu projede Türk Dilinde Soru Üretme Modeli geliştirmeyi hedefliyoruz.
-		
-		Ayrıca bir uygulamanın herhangi bir dilde geliştirilebilmesi için eğitim veri setinin o dilden örnekler de içermesi gerekir. Bu tür verileri İngilizce, Almanca, Fransızca vb. Dillerde temin etmek zor bir iş değildir. Ancak, Türkçe etiketli veriler az olduğundan, soru botları, kişisel asistanlar gibi akıllı uygulamaların Türkçe'de geliştirilmesi diğer dillere göre çok daha fazla çaba gerektirmektedir.
-		
-		Bu veri setinin geliştirilmesinin bu tür uygulamaların geliştirme sürecine önemli bir katkı sağlayacağına inanıyoruz.
-		
-		\anahtarkelimeler{Doğal Dil İşleme, Derin Öğrenme, Soru Üretme}
+		\anahtarkelimeler{Yapay Zeka, Doğal Dil İşleme, Derin Öğrenme, Soru Üretme}
 	\end{abstractTR}
 	
 	\makelists
