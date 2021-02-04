@@ -394,13 +394,20 @@
 	\subsubsection{Dataset}
 	While creating the dataset, we first created our classes according to the data's that we have. The classes have been created according to the data could be found in figure \ref{fig:dataset_person} and figure \ref{fig:dataset_persondataparser}.\\
 	
-	As we have mentioned in Section \ref{dataset-design}, we have already decided on the question patterns on the designing phase. In the implementation phase, we have generated around 1700 question patterns by hand. Sample question patterns that we have generated could be found in figure \ref{qg-patterns}.
+	As we have mentioned in Section \ref{dataset-design}, we have already decided on the question patterns on the designing phase. In the implementation phase, we have generated around 1700 question patterns by hand. Sample question patterns that we have generated could be found in Figure \ref{qg-patterns}.
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=.5]{qg-patterns}
 		\caption{Sample Question Generation patterns\label{qg-patterns}}
 	\end{figure}
-	After generating the question patterns, we needed to implement a fuzzy search mechanism while searching an attribute in the long description. We have researched and found out that in fuzzy search algorithms, the Lavensthein's distance formula. After that, we found a package that is the implementation of that formula called \textit{fuzzywuzzy}. We pass the long description, and the answer that we want to generate a question from then the method returns us a ratio. We have decided to use 0.7 as the threshold for this ratio. If the ratio is higher than our threshold value, then we generate the questions.\\
+	After generating the question patterns, we needed to implement a fuzzy search mechanism while searching an attribute in the long description. We have researched and found out that in fuzzy search algorithms, the Lavensthein's distance formula. After that, we found a package that is the implementation of that formula called \textit{fuzzywuzzy}. We pass the long description, and the answer that we want to generate a question from then the method returns us a ratio. We have decided to use 0.7 as the threshold for this ratio. If the ratio is higher than our threshold value, then we generate the questions. In Figure \ref{ilker-basbug}, the questions that have been generated for Ilker Basbug, who is the 26th Chief of the General Staff of Turkey. Wikipedia grouped him as a soldier, thus we have generated the possible questions using the data from the table. \\
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.3]{ilker-basbug}
+		\caption{Questions generated for Ilker Basbug (26th Chief of the General Staff of Turkey)\label{ilker-basbug}}
+	\end{figure}
+	
 	
 	Another critical aspect of the implementation part was the speed. There were around fifty-three thousand people in the first data, and the whole Wikipedia data is around five hundred megabytes of data.  Our computers were not sufficient for this processing so we have decided to use cloud services from Amazon Web Services called EC2, enabling us to use a virtual machine instance with 96 Intel Xeon 2.90GHz CPU's and 192 GB of RAM's. We have used our previous knowledge on multiprocessing from Operating Systems and tweaked our code to work with multiple CPU's using a Pool. Nevertheless, our data processing procedure takes a long time; it takes around 1 hour with the setup mentioned. 
 	
