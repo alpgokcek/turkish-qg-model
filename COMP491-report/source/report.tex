@@ -164,9 +164,14 @@
 		\includegraphics[scale=.37]{turkish_qg_system}
 		\caption{Question Generation Model diagram}
 	\end{figure}
+
+	\gls{qg} models require extensively large training data. In this project, we develop the initial data sets for the development of the \gls{qg} model. At the later stages, dataset that we aggregated will be used to develop the final product which is the \gls{qg} Model itself.
 	
 	\subsubsection{Project Coverage}
-	The project consists of sequential stages where the given input is passed over from one to other. These stages can be classified as the main content of the project. Initially, there will be a pre-processing stage for the data; this pre-process might be tweaking the string or simplifying the sentence. Then, BERT language model will be fine-tuned upon retrieving the input string.\\
+	
+	First part of the project, which is the main focus of this report, consist of building a data set as the training of \gls{qg} Model at the later stages. This data is based on the information retrieved from the Turkish Wikipedia. \newline \par
+	
+	Later stages of the project consists of sequential steps where the given input is passed over from one to other. These stages can be classified as the main content of the project. Initially, there will be a pre-processing stage for the data; this pre-process might be tweaking the string or simplifying the sentence. Then, BERT language model will be fine-tuned upon retrieving the input string.\\
 	
 	Project is based on software; outcome and the deliverables will consist of soft materials. The project's outcome will be an executable file and importable Python module that other researchers can use.
 	
@@ -339,36 +344,7 @@
 	\end{figure}
 	
 	\subsubsection{UML (Unified Modeling Language) Diagrams}
-	\begin{figure}[h!]
-		\centering
-		\begin{minipage}[c]{0.45\textwidth}
-			\centering
-			\includegraphics[scale=.5]{UML_diagrams/Bert_SQG.png}
-			\caption{BERT-SQG Class\label{fig:bert_sqg}}
-		\end{minipage}
-		\begin{minipage}[c]{0.45\textwidth}
-			\centering
-			\includegraphics[scale=.35]{UML_diagrams/Dataset_loader.png}
-			\caption{Dataset\_loader Class\label{fig:bert_dataset_loader}}
-		\end{minipage}
-	\end{figure}
-	
-	\begin{figure}[ht!]
-		\centering
-		\centering
-		\includegraphics[scale=.5]{UML_diagrams/Person.png}
-		\caption{Person Class\label{fig:dataset_person}}
-	\end{figure}
-	
-	
-	\begin{figure}[ht!]
-		\centering
-		\includegraphics[scale=.35]{UML_diagrams/PersonDataParser.png}
-		\caption{PersonDataParser Class\label{fig:dataset_persondataparser}}
-	\end{figure}
-	
-	\pagebreak
-	\newpage
+	UML Diagrams can be seen from Appendix C
 	
 	\section{Design, implementation and testing}
 	During the design phase of our project, we had two different components that have to be completed. These are:
@@ -497,8 +473,42 @@
 	
 	Given that the project member-only consists of two people, we cannot talk about organizational inefficiencies or miscommunication issues. 
 	
-	\begin{appendix}[A]
+	\begin{appendix}[A: Attributes of \textsl{Person} Entities]
 		\VerbatimInput[breaklines=true, label=attributes.txt\label{attributes}]{./attributes.txt}
+	\end{appendix}
+
+
+	\begin{appendix}[B: UML Diagrams]
+		\begin{figure}[h!]
+			\centering
+			%\begin{minipage}[c]{0.45\textwidth}
+				\centering
+				\includegraphics[scale=.45]{UML_diagrams/Bert_SQG.png}
+				\caption{\texttt{BERT-SQG} Class\label{fig:bert_sqg}}
+		\end{figure}
+		\begin{figure}[h!]
+			%\end{minipage}
+			%\begin{minipage}[c]{0.45\textwidth}
+				\centering
+				\includegraphics[scale=.5]{UML_diagrams/Dataset_loader.png}
+				\caption{\texttt{Dataset\_loader} Class\label{fig:bert_dataset_loader}}
+			%\end{minipage}
+		\end{figure}
+		
+		\begin{figure}[h!]
+			\centering
+			\centering
+			\includegraphics[scale=.5]{UML_diagrams/Person.png}
+			\caption{\texttt{Person} Class\label{fig:dataset_person}}
+		\end{figure}
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=.55]{UML_diagrams/PersonDataParser.png}
+			\caption{\texttt{PersonDataParser} Class\label{fig:dataset_persondataparser}}
+		\end{figure}
+		
 	\end{appendix}
 	
 	
