@@ -7,27 +7,34 @@
 \usepackage{titlesec}
 \usepackage{setspace}
 \usepackage{enumitem}
-
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 \setmainfont{Arial}
 
 \definecolor{azure}{RGB}{25,60,102}
 \definecolor{darkazure}{RGB}{37,95,166}
-
+\definecolor{danube}{RGB}{106,157,212}
 
 
 \titleformat{\section}
 {\large\bfseries\color{darkazure}}
 {}{0.0001em}{}
+\renewcommand{\headrulewidth}{0pt}
+
+\rhead{
+	\vspace*{-3em}
+	\includegraphics[height=1.45cm]{../assets/mef_logo.png}
+}
 
 
 \begin{document}
-
+	\arrayrulecolor{danube}
 	
-	\begin{flushright}
-		\vspace*{-7em}
-		\includegraphics[height=1.45cm]{./assets/mef_logo.png}
-	\end{flushright}
 
 	
 	\begin{spacing}{1.1}
@@ -35,8 +42,9 @@
 		\bfseries
 		\huge{
 			\noindent
-			COMP492 SENIOR DESIGN PROJECT II \\
-			PROPOSAL FORM \par}
+			COMP492 SENIOR DESIGN PROJECT II \hspace{0pt} \\
+			PROPOSAL FORM \par
+		}
 		\large{
 			\noindent
 			DEPARTMENT OF COMPUTER ENGINEERING \newline \par
@@ -71,25 +79,37 @@
 	
 	
 	\section{Project Tasks, Time Plan and Deliverables}
-	
 	\begin{center}
-		\begin{table}[h!]
-			\begin{tabular}{| c | c | c | c | c |}
+		\begin{table}[H]
+			\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}m{28mm}|m{20mm}|m{28mm}|m{28mm}|m{39mm}|}					
 				\rowcolor[RGB]{215,229,244}
 				\hline
-				Task & Start Date - Due Date & Deliverable & Evaluation Criteria & Objective \\
-				a & b & c & d & e \\ \hline  
-				a & b & c & d & e \\ \hline  
-				a & b & c & d & e \\ \hline  
-				a & b & c & d & e \\ \hline  
-				a & b & c & d & e \\ \hline  
-				a & b & c & d & e \\
+				\multicolumn{1}{|>{\centering\arraybackslash}m{28mm}|}{\textbf{Task}} 
+				& \multicolumn{1}{>{\centering\arraybackslash}m{20mm}|}{\textbf{Start \& Due \newline Dates}} 
+				& \multicolumn{1}{>{\centering\arraybackslash}m{28mm}|}{\textbf{Deliverable}} 
+				& \multicolumn{1}{>{\centering\arraybackslash}m{28mm}|}{\textbf{Evaluation Criteria}} 
+				& \multicolumn{1}{>{\centering\arraybackslash}m{39mm}|}{\textbf{Objective}}\\
+				Project Proposal & 09/10/2020\newline 23/10/2020 & Proposal with clear goals. & Readable, clear & Expressing our intent for the research project and our tasks for this semester. \\ \hline  
+				Development\newline Environment\newline Preparation & 19/10/2020\newline10/11/2020 & A working environment & Installment of necessary tools, programming languages etc. & Embracing the concepts of the operating system, programming language, frameworks and best practices to be used during the development stages \\ \hline  
+				Literature Review and data collection & 19/10/2020\newline30/11/2020 & A collection of related papers and a training dataset for QG. & Moderate size dataset and collection of recent publications & Learning the foundations of the learning-based methods, developing insight about the concepts. Learning state-of-the art in this research area. Collecting the first Turkish QG dataset. \\ \hline  
+				Question Generation System Prototype & 01/11/2020\newline01/01/2021 & Prototype System & A working prototype with limited capabilities & Generating questions of different forms from a given text. \\ \hline  
+				Final Report & 01/01/2021\newline08/01/2021 & Final Report & Complete, readable, formatted & Covering the work done in detail. \\
 				\hline  
-			\end{tabular}
+			\end{tabularx}
 		\end{table}
 	\end{center}
 	
 	
 	\section{Project Team and Authority Information}
-	
+	\begin{table}[H]
+		\begin{tabularx}{\textwidth}{|>{\columncolor[RGB]{215,229,244}\hsize=0.33\hsize}X|
+				>{\hsize=.67\hsize}X|} 	
+			
+			\hline
+			\textbf{Proposal Date} & 08/03/2020 \\ \hline
+			\textbf{Academic Term of Project Delivery} & 2020-2021, Spring semester \\ \hline
+			\textbf{Project Team Members} & Alp Gokcek, \#041701014, Computer Engineering (Major) \newline Erdal Sidal Dogan, \#041701076, Computer Engineering (Major)  \\ \hline
+			\textbf{Advisor(s)} & Seniz Demir \\ \hline
+		\end{tabularx}
+	\end{table}
 \end{document}
