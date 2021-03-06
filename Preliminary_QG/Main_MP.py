@@ -55,7 +55,8 @@ def process(enum):
                 answer = p.attributes[pattern_type]
                 temp_dict1 = {'answer': answer, 'questions': list()}
                 for question in patterns[p.occupation][pattern_type]:                
-                    temp_question = question
+                    temp_question = question.format(name=p.name)
+                    print(temp_question)
                     ratio = fuzz.partial_ratio(description, p.attributes[pattern_type])
                     if ratio > THRESHOLD:
                         try:
@@ -65,9 +66,9 @@ def process(enum):
                                 temp_question = temp_question.format(_suffix2=get_suffix(p.name, "_suffix2"))
                             if _suffix3 in temp_question:
                                 temp_question = temp_question.format(_suffix3=get_suffix(p.name, "_suffix3"))
-                            temp_dict1['questions'].append(temp_question.format(name=p.name))
+                            temp_dict1['questions'].append(temp_question)
                         except Exception as a:
-                            print("ANAM SIKILDI", a,"BU SIKTI", temp_question)
+                            print("ANAM SIKILDI", a,"BU SIKTI", p.name, temp_question)
                 
                 if len(temp_dict1['questions']) > 0:
                     temp_dict['data'].append(temp_dict1)
