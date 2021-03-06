@@ -34,8 +34,8 @@ def get_suffix(word: str, sffx_type: str):
         return Turkish(word).possessive(person=2)
     elif sffx_type == "_suffix2":
         return Turkish(word).dative()
-   elif sffx_type == "_suffix3":
-        return Turkish(word).ablative()
+    elif sffx_type == "_suffix3":
+       return Turkish(word).ablative()
 
 def process(enum):
     index, p = enum
@@ -52,12 +52,24 @@ def process(enum):
                 answer = p.attributes[pattern_type]
                 temp_dict1 = {'answer': answer, 'questions': list()}
                 for question in patterns[p.occupation][pattern_type]:                
+                    temp_question = question
+                    if _suffix1 in question:
+                        temp_question = temp_question.format(_suffix1=get_suffix(p.name, "_suffix1"))
+                    if _suffix2 in question:
+                        temp_question = temp_question.format(_suffix2=get_suffix(p.name, "_suffix2"))
+                    if _suffix3 in question:
+                        temp_question = temp_question.format(_suffix3=get_suffix(p.name, "_suffix3"))
+
+                    ratio = fuzz.partial_ratio(description, p.attributes[pattern_type])
+                    if ratio > THRESHOLD:
+                        temp_dict1['questions'].append(temp_question.format(name=p.name))
+
                     if _suffix1 not in question and _suffix2 not in question and _suffix3 not in question: 
                         ratio = fuzz.partial_ratio(description, p.attributes[pattern_type])
                         if ratio > THRESHOLD:
                             temp_dict1['questions'].append(question.format(name=p.name))
                 if len(temp_dict1['questions']) > 0:
-                        temp_dict['data'].append(temp_dict1)
+                    temp_dict['data'].append(temp_dict1)
                 else:
                     del temp_dict1
         if len(temp_dict['data']) > 0:
