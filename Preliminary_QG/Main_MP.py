@@ -30,13 +30,15 @@ occupations_with_attr = parser.get_top_occupations_and_attributes(top=10)
 _suffix1, _suffix2, _suffix3 = "_suffix1", "_suffix2", "_suffix3"
 
 def get_suffix(word: str, sffx_type: str):
+    suffix = ''
     if sffx_type == "_suffix1":
-        return Turkish(word).possessive(person=2)
+        suffix = Turkish(word).possessive(person=2)
     elif sffx_type == "_suffix2":
-        return Turkish(word).dative()
+        suffix = Turkish(word).dative()
     elif sffx_type == "_suffix3":
-       return Turkish(word).ablative()
-
+       suffix = Turkish(word).ablative()
+    return suffix[len(word):]
+    
 def process(enum):
     index, p = enum
     print(index)
@@ -53,15 +55,14 @@ def process(enum):
                 temp_dict1 = {'answer': answer, 'questions': list()}
                 for question in patterns[p.occupation][pattern_type]:                
                     temp_question = question
-                    if _suffix1 in question:
-                        temp_question = temp_question.format(_suffix1=get_suffix(p.name, "_suffix1"))
-                    if _suffix2 in question:
-                        temp_question = temp_question.format(_suffix2=get_suffix(p.name, "_suffix2"))
-                    if _suffix3 in question:
-                        temp_question = temp_question.format(_suffix3=get_suffix(p.name, "_suffix3"))
-
                     ratio = fuzz.partial_ratio(description, p.attributes[pattern_type])
                     if ratio > THRESHOLD:
+                        if _suffix1 in temp_question:
+                            temp_question = temp_question.format(_suffix1=get_suffix(p.name, "_suffix1"))
+                        if _suffix2 in temp_question:
+                            temp_question = temp_question.format(_suffix2=get_suffix(p.name, "_suffix2"))
+                        if _suffix3 in temp_question:
+                            temp_question = temp_question.format(_suffix3=get_suffix(p.name, "_suffix3"))
                         temp_dict1['questions'].append(temp_question.format(name=p.name))
                 
                 if len(temp_dict1['questions']) > 0:

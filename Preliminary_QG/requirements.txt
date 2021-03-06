@@ -1,2 +1,4 @@
 fuzzywuzzy
 bs4
+turkish_suffix_library
+python-Levenshtein
