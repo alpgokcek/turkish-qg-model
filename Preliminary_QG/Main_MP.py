@@ -63,11 +63,7 @@ def process(enum):
                     ratio = fuzz.partial_ratio(description, p.attributes[pattern_type])
                     if ratio > THRESHOLD:
                         temp_dict1['questions'].append(temp_question.format(name=p.name))
-
-                    if _suffix1 not in question and _suffix2 not in question and _suffix3 not in question: 
-                        ratio = fuzz.partial_ratio(description, p.attributes[pattern_type])
-                        if ratio > THRESHOLD:
-                            temp_dict1['questions'].append(question.format(name=p.name))
+                
                 if len(temp_dict1['questions']) > 0:
                     temp_dict['data'].append(temp_dict1)
                 else:
