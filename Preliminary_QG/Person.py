@@ -8,4 +8,4 @@ class Person:
         self.description = description
 
     def __str__(self):
-        return "{}: {} \n\t\t{}".format(self.name, self.occupation, self.description)
+        return "{}: {} \n\t\t{}".format(self.doc_id, self.name, self.occupation, self.description)
