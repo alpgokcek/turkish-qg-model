@@ -6,6 +6,11 @@ Preliminary_QG/data/wiki_whole_data.html
 Preliminary_QG/out_data.txt
 Preliminary_QG/temp_files/
 
+# LaTeX auxiliary files
+*.aux
+*.synctex.gz
+*.log
+*.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
