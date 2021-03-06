@@ -10,7 +10,6 @@ Preliminary_QG/temp_files/
 *.aux
 *.synctex.gz
 *.log
-*.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
