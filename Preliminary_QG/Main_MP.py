@@ -37,11 +37,12 @@ def get_suffix(word: str, sffx_type: str):
         suffix = Turkish(word).dative()
     elif sffx_type == "_suffix3":
        suffix = Turkish(word).ablative()
+    suffix = str(suffix)
     return suffix[len(word):]
     
 def process(enum):
     index, p = enum
-    print(index)
+    print("Idx,", index, "P", p)
     temp_dict = dict()
     description_tag = soup.find("div", {"id": int(p.doc_id)})
     if description_tag:
@@ -57,13 +58,16 @@ def process(enum):
                     temp_question = question
                     ratio = fuzz.partial_ratio(description, p.attributes[pattern_type])
                     if ratio > THRESHOLD:
-                        if _suffix1 in temp_question:
-                            temp_question = temp_question.format(_suffix1=get_suffix(p.name, "_suffix1"))
-                        if _suffix2 in temp_question:
-                            temp_question = temp_question.format(_suffix2=get_suffix(p.name, "_suffix2"))
-                        if _suffix3 in temp_question:
-                            temp_question = temp_question.format(_suffix3=get_suffix(p.name, "_suffix3"))
-                        temp_dict1['questions'].append(temp_question.format(name=p.name))
+                        try:
+                            if _suffix1 in temp_question:
+                                temp_question = temp_question.format(_suffix1=get_suffix(p.name, "_suffix1"))
+                            if _suffix2 in temp_question:
+                                temp_question = temp_question.format(_suffix2=get_suffix(p.name, "_suffix2"))
+                            if _suffix3 in temp_question:
+                                temp_question = temp_question.format(_suffix3=get_suffix(p.name, "_suffix3"))
+                            temp_dict1['questions'].append(temp_question.format(name=p.name))
+                        except Exception as a:
+                            print("ANAM SIKILDI", a,"BU SIKTI", temp_question)
                 
                 if len(temp_dict1['questions']) > 0:
                     temp_dict['data'].append(temp_dict1)
