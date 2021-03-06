@@ -29,8 +29,13 @@ occupations_with_attr = parser.get_top_occupations_and_attributes(top=10)
 
 _suffix1, _suffix2, _suffix3 = "_suffix1", "_suffix2", "_suffix3"
 
-def get_suffix(word: str):
-    print(Turkish('araba').dative())
+def get_suffix(word: str, sffx_type: str):
+    if sffx_type == "_suffix1":
+        return Turkish(word).possessive(person=2)
+    elif sffx_type == "_suffix2":
+        return Turkish(word).dative()
+   elif sffx_type == "_suffix3":
+        return Turkish(word).ablative()
 
 def process(enum):
     index, p = enum
@@ -62,7 +67,7 @@ def process(enum):
 
 if __name__ == '__main__':
     pool = Pool(os.cpu_count()) # Create a multiprocessing Pool
-    pool.map(get_suffix, enumerate(persons))
-    #pool.map(process, enumerate(persons))
+   # pool.map(get_suffix, enumerate(persons))
+    pool.map(process, enumerate(persons))
     pool.close()
     pool.join()
