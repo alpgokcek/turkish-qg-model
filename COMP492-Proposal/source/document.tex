@@ -59,28 +59,31 @@
 
 	\section{Project Summary (Abstract)}
 	
-	Our goal in this project is to develop a Turkish Question Generation System using available online sources such as Wikipedia. Question Generation Systems are capable of generate various logical questions from the given text input. QG Systems are prevalent in several computer applications such as chatbots, automated grading systems etc. Development of such a system is particularly important since there are not any examples of online tools and available datasets in Turkish. However, QG research has already reached a notable level in other languages such as English and there are available datasets for this task. For instance, SQuAD by Stanford University is one of the well- known datasets used for this task in English. \newline \par
+	Question Generation is a Deep Learning model that given a paragraph, passage or an entity in Turkish, produces the possible questions that can be answered solely by the given content to the system. Question Generation(QG) Systems are capable of generating various logical questions from the given text input. QG Systems are prevalent in several computer applications such as chatbots, automated grading systems etc.\newline \par
 	
-	In this project, we are aiming to create the first Turkish Question Generation Dataset of moderate size. This step is required for developing learning-based solutions that we’re going to apply in this project. We plan to apply different machine learning based techniques for questions of generating varying forms (Who-What-When etc.) and assess their performances on the dataset we’ll gather. \newline \par
+	In this project, our aim is to train different deep learning models for question generation and assess their performances. We find this task worth tackling since there are not many examples of comprehensive studies on the topic and the outcomes of this project will empower the development of more capable-than-ever Question Answering Systems for the Turkish Language. \newline \par
 	
-	Furthermore, in the next semester, we are going to explore the applicability of deep learning models on this topic. Outcome of this research will be integrated into a larger project which focuses on Automated Question Answering system for the online lectures in the Turkish Language. (This is a joint project with EE Dept. under the supervision of Ebru Arisoy Saraclar)
+	QG models require extensively large training data, thus, in the last semester we have developed the initial dataset for the development of the QG model. This dataset is the largest Turkish Question Answer dataset currently available. In this semester, we also aim to improve the diversity of our dataset to generate questions in larger extent. \newline \par
+	
 	
 	\section{Keywords}
-	
-	Automatic speech recognition, Natural Language Processing, Deep Learning, Sentiment Analysis, Education Technology, MOOC (Massive Open Online Courses). \newline \par
+	Natural Language Processing, Deep Learning, Question Generation \newline \par
 	
 	\section{Hardware and Software Requirements}
 	
 	\begin{itemize}[label=\textcolor{darkazure}{\Large\textbullet}]
-		\item GPU Optimized Server. Will be used for developing deep learning models, storing large amounts of data and as a collaborative environment.
+		\item GPU Optimized Server. Will be used for training deep learning models, storing large amounts of data and as a collaborative environment.
 		
 		\item UNIX Based Environment(s). Given the design and integration of de-facto programming languages, frameworks, tools with Unix based operating systems, along with the flexibility and low-level tools it has to offer, we concluded that UNIX based operating systems will be most suitable for the development process.
+		
+		\item Dataset.  Contains Turkish paragraphs, related questions and their answers.
 	\end{itemize}
 	
 	
 	\section{Project Tasks, Time Plan and Deliverables}
 	\begin{center}
 		\begin{table}[H]
+			\caption{Project tasks, time plan and deliverables}
 			\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}m{28mm}|m{20mm}|m{28mm}|m{28mm}|m{39mm}|}					
 				\rowcolor[RGB]{215,229,244}
 				\hline
@@ -89,26 +92,45 @@
 				& \multicolumn{1}{>{\centering\arraybackslash}m{28mm}|}{\textbf{Deliverable}} 
 				& \multicolumn{1}{>{\centering\arraybackslash}m{28mm}|}{\textbf{Evaluation Criteria}} 
 				& \multicolumn{1}{>{\centering\arraybackslash}m{39mm}|}{\textbf{Objective}}\\
-				Project Proposal & 09/10/2020\newline 23/10/2020 & Proposal with clear goals. & Readable, clear & Expressing our intent for the research project and our tasks for this semester. \\ \hline  
-				Development\newline Environment\newline Preparation & 19/10/2020\newline10/11/2020 & A working environment & Installment of necessary tools, programming languages etc. & Embracing the concepts of the operating system, programming language, frameworks and best practices to be used during the development stages \\ \hline  
-				Literature Review and data collection & 19/10/2020\newline30/11/2020 & A collection of related papers and a training dataset for QG. & Moderate size dataset and collection of recent publications & Learning the foundations of the learning-based methods, developing insight about the concepts. Learning state-of-the art in this research area. Collecting the first Turkish QG dataset. \\ \hline  
-				Question Generation System Prototype & 01/11/2020\newline01/01/2021 & Prototype System & A working prototype with limited capabilities & Generating questions of different forms from a given text. \\ \hline  
-				Final Report & 01/01/2021\newline08/01/2021 & Final Report & Complete, readable, formatted & Covering the work done in detail. \\
-				\hline  
+				Project Proposal & 22/02/2021\newline 05/03/2021 & Proposal with clear goals. & Readable, clear & Expressing our intent for the research project and our tasks for this semester. \\ \hline
+				
+				Literature Review and data collection & 01/03/2021\newline12/03/2021 & A collection of related papers and a training dataset for QG. & Moderate size dataset and collection of recent publications & Learning the foundations of the learning-based methods, developing insight about the concepts. Learning state-of-the art in this research area. Collecting the first Turkish QG dataset. \\ \hline  
+				
+				Development\newline Environment\newline Preparation & 04/03/2021\newline10/03/2021 & A working environment & Installment of necessary tools, programming languages etc. & Embracing the concepts of the operating system, programming language, frameworks and best practices to be used during the development stages \\ \hline  
+				
+				Revision of the dataset from COMP491 & 08/01/2021\newline12/03/2021 & Revision of the the dataset & Completeness & Covering and revising the work done in detail from COMP491. \\ \hline  
+				
+				Technical Preparation & 12/03/2021\newline 25/03/2021 & N/A. & N/A. & Preparing the basis for our further work. \\ \hline
+				
+				Implementation of Models & 19/03/2021\newline 15/04/2021 & Working prototypes. & Accuracy, performance, capable models & Generating questions in different forms from a given text by using trained models. \\ \hline
+				
+				Progress Report \& Presentation Preparation & 06/04/2021\newline 09/04/2021 & Well-prepared report and presentation. & Complete, readable, formatted & Covering the work done in detail up to middle of the semester. \\ \hline
+				
+				Evaluation of Models & 19/04/2021\newline 30/04/2021 & Report for evaluation of models  & Comprehensive, readable, clear & Evaluating the trained models with the state-of-art QG evaluation metrics \\ \hline
+				
+				User Interface Development & 03/05/2021\newline 21/05/2021 & Simple UI for users to interact & Simple to use, error-free usage & Enabling the users to interact with the QG model  \\ \hline
+				
+				Final Report \& Presentation Preparation & 20/05/2021\newline 02/06/2021 & Well-prepared report and presentation & Complete, readable, formatted & Covering the work done in detail. \\ \hline
 			\end{tabularx}
 		\end{table}
 	\end{center}
-	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.95\textwidth]{../assets/gantt/gantt-chart.pdf}
+		\caption{Gantt chart of the project}
+	\end{figure}
+
 	
 	\section{Project Team and Authority Information}
 	\begin{table}[H]
+		\caption{Project team and authority information}
 		\begin{tabularx}{\textwidth}{|>{\columncolor[RGB]{215,229,244}\hsize=0.33\hsize}X|
 				>{\hsize=.67\hsize}X|} 	
 			
 			\hline
-			\textbf{Proposal Date} & 08/03/2020 \\ \hline
-			\textbf{Academic Term of Project Delivery} & 2020-2021, Spring semester \\ \hline
-			\textbf{Project Team Members} & Alp Gokcek, \#041701014, Computer Engineering (Major) \newline Erdal Sidal Dogan, \#041701076, Computer Engineering (Major)  \\ \hline
+			\textbf{Proposal Date} & 08/03/2021 \\ \hline
+			\textbf{Academic Term of Project Delivery} & 2020-2021, Spring \\ \hline
+			\textbf{Project Team Members} & Alp Gokcek, \#041701014, Computer Engineering \newline Erdal Sidal Dogan, \#041701076, Computer Engineering  \\ \hline
 			\textbf{Advisor(s)} & Seniz Demir \\ \hline
 		\end{tabularx}
 	\end{table}
