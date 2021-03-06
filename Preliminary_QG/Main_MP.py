@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 import json
 import os
 from multiprocessing import Pool
+from turkish_suffix_library.turkish import Turkish
 
 THRESHOLD = 70
 parser = Parser("data/wiki_persons.txt")
@@ -28,6 +29,8 @@ occupations_with_attr = parser.get_top_occupations_and_attributes(top=10)
 
 _suffix1, _suffix2, _suffix3 = "_suffix1", "_suffix2", "_suffix3"
 
+def get_suffix(word: str):
+    print(Turkish('araba').dative())
 
 def process(enum):
     index, p = enum
@@ -59,6 +62,7 @@ def process(enum):
 
 if __name__ == '__main__':
     pool = Pool(os.cpu_count()) # Create a multiprocessing Pool
-    pool.map(process, enumerate(persons))
+    pool.map(get_suffix, enumerate(persons))
+    #pool.map(process, enumerate(persons))
     pool.close()
     pool.join()

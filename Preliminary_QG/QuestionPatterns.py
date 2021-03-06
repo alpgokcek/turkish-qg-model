@@ -523,30 +523,30 @@ class QuestionPatterns:
             ]
         },
         "Filozof": {
-            "çağ": [
+            "çağ": [
                 "{name} hangi çağda yaşamaktaydı?",
                 "{name} hangi çağda yaşadı?"
             ],
-            "bölge": [
+            "bölge": [
                 "{name} hangi bölgede yaşamaktaydı?",
                 "{name} hangi bölgede yaşadı?"
             ],
-            "etkilendikleri": [
+            "etkilendikleri": [
                 "{name} kimlerden etkilenmiştir?",
                 "{name} kimlerden etkilendi?",
                 "{name}'{_suffix1}n etkilendiği kişiler kimlerdir?"
             ],
-            "etkiledikleri": [
+            "etkiledikleri": [
                 "{name} kimleri etkilemiştir?",
                 "{name} kimleri etkiledi?",
                 "{name}'{_suffix1}n etkilediği kişiler kimlerdir?"
             ],
-            "ilgialanları": [
+            "ilgialanları": [
                 "{name}'{_suffix1}n ilgi alanları nelerdir?",
                 "{name}'{_suffix1}n ilgi alanları nelerdi?",
                 "{name}'{_suffix1}n ilgi alanları neydi?"
             ],
-            "okulgelenek":[
+            "okulgelenek": [
                 "{name}'{_suffix1}n okulunun geleneği nedir?",
                 "{name}'{_suffix1}n okulunun gelenekleri nelerdir?"
             ]
