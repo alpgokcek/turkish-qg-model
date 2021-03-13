@@ -15,7 +15,7 @@ parser.parse()
 counter = 0
 patterns = QuestionPatterns.patterns
 
-out = open("out_data.txt", 'w')
+out = open("out/data.txt", 'w')
 full_wiki = open("data/wiki_whole_data.html").read()
 soup = BeautifulSoup(full_wiki, "html.parser")
 
@@ -29,6 +29,7 @@ occupations_with_attr = parser.get_top_occupations_and_attributes(top=10)
 
 _suffix1, _suffix2, _suffix3 = "_suffix1", "_suffix2", "_suffix3"
 
+
 def get_suffix(word: str, sffx_type: str):
     suffix = ''
     if sffx_type == "_suffix1":
@@ -36,10 +37,11 @@ def get_suffix(word: str, sffx_type: str):
     elif sffx_type == "_suffix2":
         suffix = Turkish(word).dative()
     elif sffx_type == "_suffix3":
-       suffix = Turkish(word).ablative()
+        suffix = Turkish(word).ablative()
     suffix = str(suffix)
     return suffix[len(word):]
-    
+
+
 def process(enum):
     index, p = enum
     print("Idx,", index, "P", p)
@@ -54,24 +56,28 @@ def process(enum):
             if pattern_type in p.attributes.keys():
                 answer = p.attributes[pattern_type]
                 temp_dict1 = {'answer': answer, 'questions': list()}
-                for question in patterns[p.occupation][pattern_type]:                
+                for question in patterns[p.occupation][pattern_type]:
                     temp_question = question
                     print(temp_question)
-                    ratio = fuzz.partial_ratio(description, p.attributes[pattern_type])
+                    ratio = fuzz.partial_ratio(
+                        description, p.attributes[pattern_type])
                     if ratio > THRESHOLD:
                         try:
                             if _suffix1 in temp_question:
-                                temp_question = temp_question.format(name=p.name,_suffix1=get_suffix(p.name, "_suffix1"))
+                                temp_question = temp_question.format(
+                                    name=p.name, _suffix1=get_suffix(p.name, _suffix1))
                             elif _suffix2 in temp_question:
-                                temp_question = temp_question.format(name=p.name,_suffix2=get_suffix(p.name, "_suffix2"))
+                                temp_question = temp_question.format(
+                                    name=p.name, _suffix2=get_suffix(p.name, _suffix2))
                             elif _suffix3 in temp_question:
-                                temp_question = temp_question.format(name=p.name,_suffix3=get_suffix(p.name, "_suffix3"))
+                                temp_question = temp_question.format(
+                                    name=p.name, _suffix3=get_suffix(p.name, _suffix3))
                             else:
                                 temp_question = question.format(name=p.name)
                             temp_dict1['questions'].append(temp_question)
-                        except Exception as a:
-                            print("ANAM SIKILDI", a,"BU SIKTI", p.name, temp_question)
-                
+                        except Exception as e:
+                            print("Error on: {} - {} \n{}\n".format(e,
+                                                                    p.name, temp_question))
                 if len(temp_dict1['questions']) > 0:
                     temp_dict['data'].append(temp_dict1)
                 else:
@@ -82,7 +88,7 @@ def process(enum):
 
 
 if __name__ == '__main__':
-    pool = Pool(os.cpu_count()) # Create a multiprocessing Pool
+    pool = Pool(os.cpu_count())  # Create a multiprocessing Pool
    # pool.map(get_suffix, enumerate(persons))
     pool.map(process, enumerate(persons))
     pool.close()
