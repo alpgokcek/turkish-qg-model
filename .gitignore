@@ -1,8 +1,7 @@
 Preliminary_QG/.DS_Store
-Preliminary_QG/data/wiki_persons.txt
 Preliminary_QG/.idea/
 Preliminary_QG/__pycache__/
-Preliminary_QG/data/wiki_whole_data.html
+Preliminary_QG/data/*
 Preliminary_QG/out_data.txt
 Preliminary_QG/temp_files/
 
