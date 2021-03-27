@@ -33,7 +33,7 @@ _suffix1, _suffix2, _suffix3 = "_suffix1", "_suffix2", "_suffix3"
 def get_suffix(word: str, sffx_type: str):
     suffix = ''
     if sffx_type == "_suffix1":
-        suffix = Turkish(word).possessive(person=2)
+        suffix = Turkish(word).genitive(person=2)
     elif sffx_type == "_suffix2":
         suffix = Turkish(word).dative()
     elif sffx_type == "_suffix3":
@@ -58,7 +58,7 @@ def process(enum):
                 temp_dict1 = {'answer': answer, 'questions': list()}
                 for question in patterns[p.occupation][pattern_type]:
                     temp_question = question
-                    print(temp_question)
+                    #print(temp_question)
                     ratio = fuzz.partial_ratio(
                         description, p.attributes[pattern_type])
                     if ratio > THRESHOLD:
