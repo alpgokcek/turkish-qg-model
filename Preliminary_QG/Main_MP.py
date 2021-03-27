@@ -64,21 +64,20 @@ def create_common_questions(p: Person, person_dict: dict):
 		ans = p.attributes[feature]
 		for pattern in question_patterns:
 			try:
-                if _suffix1 in question_pattern:
-                    question_pattern = question_pattern.format(
-                        name=p.name, _suffix1=get_suffix(p.name, _suffix1))
-                elif _suffix2 in question_pattern:
-                    question_pattern = question_pattern.format(
-                        name=p.name, _suffix2=get_suffix(p.name, _suffix2))
-                elif _suffix3 in question_pattern:
-                    question_pattern = question_pattern.format(
-                        name=p.name, _suffix3=get_suffix(p.name, _suffix3))
-                else:
-                    question_pattern = question_pattern.format(name=p.name)
-                qa_pair['questions'].append(question_pattern)
-            except Exception as e:
-                print("Error on: {} - {} \n{}\n".format(e,
-                                                        p.name, question_pattern))
+				if _suffix1 in question_pattern:
+				    question_pattern = question_pattern.format(
+				        name=p.name, _suffix1=get_suffix(p.name, _suffix1))
+				elif _suffix2 in question_pattern:
+				    question_pattern = question_pattern.format(
+				        name=p.name, _suffix2=get_suffix(p.name, _suffix2))
+				elif _suffix3 in question_pattern:
+				    question_pattern = question_pattern.format(
+				        name=p.name, _suffix3=get_suffix(p.name, _suffix3))
+				else:
+				    question_pattern = question_pattern.format(name=p.name)
+				qa_pair['questions'].append(question_pattern)
+			except Exception as e:
+				print("Error on: {} - {} \n{}\n".format(e, p.name, question_pattern))
 
 
 
@@ -120,7 +119,11 @@ def process(enum):
                             print("Error on: {} - {} \n{}\n".format(e,
                                                                     p.name, question_pattern))
                 if len(qa_pair['questions']) > 0: # if any relevant qa pair is present
+                	person_dict['data'].append(qa_pair)
+                else:
+                	del qa_pair
         if len(person_dict['data']) > 0:
+        	out.write(json.dumps(person_dict, ensure_ascii=False)+ ", \n\n")
         del person_dict
 
 
