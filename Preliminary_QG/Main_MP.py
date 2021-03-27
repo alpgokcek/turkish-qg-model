@@ -99,7 +99,7 @@ def process(enum):
                 answer = p.attributes[pattern_type]
                 qa_pair = {'answer': answer, 'questions': list()}
                 for question_pattern in feature_patterns[pattern_type]:
-                    ratio = int(fuzz.token_set_ratio(description, answer)) # does the description paragraph contain answer?
+                    ratio = int(fuzz.partial_token_set_ratio(description, answer)) # does the description paragraph contain answer?
                     if ratio > 30:
                         qa_pair['ratio'] = ratio
                         try:
