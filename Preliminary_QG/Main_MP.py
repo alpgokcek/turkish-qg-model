@@ -21,6 +21,10 @@ args = parser.parse_args()
 ATTRIBUTES_PATH = "sample_data/sample_wiki_persons.txt" if args.dev else "data/wiki_persons.txt"
 WIKI_PATH = "sample_data/sample_wiki_dump.html" if args.dev else "data/wiki_whole_data.html"
 OUTPUT_PATH = "out/data.txt" if not args.output else args.output
+CONFIG_FILE = json.load(open('config.json', 'r'))
+
+OCCUPATION_SETTINGS = CONFIG_FILE["occupation_settings"]
+
 
 THRESHOLD = 60
 parser = Parser(ATTRIBUTES_PATH)
@@ -70,17 +74,17 @@ def format_question(p, question_pattern):
 				name=p.name, _suffix3=get_suffix(p.name, _suffix3))
 		else:
 			question_pattern = question_pattern.format(name=p.name)
-		#qa_pair['questions'].append(question_pattern)
 		return question_pattern
 	except Exception as e:
 		print("Error on: {} - {} \n{}\n".format(e, p.name, question_pattern))
 
 def create_common_questions(p: Person):
-	global counter
-	#index, p = enum
+	bitmap = OCCUPATION_SETTINGS[p.occupation]["common_questions"]
 	pair_list = list()
-	for feature, question_patterns in common_patterns.items():
-		if feature in p.attributes:
+	for i, (feature, question_patterns) in enumerate(common_patterns.items()):
+		if bitmap[i] == "0":
+			continue
+		elif feature in p.attributes:
 			ans = p.attributes[feature]
 			qa_pair = {'answer': ans, 'questions': list()}
 			for pattern in question_patterns:
