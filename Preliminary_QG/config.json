@@ -1,7 +1,7 @@
 {
     "occupation_settings": {
         "Asker": {
-            "common_questions": "0000"
+            "common_questions": "1111"
         },
         "Basketbolcu": {
             "common_questions": "0000"
@@ -13,7 +13,7 @@
             "common_questions": "0000"
         },
         "Filozof": {
-            "common_questions": "0000"
+            "common_questions": "1111"
         },
         "Futbolcu": {
             "common_questions": "0000"
@@ -25,10 +25,10 @@
             "common_questions": "0000"
         },
         "Kişi": {
-            "common_questions": "0000"
+            "common_questions": "1111"
         },
         "Kraliyet": {
-            "common_questions": "0000"
+            "common_questions": "1111"
         },
         "Makam sahibi": {
             "common_questions": "0000"
