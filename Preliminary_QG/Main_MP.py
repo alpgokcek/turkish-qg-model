@@ -4,6 +4,7 @@ from PersonDataParser import Parser
 from QuestionPatterns import QuestionPatterns
 from CommonPatterns import CommonPatterns
 from bs4 import BeautifulSoup
+from Person import Person
 import json
 import os
 from multiprocessing import Pool
@@ -57,7 +58,7 @@ def get_suffix(word: str, sffx_type: str):
     return suffix[len(word):]
 
 
-def create_common_questions(enum):
+def create_common_questions(p: Person, person_dict: dict):
     index, p = enum
     for question in common_patterns:
         print("Person: ", p)
@@ -67,10 +68,11 @@ def create_common_questions(enum):
 
 def process(enum):
     index, p = enum
-    print("Idx,", index, "P", p)
+    #print("Idx,", index, "P", p)
     person_dict = dict()
     description_tag = soup.find(
         "div", {"id": int(p.doc_id)})  # large description text
+    print("DESC TAG.", description_tag)
     if description_tag:
         description = description_tag.get_text().replace('\n', '')
         del description_tag
@@ -82,29 +84,29 @@ def process(enum):
             if pattern_type in p.attributes.keys():
                 answer = p.attributes[pattern_type]
                 qa_pair = {'answer': answer, 'questions': list()}
-                for question in feature_patterns[pattern_type]:
-                    temp_question = question
-                    # print(temp_question)
-                    ratio = fuzz.partial_ratio(
-                        description, p.attributes[pattern_type])
-                    if ratio > THRESHOLD:
+                for question_pattern in feature_patterns[pattern_type]:
+                    # does the description paragraph contain answer?
+                    ratio = int(fuzz.token_set_ratio(description, answer))
+                    if ratio > 30:
+                        qa_pair['ratio'] = ratio
                         try:
-                            if _suffix1 in temp_question:
-                                temp_question = temp_question.format(
+                            if _suffix1 in question_pattern:
+                                question_pattern = question_pattern.format(
                                     name=p.name, _suffix1=get_suffix(p.name, _suffix1))
-                            elif _suffix2 in temp_question:
-                                temp_question = temp_question.format(
+                            elif _suffix2 in question_pattern:
+                                question_pattern = question_pattern.format(
                                     name=p.name, _suffix2=get_suffix(p.name, _suffix2))
-                            elif _suffix3 in temp_question:
-                                temp_question = temp_question.format(
+                            elif _suffix3 in question_pattern:
+                                question_pattern = question_pattern.format(
                                     name=p.name, _suffix3=get_suffix(p.name, _suffix3))
                             else:
-                                temp_question = question.format(name=p.name)
-                            qa_pair['questions'].append(temp_question)
+                                question_pattern = question_pattern.format(
+                                    name=p.name)
+                            qa_pair['questions'].append(question_pattern)
                         except Exception as e:
                             print("Error on: {} - {} \n{}\n".format(e,
-                                                                    p.name, temp_question))
-                if len(qa_pair['questions']) > 0:
+                                                                    p.name, question_pattern))
+                if len(qa_pair['questions']) > 0:  # if any relevant qa pair is present
                     person_dict['data'].append(qa_pair)
                 else:
                     del qa_pair
@@ -115,7 +117,7 @@ def process(enum):
 
 if __name__ == '__main__':
     pool = Pool(os.cpu_count())  # Create a multiprocessing Pool
-    pool.map(create_common_questions, enumerate(persons))
-    #pool.map(process, enumerate(persons))
+    #pool.map(create_common_questions, enumerate(persons))
+    pool.map(process, enumerate(persons))
     pool.close()
     pool.join()
