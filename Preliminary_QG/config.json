@@ -1,64 +1,66 @@
 {
     "occupation_settings": {
         "Asker": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Basketbolcu": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Bilim adamı": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Buz patencisi": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Filozof": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Futbolcu": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Güreşçi": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Hakem": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Kişi": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Kraliyet": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Makam sahibi": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Manken": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Müzik sanatçısı": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Oyuncu": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Profesyonel güreşçi": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Sanatçı": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Sporcu": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Tenis sporcu": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Voleybolcu": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         },
         "Yazar": {
-            "common_questions": "0010"
+            "common_questions": "0000"
         }
     }
 }
+
+
