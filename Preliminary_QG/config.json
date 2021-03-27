@@ -1,0 +1,64 @@
+{
+    "occupation_settings": {
+        "Asker": {
+            "common_questions": "0010"
+        },
+        "Basketbolcu": {
+            "common_questions": "0010"
+        },
+        "Bilim adamı": {
+            "common_questions": "0010"
+        },
+        "Buz patencisi": {
+            "common_questions": "0010"
+        },
+        "Filozof": {
+            "common_questions": "0010"
+        },
+        "Futbolcu": {
+            "common_questions": "0010"
+        },
+        "Güreşçi": {
+            "common_questions": "0010"
+        },
+        "Hakem": {
+            "common_questions": "0010"
+        },
+        "Kişi": {
+            "common_questions": "0010"
+        },
+        "Kraliyet": {
+            "common_questions": "0010"
+        },
+        "Makam sahibi": {
+            "common_questions": "0010"
+        },
+        "Manken": {
+            "common_questions": "0010"
+        },
+        "Müzik sanatçısı": {
+            "common_questions": "0010"
+        },
+        "Oyuncu": {
+            "common_questions": "0010"
+        },
+        "Profesyonel güreşçi": {
+            "common_questions": "0010"
+        },
+        "Sanatçı": {
+            "common_questions": "0010"
+        },
+        "Sporcu": {
+            "common_questions": "0010"
+        },
+        "Tenis sporcu": {
+            "common_questions": "0010"
+        },
+        "Voleybolcu": {
+            "common_questions": "0010"
+        },
+        "Yazar": {
+            "common_questions": "0010"
+        }
+    }
+}

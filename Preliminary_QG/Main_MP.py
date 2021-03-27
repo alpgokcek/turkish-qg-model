@@ -2,15 +2,27 @@ from pprint import pprint
 from fuzzywuzzy import fuzz
 from PersonDataParser import Parser
 from QuestionPatterns import QuestionPatterns
-from CommonPatterns import  CommonPatterns
+from CommonPatterns import CommonPatterns
 from bs4 import BeautifulSoup
 import json
 import os
 from multiprocessing import Pool
 from turkish_suffix_library.turkish import Turkish
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--output", help="path of output file",
+                    type=str)
+parser.add_argument(
+    "--dev", help="development environment selection", action='store_true')
+args = parser.parse_args()
+
+ATTRIBUTES_PATH = "sample_data/sample_wiki_persons.txt" if args.dev else "data/wiki_persons.txt"
+WIKI_PATH = "sample_data/sample_wiki_dump.html" if args.dev else "data/wiki_whole_data.html"
+OUTPUT_PATH = "out/data.txt" if not args.output else args.output
 
 THRESHOLD = 70
-parser = Parser("sample_data/sample_wiki_persons.txt")
+parser = Parser(ATTRIBUTES_PATH)
 parser.parse()
 
 counter = 0
@@ -19,7 +31,7 @@ common_patterns = CommonPatterns.patterns
 
 
 out = open("out/data.txt", 'w')
-full_wiki = open("sample_data/sample_wiki_dump.html").read()
+full_wiki = open(WIKI_PATH).read()
 soup = BeautifulSoup(full_wiki, "html.parser")
 
 
@@ -46,30 +58,33 @@ def get_suffix(word: str, sffx_type: str):
 
 
 def create_common_questions(enum):
-	index, p = enum
-	for question in common_patterns:
-		print("Person: ",p)
-		print("Question: ",question)
-		print("\n\n")
+    index, p = enum
+    for question in common_patterns:
+        print("Person: ", p)
+        print("Question: ", question)
+        print("\n\n")
+
 
 def process(enum):
     index, p = enum
     print("Idx,", index, "P", p)
     person_dict = dict()
-    description_tag = soup.find("div", {"id": int(p.doc_id)}) # large description text
-    if description_tag: 
+    description_tag = soup.find(
+        "div", {"id": int(p.doc_id)})  # large description text
+    if description_tag:
         description = description_tag.get_text().replace('\n', '')
         del description_tag
         person_dict['description'] = "description"
         person_dict['data'] = list()
         feature_patterns = occupational_patterns[p.occupation]
-        for pattern_type in feature_patterns.keys(): # pattern type = rutbesi, pozisyon, etc.
+        # pattern type = rutbesi, pozisyon, etc.
+        for pattern_type in feature_patterns.keys():
             if pattern_type in p.attributes.keys():
                 answer = p.attributes[pattern_type]
                 qa_pair = {'answer': answer, 'questions': list()}
                 for question in feature_patterns[pattern_type]:
                     temp_question = question
-                    #print(temp_question)
+                    # print(temp_question)
                     ratio = fuzz.partial_ratio(
                         description, p.attributes[pattern_type])
                     if ratio > THRESHOLD:
