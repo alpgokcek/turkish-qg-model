@@ -48,10 +48,27 @@ def get_suffix(word: str, sffx_type: str):
 
 def create_common_questions(p: Person, person_dict: dict):
 	index, p = enum
-	for question in common_patterns:
-		print("Person: ",p)
-		print("Question: ",question)
-		print("\n\n")
+	for feature, question_patterns in common_patterns:
+		ans = p.attributes[feature]
+		for pattern in question_patterns:
+			try:
+                if _suffix1 in question_pattern:
+                    question_pattern = question_pattern.format(
+                        name=p.name, _suffix1=get_suffix(p.name, _suffix1))
+                elif _suffix2 in question_pattern:
+                    question_pattern = question_pattern.format(
+                        name=p.name, _suffix2=get_suffix(p.name, _suffix2))
+                elif _suffix3 in question_pattern:
+                    question_pattern = question_pattern.format(
+                        name=p.name, _suffix3=get_suffix(p.name, _suffix3))
+                else:
+                    question_pattern = question_pattern.format(name=p.name)
+                qa_pair['questions'].append(question_pattern)
+            except Exception as e:
+                print("Error on: {} - {} \n{}\n".format(e,
+                                                        p.name, question_pattern))
+
+
 
 def process(enum):
     index, p = enum
