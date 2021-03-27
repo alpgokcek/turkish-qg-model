@@ -702,10 +702,10 @@ class QuestionPatterns:
                 "{name}'{_suffix1} ring adı nedir?"
             ],
             "eğiten": [
-                "{name}'{_suffix1}} eğiten kişiler kimlerdir?",
-                "{name}'{_suffix1}} eğiten kişiler kimler?",
-                "{name}'{_suffix1}} eğiten kişilerin adları nelerdir?",
-                "{name}'{_suffix1}} eğiten kişilerin adları ne?"
+                "{name}'{_suffix1} eğiten kişiler kimlerdir?",
+                "{name}'{_suffix1} eğiten kişiler kimler?",
+                "{name}'{_suffix1} eğiten kişilerin adları nelerdir?",
+                "{name}'{_suffix1} eğiten kişilerin adları ne?"
             ],
             "eş": [
                 "{name} kimle evlidir?",
