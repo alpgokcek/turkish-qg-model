@@ -30,7 +30,6 @@ THRESHOLD = 60
 parser = Parser(ATTRIBUTES_PATH)
 parser.parse()
 
-counter = 0
 occupational_patterns = QuestionPatterns.patterns
 common_patterns = CommonPatterns.patterns
 
