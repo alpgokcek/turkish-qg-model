@@ -2,3 +2,7 @@ sudo apt update
 sudo apt upgrade
 sudo apt install python3-pip
 ./rclone-setup
+sudo apt-get install zsh
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+echo -e "\nPROMPT='%({%F{yellow}%}.)$USER @ %{$fg[white]%}%M %{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'" >> .zshrc
+source ~/.zshrc
