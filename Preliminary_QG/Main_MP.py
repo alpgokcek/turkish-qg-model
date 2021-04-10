@@ -129,7 +129,7 @@ def process(enum):
                 else:
                     del qa_pair
         if len(person_dict['data']) > 0:
-            out.write(json.dumps(person_dict, ensure_ascii=False) + ", \n\n")
+            out.write(json.dumps(person_dict, ensure_ascii=False) + ",\n")
         del person_dict
 
 
