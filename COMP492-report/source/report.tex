@@ -1,0 +1,524 @@
+\documentclass{mefsdp}
+
+
+\setauthors{Alp Gokcek, Erdal Sidal Dogan }
+\settitle{TURKISH QUESTION GENERATION MODEL}
+\setcourseno{I}
+\setmonth{February}
+\setyear{2021}
+\setfaculty{Engineering}
+\setdepartment{Computer Engineering}
+\setchair{Prof. Muhittin Gokmen}
+\setdate{02/05/2021}
+\setadvisor{Asst. Prof. Seniz Demir}
+
+\settitleTR{TÜRKÇE SORU OLUŞTURMA MODELİ}
+\setmonthTR{Şubat}
+\setfacultyTR{Mühendislik}
+\setdepartmentTR{Bilgisayar Mühendisliği}
+\setadvisorTR{Dr. Şeniz Demir}
+
+\setfigurepath{../figures/}
+
+
+\newacronym{dl}{DL}{Deep Learning}
+\newacronym{qg}{QG}{Question Generation}
+\newacronym{nlp}{NLP}{Natural Language Processing}
+\newacronym{do}{DÖ}{Derin Öğrenme}
+\newacronym{su}{SÜ}{Soru Üretme}
+\newacronym{ddi}{DDİ}{Doğal Dil İşleme}
+
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+
+% redefine \VerbatimInput
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{black},
+	%
+	labelposition=topline,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+
+\begin{document}
+	
+	\makestandards
+	
+	\begin{abstract}
+		Over the last years, the software we use has gained humanitarian characteristics. These features are invigorated by the Artificial Intelligence research, which has shown significant improvements over the past decade. With the emergence of \gls{dl}, other sub-fields of AI such as \gls{nlp} made leaps in a short amount of time as well. Today, the results of the studies of these fields are ubiquitous. \newline \par
+		
+		Development of such applications requires extensively large datasets for the training of \gls{dl} models. Furthermore, capability and the reliability of these applications are highly dependent on the data they have been trained on. \newline \par
+		
+		Labelled data in the Turkish language is scarce; hence, the development of AI-based applications in Turkish is bottleneck by the absence of data and requires significantly more effort than other languages. \newline \par
+		
+		In this project, we present the initial steps toward developing a \gls{qg} model based on \gls{dl}. This paper includes the hard-coded training dataset generation for the \gls{dl} model to be developed in later stages.
+		
+
+		\keywords{Artificial Intelligence, Natural Language Processing, Deep Learning, Question Generation}
+	\end{abstract}
+	
+		
+	\begin{abstractTR}
+	Son yıllarda kullandığımız yazılımlar insani özellikler kazandı. Tüm bu özellikler, son on yılda önemli gelişmeler gösteren Yapay Zeka araştırmalarının bulgularıyla mümkün olabildi. \gls{do}'nin ortaya çıkmasıyla birlikte, \gls{ddi} gibi yapay zeka'nın  diğer alt alanları da kısa sürede sıçramalar yaptı. Günümüzde bu alanlarla ilgili çalışmaların sonuçlarını bir çok yerde görebiliriz. \newline \par
+	
+	Bu tür uygulamaların geliştirilmesi, \gls{do} modellerinin eğitimi için oldukça büyük veri kümeleri gerektirir. Ayrıca, bu uygulamaların kapasitesi ve güvenilirliği, eğitim aldıkları verilere büyük ölçüde bağlıdır. \newline \par
+	
+	Türkçe'de etiketlenmiş veri bulmak kolay olmadığından, yapay zeka tabanlı uygulamaların geliştirilmesi veri yokluğu nedeniyle zorlaşmaktadır ve diğer dillere kıyasla çok daha fazla çaba gerektirir. \newline \par
+	
+	Bu projede, \gls{do}'ye dayalı bir \gls{su} Modeli geliştirmeye yönelik ilk adımları sunuyoruz. Bu belge, sonraki aşamalarda geliştirilecek \gls{do} modeli için sabit kodlanmış eğitim veri kümesi oluşturmanın detaylarını göstermektedir. 
+		
+		\anahtarkelimeler{Yapay Zeka, Doğal Dil İşleme, Derin Öğrenme, Soru Üretme}
+	\end{abstractTR}
+	
+	\makelists
+	
+	\section{Introduction}
+	Artificial Intelligence is one of the promising research fields in computer science. Scientists and researchers are developing novel or more efficient ways to teach computers how to achieve humanly-kinds of tasks.\\
+	
+	Over time, developments in this area yield to a whole new class of possibilities and problems requiring brand new methodologies to reach the solution. With the emergence of Machine Learning, computers became to be able to parse data, learn from the data and apply their findings from it in a way that they are told to.\\
+	
+	In recent years, researchers came up with a more niche way of handling Machine Learning (ML) tasks, creating a structure that imitates the Neurons in our brains. This new subclass of ML is named Deep Learning (DL). Compared to ML, it is capable of handling a much more complicated task due to its multi-layered structure.\\
+	
+	Developments in this area enabled researches from numerous fields to move their research a step further. Today, Deep Learning is ubiquitous in computer applications. It is utilized for Computer Vision, Natural Language Processing, Biotechnology and much more. In this project, methods and techniques that are results of the studies conducted in the research area of Natural Language Processing are used heavily along with various Machine Learning and Deep Learning models. Consequently, the Turkish Question Generation is invigorated by the state-of-art Deep Learning and Language Models.\\
+	
+	Turkish Question Generation Model aims to generate natural language questions from a given content, such as paragraphs, where the questions can be answered solely by the content.   As the authors, we find this task worth tackling since there are not many examples of comprehensive studies on the topic and the outcomes of this project will empower the development of more-capable-than-ever Question Answering Systems for the Turkish Language. 
+	\newpage
+	
+	\subsection{Motivation}
+	
+	As humans, we are continually learning, adapting to changes or make decisions on an everyday basis. Even if we do not realize, we usually are dependent on other humans and their knowledge and expertise even for most trivial things we do in our daily lives.\\
+	
+	For instance, a student feels in need for an instructor or others than can address his/her questions about a topic, an individual may be in a hurry to find out whether he/she can perform SWIFT transaction from his bank, or simply a person can ask about the weather forecast to the voice assistant on a smartphone. All of these examples are having a common point that they are all based on Question Answering (QA) Systems.\\
+	
+	As we have discussed, QA Systems are getting more and more space in our lives and presents a wide range of opportunities. With these systems, we are able to get answers to our question at no time, without any human interaction at all. This feature enables humans to reach to even the most isolated information in the context a matter of time upon request.\\
+	
+	Unfortunately, given that almost every human spoken language has a specific set of rules, grammar and vocabulary, QA systems need to be developed for each language separately. Development of such systems are not the easiest thing to do, first of all, even if the developer(s) has all the competency in the technical skills required, there is a need for clear, labelled, reliable and excessively large dataset. The dataset must contain questions and possible answers to that question. Creating such dataset manually is almost unattainable; therefore, there is a need for a system that can automate this process. Question Generation systems are perfect for meeting such need. The output of the QG system can be used as the dataset for development.\\
+	
+	On top of that, QG systems can be utilized in the education field also. Given a passage, the instructor may want to create various questions automatically without putting any effort. The same application can be used by a student for practising the learnings from a section.
+	
+	
+	\subsection{Broad impact}
+	\subsubsection{Global Impact of the solution}
+	Online courses are gaining getting more and more popular each and every year. While their high-quality content is available on the web, for those who cannot understand English or mainstream languages of a specific subject, it is harder to keep up with the recent developments in the area. Up to this point, MOOC platforms offer translation and subtitles for such users. The Question Generation systems, along with Question Answering systems, might create an artificial interactive environment between the instructor and the student. Consequently, helping the information to spread around the world.
+	
+	\subsubsection{Economic Impact of the solution}
+	This project enables us to move faster to the point where we can automate almost every Question-Answer process where the data is assumed to be available to a computer system; there is not an ambiguity amongst possible answers, and the answers are static and clearly defined or quantitative.\\
+	
+	Initial assumption would be that such a system would decrease human dependency and reduce the number of jobs consequently. However, given that the same approach is applicable to almost every new technology/product emerges in the market, it is shown that they also create new opportunities. 
+	
+	
+	\subsubsection{Environmental Impact of the solution}
+	Since the project will be software-based, no significant effect on the environment will be observed. Of course, one can discuss keeping the servers on, utilizing their resources to the maximum level continually will increase the total electricity consumption. 
+	
+	\subsubsection{Social Impacts of the solution}
+	This project has many social impacts, though not directly. With the solution we developed, strengthening the question-answering model carried out in connection with this project, we will aid the learners' knowledge acquisition process.
+	
+	
+	\subsubsection{Legal Issues related to the project}
+	Such as any system that is designed to present information to the user, Question Answering systems, which our project Question Generation system will yield to development of, requires the necessary information for answering the question. Under these circumstances, the source of this information is critically important. Consent of the creator must be obtained before developing such a system. \\
+	
+	The system must also not give inaccurate information to the user, since they may depend on the system on a critical task whose fault cannot be tolerated.
+	
+	\section{Project Definition and Planning}
+	Turkish Question Generation Model is a neural network-based model capable of generating questions from a given piece of text in the Turkish language. This project implements such model using \textit{Recurrent Neural Network (RNN)} and/or \textit{Convolutional Neural Network (CNN)}.
+	
+	\subsection{Project Definition}
+	The project's main feature will be accepting input and creating possible questions from that input while assigning probability scores to each generated question. Questions are delivered in easily parsable file format such as JSON, XML, HTML, CSV, TSV etc.\\
+	
+	There is no GUI planned for the QG project; however, it will be presented as CLI and \textit{Python Module}\footnotemark \footnotetext{An importable Python file that contains the functions for incorporating Turkish Question Generation for further research.} servers. for public use if allowed.
+	\\
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=.8]{qg-system-schema}
+		\caption{Question Generation system schema}
+	\end{figure}
+	
+	\subsubsection{Dataset}
+	There are lots of publicly available datasets for natural language processing tasks. However, for this project, our primary constraint was to build our system on top of a Turkish Dataset. Some other constraints we had was that the data must consist of correctly structured sentences in grammatical aspect, it must be labelled, come from a reliable source with the consent of the owner(s) and must be very large, given that larger dataset yields better models.
+	
+	\subsubsection{Programming Languages and Frameworks}
+	This project is developed with \textit{Python 3}. It has chosen because it is relatively simple and allows us to focus on the project rather than computational concerns, it has a vast community for troubleshooting, decreasing the chances of having an issue about the language.\\
+	
+	Furthermore, Python is adapted by the AI researchers, and there are numerous resources, frameworks and libraries that are developed for Python in which we utilize heavily. The framework we are going to be using is PyTorch. This framework recently developed and provided state-of-art parallel processing of tenors on GPU. Also, there are other libraries that are developed for scientific computing and have been used in this project such as pandas, NumPy.\\
+	
+	\subsection{Project Planning}
+	\begin{table}[ht!]
+		\caption{Project plan for 14 weeks}
+		\centering
+		\includegraphics[scale=.8]{gantt}
+	\end{table}
+	\newpage
+	\subsubsection{Aim of the project}
+	Turkish Question Generation Model aims to create a Deep Learning model that given a paragraph, passage or an entity in Turkish, it presents the possible questions that can be answered solely by the given content to the system.
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=.37]{turkish_qg_system}
+		\caption{Question Generation Model diagram}
+	\end{figure}
+
+	\gls{qg} models require extensively large training data. In this project, we develop the initial data sets for the development of the \gls{qg} model. At the later stages, dataset that we aggregated will be used to develop the final product which is the \gls{qg} Model itself.
+	
+	\subsubsection{Project Coverage}
+	
+	First part of the project, which is the main focus of this report, consist of building a data set as the training of \gls{qg} Model at the later stages. This data is based on the information retrieved from the Turkish Wikipedia. \newline \par
+	
+	Later stages of the project consists of sequential steps where the given input is passed over from one to other. These stages can be classified as the main content of the project. Initially, there will be a pre-processing stage for the data; this pre-process might be tweaking the string or simplifying the sentence. Then, BERT language model will be fine-tuned upon retrieving the input string.\\
+	
+	Project is based on software; outcome and the deliverables will consist of soft materials. The project's outcome will be an executable file and importable Python module that other researchers can use.
+	
+	
+	\subsubsection{Use Cases}
+	Use case diagram of our project could be found in figure \ref{usecases}. We have only one type of user at the moment. User will give a context paragraph to the system; then the system will return the questions generated from this context paragraph.
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=.22]{use-case-diagram}
+		\caption{Use case diagram of our QG system\label{usecases}}
+	\end{figure}
+	\newpage
+	
+	\subsubsection{Success Criteria}
+	A couple of metrics will evaluate the outcomes of the project. Given that the outputs will be natural language instances, existing methods and algorithms specifically designed to evaluate generated natural language examples will be utilized. There are multiple algorithms and methods available, which consider different aspects of the outcome. Some of them are:
+	\begin{itemize}
+		\item BLEU
+		\item ROUGE
+		\item METEOR\\
+	\end{itemize}
+	
+	Each of the enumerated methods takes different aspects into account, while \textit{BLEU} score is calculated with best match length is prominent, \textit{ROGUE} is based on recall score. They all have their tradeoffs, and neither of them is merely a strong indicator of success.
+	
+	\subsubsection{Project time and resource estimation}
+	The project is estimated to take 16 weeks for two undergraduate students that are novices to the topic. While estimating, course load and other external factors are taken into account. The detailed timeline can be seen from Table 1 on the previous page. \\
+	
+	Assuming that each member spends 8 hours a week working on this project's issues, it makes approximately 128 hours per person, 256 hours spent in total. Also, it has been mentioned that computing resources will be required for the project. If we use cloud computing providers (AWS for this particular example) rates for this estimation, we observe that the hourly price is ~\$2 for a server that we need to run. Considering that these are very intensive applications, it might be the cases that the server will be up and making computations for long hours, 20 hours a week. This estimation sums up to \$600 in server running costs and 256 men hours. Notice that no access to books, online courses or any other learning material has not been included.
+	
+	
+	\subsubsection{Solution Strategies and Applicable Methods}
+	For the project, we decided to use off-the-shelf language models by fine-tuning them according to our data. Of course, we could have tried to achieve it without using such advanced models; however, there would be the risk of not completing the project in time or a flawed model could have been produced.\\
+	
+	We had an option to use another mainstream language model such as ELECTRA or RASA. Given that BERT was adopted by the community, faster to train, and documentation is provided more comprehensive than others, we decided to use the BERT model.
+	
+	
+	\subsubsection{Risk Analysis}
+	One of the significant risks that may occur is that the model gives questions that are not directly related to given inputs or contain grammatical/structural errors. There are not any risks.
+	
+	\subsubsection{Tools Needed}
+	The project requires the development of Machine and Deep Learning Models from scratch. Due to wide selection of libraries for this purpose, the community behind it, and the de-facto standard of the AI research and scientific development, it has been decided that \textit{Python Programming Language} will be used for development and implementation during this project.\\
+	
+	Specifically, for the model development, an up-to-date, state-of-art library named \textit{PyTorch} will be used extensively. Also, the development of such models and processing large amounts of data requires computing resources. Therefore, servers configured with GPU optimization in mind will be required for a faster development process.
+	
+	
+	
+	\section{Theoretical Background}
+	\subsection{Literature Survey}
+	In this section, a survey of the literature from multiple sources could be found.
+	\subsubsection{Question Answering}
+	Question Answering (QA) automatically presents the answers to the question that users ask without any human interaction. In a QA model, it is expected that the system has access to the necessary information to answer the question.\\
+	To develop such a model, we need extensive data consisting of Questions and their Answers, a duple that we will denote by <Q, A>. Unfortunately, labelling this kind of data manually or creating answers from scratch for an Artificial Intelligence based solution is not the most efficient.
+	They address these problems by;
+	\begin{enumerate}
+		\item Large scale high-quality dataset from Community-QA websites such as Yahoo, Quora is obtained since they provide large scale QA pairs generated by real users.
+		\item Two ways of accomplishing such task is implemented and compared. One is a retrieval-based method using Convolutional Neural Networks(CNN) and other is a generation-based method using Recurrent Neural Network (RNN).
+		\item Outcomes of the QG model is integrated with end-to-end QA task. It is evaluated on three state-of-art datasets, SQuAD, MS MARCO, and WikiQA. Results show that generated questions can improve QA quality on all these three datasets.
+	\end{enumerate}
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=.8]{sample-qg}
+		\caption{Sample Question Answering model}
+	\end{figure}
+	
+	\subsubsection{Question Generation}
+	In their paper, research engineers from Microsoft Research proposed extracting question from a given piece of text. \cite{duan2017question} While they used NLP methodologies and Neural Networks for their paper, they did not include the semantics of words in their paper.\\
+	
+	QG Engine is consist of four components:
+	\begin{enumerate}
+		\item Question Pattern Mining
+		\item Question Pattern Prediction
+		\item Question Topic Selection
+		\item Question Ranking
+	\end{enumerate}
+	\subsubsection{BERT Language Model}
+	We have encountered a language model called BERT, which is also known as Bidirectional Encoder Representation from Transformers developed by Google (Attention is all you need). It uses a machine learning model called Transformers. We have researched other language models, and for the language translation problem, we have found two techniques which are LSTM and Transformers.\\
+	
+	First of all, we have found out that LSTMs are slow to train, words are passed sequentially, and words are getting generated sequentially which can take significant time for the neural network to learn the language. Furthermore, LSTMs are not truly bidirectional; they learn left-to-right and right-to-left separately and concatenate afterwards. Thus, a need for  Transformers arose. Transformers are faster because they can process words simultaneously and deeply bidirectional since they can learn in both directions. \\
+	
+	On Figure \ref{transformer}, you can see the architecture of a transformer. It is formed by two components which are encoder and decoder.\\
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=.8]{transformers}
+		\caption{Architecture of a \textit{Transformer}\label{transformer}}
+	\end{figure}
+	
+	As the BERT's name suggests, we will obtain the BERT language model if we put encoders on after another. The architecture of the BERT language model could be found in figure \ref{bert-architecture}. It is the current state-of-the-art language model for NLP tasks. \cite{chan-fan-2019-recurrent}
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=.8]{bert-model-architecture}
+		\caption{BERT language model architecture\label{bert-architecture}}
+	\end{figure}
+	We have found a paper that uses this language model to solve our problem, and they have made sequentially improved three models which are BERT-QG (BERT Question Generation), BERT-SQG (BERT Sequential Question Generation) and BERT-HLSQG (BERT Highlight Sequential Question Generation) models. QG is the simplest model that this paper introduces. It is the initial attempt to create a powerful Question Generation Model using BERT. As proposed by researchers, considering the previous decoded results significantly improve the quality of the model. However, in BERT-QG, token generation is performed without considering the previous states or decoded results. Due to this consideration, BERT-SQG is developed. BERT-SQG addressed the problem of ignoring the previous decodes in the BERT-QG model. However, researchers researched and concluded that BERT-SQG is not capable of producing quality questions in lengthy situations, and if an answer phase appears multiple times, it struggles to decide which one to decide. As a result, BERT-SQG is restructured, and BERT-HLSQG, a model outperforming BERG-SQG is obtained.\\
+	
+	They have compared these models with the known to be the best question generation models which were NQG-RC and PLQG. NQG-RC is a seq2seq question model based on bidirectional LSTMs. PLQG is a seq2seq network which is capable of handling long text input. This model is known to be the state-of-the-art models for QG tasks. As shown in table \ref{recurrent-comparison}, their models have outperformed the state-of-the-art models on every metric.\\
+	\begin{table}[ht!]
+		\caption{Performance comparison of Question Generation models on different datasets\label{recurrent-comparison}}
+		\centering
+		\includegraphics[scale=.7]{recurrent-comparison}
+	\end{table}
+	
+	\subsection{Question Generation Model with BERT Language Model}
+	As a result of this literature survey, we have decided to go with the BERT language model. BERT language model shows significant performance over various NLP tasks, such as classification, summarization, translation. It has a robust architecture behind it which is transformers. We have searched a pre-trained Turkish model of BERT, and we found a repository on GitHub for it. Starting from next week, we will start using this model as well.\\
+	
+	As the dataset, we have decided to go with Turkish Wikipedia dataset. There are several reasons behind it. Since the data of Wikipedia is close to textbook data, it should be beneficial to train our model with this dataset. Moreover, our advisor, Seniz Demir, had a Wikipedia Parser project. Thus, we will use the Turkish Wikipedia dataset.
+	
+	
+	
+	\section{Analysis and Modeling}
+	
+	Aim of this project is to develop a Turkish Question Generation Model. Given a paragraph or a piece of text, our model creates the possible questions that can be answered with the information given in that paragraph. \newline \par
+	
+	However, such a model's development requires an extensively large and labelled dataset consisting of paragraphs, related questions, and answers to those questions. Unfortunately, such dataset is not available in the Turkish language. There are examples of it, but they neither contain large amounts of the information nor find the data reliable. \newline \par
+	
+	For the reasons described above, we decided to compose our dataset. Our dataset consists of paragraphs from Turkish Wikipedia. Using the Turkish Wikipedia's Person entities, we can create the question patterns for each person's attributes. Later, these questions patterns are completed by substituting the person's name with the placeholders. At this step, we have our questions and the description paragraph of the person available to us.
+	
+	However, we must also confirm that the answer to the question is also found in the paragraph. For this reason, we use a fuzzy search algorithm in order to determine if the answer is in the paragraph or not. If we add the questions to our dataset, if not, we skip to the next question. \newline \par
+	
+	Apart from the dataset, the project's primary goal is to create the \gls{qg} model. Given that this model \gls{qg} model will be developed based on the dataset, the first stage of this project has been dedicated to producing the dataset. 
+	
+	\subsection{System Factors}
+	Since our work is based on the data acquired from Wikipedia and its manipulation, source data is highly influential on the outcome. While creating the dataset, we always aim to create grammatically flawless questions while covering the variety of inputs that may come from the end-user
+	
+	\subsection{How System Works}
+	Input data consists of ~53,000 person entities from Turkish Wikipedia. Occupations of each person and their attributes are also presented. For instance, for a 'Soldier', given attributes are: 'Rank', 'Wars', 'Nationality', 'Commanders' etc. Given that most of these attributes are also mentioned in the corresponding person's description paragraph, when we create the questions that ask about these attributes, we will have the description paragraph and the questions together. 
+	
+	Initially, each question patterns for attributes are created manually containing a placeholder for the person's name. Later, by iterating over each person and substituting names for their attributes, we create example questions. 
+	
+	When we iterate over every person, we accumulate a dataset consisting of paragraphs that describe the person and questions about the person's attributes, which is also contained in the paragraph.  
+	
+	\subsubsection{Modelling}
+	
+	The system can be inspected under two groups; Dataset Production and Development of the Question Generation Model. \newline \par
+	
+	Figure 6 shows the relationship between person entities, their attributes and the question patterns. Each person has a set of attributes, and each attribute has a set of question patterns. \newline \par
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=.5]{architecture.pdf}
+		\caption{System Entities\label{per-attr-qp}}
+	\end{figure}
+	
+	
+	
+	Figure 7 shows the relationship between an attribute and the questions. For an attribute, there are multiple question patterns. When the questions are generated using the pattern, cumulatively these patterns create questions about the person's attribute. \newline \par
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=.5]{attr_questions.pdf}
+		\caption{Relationship of an attribute to Questions\label{attr-qg}}
+	\end{figure}
+	
+	
+	Figure 8 shows the relationship between the person entity and how the output data for a single person is generated. Each person has a descriptive paragraph and set of attributes. These attributes yield to set of questions that the description paragraph can answer. When the paragraph and the questions are coupled together, we get a paragraph-questions pair for our dataset. \newline \par
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=.5]{person_output.pdf}
+		\caption{Relationship of an attribute to Questions}
+	\end{figure}
+	
+	\newpage
+	\subsubsection{System Architecture }
+	Explanation of system architecture.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.17]{bert_sqg.png}
+		\caption{BERT-SQG Architecture \cite{chan-fan-2019-bert}\label{bertsqg-arch}}
+	\end{figure}
+	
+	\subsubsection{UML (Unified Modeling Language) Diagrams}
+	UML Diagrams can be seen from Appendix C
+	
+	\section{Design, implementation and testing}
+	During the design phase of our project, we had two different components that have to be completed. These are:
+	\begin{itemize}
+		\item A Turkish question answering dataset will be used to train the \gls{qg} model.
+		\item A \gls{qg} model.
+	\end{itemize}
+	This section will explain the design process we have followed during the design, implementation, and testing of these two components separately.
+	\subsection{Design}
+	\subsubsection{Dataset}\label{dataset-design}
+	Before creating our dataset, we have researched if any of the datasets are suitable and sufficient. We have found one dataset that is suitable for our model. That dataset has around 2.2k questions, and the descriptive texts were about Turkish \& Islamic Science History, which is not completely suitable and sufficient. Hence, we have decided to create our dataset. During the design phase of the dataset, we have used 2 Wikipedia datasets. The first data was semi-cleaned scrapped Turkish Wikipedia data. Data we had has the short descriptions and the table contents. An example of the table content could be found in Figure \ref{wiki-table-content}. 
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.3]{wiki-table-content}
+		\caption{Sample Wikipedia table content\label{wiki-table-content}}
+	\end{figure}
+	
+	However, this data was insufficient for our dataset since most of the table contents' data does not appear in the short description. Thus, we had to use long descriptions for each of them. After that, we also matched the whole Wikipedia Turkish dump we found from Kaggle with our first data. This data had long descriptions of every document that is currently available on Wikipedia. During the matching phase, we have decided to match each document by their id's.\\
+	
+	After finishing the data part, we have started to analyze our data. We have grouped each person according to their occupation. After grouping, we have found out that we have twenty different occupations. Each occupation has its table attributes. Our main goal is to generate question patterns according to their occupations and the most used ten attributes for that specific occupation. Our analysis on the Wikipedia persons data could be found in Appendix A.\\
+	
+	Finally, we have started to generate the question patterns according to the occupation and the attributes. During this process, we have decided to the question pattern styling.\\
+	
+	\subsubsection{Question Generation Model}\label{qgmodel-design}
+	In the design process of Question Generation Model, we have followed the architecture of the \cite{chan-fan-2019-recurrent}. According to their architecture, we will use an sequential-to-sequential model. For the given paragraph $C=[c_1, c_2, ..., c_n]$, the answer phase $A=[a_1, a_2, ..., a_n]$ and the question $\hat{Q} = [\hat{q_1}, ..., \hat{q_i}]$, the input sequence $X_i$ will be shown as follows.
+	\begin{equation}
+	X_i =  ([CLS], C, [SEP], A, [SEP], \hat{q_1}, ..., \hat{q_i}, [MASK])\label{formula1}
+	\end{equation}
+	
+	There are three different tokens in that sequence. These can be summarized as follows:
+	\begin{itemize}
+		\item \textit{$[CLS]$}: Token shows the beginning of a sequence.
+		\item \textit{$[SEP]$}: Token separates the answer from the context and the generated question.
+		\item \textit{$[MASK]$}: Token shows the ending of a sequence.
+	\end{itemize}
+	
+	After that, we take the final hidden state for the last token \textit{$[MASK]$} in the input sequence. We denote the final hidden vector of \textit{$[MASK]$} as $\textbf{h}[MASK] \in \textit{R}^{h}$. After that BERT model will be adapted by adding an affine layer $\textbf{W}_{SQG} \in \textit{R}^{h×|V|}$ to the output of the \textit{$[MASK]$} token. The label probabilities  $Pr(w|X_i) \in \textit{R}^{|V|}$ are computed by a soft-max function as follows. 
+	\begin{equation}
+	Pr(w|X_i) = softmax(\textbf{h}[MASK] * \textbf{W}_{SQG} + \textbf{b}_{SQG})
+	\end{equation}
+	\begin{equation}
+	\hat{q_i} = argmax_{w}Pr(w|X_i)
+	\end{equation}
+	Later on, on each iteration, the newly generated token $\hat{q_i}$ will be appended into X and the generation process will be continued until \textit{$[SEP]$} is predicted. Thus, in the end, we will have our question.
+	\subsection{Implementation}
+	Similar to the design part, we have developed and implemented each component separately. We have implemented these components with the Python Programming Language.
+	\subsubsection{Dataset}
+	While creating the dataset, we first created our classes according to the data's that we have. The classes have been created according to the data could be found in figure \ref{fig:dataset_person} and figure \ref{fig:dataset_persondataparser}.\\
+	
+	As we have mentioned in Section \ref{dataset-design}, we have already decided on the question patterns on the designing phase. In the implementation phase, we have generated around 1700 question patterns by hand. Sample question patterns that we have generated could be found in Figure \ref{qg-patterns}.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.5]{qg-patterns}
+		\caption{Sample Question Generation patterns\label{qg-patterns}}
+	\end{figure}
+	After generating the question patterns, we needed to implement a fuzzy search mechanism while searching an attribute in the long description. We have researched and found out that in fuzzy search algorithms, the Lavensthein's distance formula. After that, we found a package that is the implementation of that formula called \textit{fuzzywuzzy}. We pass the long description, and the answer that we want to generate a question from then the method returns us a ratio. We have decided to use 0.7 as the threshold for this ratio. If the ratio is higher than our threshold value, then we generate the questions. In Figure \ref{ilker-basbug}, the questions that have been generated for Ilker Basbug, who is the 26th Chief of the General Staff of Turkey. Wikipedia grouped him as a soldier, thus we have generated the possible questions using the data from the table. \\
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.3]{ilker-basbug}
+		\caption{Questions generated for Ilker Basbug (26th Chief of the General Staff of Turkey)\label{ilker-basbug}}
+	\end{figure}
+	
+	
+	Another critical aspect of the implementation part was the speed. There were around fifty-three thousand people in the first data, and the whole Wikipedia data is around five hundred megabytes of data.  Our computers were not sufficient for this processing so we have decided to use cloud services from Amazon Web Services called EC2, enabling us to use a virtual machine instance with 96 Intel Xeon 2.90GHz CPU's and 192 GB of RAM's. We have used our previous knowledge on multiprocessing from Operating Systems and tweaked our code to work with multiple CPU's using a Pool. Nevertheless, our data processing procedure takes a long time; it takes around 1 hour with the setup mentioned. 
+	
+	\subsubsection{Question Generation Model}
+	During the implementation phase of the Question Generation Model, we already mentioned that we had used the architecture from \cite{chan-fan-2019-recurrent}. During the implementation, we have used the \textit{transformers} from Huggingface and \textit{PyTorch} packages which are needed to accomplish our goal. Also, we use the pre-trained Turkish model created by Stefan Schweter, a well-known Computational Linguistic, provided $BERT_{base}$ Turkish cased model (12 layers, 768 hidden dimensions.) We have started to implement the BERT SQG model by creating the classes in figure \ref{fig:bert_sqg} and figure \ref{fig:bert_dataset_loader}. After that, we have implemented the formula \ref{formula1} and created an SQG model with it. However, we could not accomplish our goal this semester. In the following semester, we will start by fixing and completing this model.
+	
+	\subsection{Testing}
+	Similar to the previous parts, we have developed and implemented each component separately. During the testing part, for the dataset, we have run our code several times, and the output was as expected. The dataset has been created according to the question patterns that we have generated. Thus, we did not encounter any problems. For the QG Model, since we could not complete our development process, we could not test the system. Next semester, we will use several evaluation metrics such as BLEU, METEOR, ROUGE.
+	
+	\section{Results}
+	We started this project aiming to develop a Turkish Question Generation Model. Later on, we found ourselves that we had to produce our dataset for development. \newline \par
+	
+	In order to build up a dataset, we had access to Turkish Wikipedia data. This data presented us the person entities along with their description paragraphs and the attributes of the person. There are 20 occupations in total, and we picked the most frequent ten attributes for each occupation in our dataset. Results of the analysis that we carried out can be seen from Appendix A.\newline \par
+	
+	The dataset that we created using the Person entities from Turkish Wikipedia enabled us to create +53,000 paragraphs along with the ten attributes each. Consequently, we produced a dataset containing paragraphs from a wide range of persons with numerous attributes with their questions-answer pair. In the near future, we expect to increase the number of questions in the dataset to make room for further developments. We aim to increase the count of the questions by 40\% by the second semester. \newline \par
+	
+	Currently, our dataset is approximately 400MB .txt file stored in JSON format.\newline \par
+	
+	Furthermore, we studied the development of Question Generation Model. However, since the dataset was not completed, we did not have the chance to test the system. In the following semester, to evaluate our system rigorously, most popular evaluation metrics such as BLEU will be utilized.
+	\newline \par
+	
+	
+	\section{Conclusion}
+	In this project, we aimed to create a Turkish Question Generation Model. To develop such a model, we had to use a large dataset that would enable us to develop a capable and reliable model. Unfortunately, we realized that such a dataset does not exist in Turkish, and we had to create our own. For these purposes, we develop a system that would generate the paragraph and question pairs given Turkish Wikipedia's content. \newline \par
+	
+	After creating the possible questions manually, we ran our program that would produce the dataset. However, the process was so slow on our local machines, that is when we decided to use a server. We rented a CPU-Optimized server from the \textit{Amazon Web Services}. Thanks to computing power it enabled us to utilize, we created our dataset, which contains 2.5M+ lines less than an hour. \newline \par
+	
+	
+	\subsection{Life-Long Learning}
+	At the beginning of the project, both of us were novels about Artificial Intelligence and Natural Language Processing. Initially, we gathered information about the extent of these research areas from various academic survey papers, online discussion forums, and blog posts. \newline \par
+	
+	We also started to study the popular frameworks and libraries used for developing learning models during the initial stages. We started out with the \textit{PyTorch} library developed for Python Language. We used online courses, textbooks and official documentation to inspect the application available on GitHub while studying the PyTorch framework. \newline \par
+	
+	Another topic we had to study was Language Models. Given that there are not many more reliable sources at this topic, we mostly used the official documentation of the academic papers.\newline \par
+	
+	Later on, we started to work on large amounts of data. At some point, our computing resources were not sufficient for such process; hence we used remote servers from the \textit{Amazon Web Services}. We applied our knowledge from operating systems course for parallelism to utilize multi-CPU servers to their full capabilities. \newline \par
+	
+	\subsection{Professional and ethical responsibilities of engineers}
+	
+	We did not have a written ethical code of conduct before the beginning of this project. However, we knew each other over the years and knew each other's expectations during the project.
+	Ethical responsibilities of engineers are not limited by the list presented below, yet, these can be examples of the ethical standards that we followed during the project.
+	
+	\begin{itemize}
+		\item	Honesty and authenticity
+		\item	Humility, respect and mutual understanding
+		\item	Consistency of our activity and expressions, clarity
+		\item	Cost-conscious (avoiding waste),
+		\item	Practicing in compliance with the mission and achieving the vision,
+	\end{itemize}
+	
+	
+	\subsection{Contemporary Issues}
+	
+	Even though we may not realize it yet, we embraced Artificial Intelligence in our lives, especially over the last decade. Today, we use numerous applications from chatbots to classifiers to predictors day-to-day basis. \newline \par
+	
+	In this project, we developed a dataset that will enhance the development of AI applications in Turkish. We believe that the developers will appreciate the contributions of the outcomes of this project. \newline \par
+	
+	It is anticipated that in the upcoming years' AI will become even more ubiquitous. We strongly believe that the data will become more and more valuable with further progressions in Data Science. \newline \par
+	
+	Today, training of the usable \gls{dl} models requires significant computing power that is not affordable by many, in the future quantum computing may enable us to have access to cheaper yet faster computing resources. \newline \par
+	
+	\subsection{Team Work}
+	Initially, we decided to move on similar topic simultaneously given that we were both novels about the topic. We sustained this approach until the later weeks of the project term. We spend most of our time studying the concepts during the initial stages, enrolling into MOOC courses to understand the area and the typical applications. \newline \par
+	
+	Later on, we split the workload between the two members. The first task we aimed to accomplish was to create question patterns for the data. This task had been assigned to Erdal; simultaneously, Alp was working on the BERT Language model and experimenting with other datasets to figure out the system and not move whenever the new dataset gets produced swiftly. \newline \par
+	
+	Then, Alp has joined to Erdal to fasten up the process after realizing that creating question patterns is a time-consuming process. Erdal \& Alp completed creating the question patterns together. Studies about BERT will continue as the dataset gets completed.\newline \par
+	
+	Other tasks such as reports, meeting notes distributed evenly between Erdal \& Alp.\newline \par
+	
+	Given that the project member-only consists of two people, we cannot talk about organizational inefficiencies or miscommunication issues. 
+	
+	\begin{appendix}[A: Attributes of \textsl{Person} Entities]
+		\VerbatimInput[breaklines=true, label=attributes.txt\label{attributes}]{./attributes.txt}
+	\end{appendix}
+
+
+	\begin{appendix}[B: UML Diagrams]
+		\begin{figure}[h!]
+			\centering
+			%\begin{minipage}[c]{0.45\textwidth}
+				\centering
+				\includegraphics[scale=.45]{UML_diagrams/Bert_SQG.png}
+				\caption{\texttt{BERT-SQG} Class\label{fig:bert_sqg}}
+		\end{figure}
+		\begin{figure}[h!]
+			%\end{minipage}
+			%\begin{minipage}[c]{0.45\textwidth}
+				\centering
+				\includegraphics[scale=.5]{UML_diagrams/Dataset_loader.png}
+				\caption{\texttt{Dataset\_loader} Class\label{fig:bert_dataset_loader}}
+			%\end{minipage}
+		\end{figure}
+		
+		\begin{figure}[h!]
+			\centering
+			\centering
+			\includegraphics[scale=.5]{UML_diagrams/Person.png}
+			\caption{\texttt{Person} Class\label{fig:dataset_person}}
+		\end{figure}
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=.55]{UML_diagrams/PersonDataParser.png}
+			\caption{\texttt{PersonDataParser} Class\label{fig:dataset_persondataparser}}
+		\end{figure}
+		
+	\end{appendix}
+	
+	
+	\bibliographystyle{IEEEtranN}
+	\bibliography{../bibliography/references}
+\end{document}
