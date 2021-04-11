@@ -15,7 +15,7 @@ from config import checkpoint, bert_path, mb, dl_workers, device, bert_hidden_si
     bert_vocab_size, decoder_input_size, dropout, epochs, clip, model_path, stage, bert_model, encoder_trained, \
     attention_hidden_size, num_layers, weight_decay, betas, lr, momentum
 from model.utils import load_checkpoint, init_weights, save_checkpoint, enable_reproducibility, model_size, no_grad
-from model import Attention, Decoder, Seq2Seq
+from model import Attention, Decoder, Seq2Seq, BeamSearch
 from data import BertDataset
 from run import train, eval
 from run.utils.time import epoch_time
@@ -27,9 +27,9 @@ from run.utils.time import epoch_time
 
 if __name__ == '__main__':
     log = logging.getLogger(__name__)
-    log.info(f'Running on device {cuda.current_device()}')
+    log.info(f'Running on device {cuda.current_device() if device=="cuda" else "cpu"}')
 
-    enable_reproducibility(1234)
+    enable_reproducibility(121314)
 
     train_set = BertDataset(bert_path / bert_model / 'train')
     valid_set = BertDataset(bert_path / bert_model / 'valid')
@@ -38,19 +38,18 @@ if __name__ == '__main__':
     valid_loader = DataLoader(valid_set, batch_size=mb, shuffle=True,
                               num_workers=dl_workers, pin_memory=True if device == 'cuda' else False)
 
-    attention = Attention(bert_hidden_size, decoder_hidden_size, attention_hidden_size)  # add attention_hidden_size
-    decoder = Decoder(bert_vocab_size, decoder_input_size, bert_hidden_size, decoder_hidden_size, num_layers,
-                      dropout, attention, device)
-    encoder = BertModel.from_pretrained(model_path / stage / bert_model)
+    attention = Attention(bert_hidden_size, decoder_hidden_size)
+    decoder = Decoder(bert_vocab_size, decoder_input_size, bert_hidden_size, decoder_hidden_size, dropout, attention, device)
+    model = Seq2Seq(decoder, device)
 
+    encoder = BertModel.from_pretrained(model_path / 'stage_one' / bert_model)
+    encoder.to(device)
 
-    model = Seq2Seq(encoder, decoder, device, encoder_trained)
-
-    optimizer = optim.SGD(decoder.parameters(), weight_decay=weight_decay, lr=lr, momentum=momentum)
+    optimizer = optim.Adam(decoder.parameters())
     criterion = nn.CrossEntropyLoss(ignore_index=0, reduction='none')  # Pad Index
 
     if checkpoint is not None:
-        last_epoch, model_dict, optim_dict, valid_loss_list, train_loss_list = load_checkpoint(checkpoint)
+        last_epoch, model_dict, optim_dict, valid_loss_list, train_loss_list, bleu_list = load_checkpoint(checkpoint)
         last_epoch += 1
         model.load_state_dict(model_dict)
         best_valid_loss = min(valid_loss_list)
@@ -61,7 +60,7 @@ if __name__ == '__main__':
                 if torch.is_tensor(v):
                     state[k] = v.to(device)
 
-        print(f'Using Checkpoint')
+        log.info(f'Using checkpoint {checkpoint}')
     else:
         last_epoch = 0
         valid_loss_list, train_loss_list = [], []
@@ -74,9 +73,9 @@ if __name__ == '__main__':
         start_time = time.time()
 
         log.info(f'Epoch {epoch+1} training')
-        train_loss = train(model, device, training_loader, optimizer, criterion, clip)
+        train_loss = train(model, device, training_loader, optimizer, criterion, clip, encoder, encoder_trained)
         log.info(f'\nEpoch {epoch + 1} validation')
-        valid_loss, bleu_score = eval(model, device, valid_loader, criterion)
+        valid_loss, bleu_score = eval(model, device, valid_loader, criterion, encoder)
 
         train_loss_list.append(train_loss)
         valid_loss_list.append(valid_loss)
@@ -88,7 +87,7 @@ if __name__ == '__main__':
         #     if valid_loss < best_valid_loss:
         #         best_valid_loss = valid_loss
         save_checkpoint(model_path / stage /f'decoder/model0epoch{epoch}', epoch, model, optimizer, valid_loss_list, train_loss_list)
-
+        encoder.save_pretrained((model_path / stage / bert_model / f'model0epoch{epoch}').mkdir())
         log.info(f'\nEpoch: {epoch + 1:02} completed | Time: {epoch_mins}m {epoch_secs}s')
         log.info(f'\tTrain Loss: {train_loss:.3f} | Train PPL: {math.exp(train_loss):7.3f}')
         log.info(f'\t Val. Loss: {valid_loss:.3f} |  Val. PPL: {math.exp(valid_loss):7.3f} | Val. BLEU {bleu_score}\n\n')
