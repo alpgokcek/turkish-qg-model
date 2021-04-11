@@ -8,9 +8,10 @@ from .utils import epoch_time
 
 pw_criterion = nn.CrossEntropyLoss(ignore_index=0)  # Pad Index
 
-def train(model, device, dataloader, optimizer, criterion, clip):
+def train(model, device, dataloader, optimizer, criterion, clip, encoder, encoder_trained):
     log = logging.getLogger(__name__)
     model.train()
+    encoder.train() if encoder_trained else encoder.eval()
 
     epoch_loss = 0
 
@@ -20,9 +21,20 @@ def train(model, device, dataloader, optimizer, criterion, clip):
         input_data, input_length = input_
         output_data, output_length = output_
 
+        input_ids, token_type_ids, attention_mask = input_data
+
         optimizer.zero_grad()
 
-        prediction = model([x.to(device) for x in input_data],  output_data.to(device))
+        if encoder_trained:
+            bert_hs = encoder(input_ids.to(device), token_type_ids=token_type_ids.to(device),
+                              attention_mask=attention_mask.to(device))
+        else:
+            with torch.no_grad():
+                bert_hs = encoder(input_ids.to(device), token_type_ids=token_type_ids.to(device),
+                                  attention_mask=attention_mask.to(device))
+
+
+        prediction = model(bert_hs[0],  output_data.to(device))
 
         trg_sent_len = prediction.size(1)
 

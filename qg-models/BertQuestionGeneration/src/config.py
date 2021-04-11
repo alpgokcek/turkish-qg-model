@@ -24,7 +24,7 @@ def setup(bert_model, model_path, stage, squad_path, bert_path):
     file.close()
 
     log.info(f'Setup: downloading {bert_model}')
-    BertModel.from_pretrained(bert_model).save_pretrained(model_path / stage / bert_model)
+    BertModel.from_pretrained(bert_model).save_pretrained(model_path / 'stage_one' / bert_model)
 
     log.info(f'Setup: preprocessing {bert_model} input')
     for x in squad_path.iterdir():
@@ -43,14 +43,14 @@ bert_path = Path('../data/bert')
 model_path = Path('../data/model/')
 
 stage = 'stage_one'
-bert_model = 'bert-large-cased'
+bert_model = 'bert-base-cased'
 
 # if not present download the right bert version and preprocess and save the dataset
 setup(bert_model, model_path, stage, squad_path, bert_path)
 
 # encoder parameter
 
-with (model_path / stage / bert_model / 'config.json').open('r') as f:
+with (model_path / 'stage_one' / bert_model / 'config.json').open('r') as f:
     conf = json.load(f)
     bert_hidden_size = conf['hidden_size']
     bert_vocab_size = conf['vocab_size']
@@ -71,7 +71,7 @@ dropout = 0.5
 
 # training parameters
 epochs = 4
-mb = 32
+mb = 15
 dl_workers = 0
 checkpoint = None
 encoder_trained = False
