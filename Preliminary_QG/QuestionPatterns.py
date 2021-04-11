@@ -273,7 +273,18 @@ class QuestionPatterns:
                 "{name}'{_suffix1} okulunun gelenekleri nelerdir?"
             ]
         },
-        "Hakem": {},
+        "Hakem": {
+            "turnuva": [
+                    "{name}'{_suffix1} görev aldığı turnuvalar hangileridir?",
+                    "{name} hangi turnuvalarda görev yapmıştır?",
+                    "{name} bulunduğu turnuvalar nelerdir?"
+                ],
+            "turnuva": [
+                    "{name}'{_suffix1} görevi nedir?",
+                    "{name} hangi görevi yapmaktadır?",
+                    "{name} üslendiği görev nedir?"
+                ],
+        },
         "Güreşçi": {
             "debut": [
                 "{name}'{_suffix1} ilk ringe çıkışı ne zamandır?",
