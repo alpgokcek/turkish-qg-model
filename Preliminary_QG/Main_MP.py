@@ -39,6 +39,8 @@ occupational_patterns = QuestionPatterns.patterns if not CONFIG_FILE[
 common_patterns = CommonPatterns.patterns if not CONFIG_FILE[
     'use_minified'] else MinifiedCommonPatterns.patterns
 
+print("occupational_patterns", occupational_patterns)
+
 
 out = open("out/data.txt", 'w')
 full_wiki = open(WIKI_PATH).read()
@@ -104,7 +106,7 @@ def create_common_questions(p: Person):
 
 def process(enum):
     index, p = enum
-    # print("Idx,", index, "P", p)
+    print("Idx,", index, "P", p)
     person_dict = dict()
     description_tag = soup.find(
         "div", {"id": int(p.doc_id)})  # large description text
