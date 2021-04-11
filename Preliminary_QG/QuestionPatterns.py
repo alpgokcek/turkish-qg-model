@@ -87,14 +87,13 @@ class QuestionPatterns:
                 "{name}'{_suffix1} ilk takımı hangisidir?",
                 "{name}'{_suffix1} kariyerine başladığı takım hangisidir?",
                 "{name}'{_suffix1} kariyerindeki ilk takım hangisidir?",
+                "{name} kariyerine hangi takımda başlamıştır?",
                 "{name} profesyonel kariyerine hangi takımda başlamıştır?",
                 "{name} profesyonel kariyerine hangi takımla başlamıştır?",
                 "{name} profesyonel kariyerine hangi takımla adım atmıştır?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk takım hangisidir?",
-                "{name}'{_suffix1} profesyonel kariyerindeki ilk takım hangisiydi?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk takım hangisi?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk takım neydi?",
-                "{name}'{_suffix1} profesyonel kariyerindeki ilk takım nedir?"
             ],
             "takımyıl1": [
                 "{name} profesyonel kariyerine ne zaman başlamıştır?",
@@ -104,16 +103,12 @@ class QuestionPatterns:
                 "{name}'{_suffix1} profesyonel kariyerine başlangıcı ne zaman oldu?",
                 "{name}'{_suffix1} profesyonel kariyerine başlangıcı ne zaman olmuştur?",
                 "{name} profesyonel kariyerine hangi yılda başladı?",
-                "{name} profesyonel kariyerine hangi yılda başlamıştı?",
                 "{name} profesyonel kariyerine hangi yılda başlamıştır?",
                 "{name} profesyonel kariyerine ne zaman başladı?",
-                "{name} profesyonel kariyerine ne zaman başlamıştı?",
                 "{name} profesyonel kariyerine ne zaman başlamıştır?",
                 "{name}'{_suffix1} ilk takımında ne zaman oynamıştır?",
-                "{name}'{_suffix1} ilk takımında ne zamanlar oynamıştır?",
                 "{name}'{_suffix1} ilk takımında hangi yıllar oynamıştır?",
                 "{name}'{_suffix1} ilk takımında hangi yıllar oynadı?",
-                "{name}'{_suffix1} ilk takımında oynadığı zaman aralığı nedir?",
                 "{name}'{_suffix1} ilk takımında oynadığı zaman aralığı nedir?",
                 "{name}'{_suffix1} ilk oynadığı takımda ne zaman oynamıştır?",
                 "{name}'{_suffix1} ilk oynadığı takımda hangi yıllar arasında oynamıştır?",
@@ -124,7 +119,6 @@ class QuestionPatterns:
                 "{name}'{_suffix1} ikinci oynadığı takım hangisidir?",
                 "{name}'{_suffix1} oynadığı ikinci takım hangisidir?",
                 "{name}'{_suffix1} oynadığı ikinci takım nedir?",
-                "{name}'{_suffix1} oynadığı ikinci takımı ne",
                 "{name}'{_suffix1} ikinci takımı nedir?",
                 "{name}'{_suffix1} ikinci takımı hangisi?",
                 "{name}'{_suffix1} ikinci takımı hangisidir?",
@@ -137,22 +131,16 @@ class QuestionPatterns:
                 "{name}'{_suffix1} profesyonel kariyerindeki ikinci takım nedir?"
             ],
             "takımyıl2": [
-                "{name}'{_suffix1} ikinci takımında ne zaman oynamıştır?",
-                "{name}'{_suffix1} ikinci takımında ne zamanlar oynamıştır?",
+                "{name} kariyerindeki ikinci takımda ne zaman oynamıştır?",
+                "{name} ikinci takımında ne zaman oynamıştır?",
                 "{name} ikinci takımında hangi yıllar oynamıştır?",
                 "{name} ikinci takımında hangi yıllar oynadı?",
                 "{name}'{_suffix1} ikinci takımında oynadığı zaman aralığı nedir?",
-                "{name} ikinci takımında oynadığı zaman aralığı nedir?",
                 "{name}'{_suffix1} ikinci oynadığı takımda ne zaman oynamıştır?",
-                "{name} ikinci oynadığı takımda ne zaman oynamıştır?",
-                "{name}'{_suffix1} ikinci oynadığı takımda hangi yıllar arasında oynamıştır?",
-                "{name}'{_suffix1} ikinci oynadığı takımda hangi yıllar arasında oynamıştı?",
-                "{name}'{_suffix1} ikinci oynadığı takımda hangi yıllar arasında oynadı?",
-                "{name}'{_suffix1} oynadığı ikinci takımda hangi yıllar arasında oynadı?",
-                "{name}'{_suffix1} oynadığı ikinci takımda hangi yıllar arasında oynamıştır?",
-                "{name}'{_suffix1} oynadığı ikinci takımda hangi yıllar arasında oynamıştı?",
-                "{name}'{_suffix1} oynadığı ikinci takımda hangi periyotta oynamıştı?",
-                "{name}'{_suffix1} oynadığı ikinci takımda hangi periyotta oynamıştır?"
+                "{name} ikinci oynadığı takımda hangi yıllar arasında oynamıştır?",
+                "{name} oynadığı ikinci takımda hangi yıllar arasında oynadı?",
+                "{name} oynadığı ikinci takımda hangi yıllar arasında oynamıştır?",
+                "{name} oynadığı ikinci takımda hangi periyotta oynamıştır?"
             ],
             "takım": [
                 "{name} hangi takımda oynamaktadır?",
@@ -205,7 +193,6 @@ class QuestionPatterns:
             "ödüller": [
                 "{name} hangi ödüllere sahiptir?",
                 "{name} hangi ödülleri almıştır?",
-                "{name} aldığı ödüller",
                 "{name} sahip olduğu ödüller nelerdir?",
                 "{name}'{_suffix2} takdim edilen ödüller nelerdir?",
                 "{name}'{_suffix2} verilen ödüller nelerdir?",
@@ -237,7 +224,6 @@ class QuestionPatterns:
                 "{name} hangi ülke adına mücadele etmektedir?",
                 "{name} hangi ülkenin sporcusudur?",
                 "{name} hangi ülkenin sporcusuydu?",
-                "{name} hangi ülkenin sporcusu",
                 "{name} hangi ülkenin vatandaşıdır?",
                 "{name} nerenin vatandaşıdır?",
                 "{name} vatandaşlığı hangi ülkedendir?",
@@ -257,6 +243,10 @@ class QuestionPatterns:
         "Filozof": {
             "çağ": [
                 "{name} hangi çağda yaşamaktaydı?",
+                "{name} hangi çağda yaşadı?",
+                "{name} yaşadığı çağ hangisiir?",
+                "{name} hangi çağda yaşadı?",
+                "{name} hangi çağda yaşadı?",
                 "{name} hangi çağda yaşadı?"
             ],
             "bölge": [
@@ -459,15 +449,22 @@ class QuestionPatterns:
                 "{name} hangi yıllar arasında hüküm sürmüştür?"
             ],
             "sonragelen": [
-                "{name}'{_suffix3} sonra gelen hükümdar kim?",
+                "{name}'{_suffix3} sonra gelen hükümdar kimir?",
+                "{name}'{_suffix3} sonra hangi hükümdar gelmiştir?",
+                "{name}'{_suffix3} sonra tahta kim geçmiştir?",
+                "{name}'{_suffix1} ardından kim hüküm sürmüştür?",
+                "{name}'{_suffix1} ardından kim tahta geçmiştir?"
             ],
             "öncegelen": [
                 "{name}'{_suffix3} önce gelen hükümdar kimdir?",
-                "{name}'{_suffix3} önce gelen hükümdar kim?",
+                "{name}'{_suffix3} önce kim hüküm sürmekteydi?",
+                "{name} kimin ardından tahta çıkmıştır?",
+                "{name} hangi hükümdardan sonra gelmiştir?",
+                "{name} hangi tahtı kimden devralmıştır?"
             ],
             "babası": [
                 "{name}'{_suffix1} babası kimdir?",
-                "{name}'{_suffix1} babası kim?"
+                "{name}'{_suffix1} babasının adı nedir?"
             ],
             "hanedan": [
                 "{name}'{_suffix1} hanedanı nedir?",
@@ -477,7 +474,7 @@ class QuestionPatterns:
             ],
             "annesi": [
                 "{name}'{_suffix1} annesi kimdir?",
-                "{name}'{_suffix1} annesi kim?"
+                "{name}'{_suffix1} annesinin adı nedir?"
             ],
         },
         "Makam sahibi": {
@@ -488,9 +485,9 @@ class QuestionPatterns:
                 "{name}'{_suffix1} görevi nedir"
             ],
             "dönembaşı": [
-                "{name} hangi yılda göreve başlamıştır?",
-                "{name} hangi yılda göreve başlamıştı?",
-                "{name} hangi yılda göreve başladı?",
+                "{name} göreve ne zaman başlamıştır?",
+                "{name} ilk görev yılı nedir?",
+                "{name} göreve ne zaman gelmiştir?",
                 "{name} dönemi ne zaman başlamıştır?"
             ],
             "öncegelen": [
@@ -500,10 +497,10 @@ class QuestionPatterns:
                 "{name}'{_suffix3} önce görev alan kişi kimdir?"
             ],
             "dönemsonu": [
-                "{name} hangi yılda görevi sona ermiştir?",
-                "{name} hangi yılda görevi bitmiştir?",
-                "{name} hangi yılda görevi bitti?",
-                "{name} dönemi ne zaman bitmiştir?"
+                "{name} en son hangi yıl görev yapmıştır?",
+                "{name} görevini ne zaman devretmiştir?",
+                "{name}'{_suffix1} son görev yılı ne zamandır?",
+                "{name}'{_suffix1} görevi ne zaman sona ermiştir?"
             ],
             "sonragelen": [
                 "{name}'{_suffix3} sonra gelen kişi kimdir?",
@@ -514,55 +511,49 @@ class QuestionPatterns:
             "partisi": [
                 "{name} hanginin bir mensubudur?",
                 "{name}'{_suffix1} partisi nedir?",
-                "{name}'{_suffix1} partisi ne?"
             ]
         },
         "Manken": {
             "gözrengi": [
                 "{name}'{_suffix1} göz rengi nedir?",
-                "{name}'{_suffix1} göz rengi ne?"
+                "{name}'{_suffix1} gözü hangi renktir"
             ],
             "saçrengi": [
                 "{name}'{_suffix1} saç rengi nedir?",
-                "{name}'{_suffix1} saç rengi ne?"
+                "{name}'{_suffix1} saçı hangi renktir?"
             ],
             "ulus": [
                 "{name} nerelidir?",
                 "{name} hangi ülke asıllıdır?",
                 "{name} hangi millettendir?",
-                "{name}'{_suffix1} hangi millettendir?"
+                "{name}'{_suffix1} uyruğu neresidir"
             ],
             "boy": [
                 "{name}'{_suffix1} boyu ne kadardır?",
                 "{name}'{_suffix1} boyu nedir?",
-                "{name}'{_suffix1} boyu ne"
             ]
         },
         "Müzik sanatçısı": {
             "artalan": [
                 "{name}'{_suffix1} art alanı nedir?",
-                "{name}'{_suffix1} art alanı ne"
+                "{name} hangi türden gelmektedir"
             ],
             "tarz": [
                 "{name} hangi tür müzik yapar?",
-                "{name} hangi tür müzik yaptı?",
-                "{name} hangi tür müzik yapmaktadır?",
                 "{name}'{_suffix1} hangi tarzda müzik yapmaktadır?",
                 "{name}'{_suffix1} hangi tarzda müzik yapmakta",
                 "{name}'{_suffix1} hangi tarzda müzik yapar?",
                 "{name}'{_suffix1} hangi tarzlarda müzik yapmaktadır?",
-                "{name}'{_suffix1} hangi tarzlarda müzik yapmakta",
-                "{name}'{_suffix1} hangi tarzlarda müzik yapar?",
-                "{name}'{_suffix1} ne tarzda müzik yapmaktadır?",
-                "{name}'{_suffix1} ne tarzda müzik yapmaktadır?",
+                "{name}'{_suffix1} müzik tarzı nedir",
+                "{name}'{_suffix1} tarzı nedir",
+                "{name}'{_suffix1} ne tarz müzik yapmaktadır?",
                 "{name}'{_suffix1} ne tarzda müzik yapar?",
-                "{name}'{_suffix1} ne tarzlarda müzik yapmaktadır?",
-                "{name}'{_suffix1} ne tarzlarda müzik yapmaktadır?",
-                "{name}'{_suffix1} ne tarzlarda müzik yapar?"
+                "{name}'{_suffix1} hangi tarzda müzik yapmaktadır?",
+                "{name}'{_suffix1} ne tarzda müzik yapmaktadır?",
             ],
             "etkinyıllar": [
                 "{name} hangi yıllarda aktif olarak müzik yapmıştır?",
-                "{name} hangi yıllarda aktif olarak müzik yapmıştı?",
+                "{name} hangi yıllarda müzisyenlik yapmıştı?",
                 "{name} aktif yılları nelerdir?"
                 "{name} aktif yılları nedir?"
                 "{name} etkin yılları nelerdir?"
@@ -722,14 +713,12 @@ class QuestionPatterns:
             "ülke": [
                 "{name} hangi ülke adına ter dökmektedir?",
                 "{name} hangi ülkenin sporcusudur?",
-                "{name} hangi ülkenin sporcusu?",
                 "{name} hangi ülke adına yarışmaktadır?",
-                "{name}'{_suffix1} doğduğu yer"
             ],
             "spor": [
                 "{name} hangi spor dalındadır?",
                 "{name} hangi spor dalında mücadele etmektedir?",
-                "{name} hangi sporu yapar?"
+                "{name} hangi sporu yapmaktadır?"
             ],
             "uyruk": [
                 "{name} nerelidir?",
@@ -739,12 +728,13 @@ class QuestionPatterns:
             ],
             "kei": [
                 "{name}'{_suffix1} en iyi derecesi nedir?",
-                "{name}'{_suffix1} en iyi derecesi ne"
+                "{name}'{_suffix1} kariyerinde elde ettiği en yüksek derece nedir?",
+                "{name}'{_suffix1} elde ettiği en yüksek başarı nedir?"
             ],
             "ağırlık": [
-                "{name}'{_suffix1} kilosu kaçtır?",
                 "{name}'{_suffix1} kilosu nedir?",
-                "{name}'{_suffix1} kilosu ne?"
+                "Ünlü sporcu {name} kaç kilodur?",
+                "{name}'{_suffix1} ağırlığı nedir?",
             ]
         },
         "Tenis sporcu": {
@@ -752,7 +742,6 @@ class QuestionPatterns:
                 "{name} hangi ülke vatandaşıdır?",
                 "{name} hangi ülkenin vatandaşıdır?",
                 "{name} nerenin vatandaşıdır?",
-                "{name} vatandaşlığı hangi ülkedendir?",
                 "{name}'{_suffix1} vatandaşlığı hangi ülkedendir?",
                 "{name}'{_suffix1} vatandaşı olduğu ülke hangisidir?",
                 "{name}'{_suffix1} vatandaşı olduğu ülke nedir?",
@@ -761,43 +750,46 @@ class QuestionPatterns:
             ],
             "enyükseksıralama": [
                 "{name}'{_suffix1} en iyi derecesi nedir?",
-                "{name}'{_suffix1} en iyi derecesi ne",
                 "{name}'{_suffix1} en yüksek sıralaması nedir?",
-                "{name}'{_suffix1} en yüksek sıralaması ne"
+                "{name}'{_suffix1} kariyerinde elde ettiği en yüksek sıralama nedir?",
+                "{name}'{_suffix1} elde ettiği en yüksek başarı nedir?"
             ],
             "oyunstili": [
                 "{name}'{_suffix1} oyun stili nedir?",
-                "{name}'{_suffix1} oyun stili ne?"
+                "{name} hangi stilde oynamaktadır?"
             ],
             "wimbledonsonuçları": [
-                "{name}'{_suffix1} Amerika açık sonuçları nedir?",
-                "{name}'{_suffix1} Amerika açık sonuçları nelerdir?",
-                "{name}'{_suffix1} Amerika açık sonuçları nasıl?"
+                "{name}'{_suffix1} Wimbledon sonuçları nedir?",
+                "{name} Wimbledon'da hangi sonucu elde etmiştir?",
+                "{name} Wimbledon sonuçları nasıldır?"
             ],
             "amerikaaçıksonuçları": [
                 "{name}'{_suffix1} Amerika açık sonuçları nedir?",
-                "{name}'{_suffix1} Amerika açık sonuçları nelerdir?",
-                "{name}'{_suffix1} Amerika açık sonuçları nasıl?"
+                "{name} Amerika açıkta hangi sonucu elde etmiştir?",
+                "{name} Amerika açık sonuçları nasıldır?"
             ],
             "fransaaçıksonuçları": [
                 "{name}'{_suffix1} Fransa açık sonuçları nedir?",
-                "{name}'{_suffix1} Fransa açık sonuçları nelerdir?",
-                "{name}'{_suffix1} Fransa açık sonuçları nasıl?"
+                "{name} Fransa açıkta hangi sonucu elde etmiştir?",
+                "{name} Fransa açık sonuçları nasıldır?"
+
             ],
             "avustralyaaçıksonuçları": [
                 "{name}'{_suffix1} Avustralya açık sonuçları nedir?",
-                "{name}'{_suffix1} Avustralya açık sonuçları nelerdir?",
-                "{name}'{_suffix1} Avustralya açık sonuçları nasıl?"
+                "{name} Avustralya açıkta hangi sonucu elde etmiştir?",
+                "{name} Avustralya açık sonuçları nasıldır?"
             ],
             "toplamkupa": [
-                "{name}'{_suffix1} kazandığı toplam kupa nedir?",
-                "{name}'{_suffix1} kazandığı toplam kupa kaçtır?",
-                "{name}'{_suffix1} kazandığı toplam kupa kaç?"
+                "{name}'{_suffix1} kazandığı toplam kupa sayısı kaçtır?",
+                "{name} kariyerinde toplam kaç tane kupa kazanmıştır?",
+                "{name} toplam kaç adet kupa kazanmıştır",
+                "{name} kaç adet kupaya sahiptir?",
+                "{name}'{_suffix1} sahip olduğu kupa sayısı nedir?"
+
             ],
             "yaşadığıyer": [
                 "{name} nerede yaşamaktadır?",
-                "{name} yaşadığı yer neresidir?",
-                "{name} yaşadığı yer neresi"
+                "{name} yaşadığı yer neresidir?"
             ]
         },
         "Voleybolcu": {
@@ -818,13 +810,13 @@ class QuestionPatterns:
                 "{name} nerelidir?",
                 "{name} hangi ülke asıllıdır?",
                 "{name} hangi millettendir?",
-                "{name}'{_suffix1} hangi millettendir?"
+                "{name}'{_suffix1} uyruğu nedir?"
             ],
             "kulüptakım": [
                 "{name} hangi takımlarda oynamıştır?",
-                "{name} hangi takımlarda oynamıştı?",
-                "{name} hangi takımlarda oynamıştır?",
-                "{name} hangi takımlarda oynamıştır?",
+                "{name} geçmişte hangi takımlarda oynamıştır?",
+                "{name} daha önce oynadığı takımlar nelerdir?",
+                "{name} bulunduğu takımlar hangileridir?",
 
             ],
             "bulunduğukulüp": [
@@ -843,13 +835,12 @@ class QuestionPatterns:
             ],
             "numarası": [
                 "{name}'{_suffix1} forma numarası nedir?",
-                "{name}'{_suffix1} forması kaç numara?",
                 "{name}'{_suffix1} forması kaç numaradır?",
                 "{name}'{_suffix1} forması kaç numaraydı?",
                 "{name} kaç numaralı formayı giymektedir?",
                 "{name} kaç numaralı formayı giymişti?",
                 "{name} hangi forma numarasına sahiptir?",
-                "{name} sahip olduğu forma numarası nedir?"
+                "{name}'{_suffix1} sahip olduğu forma numarası nedir?"
             ],
             "millitakım": [
                 "{name} hangi milli takımda oynamaktadır?",
@@ -859,9 +850,7 @@ class QuestionPatterns:
                 "{name} hangi ülkenin milli takımında oynadı?",
                 "{name} oynadığı milli takım hangisidir?",
                 "{name}'{_suffix1} oynadığı milli takım hangisidir?",
-                "{name} oynadığı milli takım hangisi?",
                 "{name}'{_suffix1} oynadığı milli takım hangisi?",
-                "{name} oynadığı milli takım nedir?",
                 "{name}'{_suffix1} oynadığı milli takım nedir?",
                 "{name} nerenin milli takımında oynamaktadır?",
                 "{name} nerenin milli takımında oynamıştı?",
@@ -871,12 +860,7 @@ class QuestionPatterns:
         },
         "Yazar": {
             "meslek": [
-                "{name}'{_suffix1} mesleği",
-                "{name}'{_suffix1} mesleği ne",
-                "{name}'{_suffix1} mesleği neydi",
-                "{name}'{_suffix1} gerçek mesleği",
                 "{name}'{_suffix1} gerçek mesleği nedir?",
-                "{name}'{_suffix1} gerçek mesleği neydi",
                 "{name}'{_suffix1} mesleği nedir?",
                 "{name} mesleği nedir?",
                 "{name} mesleği ne idi?",
@@ -907,7 +891,6 @@ class QuestionPatterns:
             "ilkeser": [
                 "{name}'{_suffix1} ilk eseri nedir?",
                 "{name}'{_suffix1} ilk eseri hangisidir?",
-                "{name}'{_suffix1} ilk eseri?",
                 "{name}'{_suffix1} ilk eserinin adı nedir?",
                 "{name}'{_suffix1} verdiği ilk eserinin adı nedir?",
                 "{name}'{_suffix1} verdiği ilk eseri nedir?",
