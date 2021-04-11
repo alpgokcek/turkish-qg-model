@@ -60,11 +60,13 @@ _suffix1, _suffix2, _suffix3 = "_suffix1", "_suffix2", "_suffix3"
 def get_suffix(word: str, sffx_type: str):
     suffix = ''
     if sffx_type == "_suffix1":
-        suffix = Turkish(word).genitive(person=2)
+        suffix = Turkish(word).genitive(proper_noun=True) # -in
     elif sffx_type == "_suffix2":
-        suffix = Turkish(word).dative()
+        suffix = Turkish(word).dative(proper_noun=True)  # -e
     elif sffx_type == "_suffix3":
-        suffix = Turkish(word).ablative()
+        suffix = Turkish(word).ablative(proper_noun=True) #-den
+    elif sffx_type == "_suffix4":
+        suffix = Turkish(word).ablative(proper_noun=True)
     suffix = str(suffix)
     return suffix[len(word):]
 
