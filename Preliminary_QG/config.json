@@ -1,4 +1,5 @@
-{
+{   
+    "use_minified": true,
     "occupation_settings": {
         "Asker": {
             "common_questions": "1111"

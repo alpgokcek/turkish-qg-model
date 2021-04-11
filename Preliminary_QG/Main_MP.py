@@ -3,6 +3,10 @@ from fuzzywuzzy import fuzz
 from PersonDataParser import Parser
 from QuestionPatterns import QuestionPatterns
 from CommonPatterns import CommonPatterns
+
+from MinifiedQuestionPatterns import MinifiedQuestionPatterns
+from MinifiedCommonPatterns import MinifiedCommonPatterns
+
 from bs4 import BeautifulSoup
 from Person import Person
 import json
@@ -30,8 +34,10 @@ THRESHOLD = 60
 parser = Parser(ATTRIBUTES_PATH)
 parser.parse()
 
-occupational_patterns = QuestionPatterns.patterns
-common_patterns = CommonPatterns.patterns
+occupational_patterns = QuestionPatterns.patterns if not CONFIG_FILE[
+    'use_minified'] else MinifiedQuestionPatterns.patterns
+common_patterns = CommonPatterns.patterns if not CONFIG_FILE[
+    'use_minified'] else MinifiedCommonPatterns.patterns
 
 
 out = open("out/data.txt", 'w')

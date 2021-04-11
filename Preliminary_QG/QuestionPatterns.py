@@ -4,7 +4,6 @@ class QuestionPatterns:
             "rütbesi": [
                 "{name} hangi rütbede görev yapmaktaydı?",
                 "{name}'{_suffix1} rütbesi nedir?",
-                "{name}'{_suffix1} rütbesi neydi?",
                 "{name} hangi rütbeye sahiptir?",
                 "{name} hangi rütbeye sahip olmuştur?"
 
@@ -54,8 +53,7 @@ class QuestionPatterns:
                 "{name}'{_suffix1} komuta ettikleri kimlerdir?",
                 "{name} komuta ettiği askerler kimlerdi?",
                 "{name} kimleri komuta etmiştir?",
-                "{name}'{_suffix1} komutası altında kimler bulunuyordu?",
-                "{name}'{_suffix1} komutası altındaki askerler",
+                "{name}'{_suffix1} komutası altında kimler bulunuyordu?"
             ],
             "madalya": [
                 "{name} hangi madalyalara sahiptir?",
@@ -93,13 +91,10 @@ class QuestionPatterns:
                 "{name} profesyonel kariyerine hangi takımla adım atmıştır?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk takım hangisidir?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk takım hangisi?",
-                "{name}'{_suffix1} profesyonel kariyerindeki ilk takım neydi?",
             ],
             "takımyıl1": [
                 "{name} profesyonel kariyerine ne zaman başlamıştır?",
                 "{name}'{_suffix1} profesyonel kariyerine başlangıcı ne zamandır?",
-                "{name}'{_suffix1} profesyonel kariyerine başlangıcı ne zamandı",
-                "{name}'{_suffix1} profesyonel kariyerine başlangıcı ne zaman",
                 "{name}'{_suffix1} profesyonel kariyerine başlangıcı ne zaman oldu?",
                 "{name}'{_suffix1} profesyonel kariyerine başlangıcı ne zaman olmuştur?",
                 "{name} profesyonel kariyerine hangi yılda başladı?",
@@ -127,7 +122,6 @@ class QuestionPatterns:
                 "{name}'{_suffix1} profesyonel kariyerindeki ikinci takım hangisidir?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ikinci takım hangisiydi?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ikinci takım hangisi?",
-                "{name}'{_suffix1} profesyonel kariyerindeki ikinci takım neydi?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ikinci takım nedir?"
             ],
             "takımyıl2": [
@@ -185,7 +179,6 @@ class QuestionPatterns:
                 "{name} nerelerde çalışmıştır?",
                 "{name} nerelerde çalıştı?",
                 "{name} nerelerde çalışmıştı?",
-                "{name}'{_suffix1} çalıştığı kurumlar",
                 "{name}'{_suffix1} çalıştığı kurumlar nerelerdir?",
                 "{name} hangi kurumlarda çalışmıştır?",
                 "{name}'{_suffix1} çalıştığı kurumlar nedir?",
@@ -265,8 +258,7 @@ class QuestionPatterns:
             ],
             "ilgialanları": [
                 "{name}'{_suffix1} ilgi alanları nelerdir?",
-                "{name}'{_suffix1} ilgi alanları nelerdi?",
-                "{name}'{_suffix1} ilgi alanları neydi?"
+                "{name}'{_suffix1} ilgi alanları nelerdi?"
             ],
             "okulgelenek": [
                 "{name}'{_suffix1} okulunun geleneği nedir?",
@@ -275,15 +267,15 @@ class QuestionPatterns:
         },
         "Hakem": {
             "turnuva": [
-                    "{name}'{_suffix1} görev aldığı turnuvalar hangileridir?",
-                    "{name} hangi turnuvalarda görev yapmıştır?",
-                    "{name} bulunduğu turnuvalar nelerdir?"
-                ],
+                "{name}'{_suffix1} görev aldığı turnuvalar hangileridir?",
+                "{name} hangi turnuvalarda görev yapmıştır?",
+                "{name} bulunduğu turnuvalar nelerdir?"
+            ],
             "turnuva": [
-                    "{name}'{_suffix1} görevi nedir?",
-                    "{name} hangi görevi yapmaktadır?",
-                    "{name} üslendiği görev nedir?"
-                ],
+                "{name}'{_suffix1} görevi nedir?",
+                "{name} hangi görevi yapmaktadır?",
+                "{name} üslendiği görev nedir?"
+            ],
         },
         "Güreşçi": {
             "debut": [
@@ -298,10 +290,9 @@ class QuestionPatterns:
                 "{name}'{_suffix1} ring adı nedir?"
             ],
             "eğiten": [
-                "{name}'{_suffix1}} eğiten kişiler kimlerdir?",
-                "{name}'{_suffix1}} eğiten kişiler kimler?",
-                "{name}'{_suffix1}} eğiten kişilerin adları nelerdir?",
-                "{name}'{_suffix1}} eğiten kişilerin adları ne?"
+                "{name}'{_suffix1} eğiten kişiler kimlerdir?",
+                "{name}'{_suffix1} eğiten kişilerin adları nelerdir?",
+                "{name}'{_suffix1} eğiten kişilerin adları nedir?"
             ],
             "eğitildiğiyer": [
                 "{name} nerede eğitilmiştir?",
@@ -334,10 +325,7 @@ class QuestionPatterns:
                 "{name}'{_suffix1} maçlardaki pozisyonu nedir?"
             ],
             "tamadı": [
-                "{name}'{_suffix1} tam adı nedir?",
-                "{name}'{_suffix1} tam adı neydi",
-                "{name}'{_suffix1} tam adı ne",
-                "{name}'{_suffix1} tam adı ne idi"
+                "{name}'{_suffix1} tam adı nedir?"
             ],
             "kulüp1": [
                 "{name}'{_suffix1} ilk oynadığı takım hangisidir?",
@@ -352,7 +340,6 @@ class QuestionPatterns:
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk takım hangisidir?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk takım hangisiydi?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk takım hangisi?",
-                "{name}'{_suffix1} profesyonel kariyerindeki ilk takım neydi?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk takım nedir?",
                 "{name}'{_suffix1} ilk oynadığı kulüp hangisidir?",
                 "{name}'{_suffix1} oynadığı ilk kulüp hangisidir?",
@@ -366,7 +353,6 @@ class QuestionPatterns:
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk kulüp hangisidir?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk kulüp hangisiydi?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk kulüp hangisi?",
-                "{name}'{_suffix1} profesyonel kariyerindeki ilk kulüp neydi?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ilk kulüp nedir?"
             ],
             "kulüpyıl1": [
@@ -397,7 +383,6 @@ class QuestionPatterns:
                 "{name}'{_suffix1} ikinci oynadığı takım hangisidir?",
                 "{name}'{_suffix1} oynadığı ikinci takım hangisidir?",
                 "{name}'{_suffix1} oynadığı ikinci takım nedir?",
-                "{name}'{_suffix1} oynadığı ikinci takımı ne",
                 "{name}'{_suffix1} ikinci takımı nedir?",
                 "{name}'{_suffix1} ikinci takımı hangisi?",
                 "{name}'{_suffix1} ikinci takımı hangisidir?",
@@ -406,7 +391,6 @@ class QuestionPatterns:
                 "{name}'{_suffix1} profesyonel kariyerindeki ikinci takım hangisidir?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ikinci takım hangisiydi?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ikinci takım hangisi?",
-                "{name}'{_suffix1} profesyonel kariyerindeki ikinci takım neydi?",
                 "{name}'{_suffix1} profesyonel kariyerindeki ikinci takım nedir?"
             ],
             "kulüpyıl2": [
@@ -431,9 +415,7 @@ class QuestionPatterns:
         "Kişi": {
             "meslek": [
                 "{name}'{_suffix1} mesleği nedir?",
-                "{name}'{_suffix1} mesleği neydi",
                 "{name} ne iş yapar?",
-                "{name} işi ne?",
                 "{name} işi nedir?"
             ],
             "aktifyılları": [
@@ -479,9 +461,7 @@ class QuestionPatterns:
             ],
             "hanedan": [
                 "{name}'{_suffix1} hanedanı nedir?",
-                "{name}'{_suffix1} hanedanı ne?",
-                "{name} hangi hanedandandır?",
-                "{name} hangi hanedandan?",
+                "{name} hangi hanedandandır?"
             ],
             "annesi": [
                 "{name}'{_suffix1} annesi kimdir?",
@@ -520,7 +500,7 @@ class QuestionPatterns:
                 "{name}'{_suffix3} sonra görev alan kişi kimdir?"
             ],
             "partisi": [
-                "{name} hanginin bir mensubudur?",
+                "{name} hangi partinin mensubudur?",
                 "{name}'{_suffix1} partisi nedir?",
             ]
         },
@@ -572,17 +552,11 @@ class QuestionPatterns:
                 "{name} etkin olduğu yıllar nedir?"
             ],
             "meslek": [
-                "{name}'{_suffix1} mesleği",
-                "{name}'{_suffix1} mesleği ne",
-                "{name}'{_suffix1} mesleği neydi",
                 "{name}'{_suffix1} gerçek mesleği",
                 "{name}'{_suffix1} gerçek mesleği nedir?",
-                "{name}'{_suffix1} gerçek mesleği neydi",
                 "{name}'{_suffix1} mesleği nedir?",
                 "{name} mesleği nedir?",
-                "{name} mesleği ne idi?",
                 "{name} hangi mesleğe mensuptur?",
-                "{name} hangi mesleğe mensup?",
                 "{name} hangi mesleği yapıyordu?",
                 "{name} hangi işi yapıyor?",
                 "{name} hangi işi yapıyordu?"
@@ -598,8 +572,6 @@ class QuestionPatterns:
                 "{name} hangi millettendir?",
                 "{name}'{_suffix1} hangi millettendir?",
                 "{name} kökeni nedir?",
-                "{name} kökeni ne",
-                "{name} kökeni neydi"
             ],
             "çalgı": [
                 "{name} hangi çalgıyı çalmaktadır?",
@@ -614,28 +586,17 @@ class QuestionPatterns:
             "yer": [
                 "{name} nerede yaşamaktadır?",
                 "{name} yaşadığı yer neresidir?",
-                "{name} yaşadığı yer neresi"
+                "{name} ikamet ettiği yer neresidir?"
             ],
             "meslek": [
-                "{name}'{_suffix1} mesleği",
-                "{name}'{_suffix1} mesleği ne",
-                "{name}'{_suffix1} mesleği neydi",
-                "{name}'{_suffix1} gerçek mesleği",
                 "{name}'{_suffix1} gerçek mesleği nedir?",
-                "{name}'{_suffix1} gerçek mesleği neydi",
                 "{name}'{_suffix1} mesleği nedir?",
                 "{name} mesleği nedir?",
-                "{name} mesleği ne idi?",
                 "{name} hangi mesleğe mensuptur?",
-                "{name} hangi mesleğe mensup?",
-                "{name} hangi mesleği yapıyordu?",
                 "{name} hangi işi yapıyor?",
-                "{name} hangi işi yapıyordu?"
             ],
             "etkinyıllar": [
                 "{name} hangi yıllarda aktif olarak rol almıştır?",
-                "{name} hangi yıllarda aktif olarak rol almıştı?",
-                "{name} hangi yıllarda aktif olarak rol almıştı?",
                 "{name} aktif yılları nelerdir?"
                 "{name} aktif yılları nedir?"
                 "{name} etkin yılları nelerdir?"
@@ -669,9 +630,7 @@ class QuestionPatterns:
             ],
             "eğiten": [
                 "{name}'{_suffix1} eğiten kişiler kimlerdir?",
-                "{name}'{_suffix1} eğiten kişiler kimler?",
                 "{name}'{_suffix1} eğiten kişilerin adları nelerdir?",
-                "{name}'{_suffix1} eğiten kişilerin adları ne?"
             ],
             "eş": [
                 "{name} kimle evlidir?",
@@ -696,7 +655,6 @@ class QuestionPatterns:
         "Sanatçı": {
             "alanı": [
                 "{name}'{_suffix1} alanı nedir?",
-                "{name}'{_suffix1} alanı ne",
                 "{name} hangi alanda sanat yapmaktadır?",
                 "{name} hangi alanda sanat yapmaktaydı?",
                 "{name} hangi alanda sanat yapıyor?",
@@ -793,7 +751,7 @@ class QuestionPatterns:
             "toplamkupa": [
                 "{name}'{_suffix1} kazandığı toplam kupa sayısı kaçtır?",
                 "{name} kariyerinde toplam kaç tane kupa kazanmıştır?",
-                "{name} toplam kaç adet kupa kazanmıştır",
+                "{name} toplam kaç adet kupa kazanmıştır?",
                 "{name} kaç adet kupaya sahiptir?",
                 "{name}'{_suffix1} sahip olduğu kupa sayısı nedir?"
 
@@ -874,9 +832,7 @@ class QuestionPatterns:
                 "{name}'{_suffix1} gerçek mesleği nedir?",
                 "{name}'{_suffix1} mesleği nedir?",
                 "{name} mesleği nedir?",
-                "{name} mesleği ne idi?",
                 "{name} hangi mesleğe mensuptur?",
-                "{name} hangi mesleğe mensup?",
                 "{name} hangi mesleği yapıyordu?",
                 "{name} hangi işi yapıyor?",
                 "{name} hangi işi yapıyordu?"
