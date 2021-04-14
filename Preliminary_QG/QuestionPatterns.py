@@ -4,8 +4,9 @@ class QuestionPatterns:
             "rütbesi": [
                 "{name} hangi rütbede görev yapmaktaydı?",
                 "{name}'{_suffix1} rütbesi nedir?",
+                "{name}'{_suffix1} sahip olduğu rütbe nedir?",
                 "{name} hangi rütbeye sahiptir?",
-                "{name} hangi rütbeye sahip olmuştur?"
+                "{name} ordudaki rütbesi nedir?"
 
             ],
             "hizmetyılları": [
@@ -16,12 +17,12 @@ class QuestionPatterns:
                 "{name}'{_suffix1} orduda bulunduğu yıllar nedir?",
                 "{name} ne zaman hizmet vermiştir?",
                 "{name} ne zaman orduda bulunmuştur?",
-                "{name} ne zamanlar hizmet vermiştir",
+                "{name} ne zamanlar hizmet vermiştir?",
                 "{name} ne zaman asker olarak görev yapmıştır?",
                 "{name} hangi yıllar arasında hizmet vermiştir",
                 "{name} hangi yıllar arasında orduda hizmet vermiştir?",
                 "{name} hangi yıllar arasında orduda bulunmuştur?",
-                "{name}'{_suffix1} orduda geçirdiği yıllar hangileriydi?",
+                "{name}'{_suffix1} orduda geçirdiği yıllar hangileridir?",
                 "{name} hangi yıllarını orduda geçirmiştir?",
                 "{name} hangi yıllarda orduda bulundu?",
                 "{name} hangi yıllarda asker olarak görev yapmıştır?",
@@ -31,14 +32,13 @@ class QuestionPatterns:
                 "{name} hangi ordudaydı?",
                 "{name} hangi orduda görev aldı?",
                 "{name} hangi orduya bağlıdır?",
-                "{name} hangi orduya bağlıydı?",
                 "{name} hangi orduya bağlı görev aldı?",
                 "{name} hangi orduya bağlı olarak görev almıştır?",
                 "{name} hangi ülke ordusunda bulunuyordu?",
                 "{name} hangi ülke ordusunda görev almıştır?",
                 "{name} hangi ülke ordusuna mensuptur?",
-                "{name}'{_suffix2} bağlı bulunduğu ordu hangisidir?"
-                "{name}'{_suffix2} bağlılığı hangi ordudaydı?"
+                "{name}'{_suffix1} bağlı bulunduğu ordu hangisidir?"
+                "{name}'{_suffix1} bağlılığı hangi ordudaydı?"
             ],
             "savaşları": [
                 "{name} nerede savaşmıştır?",
@@ -51,7 +51,7 @@ class QuestionPatterns:
             ],
             "komutaettikleri": [
                 "{name}'{_suffix1} komuta ettikleri kimlerdir?",
-                "{name} komuta ettiği askerler kimlerdi?",
+                "{name}'{_suffix1} komuta ettiği askerler kimlerdi?",
                 "{name} kimleri komuta etmiştir?",
                 "{name}'{_suffix1} komutası altında kimler bulunuyordu?"
             ],
@@ -67,7 +67,6 @@ class QuestionPatterns:
         "Basketbolcu": {
             "pozisyon": [
                 "{name} hangi pozisyonda oynamaktadır?",
-                "{name} hangi pozisyonda oynar?",
                 "{name} hangi pozisyonda oynuyor?",
                 "{name} hangi mevkiide oynamaktadır?",
                 "{name} hangi mevkiide oynar?",
@@ -130,7 +129,6 @@ class QuestionPatterns:
                 "{name} ikinci takımında hangi yıllar oynamıştır?",
                 "{name} ikinci takımında hangi yıllar oynadı?",
                 "{name}'{_suffix1} ikinci takımında oynadığı zaman aralığı nedir?",
-                "{name}'{_suffix1} ikinci oynadığı takımda ne zaman oynamıştır?",
                 "{name} ikinci oynadığı takımda hangi yıllar arasında oynamıştır?",
                 "{name} oynadığı ikinci takımda hangi yıllar arasında oynadı?",
                 "{name} oynadığı ikinci takımda hangi yıllar arasında oynamıştır?",
@@ -862,6 +860,7 @@ class QuestionPatterns:
                 "{name}'{_suffix1} verdiği ilk eserinin adı nedir?",
                 "{name}'{_suffix1} verdiği ilk eseri nedir?",
                 "{name}'{_suffix1} verdiği ilk eseri hangisidir?"
+                "Yazar {name}'{_suffix1} ilk eseri nedir?"
             ]
         }
     }
