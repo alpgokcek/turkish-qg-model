@@ -4,6 +4,7 @@ log = logging.getLogger(__name__)
 
 import time
 import math
+import os
 
 import torch
 from torch import optim, nn, cuda
@@ -30,6 +31,7 @@ if __name__ == '__main__':
     log.info(f'Running on device {cuda.current_device() if device=="cuda" else "cpu"}')
 
     enable_reproducibility(121314)
+    print("erdal burdayım")
 
     train_set = BertDataset(bert_path / bert_model / 'train')
     valid_set = BertDataset(bert_path / bert_model / 'valid')
@@ -47,7 +49,7 @@ if __name__ == '__main__':
 
     optimizer = optim.Adam(decoder.parameters())
     criterion = nn.CrossEntropyLoss(ignore_index=0, reduction='none')  # Pad Index
-
+    print("setup bitti")
     if checkpoint is not None:
         last_epoch, model_dict, optim_dict, valid_loss_list, train_loss_list, bleu_list = load_checkpoint(checkpoint)
         last_epoch += 1
@@ -71,7 +73,7 @@ if __name__ == '__main__':
 
     for epoch in range(last_epoch, epochs):
         start_time = time.time()
-
+        print("epoch:", epoch)
         log.info(f'Epoch {epoch+1} training')
         train_loss = train(model, device, training_loader, optimizer, criterion, clip, encoder, encoder_trained)
         log.info(f'\nEpoch {epoch + 1} validation')
@@ -81,13 +83,15 @@ if __name__ == '__main__':
         valid_loss_list.append(valid_loss)
 
         end_time = time.time()
-
+        print("time took:",end_time-start_time)
         epoch_mins, epoch_secs = epoch_time(start_time, end_time)
 
         #     if valid_loss < best_valid_loss:
         #         best_valid_loss = valid_loss
-        save_checkpoint(model_path / stage /f'decoder/model0epoch{epoch}', epoch, model, optimizer, valid_loss_list, train_loss_list)
-        encoder.save_pretrained((model_path / stage / bert_model / f'model0epoch{epoch}').mkdir())
+        save_checkpoint(model_path / stage /f'decoder/model0epoch{epoch}', epoch, model, optimizer, valid_loss_list, train_loss_list, bleu_score)
+        tmp_path ="{}/{}/{}/model0epoch{}".format(model_path,stage,bert_model,epoch)
+        os.mkdir(tmp_path)
+        encoder.save_pretrained(tmp_path)
         log.info(f'\nEpoch: {epoch + 1:02} completed | Time: {epoch_mins}m {epoch_secs}s')
         log.info(f'\tTrain Loss: {train_loss:.3f} | Train PPL: {math.exp(train_loss):7.3f}')
         log.info(f'\t Val. Loss: {valid_loss:.3f} |  Val. PPL: {math.exp(valid_loss):7.3f} | Val. BLEU {bleu_score}\n\n')

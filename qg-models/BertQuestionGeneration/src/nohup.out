@@ -1,0 +1,18 @@
+erdal burdayım
+setup bitti
+epoch: 0
+time took: 1160.2272925376892
+Traceback (most recent call last):
+  File "main.py", line 93, in <module>
+    os.mkdir(tmp_path)
+FileExistsError: [Errno 17] File exists: '../data/model/stage_one/bert-base-cased/model0epoch0'
+erdal burdayım
+setup bitti
+epoch: 0
+time took: 1160.8314416408539
+epoch: 1
+time took: 1160.6804254055023
+epoch: 2
+time took: 1158.493759393692
+epoch: 3
+time took: 1157.0201227664948
