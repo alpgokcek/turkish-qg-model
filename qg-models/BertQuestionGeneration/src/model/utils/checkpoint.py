@@ -12,6 +12,6 @@ def save_checkpoint(name, epoch, model, optimizer, valid_loss, train_loss, bleu)
             }, name)
 
 def load_checkpoint(filename):
-    checkpoint = torch.load(filename, map_location=None if torch.cuda.is_available() else torch.device('cpu'))
+    checkpoint = torch.load(filename, map_location=None if torch.cuda.is_available() else torch.device('cpu'), encoding='bytes')
     return checkpoint['epoch'], checkpoint['model_state_dict'],\
            checkpoint['optimizer_state_dict'], checkpoint['valid_loss'], checkpoint['train_loss'], checkpoint['bleu']

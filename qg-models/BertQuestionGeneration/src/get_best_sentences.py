@@ -1,4 +1,6 @@
 import logging
+import io
+import pprint
 
 from nltk.translate.bleu_score import SmoothingFunction
 from nltk.translate import bleu
@@ -76,12 +78,12 @@ if __name__ == '__main__':
     attention = Attention(bert_hidden_size, decoder_hidden_size)
     decoder = Decoder(bert_vocab_size, decoder_input_size, bert_hidden_size, decoder_hidden_size, dropout, attention, device)
     model = Seq2Seq(decoder, device)
-    print("{}/stage_one/{}".format(str(model_path), bert_model))
+    print("../data/model/stage_one/bert-base-cased")
 
-    encoder = BertModel.from_pretrained("{}/stage_one/{}".format(str(model_path), bert_model))
+    encoder = BertModel.from_pretrained("../data/model/stage_one/bert-base-cased/")
     encoder.to(device)
-
-    _, model_dict, _, _, _, _ = load_checkpoint(checkpoint)
+    f = open("../data/model/stage_one/decoder/model0epoch3", 'rb')
+    _, model_dict, _, _, _, _ = load_checkpoint(f)
     model.load_state_dict(model_dict)
 
     model.to(device)
@@ -106,6 +108,6 @@ if __name__ == '__main__':
 
             # trg = [(trg sent len - 1) * batch size]
             # output = [(trg sent len - 1) * batch size, output dim]
-    print(sorted(loss_list, key=lambda x: x[0])[0:10])
+    pprint.pprint(sorted(loss_list, key=lambda x: x[0])[0:10])
 
 
