@@ -80,7 +80,7 @@ if __name__ == '__main__':
     model = Seq2Seq(decoder, device)
     print("../data/model/stage_one/bert-base-cased")
 
-    encoder = BertModel.from_pretrained("../data/model/stage_one/bert-base-cased/")
+    encoder = BertModel.from_pretrained("../data/model/stage_one/dbmdz/bert-base-turkish-cased/")
     encoder.to(device)
     f = open("../data/model/stage_one/decoder/model0epoch3", 'rb')
     _, model_dict, _, _, _, _ = load_checkpoint(f)

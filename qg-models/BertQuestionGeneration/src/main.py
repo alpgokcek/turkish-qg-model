@@ -34,12 +34,15 @@ if __name__ == '__main__':
     print("erdal burdayım")
 
     train_set = BertDataset(bert_path / bert_model / 'train')
+    #print("TRAIN SET:", len(train_set))
     valid_set = BertDataset(bert_path / bert_model / 'valid')
+    #print("VALI SET:", len(valid_set))
     training_loader = DataLoader(train_set, batch_size=mb, shuffle=True,
                                  num_workers=dl_workers, pin_memory=True if device == 'cuda' else False)
     valid_loader = DataLoader(valid_set, batch_size=mb, shuffle=True,
                               num_workers=dl_workers, pin_memory=True if device == 'cuda' else False)
 
+    print(len(training_loader))
     attention = Attention(bert_hidden_size, decoder_hidden_size)
     decoder = Decoder(bert_vocab_size, decoder_input_size, bert_hidden_size, decoder_hidden_size, dropout, attention, device)
     model = Seq2Seq(decoder, device)

@@ -10,7 +10,7 @@ from transformers import BertModel
 from data import Preprocess
 
 
-def setup(bert_model, model_path, stage, squad_path, bert_path):
+def setup(bert_model, model_path, stage, turquad_path, bert_path):
     log = logging.getLogger(__name__)
 
     file = Path('.setup').open('a+')
@@ -27,9 +27,9 @@ def setup(bert_model, model_path, stage, squad_path, bert_path):
     BertModel.from_pretrained(bert_model).save_pretrained(model_path / 'stage_one' / bert_model)
 
     log.info(f'Setup: preprocessing {bert_model} input')
-    for x in squad_path.iterdir():
+    for x in turquad_path.iterdir():
         if x.is_file():
-            dataset = Preprocess(squad_path / x.name, bert_model)
+            dataset = Preprocess(turquad_path / x.name, bert_model)
             dataset.save(bert_path / bert_model / x.name[11:-5])
     log.info(f'Setup: {bert_model} setup completed')
 
@@ -38,15 +38,15 @@ def setup(bert_model, model_path, stage, squad_path, bert_path):
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # paths
-squad_path = Path('../data/squad')
+turquad_path = Path('../data/turquad')
 bert_path = Path('../data/bert')
 model_path = Path('../data/model/')
 
 stage = 'stage_one'
-bert_model = 'bert-base-cased'
+bert_model = 'dbmdz/bert-base-turkish-cased'
 
 # if not present download the right bert version and preprocess and save the dataset
-setup(bert_model, model_path, stage, squad_path, bert_path)
+setup(bert_model, model_path, stage, turquad_path, bert_path)
 
 # encoder parameter
 
@@ -71,7 +71,7 @@ dropout = 0.5
 
 # training parameters
 epochs = 4
-mb = 15
+mb = 24
 dl_workers = 0
 checkpoint = None
 encoder_trained = False
