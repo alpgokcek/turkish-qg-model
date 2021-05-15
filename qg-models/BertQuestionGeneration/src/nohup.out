@@ -1,0 +1,52 @@
+erdal burdayım
+setup bitti
+epoch: 0
+time took: 1160.2272925376892
+Traceback (most recent call last):
+  File "main.py", line 93, in <module>
+    os.mkdir(tmp_path)
+FileExistsError: [Errno 17] File exists: '../data/model/stage_one/bert-base-cased/model0epoch0'
+erdal burdayım
+setup bitti
+epoch: 0
+time took: 1160.8314416408539
+epoch: 1
+time took: 1160.6804254055023
+epoch: 2
+time took: 1158.493759393692
+epoch: 3
+time took: 1157.0201227664948
+erdal burdayım
+TRAIN SET: 3461
+VALI SET: 429
+145
+setup bitti
+epoch: 0
+time took: 299.7062928676605
+epoch: 1
+time took: 300.1019597053528
+epoch: 2
+time took: 300.0803496837616
+epoch: 3
+time took: 300.02112770080566
+erdal burdayım
+TRAIN SET: 3461
+VALI SET: 429
+145
+setup bitti
+epoch: 0
+time took: 298.80501651763916
+epoch: 1
+time took: 300.5218868255615
+epoch: 2
+time took: 300.13170337677
+epoch: 3
+time took: 299.9701018333435
+  File "main.py", line 100
+    log.info(f'\t Val. Loss: {valid_loss:.3f} |  Val. PPL:
+                                                         ^
+SyntaxError: EOL while scanning string literal
+  File "main.py", line 100
+    log.info(f'\t Val. Loss: {valid_loss:.3f} |  Val. PPL:
+                                                         ^
+SyntaxError: EOL while scanning string literal
