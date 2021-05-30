@@ -58,7 +58,7 @@ with (model_path / 'stage_one' / bert_model / 'config.json').open('r') as f:
 #optimizer
 weight_decay = 0.001
 betas = (0.9, 0.999) # only for Adam
-lr = 0.05
+lr = 0.00005
 momentum = 0.9 # only for SGD
 
 # decoder parameter
@@ -67,11 +67,11 @@ decoder_input_size = 512  # embedding dimesions
 attention_hidden_size = 512
 num_layers = 1
 clip = 1
-dropout = 0.5
+dropout = 0.1
 
 # training parameters
-epochs = 4
-mb = 24
+epochs = 10
+mb = 28
 dl_workers = 0
 checkpoint = None
 encoder_trained = False

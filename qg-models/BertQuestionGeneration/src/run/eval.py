@@ -7,7 +7,7 @@ from nltk.translate import bleu
 from transformers import BertTokenizer
 
 pw_criterion = nn.CrossEntropyLoss(ignore_index=0)  # Pad Index
-tokenizer = BertTokenizer.from_pretrained('bert-large-cased')
+tokenizer = BertTokenizer.from_pretrained('dbmdz/bert-base-turkish-cased')
 
 def eval(model, device, dataloader, criterion, encoder):
     log = logging.getLogger(__name__)

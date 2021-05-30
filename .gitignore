@@ -1,3 +1,6 @@
+#
+qg-models/BertQuestionGeneration/data/*
+
 # RClone config file
 setup/rclone.conf
 §

@@ -1,15 +1,18 @@
 import json
 import pickle
-
+from pprint import pprint
+import numpy as np
+import torch
+from pytorch_transformers import BertTokenizer
+from torch.utils.data import Dataset, DataLoader
 from transformers import BertTokenizer
-
 
 class Preprocess:
 
-    def __init__(self, turquad_path, bert_model):
-        with open(turquad_path, 'r') as read_file:
+    def __init__(self, squad_path, bert_model):
+        with open(squad_path, 'r') as read_file:
             data = json.load(read_file)
-        input, output = _extract_turquad_data(data)
+        input, output = _extract_squad_data(data)
         self.data = _tokenize_data(input, output, bert_model)
 
 
@@ -18,15 +21,14 @@ class Preprocess:
             pickle.dump(self.data, write_file)
 
 
-def _extract_turquad_data(data):
+def _extract_squad_data(data):
     data = data['data']
 
     input = []
     output = []
+    print(len(data))
     for doc in data:
         context = doc['description'][:512]
-	#if len(context) > 500:
-	#    continue
         for qas in doc['data']:
             answer = qas['answer']
             question = qas['questions'][0]
@@ -36,11 +38,12 @@ def _extract_turquad_data(data):
     output = output[:int(0.1 * len(output))]
     return input, output
 
+
 def _tokenize_data(input, output, bert_model):
     tokenizer = BertTokenizer.from_pretrained(bert_model)
 
-    data = tokenizer.batch_encode_plus(input, pad_to_max_length=True, return_tensors='pt')
-    out_dict = tokenizer.batch_encode_plus(output, pad_to_max_length=True, return_tensors='pt')
+    data = tokenizer.batch_encode_plus(input, pad_to_max_length=False, padding=True, return_tensors='pt')
+    out_dict = tokenizer.batch_encode_plus(output, pad_to_max_length=False, padding=True,  return_tensors='pt')
 
     data['output_ids'] = out_dict['input_ids']
     data['output_len'] = out_dict['attention_mask'].sum(dim=1)
@@ -60,9 +63,5 @@ def _tokenize_data(input, output, bert_model):
 
     return data
 
-
-
-if __name__ == '__main__':
-    #../data/turquad/test.json
-    dataset = Preprocess('data.json', 'dbmdz/bert-base-turkish-cased')
-    dataset.save(f'../data/bert/dbmdz/bert-base-turkish-cased/test')
+dataset = Preprocess('data.json', 'dbmdz/bert-base-turkish-cased')
+dataset.save(f'data')

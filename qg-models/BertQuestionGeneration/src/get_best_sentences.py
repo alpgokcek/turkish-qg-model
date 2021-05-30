@@ -66,12 +66,11 @@ def loss(prediction, ground_truth):
     # loss = loss.sum(1)
 
 
-# Importante! Se il training viene fermato e poi ripreso senza cambiare il seed lo shuffling non avviene
-tokenizer = BertTokenizer.from_pretrained('bert-large-cased')
+tokenizer = BertTokenizer.from_pretrained("dbmdz/bert-base-turkish-cased")
 if __name__ == '__main__':
     enable_reproducibility(121314)
 
-    valid_set = BertDataset(bert_path / bert_model / 'test')
+    valid_set = BertDataset(bert_path / bert_model / 'valid')
     valid_loader = DataLoader(valid_set, batch_size=mb, shuffle=True,
                               num_workers=dl_workers, pin_memory=True if device == 'cuda' else False)
 
@@ -82,7 +81,7 @@ if __name__ == '__main__':
 
     encoder = BertModel.from_pretrained("../data/model/stage_one/dbmdz/bert-base-turkish-cased/")
     encoder.to(device)
-    f = open("../data/model/stage_one/decoder/model0epoch3", 'rb')
+    f = open("../data/model/stage_one/decoder/model0epoch" + str(epochs - 1), 'rb')
     _, model_dict, _, _, _, _ = load_checkpoint(f)
     model.load_state_dict(model_dict)
 
@@ -108,6 +107,6 @@ if __name__ == '__main__':
 
             # trg = [(trg sent len - 1) * batch size]
             # output = [(trg sent len - 1) * batch size, output dim]
-    pprint.pprint(sorted(loss_list, key=lambda x: x[0])[0:10])
-
+    #pprint.pprint(sorted(loss_list, key=lambda x: x[0])[0:30])
+    print(sorted(loss_list, key=lambda x: x[0])[0:])
 
