@@ -350,6 +350,7 @@
 	\begin{itemize}
 		\item A Turkish question answering dataset will be used to train the \gls{qg} model.
 		\item A \gls{qg} model.
+		\item User-Interface
 	\end{itemize}
 	This section will explain the design process we have followed during the design, implementation, and testing of these two components separately.
 	\subsection{Design}
@@ -428,6 +429,19 @@
 	
 	We have started to research several open-source Question Generation projects from GitHub and currently started to work on two of them. Both of them are developed based on the BERT language model. There are existing pre-trained language models based on BERT for Turkish language such as BERTurk \cite{stefan_schweter_2020_3770924}. We are aiming to convert pretrained models already developed on these projects.
 	
+	\subsubsection{Tokenization}
+	A tokenizer is in charge of preparing the inputs for a model. There are 3 different key features of the tokenizers. These are:
+	Splitting strings in sub-word token strings, converting tokens strings to ids and back, and encoding/decoding
+	Adding new tokens to the vocabulary in a way that is independent of the underlying structure which helps the model to learn unknown inputs easier
+	
+	Managing special tokens (like mask, beginning-of-sentence, etc.): adding them, assigning them to attributes in the tokenizer for easy access and making sure they are not split during tokenization.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\textwidth]{tokenization.pdf}
+		\caption{Tokenization example\label{token}}
+	\end{figure}
+	
 	\subsubsection{Delexicalization}
 	Delexicalization is the process that replacing language-specific words with language-agnostic meaning. Delexicalization can be used for anonymization (e.g., removing proper names) or to improve the performance of an NLP application by removing over-specific phrases (numericals, named entities, names, etc). After the generation of the questions, we are replacing the placeholders with the correct token. We have generated a delexicalized version of our dataset. We will mention the effect of the delexicalization on results in following sections.
 	
@@ -436,8 +450,24 @@
 		\includegraphics[scale=.6]{delex.pdf}
 		\caption{Non-Delexicalized ($x_1$) vs Delexicalized ($x_2$) sentences)\label{delex}}
 	\end{figure}
+
+	\subsubsection{Output Examples}
+	Questions produced by our system, after placing the names in the placeholders as a result of delexicalization process, can be seen below against the ground truths. 
+	\newline
 	
+	\noindent
+	\fbox{\parbox{\textwidth}{\textbf{Ground Truth:} Erkin Koray aktif yılları nelerdir?\newline
+			\textbf{Prediction:} Erkin Koray hangi yıllarda müzisyenlik yapmıştı?}}
+	\newline
 	
+	\noindent
+	\fbox{\parbox{\textwidth}{\textbf{Ground Truth:} Alex De Souza'nın maçlardaki pozisyonu nedir?\newline
+		\textbf{Prediction:} Alex De Souza hangi mevkiide oynamaktadır?}}		
+	\newline
+
+	\noindent
+	\fbox{\parbox{\textwidth}{\textbf{Ground Truth:} Orhan Pamuk hangi ödülleri almıştır?\newline
+			\textbf{Prediction:} Orhan Pamuk'a takdim edilen ödüller nelerdir?}}		
 	
 	\subsection{Testing}
 	BLEU or in longer version BiLingual Evaluation Understudy, is a metric for automatically evaluating machine-translated text. The BLEU score is a number between zero and one that measures the similarity of the machine-translated text to a set of high-quality reference translations. A value of 0 means that the machine-translated output has no overlap with the reference translation in other words it is a low-quality output while a value of 1 means there is perfect overlap with the reference translations which means a high-quality output. It has been shown that BLEU scores correlate well with human judgment of translation quality. Note that even human translators do not achieve a perfect score of 1.0. It is the N-gram precision and aims to find what percentage of machine n-grams can be found in the reference translation.

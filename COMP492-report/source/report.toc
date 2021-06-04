@@ -40,12 +40,14 @@
 \contentsline {subsection}{\numberline {5.2.}Implementation}{22}{subsection.0.5.2}%
 \contentsline {subsubsection}{\numberline {5.2.1.}Dataset}{22}{subsubsection.0.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2.}Question Generation Model}{24}{subsubsection.0.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3.}Delexicalization}{24}{subsubsection.0.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.3.}Tokenization}{24}{subsubsection.0.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.4.}Delexicalization}{25}{subsubsection.0.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.5.}Output Examples}{25}{subsubsection.0.5.2.5}%
 \contentsline {subsection}{\numberline {5.3.}Testing}{25}{subsection.0.5.3}%
-\contentsline {section}{\numberline {6.}Conclusion}{26}{section.0.6}%
-\contentsline {subsection}{\numberline {6.1.}Life-Long Learning}{26}{subsection.0.6.1}%
-\contentsline {subsection}{\numberline {6.2.}Professional and ethical responsibilities of engineers}{27}{subsection.0.6.2}%
-\contentsline {subsection}{\numberline {6.3.}Contemporary Issues}{27}{subsection.0.6.3}%
-\contentsline {subsection}{\numberline {6.4.}Team Work}{28}{subsection.0.6.4}%
-\contentsline {section}{APPENDIX A: Attributes of \textsl {Person} Entities}{29}{subsection.0.6.4}%
-\contentsline {section}{APPENDIX B: UML Diagrams}{34}{subsection.0.6.4}%
+\contentsline {section}{\numberline {6.}Conclusion}{27}{section.0.6}%
+\contentsline {subsection}{\numberline {6.1.}Life-Long Learning}{27}{subsection.0.6.1}%
+\contentsline {subsection}{\numberline {6.2.}Professional and ethical responsibilities of engineers}{28}{subsection.0.6.2}%
+\contentsline {subsection}{\numberline {6.3.}Contemporary Issues}{28}{subsection.0.6.3}%
+\contentsline {subsection}{\numberline {6.4.}Team Work}{29}{subsection.0.6.4}%
+\contentsline {section}{APPENDIX A: Attributes of \textsl {Person} Entities}{30}{subsection.0.6.4}%
+\contentsline {section}{APPENDIX B: UML Diagrams}{35}{subsection.0.6.4}%
