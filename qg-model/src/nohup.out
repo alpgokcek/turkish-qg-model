@@ -1,0 +1,45 @@
+Traceback (most recent call last):
+  File "main.py", line 3, in <module>
+    logging.basicConfig(file="example.log")
+  File "/home/azureuser/anaconda3/lib/python3.8/logging/__init__.py", line 1997, in basicConfig
+    raise ValueError('Unrecognised argument(s): %s' % keys)
+ValueError: Unrecognised argument(s): file
+erdal burdayım
+124
+setup bitti
+epoch: 0
+time took: 291.416259765625
+Traceback (most recent call last):
+  File "main.py", line 96, in <module>
+    tmp_path ="{}/{}/{}/model0epoch{}".format(model_path,stage,bert_model,epoch)
+FileExistsError: [Errno 17] File exists: '../data/model/stage_one/dbmdz/bert-base-turkish-cased/model0epoch0'
+Traceback (most recent call last):
+  File "main.py", line 3, in <module>
+    logging.basicConfig(filename="example.log", encoding='utf-8', level=logging.DEBUG)
+  File "/home/azureuser/anaconda3/lib/python3.8/logging/__init__.py", line 1997, in basicConfig
+    raise ValueError('Unrecognised argument(s): %s' % keys)
+ValueError: Unrecognised argument(s): encoding
+erdal burdayım
+124
+setup bitti
+epoch: 0
+time took: 293.8069667816162
+Traceback (most recent call last):
+  File "main.py", line 96, in <module>
+    tmp_path ="{}/{}/{}/model0epoch{}".format(model_path,stage,bert_model,epoch)
+FileExistsError: [Errno 17] File exists: '../data/model/stage_one/dbmdz/bert-base-turkish-cased/model0epoch0'
+Traceback (most recent call last):
+  File "main.py", line 2, in <module>
+    logging.basicConfig(filename="example.log", encoding='utf-8', level=logging.DEBUG)
+  File "/home/azureuser/anaconda3/lib/python3.8/logging/__init__.py", line 1997, in basicConfig
+    raise ValueError('Unrecognised argument(s): %s' % keys)
+ValueError: Unrecognised argument(s): encoding
+erdal burdayım
+607
+setup bitti
+epoch: 0
+time took: 2024.6186120510101
+epoch: 1
+time took: 2034.1387240886688
+epoch: 2
+time took: 2033.374177455902
