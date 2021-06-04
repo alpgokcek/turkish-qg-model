@@ -9,8 +9,8 @@
 \RequirePackage{titlecaps}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{ifthen}
-\RequirePackage[center,labelfont=bf,labelsep=endash, font=footnotesize]{caption}
-%\RequirePackage{natbib}
+\RequirePackage[center,labelfont=bf,labelsep=endash]{caption}
+\RequirePackage{natbib}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{tabularx}
 \RequirePackage[ddmmyyyy]{datetime}

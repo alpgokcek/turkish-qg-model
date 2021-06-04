@@ -9,12 +9,9 @@
 \contentsline {figure}{\numberline {9}{\ignorespaces Relationship of an attribute to Questions\relax }}{18}{figure.caption.17}%
 \contentsline {figure}{\numberline {10}{\ignorespaces BERT-SQG Architecture \cite {chan-fan-2019-bert}\relax }}{19}{figure.caption.18}%
 \contentsline {figure}{\numberline {11}{\ignorespaces Sample Wikipedia table content\relax }}{20}{figure.caption.19}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Sample Question Generation patterns\relax }}{22}{figure.caption.20}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Questions generated for Ilker Basbug (26th Chief of the General Staff of Turkey)\relax }}{23}{figure.caption.21}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Tokenization example\relax }}{25}{figure.caption.22}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Non-Delexicalized ($x_1$) vs Delexicalized ($x_2$) sentences)\relax }}{25}{figure.caption.23}%
-\contentsline {figure}{\numberline {16}{\ignorespaces BLEU Score Table (scale 0-100)\relax }}{26}{figure.caption.24}%
-\contentsline {figure}{\numberline {17}{\ignorespaces \texttt {BERT-SQG} Class\relax }}{37}{figure.caption.30}%
-\contentsline {figure}{\numberline {18}{\ignorespaces \texttt {Dataset\_loader} Class\relax }}{37}{figure.caption.31}%
-\contentsline {figure}{\numberline {19}{\ignorespaces \texttt {Person} Class\relax }}{37}{figure.caption.32}%
-\contentsline {figure}{\numberline {20}{\ignorespaces \texttt {PersonDataParser} Class\relax }}{38}{figure.caption.33}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Sample Question Generation patterns\relax }}{23}{figure.caption.20}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Questions generated for Ilker Basbug (26th Chief of the General Staff of Turkey)\relax }}{24}{figure.caption.21}%
+\contentsline {figure}{\numberline {14}{\ignorespaces \texttt {BERT-SQG} Class\relax }}{35}{figure.caption.22}%
+\contentsline {figure}{\numberline {15}{\ignorespaces \texttt {Dataset\_loader} Class\relax }}{35}{figure.caption.23}%
+\contentsline {figure}{\numberline {16}{\ignorespaces \texttt {Person} Class\relax }}{35}{figure.caption.24}%
+\contentsline {figure}{\numberline {17}{\ignorespaces \texttt {PersonDataParser} Class\relax }}{36}{figure.caption.25}%

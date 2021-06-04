@@ -4,16 +4,16 @@
 \setauthors{Alp Gokcek, Erdal Sidal Dogan}
 \settitle{TURKISH QUESTION GENERATION MODEL}
 \setcourseno{II}
-\setmonth{June}
+\setmonth{April}
 \setyear{2021}
 \setfaculty{Engineering}
 \setdepartment{Computer Engineering}
 \setchair{Prof. Muhittin Gokmen}
-\setdate{05/06/2021}
+\setdate{12/05/2021}
 \setadvisor{Asst. Prof. Seniz Demir}
 
 \settitleTR{TÜRKÇE SORU OLUŞTURMA MODELİ}
-\setmonthTR{Haziran}
+\setmonthTR{Şubat}
 \setfacultyTR{Mühendislik}
 \setdepartmentTR{Bilgisayar Mühendisliği}
 \setadvisorTR{Dr. Şeniz Demir}
@@ -29,7 +29,6 @@
 \newacronym{ddi}{DDİ}{Doğal Dil İşleme}
 
 \usepackage{xcolor}
-\usepackage{natbib}
 \usepackage{fancyvrb}
 \usepackage{fvextra}
 
@@ -53,29 +52,28 @@
 	\makestandards
 	
 	\begin{abstract}
-%		Over the last years, the software we use has gained humanitarian characteristics. These features are invigorated by the Artificial Intelligence research, which has shown significant improvements over the past decade. With the emergence of \gls{dl}, other sub-fields of AI such as \gls{nlp} made leaps in a short amount of time as well. Today, the results of the studies of these fields are ubiquitous. \newline \par
-%		
-%		Development of such applications requires extensively large datasets for the training of \gls{dl} models. Furthermore, capability and the reliability of these applications are highly dependent on the data they have been trained on. \newline \par
-%		
-%		Labelled data in the Turkish language is scarce; hence, the development of AI-based applications in Turkish is bottleneck by the absence of data and requires significantly more effort than other languages. \newline \par
-%		
-%		In this project, we present the initial steps toward developing a \gls{qg} model based on \gls{dl}. This paper includes the hard-coded training dataset generation for the \gls{dl} model to be developed in later stages.
-		Question Generation is a Deep Learning model that given a paragraph, passage or an entity in Turkish, produces the possible questions that can be answered solely by the given content to the system. \gls{qg} Systems are capable of generating various logical questions from the given text input. \gls{qg} Systems are prevalent in several computer applications such as chatbots, automated grading systems etc. \newline \par 
+		Over the last years, the software we use has gained humanitarian characteristics. These features are invigorated by the Artificial Intelligence research, which has shown significant improvements over the past decade. With the emergence of \gls{dl}, other sub-fields of AI such as \gls{nlp} made leaps in a short amount of time as well. Today, the results of the studies of these fields are ubiquitous. \newline \par
 		
-		In this project, our aim is to train a \gls{dl} model for question generation and assess its performance according to evaluation metrics. We find this task worth tackling since there are not many examples of comprehensive studies on the topic and the outcomes of this project will empower the development of more capable-than-ever Question Answering Systems for the Turkish Language.
-		\gls{qg} models require extensively large training data, thus, in the last semester we have developed the initial dataset for the development of the \gls{qg} model. This dataset is the largest Turkish Question-Answer dataset currently available. In this project, our aim is to train different language models for generation of questions and assess their performances as well as improving the diversity of our dataset.
+		Development of such applications requires extensively large datasets for the training of \gls{dl} models. Furthermore, capability and the reliability of these applications are highly dependent on the data they have been trained on. \newline \par
+		
+		Labelled data in the Turkish language is scarce; hence, the development of AI-based applications in Turkish is bottleneck by the absence of data and requires significantly more effort than other languages. \newline \par
+		
+		In this project, we present the initial steps toward developing a \gls{qg} model based on \gls{dl}. This paper includes the hard-coded training dataset generation for the \gls{dl} model to be developed in later stages.
+		
 
 		\keywords{Artificial Intelligence, Natural Language Processing, Deep Learning, Question Generation}
 	\end{abstract}
 	
 		
 	\begin{abstractTR}
-	\gls{su} Modeli, Türkçe bir paragraf, pasaj veya varlıktan, sadece verilen içerikle cevaplanabilecek olası soruları sisteme üreten bir \gls{do} modelidir. \gls{su} Sistemler, verilen metin girdisinden çeşitli mantıksal sorular üretebilir. \gls{su} Sistemler, sohbet robotları, otomatik derecelendirme sistemleri vb. gibi çeşitli bilgisayar uygulamalarında yaygındır. \newline \par
+	Son yıllarda kullandığımız yazılımlar insani özellikler kazandı. Tüm bu özellikler, son on yılda önemli gelişmeler gösteren Yapay Zeka araştırmalarının bulgularıyla mümkün olabildi. \gls{do}'nin ortaya çıkmasıyla birlikte, \gls{ddi} gibi yapay zeka'nın  diğer alt alanları da kısa sürede sıçramalar yaptı. Günümüzde bu alanlarla ilgili çalışmaların sonuçlarını bir çok yerde görebiliriz. \newline \par
 	
-	Bu projede amacımız, soru oluşturma için bir \gls{do} modelleri eğitmek ve performansını değerlendirmektir. Konuyla ilgili çok fazla kapsamlı çalışma örneği bulunmadığından ve bu projenin çıktıları Türk Dili için her zamankinden daha yetenekli Soru Cevaplama Sistemlerinin geliştirilmesini güçlendireceğinden, bu görevi çözmeye değer buluyoruz.
-	\newline \par 
-	\gls{su} modelleri çok büyük eğitim verileri gerektirir, bu nedenle son dönemde \gls{su} modelinin geliştirilmesi için ilk veri kümesini geliştirdik. Bu veri kümesi, şu anda mevcut olan en büyük Türkçe Soru-Cevap veri kümesidir. Bu projede amacımız, soruların oluşturulması ve performanslarının değerlendirilmesi ve veri setimizin çeşitliliğinin iyileştirilmesi için farklı dil modelleri yetiştirmektir.
-			
+	Bu tür uygulamaların geliştirilmesi, \gls{do} modellerinin eğitimi için oldukça büyük veri kümeleri gerektirir. Ayrıca, bu uygulamaların kapasitesi ve güvenilirliği, eğitim aldıkları verilere büyük ölçüde bağlıdır. \newline \par
+	
+	Türkçe'de etiketlenmiş veri bulmak kolay olmadığından, yapay zeka tabanlı uygulamaların geliştirilmesi veri yokluğu nedeniyle zorlaşmaktadır ve diğer dillere kıyasla çok daha fazla çaba gerektirir. \newline \par
+	
+	Bu projede, \gls{do}'ye dayalı bir \gls{su} Modeli geliştirmeye yönelik ilk adımları sunuyoruz. Bu belge, sonraki aşamalarda geliştirilecek \gls{do} modeli için sabit kodlanmış eğitim veri kümesi oluşturmanın detaylarını göstermektedir. 
+		
 		\anahtarkelimeler{Yapay Zeka, Doğal Dil İşleme, Derin Öğrenme, Soru Üretme}
 	\end{abstractTR}
 	
@@ -129,12 +127,12 @@
 	The system must also not give inaccurate information to the user, since they may depend on the system on a critical task whose fault cannot be tolerated.
 	
 	\section{Project Definition and Planning}
-	Turkish Question Generation Model is a neural network-based model capable of generating questions from a given piece of text in the Turkish language.
+	Turkish Question Generation Model is a neural network-based model capable of generating questions from a given piece of text in the Turkish language. This project implements such model using \textit{Recurrent Neural Network (RNN)} and/or \textit{Convolutional Neural Network (CNN)}.
 	
 	\subsection{Project Definition}
-	The project's main feature will be accepting input and creating possible questions from that input while assigning probability scores to each generated question. Questions are delivered in easily parsable file format such as JSON, CSV etc.\\
+	The project's main feature will be accepting input and creating possible questions from that input while assigning probability scores to each generated question. Questions are delivered in easily parsable file format such as JSON, XML, HTML, CSV, TSV etc.\\
 	
-	A GUI\footnote{Graphical User Interface} will be designed to demonstrate the capabilities and enable majority of people to use it without any technical knowledge. Also, it will be presented as CLI\footnote{Command Line Interface} and \textit{Python Module}\footnotemark \footnotetext{An importable Python file that contains the functions for incorporating Turkish Question Generation for further research.} servers for public use, if allowed.
+	There is no GUI planned for the QG project; however, it will be presented as CLI and \textit{Python Module}\footnotemark \footnotetext{An importable Python file that contains the functions for incorporating Turkish Question Generation for further research.} servers. for public use if allowed.
 	\\
 	
 	\begin{figure}[ht!]
@@ -144,22 +142,22 @@
 	\end{figure}
 	
 	\subsubsection{Dataset}
-	There are lots of publicly available datasets for natural language processing tasks. However, for this project, our primary constraint was to build our system on top of a Turkish Dataset. Some other constraints we had was that the data must consist of correctly structured sentences in grammatical aspect, it must be labeled, come from a reliable source with the consent of the owner(s) and must be very large, given that larger dataset yields better models.
+	There are lots of publicly available datasets for natural language processing tasks. However, for this project, our primary constraint was to build our system on top of a Turkish Dataset. Some other constraints we had was that the data must consist of correctly structured sentences in grammatical aspect, it must be labelled, come from a reliable source with the consent of the owner(s) and must be very large, given that larger dataset yields better models.
 	
 	\subsubsection{Programming Languages and Frameworks}
 	This project is developed with \textit{Python 3}. It has chosen because it is relatively simple and allows us to focus on the project rather than computational concerns, it has a vast community for troubleshooting, decreasing the chances of having an issue about the language.\\
 	
-	Furthermore, Python is adapted by the AI researchers, and there are numerous resources, frameworks and libraries that are developed for Python in which we utilize heavily. We have not limited ourselves to a specific framework or library for the development of the models. Also, there are other libraries that are developed for scientific computing and have been used in this project such as \textit{pandas, NumPy}, etc.\\
+	Furthermore, Python is adapted by the AI researchers, and there are numerous resources, frameworks and libraries that are developed for Python in which we utilize heavily. The framework we are going to be using is PyTorch. This framework recently developed and provided state-of-art parallel processing of tenors on GPU. Also, there are other libraries that are developed for scientific computing and have been used in this project such as pandas, NumPy.\\
 	
 	\subsection{Project Planning}
 	\begin{table}[ht!]
 		\caption{Project plan for 14 weeks}
 		\centering
-		\includegraphics[width=\linewidth]{gantt}
+		\includegraphics[scale=.8]{gantt}
 	\end{table}
 	\newpage
 	\subsubsection{Aim of the project}
-	Turkish Question Generation Model aims to fine-tune and train various state-of-art question generation models that are developed for other languages. Given a paragraph, passage or an entity in Turkish, it presents the possible questions that can be answered solely by the given content to the system.
+	Turkish Question Generation Model aims to create a Deep Learning model that given a paragraph, passage or an entity in Turkish, it presents the possible questions that can be answered solely by the given content to the system.
 	
 	\begin{figure}[ht!]
 		\centering
@@ -167,27 +165,27 @@
 		\caption{Question Generation Model diagram}
 	\end{figure}
 
-	\gls{qg} models require extensively large training data. In this project, we have developed the  datasets for the development of the \gls{qg} model. Using our custom dataset, our aim is to compare performances of various models that we trained for Turkish Question Generation. 
-	
+	\gls{qg} models require extensively large training data. In this project, we develop the initial data sets for the development of the \gls{qg} model. At the later stages, dataset that we aggregated will be used to develop the final product which is the \gls{qg} Model itself.
 	
 	\subsubsection{Project Coverage}
 	
-	In the previous semester, construction of a data set for the training of \gls{qg} Model has been completed. Dataset consists of data which retrieved from the Turkish Wikipedia. \newline \par
+	First part of the project, which is the main focus of this report, consist of building a data set as the training of \gls{qg} Model at the later stages. This data is based on the information retrieved from the Turkish Wikipedia. \newline \par
 	
-	In this semester, we train several question generation models and fine tune if necessary for Turkish language with the dataset we had constructed. Later on, we aim to compare them regarding to common metrics such as BLEU \& ROGUE \footnote{See Section \ref{sc}} and present the results in detail. \newline \par
+	Later stages of the project consists of sequential steps where the given input is passed over from one to other. These stages can be classified as the main content of the project. Initially, there will be a pre-processing stage for the data; this pre-process might be tweaking the string or simplifying the sentence. Then, BERT language model will be fine-tuned upon retrieving the input string.\\
 	
-	The project's outcome will be a usable interface that users can pass paragraphs as input and retrieve the questions that has been generated automatically. Furthermore, a CLI\footnote{Command Line Interface} will be provided for other researchers to utilize in their workflows. 
+	Project is based on software; outcome and the deliverables will consist of soft materials. The project's outcome will be an executable file and importable Python module that other researchers can use.
 	
-	\pagebreak
+	
 	\subsubsection{Use Cases}
-	Use case diagram of our project could be found in Figure \ref{usecases}. We have only one type of user at the moment. User will give a context paragraph to the system; then the system will return the questions generated from this context paragraph.
+	Use case diagram of our project could be found in figure \ref{usecases}. We have only one type of user at the moment. User will give a context paragraph to the system; then the system will return the questions generated from this context paragraph.
 	\begin{figure}[ht!]
 		\centering
 		\includegraphics[scale=.22]{use-case-diagram}
 		\caption{Use case diagram of our QG system\label{usecases}}
 	\end{figure}
+	\newpage
 	
-	\subsubsection{Success Criteria}\label{sc}
+	\subsubsection{Success Criteria}
 	A couple of metrics will evaluate the outcomes of the project. Given that the outputs will be natural language instances, existing methods and algorithms specifically designed to evaluate generated natural language examples will be utilized. There are multiple algorithms and methods available, which consider different aspects of the outcome. Some of them are:
 	\begin{itemize}
 		\item BLEU
@@ -204,7 +202,10 @@
 	
 	
 	\subsubsection{Solution Strategies and Applicable Methods}
-	For the project, we decided to use off-the-shelf language models by fine-tuning them according to our data. We could have tried to achieve it without using such advanced models; however, there would be the risk of not completing the project in time or a flawed model could have been produced.
+	For the project, we decided to use off-the-shelf language models by fine-tuning them according to our data. Of course, we could have tried to achieve it without using such advanced models; however, there would be the risk of not completing the project in time or a flawed model could have been produced.\\
+	
+	We had an option to use another mainstream language model such as ELECTRA or RASA. Given that BERT was adopted by the community, faster to train, and documentation is provided more comprehensive than others, we decided to use the BERT model.
+	
 	
 	\subsubsection{Risk Analysis}
 	One of the significant risks that may occur is that the model gives questions that are not directly related to given inputs or contain grammatical/structural errors. There are not any risks.
@@ -236,7 +237,7 @@
 	\end{figure}
 	
 	\subsubsection{Question Generation}
-	Research engineers from Microsoft Research proposed extracting question from a given piece of text. \cite{duan2017question} While they used NLP methodologies and Neural Networks, they did not include the semantics of words in their paper.\\
+	In their paper, research engineers from Microsoft Research proposed extracting question from a given piece of text. \cite{duan2017question} While they used NLP methodologies and Neural Networks for their paper, they did not include the semantics of words in their paper.\\
 	
 	QG Engine is consist of four components:
 	\begin{enumerate}
@@ -246,7 +247,7 @@
 		\item Question Ranking
 	\end{enumerate}
 	\subsubsection{BERT Language Model}
-	We have encountered a language model called BERT, which is also known as Bidirectional Encoder Representation from Transformers developed by Google \cite{vaswani2017attention}. It uses a machine learning model called Transformers. We have researched other language models, and for the language translation problem, we have found two techniques which are LSTM and Transformers.\\
+	We have encountered a language model called BERT, which is also known as Bidirectional Encoder Representation from Transformers developed by Google (Attention is all you need). It uses a machine learning model called Transformers. We have researched other language models, and for the language translation problem, we have found two techniques which are LSTM and Transformers.\\
 	
 	First of all, we have found out that LSTMs are slow to train, words are passed sequentially, and words are getting generated sequentially which can take significant time for the neural network to learn the language. Furthermore, LSTMs are not truly bidirectional; they learn left-to-right and right-to-left separately and concatenate afterwards. Thus, a need for  Transformers arose. Transformers are faster because they can process words simultaneously and deeply bidirectional since they can learn in both directions. \\
 	
@@ -276,21 +277,21 @@
 	\subsection{Question Generation Model with BERT Language Model}
 	As a result of this literature survey, we have decided to go with the BERT language model. BERT language model shows significant performance over various NLP tasks, such as classification, summarization, translation. It has a robust architecture behind it which is transformers. We have searched a pre-trained Turkish model of BERT, and we found a repository on GitHub for it. Starting from next week, we will start using this model as well.\\
 	
-	As for the dataset, we have decided to go with Turkish Wikipedia dataset. Since the data of Wikipedia is close to textbook data, it should be beneficial to train our model with this dataset. Moreover, our advisor, Seniz Demir, had a Wikipedia Parser project. Thus, we will use the Turkish Wikipedia dataset.
+	As the dataset, we have decided to go with Turkish Wikipedia dataset. There are several reasons behind it. Since the data of Wikipedia is close to textbook data, it should be beneficial to train our model with this dataset. Moreover, our advisor, Seniz Demir, had a Wikipedia Parser project. Thus, we will use the Turkish Wikipedia dataset.
 	
 	
 	
 	\section{Analysis and Modeling}
-	\label{refhere}
-	Aim of this project is to develop a Turkish Question Generation Model using our custom dataset. Given a paragraph or a piece of text, our model creates the possible questions that can be answered with the information given in that paragraph. \newline \par
+	
+	Aim of this project is to develop a Turkish Question Generation Model. Given a paragraph or a piece of text, our model creates the possible questions that can be answered with the information given in that paragraph. \newline \par
 	
 	However, such a model's development requires an extensively large and labelled dataset consisting of paragraphs, related questions, and answers to those questions. Unfortunately, such dataset is not available in the Turkish language. There are examples of it, but they neither contain large amounts of the information nor find the data reliable. \newline \par
 	
-	For the reasons described above, we composed our dataset in previous semester. Our dataset consists of paragraphs from Turkish Wikipedia. Using the Turkish Wikipedia's Person entities, we created the question patterns regarding to specification of the Person's in dataset. Later, these questions patterns are completed by substituting the person's name with the placeholders. As a result, we obtained formal question-answer pairs along with the paragraphs. \newline \par
+	For the reasons described above, we decided to compose our dataset. Our dataset consists of paragraphs from Turkish Wikipedia. Using the Turkish Wikipedia's Person entities, we can create the question patterns for each person's attributes. Later, these questions patterns are completed by substituting the person's name with the placeholders. At this step, we have our questions and the description paragraph of the person available to us.
 	
-	However, we must also confirm that the answer to the question is also found in the paragraph. For this reason, we use a fuzzy search algorithm in order to determine if the answer is in the paragraph or not. If so, we add the questions to our dataset, if not, we skip to the next question. \newline \par
+	However, we must also confirm that the answer to the question is also found in the paragraph. For this reason, we use a fuzzy search algorithm in order to determine if the answer is in the paragraph or not. If we add the questions to our dataset, if not, we skip to the next question. \newline \par
 	
-	
+	Apart from the dataset, the project's primary goal is to create the \gls{qg} model. Given that this model \gls{qg} model will be developed based on the dataset, the first stage of this project has been dedicated to producing the dataset. 
 	
 	\subsection{System Factors}
 	Since our work is based on the data acquired from Wikipedia and its manipulation, source data is highly influential on the outcome. While creating the dataset, we always aim to create grammatically flawless questions while covering the variety of inputs that may come from the end-user
@@ -350,7 +351,6 @@
 	\begin{itemize}
 		\item A Turkish question answering dataset will be used to train the \gls{qg} model.
 		\item A \gls{qg} model.
-		\item User-Interface
 	\end{itemize}
 	This section will explain the design process we have followed during the design, implementation, and testing of these two components separately.
 	\subsection{Design}
@@ -369,39 +369,26 @@
 	Finally, we have started to generate the question patterns according to the occupation and the attributes. During this process, we have decided to the question pattern styling.\\
 	
 	\subsubsection{Question Generation Model}\label{qgmodel-design}
-	As discussed in Section \ref{refhere}, we train various models for Question Generation task. This models are designed for other languages than Turkish. In this part of the project, our aim is train these models for Turkish while preserving their high performance scores. \newline \par
+	In the design process of Question Generation Model, we have followed the architecture of the \cite{chan-fan-2019-recurrent}. According to their architecture, we will use an sequential-to-sequential model. For the given paragraph $C=[c_1, c_2, ..., c_n]$, the answer phase $A=[a_1, a_2, ..., a_n]$ and the question $\hat{Q} = [\hat{q_1}, ..., \hat{q_i}]$, the input sequence $X_i$ will be shown as follows.
+	\begin{equation}
+	X_i =  ([CLS], C, [SEP], A, [SEP], \hat{q_1}, ..., \hat{q_i}, [MASK])\label{formula1}
+	\end{equation}
 	
-	Currently, we are working on two models based on BERT Language Model \cite{vaswani2017attention}.
-	
+	There are three different tokens in that sequence. These can be summarized as follows:
 	\begin{itemize}
-		\item \textbf{Model 1 \cite{rosasco_question_2020}} In this model, both the input embeddings and hidden size is selected as 512. Learning rate is 1e-4 and dropout 0.5.
-
-		\item \textbf{Model 2 \cite{zhang2019addressing}}
-		In this model, both the input embeddings size is 768 whereas the hidden size is selected as 600. Learning rate is 1e-5 and dropout 0.3.
+		\item \textit{$[CLS]$}: Token shows the beginning of a sequence.
+		\item \textit{$[SEP]$}: Token separates the answer from the context and the generated question.
+		\item \textit{$[MASK]$}: Token shows the ending of a sequence.
 	\end{itemize}
-
-
 	
-%	In the design process of Question Generation Model, we have followed the architecture of the \cite{chan-fan-2019-recurrent}. According to their architecture, we will use an sequential-to-sequential model. For the given paragraph $C=[c_1, c_2, ..., c_n]$, the answer phase $A=[a_1, a_2, ..., a_n]$ and the question $\hat{Q} = [\hat{q_1}, ..., \hat{q_i}]$, the input sequence $X_i$ will be shown as follows.
-%	\begin{equation}
-%	X_i =  ([CLS], C, [SEP], A, [SEP], \hat{q_1}, ..., \hat{q_i}, [MASK])\label{formula1}
-%	\end{equation}
-%	
-%	There are three different tokens in that sequence. These can be summarized as follows:
-%	\begin{itemize}
-%		\item \textit{$[CLS]$}: Token shows the beginning of a sequence.
-%		\item \textit{$[SEP]$}: Token separates the answer from the context and the generated question.
-%		\item \textit{$[MASK]$}: Token shows the ending of a sequence.
-%	\end{itemize}
-%	
-%	After that, we take the final hidden state for the last token \textit{$[MASK]$} in the input sequence. We denote the final hidden vector of \textit{$[MASK]$} as $\textbf{h}[MASK] \in \textit{R}^{h}$. After that BERT model will be adapted by adding an affine layer $\textbf{W}_{SQG} \in \textit{R}^{h×|V|}$ to the output of the \textit{$[MASK]$} token. The label probabilities  $Pr(w|X_i) \in \textit{R}^{|V|}$ are computed by a soft-max function as follows. 
-%	\begin{equation}
-%	Pr(w|X_i) = softmax(\textbf{h}[MASK] * \textbf{W}_{SQG} + \textbf{b}_{SQG})
-%	\end{equation}
-%	\begin{equation}
-%	\hat{q_i} = argmax_{w}Pr(w|X_i)
-%	\end{equation}
-%	Later on, on each iteration, the newly generated token $\hat{q_i}$ will be appended into X and the generation process will be continued until \textit{$[SEP]$} is predicted. Thus, in the end, we will have our question.
+	After that, we take the final hidden state for the last token \textit{$[MASK]$} in the input sequence. We denote the final hidden vector of \textit{$[MASK]$} as $\textbf{h}[MASK] \in \textit{R}^{h}$. After that BERT model will be adapted by adding an affine layer $\textbf{W}_{SQG} \in \textit{R}^{h×|V|}$ to the output of the \textit{$[MASK]$} token. The label probabilities  $Pr(w|X_i) \in \textit{R}^{|V|}$ are computed by a soft-max function as follows. 
+	\begin{equation}
+	Pr(w|X_i) = softmax(\textbf{h}[MASK] * \textbf{W}_{SQG} + \textbf{b}_{SQG})
+	\end{equation}
+	\begin{equation}
+	\hat{q_i} = argmax_{w}Pr(w|X_i)
+	\end{equation}
+	Later on, on each iteration, the newly generated token $\hat{q_i}$ will be appended into X and the generation process will be continued until \textit{$[SEP]$} is predicted. Thus, in the end, we will have our question.
 	\subsection{Implementation}
 	Similar to the design part, we have developed and implemented each component separately. We have implemented these components with the Python Programming Language.
 	\subsubsection{Dataset}
@@ -422,168 +409,41 @@
 	\end{figure}
 	
 	
-	Another critical aspect of the implementation part was the speed. There were around fifty-three thousand people in the first data, and the whole Wikipedia data is around five hundred megabytes of data.  Our computers were not sufficient for this processing so we have decided to use cloud services. We have used our previous knowledge on multiprocessing from Operating Systems and tweaked our code to work with multiple CPU's in parallel.
+	Another critical aspect of the implementation part was the speed. There were around fifty-three thousand people in the first data, and the whole Wikipedia data is around five hundred megabytes of data.  Our computers were not sufficient for this processing so we have decided to use cloud services from Amazon Web Services called EC2, enabling us to use a virtual machine instance with 96 Intel Xeon 2.90GHz CPU's and 192 GB of RAM's. We have used our previous knowledge on multiprocessing from Operating Systems and tweaked our code to work with multiple CPU's using a Pool. Nevertheless, our data processing procedure takes a long time; it takes around 1 hour with the setup mentioned. 
 	
 	\subsubsection{Question Generation Model}
-	In the last semester, we constructed our custom dataset in a format that is similar to famous SQuAD \cite{rajpurkar2016squad} dataset. Given that most of the question generation models are built on top of SQuAD dataset, we aim to incorporate our dataset as smoothly as possible. \newline \par 
-	
-%	We have started to research several open-source Question Generation projects from GitHub and currently started to work on two of them. Both of them are developed based on the BERT language model. There are existing pre-trained language models based on BERT for Turkish language such as BERTurk \cite{stefan_schweter_2020_3770924}. We are aiming to convert pretrained models already developed on these projects.
-
-	We use the PyTorch Framework to train our QG Models based on BERT Language Model. The pretrained model uses 512 hidden dimensions, and 512 attention size. Dropout probability is set to 0.1 between layers. The Adam Optimizer is applied during the training process, with an cross entropy loss function and initial learning rate of 5e-5. The batch size for the update is set as 28. Our models used a single NVIDIA Tesla K80 GPUs on Microsoft Azure VMs\footnote{Standard NC6 Promo Instance} for 3 epochs training. 
-	\subsubsection{Tokenization}
-	A tokenizer is in charge of preparing the inputs for a model. There are 3 different key features of the tokenizers. These are:
-	Splitting strings in sub-word token strings, converting tokens strings to ids and back, and encoding/decoding
-	Adding new tokens to the vocabulary in a way that is independent of the underlying structure which helps the model to learn unknown inputs easier
-	
-	Managing special tokens (like mask, beginning-of-sentence, etc.): adding them, assigning them to attributes in the tokenizer for easy access and making sure they are not split during tokenization.
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\textwidth]{tokenization.pdf}
-		\caption{Tokenization example\label{token}}
-	\end{figure}
-	
-	\subsubsection{Delexicalization}
-	Delexicalization is the process that replacing language-specific words with language-agnostic meaning. Delexicalization can be used for anonymization (e.g., removing proper names) or to improve the performance of an NLP application by removing over-specific phrases (numericals, named entities, names, etc). After the generation of the questions, we are replacing the placeholders with the correct token. We have generated a delexicalized version of our dataset. We will mention the effect of the delexicalization on results in following sections.
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=.6]{delex.pdf}
-		\caption{Non-Delexicalized ($x_1$) vs Delexicalized ($x_2$) sentences)\label{delex}}
-	\end{figure}
-
-	\subsubsection{Output Examples}
-	Questions produced by our system, after placing the names in the placeholders as a result of delexicalization process, can be seen below against the ground truths. 
-	\newline
-	
-	\noindent
-	\fbox{\parbox{\textwidth}{\textbf{Ground Truth:} Erkin Koray aktif yılları nelerdir?\newline
-			\textbf{Prediction:} Erkin Koray hangi yıllarda müzisyenlik yapmıştı?}}
-	\newline
-	
-	\noindent
-	\fbox{\parbox{\textwidth}{\textbf{Ground Truth:} Alex De Souza'nın maçlardaki pozisyonu nedir?\newline
-		\textbf{Prediction:} Alex De Souza hangi mevkiide oynamaktadır?}}		
-	\newline
-
-	\noindent
-	\fbox{\parbox{\textwidth}{\textbf{Ground Truth:} Orhan Pamuk hangi ödülleri almıştır?\newline
-			\textbf{Prediction:} Orhan Pamuk'a takdim edilen ödüller nelerdir?}}		
+	During the implementation phase of the Question Generation Model, we already mentioned that we had used the architecture from \cite{chan-fan-2019-recurrent}. During the implementation, we have used the \textit{transformers} from Huggingface and \textit{PyTorch} packages which are needed to accomplish our goal. Also, we use the pre-trained Turkish model created by Stefan Schweter, a well-known Computational Linguistic, provided $BERT_{base}$ Turkish cased model (12 layers, 768 hidden dimensions.) We have started to implement the BERT SQG model by creating the classes in figure \ref{fig:bert_sqg} and figure \ref{fig:bert_dataset_loader}. After that, we have implemented the formula \ref{formula1} and created an SQG model with it. However, we could not accomplish our goal this semester. In the following semester, we will start by fixing and completing this model.
 	
 	\subsection{Testing}
-	BLEU or in longer version BiLingual Evaluation Understudy, is a metric for automatically evaluating machine-translated text. The BLEU score is a number between zero and one that measures the similarity of the machine-translated text to a set of high-quality reference translations. A value of 0 means that the machine-translated output has no overlap with the reference translation in other words it is a low-quality output while a value of 1 means there is perfect overlap with the reference translations which means a high-quality output. It has been shown that BLEU scores correlate well with human judgment of translation quality. Note that even human translators do not achieve a perfect score of 1.0. It is the N-gram precision and aims to find what percentage of machine n-grams can be found in the reference translation.
-	\newline \par 
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\textwidth]{bleu_table.pdf}
-		\caption{BLEU Score Table (scale 0-100)}
-	\end{figure}
+	Similar to the previous parts, we have developed and implemented each component separately. During the testing part, for the dataset, we have run our code several times, and the output was as expected. The dataset has been created according to the question patterns that we have generated. Thus, we did not encounter any problems. For the QG Model, since we could not complete our development process, we could not test the system. Next semester, we will use several evaluation metrics such as BLEU, METEOR, ROUGE.
 	
-
-\begin{table}[h]
-	\centering
-	\caption{Evaluation results. Whole Paragraph, Delexicalization}
-	\begin{tabular}{l | l | l | l | l | l | l}
-		&       & \multicolumn{2}{l}{Validation}\vline                                                                                & \multicolumn{2}{l}{Train}    \vline                                                                                   &                                                      \\
-		\hline
-		& BLEU  & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\
-			 Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Train\\ Loss  \end{tabular} \\ \hline
-		Epoch 1 & 0.512 & 25.223                                                  & 1.632                                               & 14.323                                                  & 0.921                                               & 1.156                                                \\
-		Epoch 2 & 0.523 & 24.647                                                  & 1.553                                               & 8.051                                                   & 0.527                                               & 0.629                                                \\
-		Epoch 3 & 0.527 & 26.744                                                  & 1.763                                               & 9.135                                                   & 0.606                                               & 0.548                                               
-	\end{tabular}
-\label{wp}
-\end{table}
-
-
-\begin{table}[h]
-	\centering
-	\caption{Evaluation results. First Paragraph, Delexicalization}
-	\begin{tabular}{l | l | l | l | l | l | l}
-		&       & \multicolumn{2}{l}{Validation}\vline                                                                                & \multicolumn{2}{l}{Train}    \vline                                                                                   &                                                      \\
-		\hline
-		& BLEU  & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\
-			Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Train\\ Loss  \end{tabular} \\ \hline
-		Epoch 1 & 0.503 & 26.452                                                  & 1.769                                               & 13.427                                                  & 0.871                                               & 1.155                                                \\
-		Epoch 2 & 0.525 & 22.906                                                  & 1.553                                               & 9.132                                                   & 0.585                                               & 0.633                                                \\
-		Epoch 3 & 0.521 & 26.103                                                  & 1.722                                               & 8.568                                                   & 0.877                                               & 0.550                                               
-	\end{tabular}
-\label{fp}
-\end{table}
-
-
-\begin{table}[h]
-	\centering
-	\caption{Evaluation results. Last Paragraph, Delexicalization}
-	\begin{tabular}{l | l | l | l | l | l | l}
-		&       & \multicolumn{2}{l}{Validation}\vline                                                                                & \multicolumn{2}{l}{Train}    \vline                                                                                   &                                                      \\
-		\hline
-		& BLEU  & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\
-			Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Train\\ Loss  \end{tabular} \\ \hline
-		Epoch 1 & 0.502 & 31.758                                                  & 2.046                                               & 13.701                                                  & 0.882                                               & 1.135                                                \\
-		Epoch 2 & 0.501 & 25.602                                                  & 1.608                                               & 9.698                                                   & 0.631                                               & 0.634                                                \\
-		Epoch 3 & 0.524 & 22.875                                                  & 1.506                                               & 8.593                                                   & 0.568                                               & 0.572                                               
-	\end{tabular}
-\label{lp}
-\end{table}
-
-\begin{table}[h]
-	\centering
-	\caption{Evaluation results. Middle Paragraph, Delexicalization}
-	\begin{tabular}{l | l | l | l | l | l | l}
-		&       & \multicolumn{2}{l}{Validation}\vline                                                                                & \multicolumn{2}{l}{Train}    \vline                                                                                   &                                                      \\
-		\hline
-		& BLEU  & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\
-			Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Train\\ Loss  \end{tabular} \\ \hline
-		Epoch 1 & 0.519 & 26.019                                                  & 1.691                                               & 14.449                                                  & 0.996                                               & 1.121                                                \\
-		Epoch 2 & 0.518 & 26.571                                                  & 1.764                                               & 8.229                                                   & 0.536                                               & 0.617                                                \\
-		Epoch 3 & 0.522 & 24.698                                                  & 1.624                                               & 0.823                                                   & 0.565                                               & 0.549                                               
-	\end{tabular}
-\label{mp}
-\end{table}
-
-\begin{table}[h]
-	\centering
-	\caption{Evaluation results. Whole Paragraph, Non-Delexicalization}
-	\begin{tabular}{l | l | l | l | l | l | l}
-		&       & \multicolumn{2}{l}{Validation}\vline                                                                                & \multicolumn{2}{l}{Train}    \vline                                                                                   &                                                      \\
-		\hline
-		& BLEU  & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\
-			Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Train\\ Loss  \end{tabular} \\ \hline
-		Epoch 1 & 0.327 &
-		67.563                                                 & 5.753                                           & 52.255                                                  & 4.521                                               & 4.771                                                \\
-		Epoch 2 & 0.314 & 72.211                                                  & 6.161                                               & 33.405                                                   & 2.909                                               & 3.001                                                \\
-		Epoch 3 & 0.325 & 77.203                                                  & 6.570                                               & 23.486                                                   & 2.016                                               & 2.164                                               
-	\end{tabular}
-\label{manual}
-\end{table}
-
-Initially, we have tried to use our dataset without the delexicalization and the performance was not as expected, results are shared in Table \ref{manual}. Therefore, we tried to apply delexicalization method to our dataset and the performance of our model have increased significantly, Tables \ref{wp}, \ref{fp}, \ref{lp}, \ref{mp}.\newline \par 
-
-Initially our BLEU score was point three two five which was understandable to good translations. After the applying the method, we have scored point five two four which is very high-quality, adequate, and fluent translations. Also, our average sentence loss and word loss has been decreased significantly as well.
-
 	\section{Results}
+	We started this project aiming to develop a Turkish Question Generation Model. Later on, we found ourselves that we had to produce our dataset for development. \newline \par
+	
+	In order to build up a dataset, we had access to Turkish Wikipedia data. This data presented us the person entities along with their description paragraphs and the attributes of the person. There are 20 occupations in total, and we picked the most frequent ten attributes for each occupation in our dataset. Results of the analysis that we carried out can be seen from Appendix A.\newline \par
+	
+	The dataset that we created using the Person entities from Turkish Wikipedia enabled us to create +53,000 paragraphs along with the ten attributes each. Consequently, we produced a dataset containing paragraphs from a wide range of persons with numerous attributes with their questions-answer pair. In the near future, we expect to increase the number of questions in the dataset to make room for further developments. We aim to increase the count of the questions by 40\% by the second semester. \newline \par
+	
+	Currently, our dataset is approximately 400MB .txt file stored in JSON format.\newline \par
+	
+	Furthermore, we studied the development of Question Generation Model. However, since the dataset was not completed, we did not have the chance to test the system. In the following semester, to evaluate our system rigorously, most popular evaluation metrics such as BLEU will be utilized.
+	\newline \par
+	
 	
 	\section{Conclusion}
 	In this project, we aimed to create a Turkish Question Generation Model. To develop such a model, we had to use a large dataset that would enable us to develop a capable and reliable model. Unfortunately, we realized that such a dataset does not exist in Turkish, and we had to create our own. For these purposes, we develop a system that would generate the paragraph and question pairs given Turkish Wikipedia's content. \newline \par
 	
-	Later, using this dataset, we ran our NN model. Initially, we encountered with the problem of person names not matching the output question of the model. To address this issue, we used a well-known method, delexicalization. Simply, we replaced the entity names with place holders before feeding them to the neural network. Consequently, outputs we obtained consisted of placeholders instead of names. Placeholders were replaced with the appropriate values in the last step. This change drastically improved the evaluation metrics. \newline \par  
-	
-	Results were evaluation using BLEU and Cross Entropy Loss Function. Also, we attempt to train our NN with various parts of the dataset in order to find the best performing combination. Feeding the first, middle, and last paragraphs on separate occasions was one of the approaches. No significant difference in BLUE Score, Sentence, Word, and Train Loss values had been observed for different parts of the paragraph.
-	
-	
+	After creating the possible questions manually, we ran our program that would produce the dataset. However, the process was so slow on our local machines, that is when we decided to use a server. We rented a CPU-Optimized server from the \textit{Amazon Web Services}. Thanks to computing power it enabled us to utilize, we created our dataset, which contains 2.5M+ lines less than an hour. \newline \par
 	
 	
 	\subsection{Life-Long Learning}
-	At the beginning of the project, both of us were novels about Deep Learning and Natural Language Processing. Initially, we gathered information about the extent of these research areas from various academic survey papers, online discussion forums, and blog posts. \newline \par
+	At the beginning of the project, both of us were novels about Artificial Intelligence and Natural Language Processing. Initially, we gathered information about the extent of these research areas from various academic survey papers, online discussion forums, and blog posts. \newline \par
 	
 	We also started to study the popular frameworks and libraries used for developing learning models during the initial stages. We started out with the \textit{PyTorch} library developed for Python Language. We used online courses, textbooks and official documentation to inspect the application available on GitHub while studying the PyTorch framework. \newline \par
 	
 	Another topic we had to study was Language Models. Given that there are not many more reliable sources at this topic, we mostly used the official documentation of the academic papers.\newline \par
 	
-	Later on, we started to work on large amounts of data. At some point, our computing resources were not sufficient for such process; hence we used remote servers. We applied our knowledge from operating systems course for parallelism to utilize multi-CPU servers to their full capabilities. \newline \par
-	
-	Furthermore, developing a user interface which demonstrates the features of the final product enabled us to gain experience in web development.  
+	Later on, we started to work on large amounts of data. At some point, our computing resources were not sufficient for such process; hence we used remote servers from the \textit{Amazon Web Services}. We applied our knowledge from operating systems course for parallelism to utilize multi-CPU servers to their full capabilities. \newline \par
 	
 	\subsection{Professional and ethical responsibilities of engineers}
 	
@@ -610,9 +470,11 @@ Initially our BLEU score was point three two five which was understandable to go
 	Today, training of the usable \gls{dl} models requires significant computing power that is not affordable by many, in the future quantum computing may enable us to have access to cheaper yet faster computing resources. \newline \par
 	
 	\subsection{Team Work}
-	Workload has been divided as equally as possible between the two members. The first task we aimed to accomplish was to create question patterns for the data. First task of the project, crafting a custom dataset has been started by Erdal, soon after Alp joined to speed up to the process. \newline \par 
+	Initially, we decided to move on similar topic simultaneously given that we were both novels about the topic. We sustained this approach until the later weeks of the project term. We spend most of our time studying the concepts during the initial stages, enrolling into MOOC courses to understand the area and the typical applications. \newline \par
 	
-	Later, enhancements on the dataset has been carried out in collaborative fashion, just as the remaining of the tasks. There is one task, however, front-end implementation, carried out mostly by Alp.  
+	Later on, we split the workload between the two members. The first task we aimed to accomplish was to create question patterns for the data. This task had been assigned to Erdal; simultaneously, Alp was working on the BERT Language model and experimenting with other datasets to figure out the system and not move whenever the new dataset gets produced swiftly. \newline \par
+	
+	Then, Alp has joined to Erdal to fasten up the process after realizing that creating question patterns is a time-consuming process. Erdal \& Alp completed creating the question patterns together. Studies about BERT will continue as the dataset gets completed.\newline \par
 	
 	Other tasks such as reports, meeting notes distributed evenly between Erdal \& Alp.\newline \par
 	

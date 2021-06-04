@@ -1,0 +1,65 @@
+{
+   "description":"Mehmet İlker Başbuğ (29 Nisan 1943, Afyonkarahisar), Türk Silahlı Kuvvetlerinin 26. Genelkurmay Başkanı olan Türk orgeneral. ve yazar...",
+   "data":[
+      {
+         "answer":"Orgeneral",
+         "questions":[
+            "İlker Başbuğ hangi rütbede görev yapmaktaydı?",
+            "İlker Başbuğ'un rütbesi nedir?",
+            "İlker Başbuğ'un rütbesi",
+            "İlker Başbuğ'un rütbesi neydi?",
+            "İlker Başbuğ rütbe",
+            "İlker Başbuğ hangi rütbeye sahiptir?"
+         ]
+      },
+      {
+         "answer":"Afyonkarahisar, Türkiye",
+         "questions":[
+            "İlker Başbuğ nerede doğmuştur?",
+            "İlker Başbuğ nerede doğdu",
+            "İlker Başbuğ doğum yeri",
+            "İlker Başbuğ doğum yeri neresi",
+            "İlker Başbuğ doğum yeri neresidir",
+            "İlker Başbuğ nereli",
+            "İlker Başbuğ memleketi",
+            "İlker Başbuğ memleketi nedir",
+            "İlker Başbuğ doğduğu yer",
+            "İlker Başbuğ doğduğu yer neresidir",
+            "İlker Başbuğ doğduğu yer neresi",
+            "İlker Başbuğ doğduğu il",
+            "İlker Başbuğ hangi ilde doğdu",
+            "İlker Başbuğ hangi ülkede doğdu",
+            "İlker Başbuğ doğduğu ülke"
+         ]
+      },
+      {
+         "answer":"29 Nisan 1943",
+         "questions":[
+            "İlker Başbuğ doğum tarihi",
+            "İlker Başbuğ doğum tarihi nedir",
+            "İlker Başbuğ doğum tarihi ne zaman",
+            "İlker Başbuğ doğum yılı",
+            "İlker Başbuğ doğum yılı nedir",
+            "İlker Başbuğ doğum yılı ne zaman",
+            "İlker Başbuğ doğum günü ne zaman",
+            "İlker Başbuğ doğum günü nedir",
+            "İlker Başbuğ ne zaman doğmuştur?",
+            "İlker Başbuğ ne zaman doğdu",
+            "İlker Başbuğ doğum zamanı"
+         ]
+      },
+      {
+         "answer":"TSK Üstün Cesaret ve Feragat Madalyası, TSK Üstün Hizmet Madalyası, TSK Şeref Madalyası",
+         "questions":[
+            "İlker Başbuğ hangi madalyalara sahiptir?",
+            "İlker Başbuğ hangi madalyaları almıştır?",
+            "İlker Başbuğ aldığı madalyalar",
+            "İlker Başbuğ sahip olduğu madalyalar nelerdir?",
+            "İlker Başbuğ'a takdim edilen madalyalar nelerdir?",
+            "İlker Başbuğ'a verilen madalyalar nelerdir?",
+            "İlker Başbuğ'un kazandığı madalyalar nelerdir?",
+            "İlker Başbuğ'un sahip olduğu madalyalar nelerdir?"
+         ]
+      }
+   ]
+}
