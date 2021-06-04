@@ -1,7 +1,7 @@
-*.lot
-*.lof
-*.bbl
 *.blg
-*.out
+*.lot
 *.pdf
 *.toc
+*.bbl
+*.lof
+*.out
