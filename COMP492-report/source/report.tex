@@ -472,13 +472,14 @@
 	
 	\subsection{Testing}
 	BLEU or in longer version BiLingual Evaluation Understudy, is a metric for automatically evaluating machine-translated text. The BLEU score is a number between zero and one that measures the similarity of the machine-translated text to a set of high-quality reference translations. A value of 0 means that the machine-translated output has no overlap with the reference translation in other words it is a low-quality output while a value of 1 means there is perfect overlap with the reference translations which means a high-quality output. It has been shown that BLEU scores correlate well with human judgment of translation quality. Note that even human translators do not achieve a perfect score of 1.0. It is the N-gram precision and aims to find what percentage of machine n-grams can be found in the reference translation.
-	
+	\newline \par 
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=\textwidth]{bleu_table.pdf}
 		\caption{BLEU Score Table (scale 0-100)}
 	\end{figure}
 	
+
 \begin{table}[h]
 	\centering
 	\caption{Evaluation results. Whole Paragraph, Delexicalization}
@@ -561,6 +562,8 @@ Initially, we have tried to use our dataset without the delexicalization and the
 
 Initially our BLEU score was point three two five which was understandable to good translations. After the applying the method, we have scored point five two four which is very high-quality, adequate, and fluent translations. Also, our average sentence loss and word loss has been decreased significantly as well.
 
+	\section{Results}
+	
 	\section{Conclusion}
 	In this project, we aimed to create a Turkish Question Generation Model. To develop such a model, we had to use a large dataset that would enable us to develop a capable and reliable model. Unfortunately, we realized that such a dataset does not exist in Turkish, and we had to create our own. For these purposes, we develop a system that would generate the paragraph and question pairs given Turkish Wikipedia's content. \newline \par
 	
