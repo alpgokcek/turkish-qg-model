@@ -1,3 +1,11 @@
+#
+submission/
+submission.zip
+qg-models/BertQuestionGeneration/data/*
+**/*.json
+**/*.bin
+**/.DS_Store
+
 # RClone config file
 setup/rclone.conf
 §
