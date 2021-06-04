@@ -1,0 +1,11 @@
+.contexts {
+  border: 1px solid black;
+  padding: 20px;
+  &-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border: 1px solid grey;
+    margin-right: 20px;
+  }
+}
