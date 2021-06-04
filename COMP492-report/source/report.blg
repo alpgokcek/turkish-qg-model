@@ -8,8 +8,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ../bibliography/references.bib
-Warning--entry type for "stefan_schweter_2020_3770924" isn't style-file defined
---line 85 of file ../bibliography/references.bib
 -- IEEEtranN.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -19,45 +17,44 @@ Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 
 Done.
-You've used 8 entries,
+You've used 7 entries,
             4855 wiz_defined-function locations,
-            989 strings with 9705 characters,
-and the built_in function-call counts, 6475 in all, are:
-= -- 540
-> -- 204
-< -- 32
-+ -- 99
-- -- 48
-* -- 382
-:= -- 1001
-add.period$ -- 19
-call.type$ -- 8
-change.case$ -- 16
-chr.to.int$ -- 79
-cite$ -- 8
-duplicate$ -- 426
-empty$ -- 495
-format.name$ -- 68
-if$ -- 1423
+            984 strings with 9585 characters,
+and the built_in function-call counts, 5978 in all, are:
+= -- 492
+> -- 197
+< -- 31
++ -- 95
+- -- 46
+* -- 361
+:= -- 912
+add.period$ -- 17
+call.type$ -- 7
+change.case$ -- 14
+chr.to.int$ -- 78
+cite$ -- 7
+duplicate$ -- 389
+empty$ -- 453
+format.name$ -- 65
+if$ -- 1317
 int.to.chr$ -- 2
-int.to.str$ -- 9
-missing$ -- 80
-newline$ -- 58
-num.names$ -- 24
-pop$ -- 241
+int.to.str$ -- 8
+missing$ -- 73
+newline$ -- 53
+num.names$ -- 21
+pop$ -- 218
 preamble$ -- 1
-purify$ -- 8
+purify$ -- 7
 quote$ -- 2
-skip$ -- 441
+skip$ -- 404
 stack$ -- 0
-substring$ -- 192
-swap$ -- 289
+substring$ -- 189
+swap$ -- 269
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 125
+type$ -- 109
 warning$ -- 0
-while$ -- 28
+while$ -- 26
 width$ -- 0
-write$ -- 118
-(There was 1 warning)
+write$ -- 106

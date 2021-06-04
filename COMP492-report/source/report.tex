@@ -62,7 +62,7 @@
 %		In this project, we present the initial steps toward developing a \gls{qg} model based on \gls{dl}. This paper includes the hard-coded training dataset generation for the \gls{dl} model to be developed in later stages.
 		Question Generation is a Deep Learning model that given a paragraph, passage or an entity in Turkish, produces the possible questions that can be answered solely by the given content to the system. \gls{qg} Systems are capable of generating various logical questions from the given text input. \gls{qg} Systems are prevalent in several computer applications such as chatbots, automated grading systems etc. \newline \par 
 		
-		In this project, our aim is to train different \gls{dl} models for question generation and assess their performances. We find this task worth tackling since there are not many examples of comprehensive studies on the topic and the outcomes of this project will empower the development of more capable-than-ever Question Answering Systems for the Turkish Language.
+		In this project, our aim is to train a \gls{dl} model for question generation and assess its performance according to evaluation metrics. We find this task worth tackling since there are not many examples of comprehensive studies on the topic and the outcomes of this project will empower the development of more capable-than-ever Question Answering Systems for the Turkish Language.
 		\gls{qg} models require extensively large training data, thus, in the last semester we have developed the initial dataset for the development of the \gls{qg} model. This dataset is the largest Turkish Question-Answer dataset currently available. In this project, our aim is to train different language models for generation of questions and assess their performances as well as improving the diversity of our dataset.
 
 		\keywords{Artificial Intelligence, Natural Language Processing, Deep Learning, Question Generation}
@@ -72,7 +72,7 @@
 	\begin{abstractTR}
 	\gls{su} Modeli, Türkçe bir paragraf, pasaj veya varlıktan, sadece verilen içerikle cevaplanabilecek olası soruları sisteme üreten bir \gls{do} modelidir. \gls{su} Sistemler, verilen metin girdisinden çeşitli mantıksal sorular üretebilir. \gls{su} Sistemler, sohbet robotları, otomatik derecelendirme sistemleri vb. gibi çeşitli bilgisayar uygulamalarında yaygındır. \newline \par
 	
-	Bu projede amacımız, soru oluşturma için farklı \gls{do} modelleri eğitmek ve performanslarını değerlendirmektir. Konuyla ilgili çok fazla kapsamlı çalışma örneği bulunmadığından ve bu projenin çıktıları Türk Dili için her zamankinden daha yetenekli Soru Cevaplama Sistemlerinin geliştirilmesini güçlendireceğinden, bu görevi çözmeye değer buluyoruz.
+	Bu projede amacımız, soru oluşturma için bir \gls{do} modelleri eğitmek ve performansını değerlendirmektir. Konuyla ilgili çok fazla kapsamlı çalışma örneği bulunmadığından ve bu projenin çıktıları Türk Dili için her zamankinden daha yetenekli Soru Cevaplama Sistemlerinin geliştirilmesini güçlendireceğinden, bu görevi çözmeye değer buluyoruz.
 	\newline \par 
 	\gls{su} modelleri çok büyük eğitim verileri gerektirir, bu nedenle son dönemde \gls{su} modelinin geliştirilmesi için ilk veri kümesini geliştirdik. Bu veri kümesi, şu anda mevcut olan en büyük Türkçe Soru-Cevap veri kümesidir. Bu projede amacımız, soruların oluşturulması ve performanslarının değerlendirilmesi ve veri setimizin çeşitliliğinin iyileştirilmesi için farklı dil modelleri yetiştirmektir.
 			
@@ -282,7 +282,7 @@
 	
 	\section{Analysis and Modeling}
 	\label{refhere}
-	Aim of this project is to develop multiple Turkish Question Generation Models using our custom dataset and to compare performances of these models. Given a paragraph or a piece of text, our model creates the possible questions that can be answered with the information given in that paragraph. \newline \par
+	Aim of this project is to develop a Turkish Question Generation Model using our custom dataset. Given a paragraph or a piece of text, our model creates the possible questions that can be answered with the information given in that paragraph. \newline \par
 	
 	However, such a model's development requires an extensively large and labelled dataset consisting of paragraphs, related questions, and answers to those questions. Unfortunately, such dataset is not available in the Turkish language. There are examples of it, but they neither contain large amounts of the information nor find the data reliable. \newline \par
 	
@@ -427,8 +427,9 @@
 	\subsubsection{Question Generation Model}
 	In the last semester, we constructed our custom dataset in a format that is similar to famous SQuAD \cite{rajpurkar2016squad} dataset. Given that most of the question generation models are built on top of SQuAD dataset, we aim to incorporate our dataset as smoothly as possible. \newline \par 
 	
-	We have started to research several open-source Question Generation projects from GitHub and currently started to work on two of them. Both of them are developed based on the BERT language model. There are existing pre-trained language models based on BERT for Turkish language such as BERTurk \cite{stefan_schweter_2020_3770924}. We are aiming to convert pretrained models already developed on these projects.
-	
+%	We have started to research several open-source Question Generation projects from GitHub and currently started to work on two of them. Both of them are developed based on the BERT language model. There are existing pre-trained language models based on BERT for Turkish language such as BERTurk \cite{stefan_schweter_2020_3770924}. We are aiming to convert pretrained models already developed on these projects.
+
+	We use the PyTorch Framework to train our QG Models based on BERT Language Model. The pretrained model uses 512 hidden dimensions, and 512 attention size. Dropout probability is set to 0.1 between layers. The Adam Optimizer is applied during the training process, with an cross entropy loss function and initial learning rate of 5e-5. The batch size for the update is set as 28. Our models used a single NVIDIA Tesla K80 GPUs on Microsoft Azure VMs\footnote{Standard NC6 Promo Instance} for 3 epochs training. 
 	\subsubsection{Tokenization}
 	A tokenizer is in charge of preparing the inputs for a model. There are 3 different key features of the tokenizers. These are:
 	Splitting strings in sub-word token strings, converting tokens strings to ids and back, and encoding/decoding
@@ -472,12 +473,100 @@
 	\subsection{Testing}
 	BLEU or in longer version BiLingual Evaluation Understudy, is a metric for automatically evaluating machine-translated text. The BLEU score is a number between zero and one that measures the similarity of the machine-translated text to a set of high-quality reference translations. A value of 0 means that the machine-translated output has no overlap with the reference translation in other words it is a low-quality output while a value of 1 means there is perfect overlap with the reference translations which means a high-quality output. It has been shown that BLEU scores correlate well with human judgment of translation quality. Note that even human translators do not achieve a perfect score of 1.0. It is the N-gram precision and aims to find what percentage of machine n-grams can be found in the reference translation.
 	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\textwidth]{bleu_table.pdf}
+		\caption{BLEU Score Table (scale 0-100)}
+	\end{figure}
+	
+\begin{table}[h]
+	\centering
+	\caption{Evaluation results. Whole Paragraph, Delexicalization}
+	\begin{tabular}{l | l | l | l | l | l | l}
+		&       & \multicolumn{2}{l}{Validation}\vline                                                                                & \multicolumn{2}{l}{Train}    \vline                                                                                   &                                                      \\
+		\hline
+		& BLEU  & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\
+			 Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Train\\ Loss  \end{tabular} \\ \hline
+		Epoch 1 & 0.512 & 25.223                                                  & 1.632                                               & 14.323                                                  & 0.921                                               & 1.156                                                \\
+		Epoch 2 & 0.523 & 24.647                                                  & 1.553                                               & 8.051                                                   & 0.527                                               & 0.629                                                \\
+		Epoch 3 & 0.527 & 26.744                                                  & 1.763                                               & 9.135                                                   & 0.606                                               & 0.548                                               
+	\end{tabular}
+\label{wp}
+\end{table}
+
+
+\begin{table}[h]
+	\centering
+	\caption{Evaluation results. First Paragraph, Delexicalization}
+	\begin{tabular}{l | l | l | l | l | l | l}
+		&       & \multicolumn{2}{l}{Validation}\vline                                                                                & \multicolumn{2}{l}{Train}    \vline                                                                                   &                                                      \\
+		\hline
+		& BLEU  & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\
+			Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Train\\ Loss  \end{tabular} \\ \hline
+		Epoch 1 & 0.503 & 26.452                                                  & 1.769                                               & 13.427                                                  & 0.871                                               & 1.155                                                \\
+		Epoch 2 & 0.525 & 22.906                                                  & 1.553                                               & 9.132                                                   & 0.585                                               & 0.633                                                \\
+		Epoch 3 & 0.521 & 26.103                                                  & 1.722                                               & 8.568                                                   & 0.877                                               & 0.550                                               
+	\end{tabular}
+\label{fp}
+\end{table}
+
+
+\begin{table}[h]
+	\centering
+	\caption{Evaluation results. Last Paragraph, Delexicalization}
+	\begin{tabular}{l | l | l | l | l | l | l}
+		&       & \multicolumn{2}{l}{Validation}\vline                                                                                & \multicolumn{2}{l}{Train}    \vline                                                                                   &                                                      \\
+		\hline
+		& BLEU  & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\
+			Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Train\\ Loss  \end{tabular} \\ \hline
+		Epoch 1 & 0.502 & 31.758                                                  & 2.046                                               & 13.701                                                  & 0.882                                               & 1.135                                                \\
+		Epoch 2 & 0.501 & 25.602                                                  & 1.608                                               & 9.698                                                   & 0.631                                               & 0.634                                                \\
+		Epoch 3 & 0.524 & 22.875                                                  & 1.506                                               & 8.593                                                   & 0.568                                               & 0.572                                               
+	\end{tabular}
+\label{lp}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{Evaluation results. Middle Paragraph, Delexicalization}
+	\begin{tabular}{l | l | l | l | l | l | l}
+		&       & \multicolumn{2}{l}{Validation}\vline                                                                                & \multicolumn{2}{l}{Train}    \vline                                                                                   &                                                      \\
+		\hline
+		& BLEU  & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\
+			Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Train\\ Loss  \end{tabular} \\ \hline
+		Epoch 1 & 0.519 & 26.019                                                  & 1.691                                               & 14.449                                                  & 0.996                                               & 1.121                                                \\
+		Epoch 2 & 0.518 & 26.571                                                  & 1.764                                               & 8.229                                                   & 0.536                                               & 0.617                                                \\
+		Epoch 3 & 0.522 & 24.698                                                  & 1.624                                               & 0.823                                                   & 0.565                                               & 0.549                                               
+	\end{tabular}
+\label{mp}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{Evaluation results. Whole Paragraph, Non-Delexicalization}
+	\begin{tabular}{l | l | l | l | l | l | l}
+		&       & \multicolumn{2}{l}{Validation}\vline                                                                                & \multicolumn{2}{l}{Train}    \vline                                                                                   &                                                      \\
+		\hline
+		& BLEU  & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\
+			Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sentence\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Word\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Train\\ Loss  \end{tabular} \\ \hline
+		Epoch 1 & 0.327 &
+		67.563                                                 & 5.753                                           & 52.255                                                  & 4.521                                               & 4.771                                                \\
+		Epoch 2 & 0.314 & 72.211                                                  & 6.161                                               & 33.405                                                   & 2.909                                               & 3.001                                                \\
+		Epoch 3 & 0.325 & 77.203                                                  & 6.570                                               & 23.486                                                   & 2.016                                               & 2.164                                               
+	\end{tabular}
+\label{manual}
+\end{table}
+
+Initially, we have tried to use our dataset without the delexicalization and the performance was not as expected, results are shared in Table \ref{manual}. Therefore, we tried to apply delexicalization method to our dataset and the performance of our model have increased significantly, Tables \ref{wp}, \ref{fp}, \ref{lp}, \ref{mp}.\newline \par 
+
+Initially our BLEU score was point three two five which was understandable to good translations. After the applying the method, we have scored point five two four which is very high-quality, adequate, and fluent translations. Also, our average sentence loss and word loss has been decreased significantly as well.
+
 	\section{Conclusion}
 	In this project, we aimed to create a Turkish Question Generation Model. To develop such a model, we had to use a large dataset that would enable us to develop a capable and reliable model. Unfortunately, we realized that such a dataset does not exist in Turkish, and we had to create our own. For these purposes, we develop a system that would generate the paragraph and question pairs given Turkish Wikipedia's content. \newline \par
 	
 	Later, using this dataset, we ran our NN model. Initially, we encountered with the problem of person names not matching the output question of the model. To address this issue, we used a well-known method, delexicalization. Simply, we replaced the entity names with place holders before feeding them to the neural network. Consequently, outputs we obtained consisted of placeholders instead of names. Placeholders were replaced with the appropriate values in the last step. This change drastically improved the evaluation metrics. \newline \par  
 	
-	Results were evaluation using BLEU and Cross Entropy Loss Function. Also, we attempt to train our NN with various parts of the dataset in order to find the best performing combination. Feeding the first, middle, and last paragraphs on separate occasions was one of the approaches. No significant difference in BLUE Score, Sentence, Word, and Train Loss values had been observed.
+	Results were evaluation using BLEU and Cross Entropy Loss Function. Also, we attempt to train our NN with various parts of the dataset in order to find the best performing combination. Feeding the first, middle, and last paragraphs on separate occasions was one of the approaches. No significant difference in BLUE Score, Sentence, Word, and Train Loss values had been observed for different parts of the paragraph.
 	
 	
 	
