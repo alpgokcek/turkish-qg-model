@@ -29,6 +29,7 @@
 \newacronym{ddi}{DDİ}{Doğal Dil İşleme}
 
 \usepackage{xcolor}
+\usepackage{natbib}
 \usepackage{fancyvrb}
 \usepackage{fvextra}
 
@@ -439,7 +440,9 @@
 	\section{Conclusion}
 	In this project, we aimed to create a Turkish Question Generation Model. To develop such a model, we had to use a large dataset that would enable us to develop a capable and reliable model. Unfortunately, we realized that such a dataset does not exist in Turkish, and we had to create our own. For these purposes, we develop a system that would generate the paragraph and question pairs given Turkish Wikipedia's content. \newline \par
 	
-	After creating the possible questions manually, we ran our program that would produce the dataset. However, the process was so slow on our local machines, that is when we decided to use more powerful remote servers. \newline \par
+	Later, using this dataset, we ran our NN model. Initially, we encountered with the problem of person names not matching the output question of the model. To address this issue, we used a well-known method, delexicalization. Simply, we replaced the entity names with place holders before feeding them to the neural network. Consequently, outputs we obtained consisted of placeholders instead of names. Placeholders were replaced with the appropriate values in the last step. This change drastically improved the evaluation metrics. \newline \par  
+	
+	Results were evaluation using BLEU and Cross Entropy Loss Function. Also, we attempt to train our NN with various parts of the dataset in order to find the best performing combination. Feeding the first, middle, and last paragraphs on separate occasions was one of the approaches. No significant difference in BLUE Score, Sentence, Word, and Train Loss values had been observed.
 	
 	
 	
@@ -527,6 +530,6 @@
 	\end{appendix}
 	
 	
-	\bibliographystyle{IEEETranN}
+	\bibliographystyle{IEEEtranN}
 	\bibliography{../bibliography/references}
 \end{document}
