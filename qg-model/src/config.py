@@ -10,7 +10,7 @@ from transformers import BertModel
 from data import Preprocess
 
 
-def setup(bert_model, model_path, stage, turquad_path, bert_path):
+def setup(bert_model, model_path, turquad_path, bert_path):
     log = logging.getLogger(__name__)
 
     file = Path('.setup').open('a+')
@@ -24,7 +24,7 @@ def setup(bert_model, model_path, stage, turquad_path, bert_path):
     file.close()
 
     log.info(f'Setup: downloading {bert_model}')
-    BertModel.from_pretrained(bert_model).save_pretrained(model_path / 'stage_one' / bert_model)
+    BertModel.from_pretrained(bert_model).save_pretrained(model_path / bert_model)
 
     log.info(f'Setup: preprocessing {bert_model} input')
     for x in turquad_path.iterdir():
@@ -42,15 +42,14 @@ turquad_path = Path('../data/turquad')
 bert_path = Path('../data/bert')
 model_path = Path('../data/model/')
 
-stage = 'stage_one'
 bert_model = 'dbmdz/bert-base-turkish-cased'
 
 # if not present download the right bert version and preprocess and save the dataset
-setup(bert_model, model_path, stage, turquad_path, bert_path)
+setup(bert_model, model_path, turquad_path, bert_path)
 
 # encoder parameter
 
-with (model_path / 'stage_one' / bert_model / 'config.json').open('r') as f:
+with (model_path / bert_model / 'config.json').open('r') as f:
     conf = json.load(f)
     bert_hidden_size = conf['hidden_size']
     bert_vocab_size = conf['vocab_size']

@@ -43,7 +43,7 @@ def _extract_squad_data(data):
 def _tokenize_data(input, output, bert_model):
     tokenizer = BertTokenizer.from_pretrained(bert_model)
 
-    data = tokenizer.batch_encode_plus(input, max_length = 512, pad_to_max_length=False, padding=True, return_tensors='pt') ## erdal added the max_length
+    data = tokenizer.batch_encode_plus(input, max_length = 512, pad_to_max_length=False, padding=True, return_tensors='pt')
     out_dict = tokenizer.batch_encode_plus(output, max_length = 512, pad_to_max_length=False, padding=True,  return_tensors='pt')
 
     data['output_ids'] = out_dict['input_ids']

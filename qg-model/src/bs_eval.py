@@ -5,7 +5,7 @@ from torch import nn
 from nltk.translate import bleu
 from transformers import BertTokenizer
 
-pw_criterion = nn.CrossEntropyLoss(ignore_index=0)  # Pad Index
+pw_criterion = nn.CrossEntropyLoss(ignore_index=0)
 tokenizer = BertTokenizer.from_pretrained('dbmdz/bert-base-turkish-cased')
 
 def eval(model, device, dataloader, criterion, encoder):

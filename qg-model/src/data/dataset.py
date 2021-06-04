@@ -29,7 +29,6 @@ class BertDataset(Dataset):
 
 if __name__ == '__main__':
     ds = BertDataset('../../data/bert/toy')
-    #train_set, batch_size=mb, shuffle=True, num_workers=dl_workers, pin_memory=True if device=='cuda' else False
     dl = DataLoader(ds, batch_size=8, num_workers=1, shuffle=True, pin_memory=True)
     src, dest = next(iter(dl))
     src, src_len = src

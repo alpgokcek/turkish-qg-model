@@ -25,15 +25,11 @@ def _extract_turquad_data(data):
     output = []
     for doc in data:
         context = doc['description'][:512]
-	#if len(context) > 500:
-	#    continue
         for qas in doc['data']:
             answer = qas['answer']
             question = qas['questions'][0]
             input.append((context, answer))
             output.append(question)
-    #input = input[:int(0.1 * len(input))]  
-    #output = output[:int(0.1 * len(output))]
     return input, output
 
 def _tokenize_data(input, output, bert_model):
@@ -63,6 +59,5 @@ def _tokenize_data(input, output, bert_model):
 
 
 if __name__ == '__main__':
-    #../data/turquad/test.json
     dataset = Preprocess('data.json', 'dbmdz/bert-base-turkish-cased')
     dataset.save(f'../data/bert/dbmdz/bert-base-turkish-cased/test')

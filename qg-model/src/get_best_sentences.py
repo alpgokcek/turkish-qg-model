@@ -20,15 +20,13 @@ from torch.utils.data import DataLoader
 from transformers import BertModel
 
 from config import checkpoint, bert_path, mb, dl_workers, device, bert_hidden_size, decoder_hidden_size, \
-    bert_vocab_size, decoder_input_size, dropout, epochs, clip, model_path, stage, bert_model, encoder_trained, \
+    bert_vocab_size, decoder_input_size, dropout, epochs, clip, model_path, bert_model, encoder_trained, \
     attention_hidden_size, num_layers, weight_decay, betas, lr, momentum
 from model.utils import load_checkpoint, init_weights, save_checkpoint, enable_reproducibility, model_size, no_grad
 from model import Attention, Decoder, Seq2Seq
 from data import BertDataset
 from run import train, eval
 from run.utils.time import epoch_time
-
-# best_valid_loss = float('inf')
 
 def extract_name(input_list):
     name = ''
@@ -89,7 +87,7 @@ def format_sentence_list(raw_content, names):
     for i, line in enumerate(raw_content):
         line = line[1:3]
         formatted_lines = []
-        special_case = False # prevent space in next char
+        special_case = False
         for question in line:
             formatted_line = ''
             for token in question:
@@ -142,32 +140,22 @@ def loss(prediction, ground_truth):
         train_loss.append((loss, w[1:idx1], z[1:idx2]))
     return (max(train_loss, key=lambda x: x[0]))
 
-#
-# trg_sent_len = prediction.size(1)
-# prediction = prediction[:, 1:].contiguous().view(-1, prediction.shape[-1])
-# output_data = ground_truth[:, 1:].contiguous().view(-1)
-# criterion = nn.CrossEntropyLoss(ignore_index=0, reduction='none')
-# loss = criterion(prediction, output_data.to(device))
-# loss = loss.view(-1, trg_sent_len - 1)
-# loss = loss.sum(1)
 
 tokenizer = BertTokenizer.from_pretrained("dbmdz/bert-base-turkish-cased")
 def generate_sentences(filename, is_request=True):
     enable_reproducibility(121314)
     dataset_path = filename if not is_request else f"requests/{filename}"
-    # 'requests/vaCDIJloiy.json'
-    #valid_set = BertDataset(bert_path / bert_model / 'requests/vaCDIJloiy.json')
     valid_set = BertDataset(bert_path / bert_model / dataset_path)
     valid_loader = DataLoader(valid_set, batch_size=1, shuffle=True, num_workers=dl_workers, pin_memory=True if device == 'cuda' else False)
 
     attention = Attention(bert_hidden_size, decoder_hidden_size)
     decoder = Decoder(bert_vocab_size, decoder_input_size, bert_hidden_size, decoder_hidden_size, dropout, attention, device)
     model = Seq2Seq(decoder, device)
-    print("../data/model/stage_one/bert-base-cased")
+    print("../data/model/bert-base-cased")
 
-    encoder = BertModel.from_pretrained("../data/model/stage_one/dbmdz/bert-base-turkish-cased/" + "model0epoch" + str(epochs - 1))
+    encoder = BertModel.from_pretrained("../data/model/dbmdz/bert-base-turkish-cased/" + "model0epoch" + str(epochs - 1))
     encoder.to(device)
-    f = open("../data/model/stage_one/decoder/model0epoch" + str(epochs - 1), 'rb')
+    f = open("../data/model/decoder/model0epoch" + str(epochs - 1), 'rb')
     _, model_dict, _, _, _, _ = load_checkpoint(f)
     model.load_state_dict(model_dict)
 
@@ -185,18 +173,10 @@ def generate_sentences(filename, is_request=True):
             bert_hs = encoder(input_ids.to(device), token_type_ids=token_type_ids.to(device),
             		attention_mask=attention_mask.to(device))
             
-            prediction = model(bert_hs[0], output_data.to(device), 0)  # turn off teacher forcing
-            # bleu_list.append(bleu_score(prediction, output_data.to(device)))
+            prediction = model(bert_hs[0], output_data.to(device), 0)
             loss_list.append(loss(prediction, output_data.to(device)))
-            
-            # trg = [(trg sent len - 1) * batch size]
-            # output = [(trg sent len - 1) * batch size, output dim]
-            #pprint.pprint(sorted(loss_list, key=lambda x: x[0])[0:30])
-        #sorted_list = sorted(zip(loss_list, names_list), key=lambda x: x[0][0])
-        #sorted_list = sorted(zip(loss_list, names_list), key=lambda x: x[0][0])
-        #(x, y) = zip(*sorted_list)
         f_list = format_sentence_list(loss_list[0:], names_list)
-        #print(f_list) 
         return f_list
+
 if __name__ == '__main__':
     generate_sentences('test', False)

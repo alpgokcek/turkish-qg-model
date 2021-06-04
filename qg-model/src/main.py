@@ -14,7 +14,7 @@ from torch.utils.data import DataLoader
 from transformers import BertModel
 
 from config import checkpoint, bert_path, mb, dl_workers, device, bert_hidden_size, decoder_hidden_size, \
-    bert_vocab_size, decoder_input_size, dropout, epochs, clip, model_path, stage, bert_model, encoder_trained, \
+    bert_vocab_size, decoder_input_size, dropout, epochs, clip, model_path, bert_model, encoder_trained, \
     attention_hidden_size, num_layers, weight_decay, betas, lr, momentum
 from model.utils import load_checkpoint, init_weights, save_checkpoint, enable_reproducibility, model_size, no_grad
 from model import Attention, Decoder, Seq2Seq, BeamSearch
@@ -22,22 +22,14 @@ from data import BertDataset
 from run import train, eval
 from run.utils.time import epoch_time
 
-# best_valid_loss = float('inf')
-
-
-# Importante! Se il training viene fermato e poi ripreso senza cambiare il seed lo shuffling non avviene
-
 if __name__ == '__main__':
     log = logging.getLogger(__name__)
     log.info(f'Running on device {cuda.current_device() if device=="cuda" else "cpu"}')
 
     enable_reproducibility(121314)
-    print("erdal burdayım")
 
     train_set = BertDataset(bert_path / bert_model / 'train')
-    #print("TRAIN SET:", len(train_set))
     valid_set = BertDataset(bert_path / bert_model / 'valid')
-    #print("VALI SET:", len(valid_set))
     training_loader = DataLoader(train_set, batch_size=mb, shuffle=True,
                                  num_workers=dl_workers, pin_memory=True if device == 'cuda' else False)
     valid_loader = DataLoader(valid_set, batch_size=mb, shuffle=True,
@@ -48,12 +40,11 @@ if __name__ == '__main__':
     decoder = Decoder(bert_vocab_size, decoder_input_size, bert_hidden_size, decoder_hidden_size, dropout, attention, device)
     model = Seq2Seq(decoder, device)
 
-    encoder = BertModel.from_pretrained(model_path / 'stage_one' / bert_model)
+    encoder = BertModel.from_pretrained(model_path / bert_model)
     encoder.to(device)
 
     optimizer = optim.Adam(decoder.parameters())
-    criterion = nn.CrossEntropyLoss(ignore_index=0, reduction='none')  # Pad Index
-    print("setup bitti")
+    criterion = nn.CrossEntropyLoss(ignore_index=0, reduction='none')
     if checkpoint is not None:
         last_epoch, model_dict, optim_dict, valid_loss_list, train_loss_list, bleu_list = load_checkpoint(checkpoint)
         last_epoch += 1
@@ -89,11 +80,9 @@ if __name__ == '__main__':
         end_time = time.time()
         print("time took:",end_time-start_time)
         epoch_mins, epoch_secs = epoch_time(start_time, end_time)
-
-        #     if valid_loss < best_valid_loss:
-        #         best_valid_loss = valid_loss
-        save_checkpoint(model_path / stage /f'decoder/model0epoch{epoch}', epoch, model, optimizer, valid_loss_list, train_loss_list, bleu_score)
-        tmp_path ="{}/{}/{}/model0epoch{}".format(model_path,stage,bert_model,epoch)
+        
+        save_checkpoint(model_path /f'decoder/model0epoch{epoch}', epoch, model, optimizer, valid_loss_list, train_loss_list, bleu_score)
+        tmp_path ="{}/{}/{}/model0epoch{}".format(model_path,bert_model,epoch)
         os.mkdir(tmp_path)
         encoder.save_pretrained(tmp_path)
         log.info(f'\nEpoch: {epoch + 1:02} completed | Time: {epoch_mins}m {epoch_secs}s')

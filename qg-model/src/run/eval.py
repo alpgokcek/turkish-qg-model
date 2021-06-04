@@ -6,7 +6,7 @@ from torch import nn
 from nltk.translate import bleu
 from transformers import BertTokenizer
 
-pw_criterion = nn.CrossEntropyLoss(ignore_index=0)  # Pad Index
+pw_criterion = nn.CrossEntropyLoss(ignore_index=0)
 tokenizer = BertTokenizer.from_pretrained('dbmdz/bert-base-turkish-cased')
 
 def eval(model, device, dataloader, criterion, encoder):
@@ -29,7 +29,7 @@ def eval(model, device, dataloader, criterion, encoder):
             bert_hs = encoder(input_ids.to(device), token_type_ids=token_type_ids.to(device),
                               attention_mask=attention_mask.to(device))
 
-            prediction = model(bert_hs[0], output_data.to(device), 0)  # turn off teacher forcing
+            prediction = model(bert_hs[0], output_data.to(device), 0)
 
             sample_t = tokenizer.convert_ids_to_tokens(output_data[0].tolist())
             sample_p = tokenizer.convert_ids_to_tokens(prediction[0].max(1)[1].tolist())
@@ -39,14 +39,8 @@ def eval(model, device, dataloader, criterion, encoder):
             bleu = bleu_score(prediction, output_data.to(device))
 
             trg_sent_len = prediction.size(1)
-            # trg = [trg sent len, batch size]
-            # output = [trg sent len, batch size, output dim]
-
             prediction = prediction[:, 1:].contiguous().view(-1, prediction.shape[-1])
-            output_data = output_data[:, 1:].contiguous().view(-1)  # Find a way to avoid calling contiguous
-
-            # trg = [(trg sent len - 1) * batch size]
-            # output = [(trg sent len - 1) * batch size, output dim]
+            output_data = output_data[:, 1:].contiguous().view(-1)
 
             pw_loss = pw_criterion(prediction, output_data.to(device))
 
@@ -77,7 +71,3 @@ def bleu_score(prediction, ground_truth):
 
         acc_bleu += bleu([x[1:idx1]], y[1:idx2], [0.25, 0.25, 0.25, 0.25],smoothing_function=SmoothingFunction().method4)
     return acc_bleu / prediction.size(0)
-
-
-    # candidate = tokenizer.convert_ids_to_tokens(prediction[0].max(1)[1].tolist())
-    # reference = tokenizer.convert_ids_to_tokens(ground_truth[0].tolist())

@@ -9,7 +9,6 @@ from flask_cors import CORS, cross_origin
 from data import Preprocess
 
 app = Flask(__name__)
-#app.config['JSON_AS_ASCII'] = False
 cors = CORS(app, resources={r"/generate-questions": {"origins": "*"}, "/get-random-doc": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
