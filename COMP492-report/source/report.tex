@@ -4,16 +4,16 @@
 \setauthors{Alp Gokcek, Erdal Sidal Dogan}
 \settitle{TURKISH QUESTION GENERATION MODEL}
 \setcourseno{II}
-\setmonth{April}
+\setmonth{June}
 \setyear{2021}
 \setfaculty{Engineering}
 \setdepartment{Computer Engineering}
 \setchair{Prof. Muhittin Gokmen}
-\setdate{12/04/2021}
+\setdate{05/06/2021}
 \setadvisor{Asst. Prof. Seniz Demir}
 
 \settitleTR{TÜRKÇE SORU OLUŞTURMA MODELİ}
-\setmonthTR{Şubat}
+\setmonthTR{Haziran}
 \setfacultyTR{Mühendislik}
 \setdepartmentTR{Bilgisayar Mühendisliği}
 \setadvisorTR{Dr. Şeniz Demir}
@@ -63,11 +63,7 @@
 		Question Generation is a Deep Learning model that given a paragraph, passage or an entity in Turkish, produces the possible questions that can be answered solely by the given content to the system. \gls{qg} Systems are capable of generating various logical questions from the given text input. \gls{qg} Systems are prevalent in several computer applications such as chatbots, automated grading systems etc. \newline \par 
 		
 		In this project, our aim is to train different \gls{dl} models for question generation and assess their performances. We find this task worth tackling since there are not many examples of comprehensive studies on the topic and the outcomes of this project will empower the development of more capable-than-ever Question Answering Systems for the Turkish Language.
-		\newline \par 
 		\gls{qg} models require extensively large training data, thus, in the last semester we have developed the initial dataset for the development of the \gls{qg} model. This dataset is the largest Turkish Question-Answer dataset currently available. In this project, our aim is to train different language models for generation of questions and assess their performances as well as improving the diversity of our dataset.
-		
-		
-		
 
 		\keywords{Artificial Intelligence, Natural Language Processing, Deep Learning, Question Generation}
 	\end{abstract}
@@ -431,11 +427,20 @@
 	In the last semester, we constructed our custom dataset in a format that is similar to famous SQuAD \cite{rajpurkar2016squad} dataset. Given that most of the question generation models are built on top of SQuAD dataset, we aim to incorporate our dataset as smoothly as possible. \newline \par 
 	
 	We have started to research several open-source Question Generation projects from GitHub and currently started to work on two of them. Both of them are developed based on the BERT language model. There are existing pre-trained language models based on BERT for Turkish language such as BERTurk \cite{stefan_schweter_2020_3770924}. We are aiming to convert pretrained models already developed on these projects.
-%	During the implementation phase of the Question Generation Model, we already mentioned that we had used the architecture from \cite{chan-fan-2019-recurrent}. During the implementation, we have used the \textit{transformers} from Huggingface and \textit{PyTorch} packages which are needed to accomplish our goal. Also, we use the pre-trained Turkish model created by Stefan Schweter, a well-known Computational Linguistic, provided $BERT_{base}$ Turkish cased model (12 layers, 768 hidden dimensions.) We have started to implement the BERT SQG model by creating the classes in figure \ref{fig:bert_sqg} and figure \ref{fig:bert_dataset_loader}. After that, we have implemented the formula \ref{formula1} and created an SQG model with it. However, we could not accomplish our goal this semester. In the following semester, we will start by fixing and completing this model.
+	
+	\subsubsection{Delexicalization}
+	Delexicalization is the process that replacing language-specific words with language-agnostic meaning. Delexicalization can be used for anonymization (e.g., removing proper names) or to improve the performance of an NLP application by removing over-specific phrases (numericals, named entities, names, etc). After the generation of the questions, we are replacing the placeholders with the correct token. We have generated a delexicalized version of our dataset. We will mention the effect of the delexicalization on results in following sections.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.6]{delex.pdf}
+		\caption{Non-Delexicalized ($x_1$) vs Delexicalized ($x_2$) sentences)\label{delex}}
+	\end{figure}
+	
+	
 	
 	\subsection{Testing}
-	Testing will be carried out after upon the successful completion of implementation phase.
-%	Similar to the previous parts, we have developed and implemented each component separately. During the testing part, for the dataset, we have run our code several times, and the output was as expected. The dataset has been created according to the question patterns that we have generated. Thus, we did not encounter any problems. For the QG Model, since we could not complete our development process, we could not test the system. Next semester, we will use several evaluation metrics such as BLEU, METEOR, ROUGE.
+	BLEU or in longer version BiLingual Evaluation Understudy, is a metric for automatically evaluating machine-translated text. The BLEU score is a number between zero and one that measures the similarity of the machine-translated text to a set of high-quality reference translations. A value of 0 means that the machine-translated output has no overlap with the reference translation in other words it is a low-quality output while a value of 1 means there is perfect overlap with the reference translations which means a high-quality output. It has been shown that BLEU scores correlate well with human judgment of translation quality. Note that even human translators do not achieve a perfect score of 1.0. It is the N-gram precision and aims to find what percentage of machine n-grams can be found in the reference translation.
 	
 	\section{Conclusion}
 	In this project, we aimed to create a Turkish Question Generation Model. To develop such a model, we had to use a large dataset that would enable us to develop a capable and reliable model. Unfortunately, we realized that such a dataset does not exist in Turkish, and we had to create our own. For these purposes, we develop a system that would generate the paragraph and question pairs given Turkish Wikipedia's content. \newline \par
