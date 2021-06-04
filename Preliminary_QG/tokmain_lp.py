@@ -1,4 +1,5 @@
 import random
+import string
 random.seed(5)
 import nltk
 nltk.download('punkt')
@@ -47,7 +48,7 @@ common_patterns = CommonPatterns.patterns if not CONFIG_FILE[
 #print("occupational_patterns", occupational_patterns)
 
 
-out = open(OUTPUT_PATH, 'w')
+out = open("out/data_tokmain_lp.txt", 'w')
 full_wiki = open(WIKI_PATH).read()
 soup = BeautifulSoup(full_wiki, "html.parser")
 
@@ -59,41 +60,6 @@ persons = parser.get_persons()
 occupations = parser.get_occupations()
 occupations_with_attr = parser.get_top_occupations_and_attributes(top=10)
 
-_suffix1, _suffix2, _suffix3 = "_suffix1", "_suffix2", "_suffix3"
-
-
-def get_suffix(word: str, sffx_type: str):
-    suffix = ''
-    if sffx_type == "_suffix1":
-        suffix = Turkish(word).genitive(proper_noun=True) # -in
-    elif sffx_type == "_suffix2":
-        suffix = Turkish(word).dative(proper_noun=True)  # -e
-    elif sffx_type == "_suffix3":
-        suffix = Turkish(word).ablative(proper_noun=True) #-den
-    elif sffx_type == "_suffix4":
-        suffix = Turkish(word).ablative(proper_noun=True)
-    suffix = str(suffix)
-    return suffix[len(word):]
-
-
-def format_question(p, question_pattern):
-    try:
-        if _suffix1 in question_pattern:
-            question_pattern = question_pattern.format(
-                    name=p.name, _suffix1=get_suffix(p.name, _suffix1))
-        elif _suffix2 in question_pattern:
-            question_pattern = question_pattern.format(
-                    name=p.name, _suffix2=get_suffix(p.name, _suffix2))
-        elif _suffix3 in question_pattern:
-            question_pattern = question_pattern.format(
-                    name=p.name, _suffix3=get_suffix(p.name, _suffix3))
-        else:
-            question_pattern = question_pattern.format(name=p.name)
-        return question_pattern
-    except Exception as e:
-        print("Error on: {} - {} \n{}\n".format(e, p.name, question_pattern))
-
-
 def create_common_questions(p: Person):
     bitmap = OCCUPATION_SETTINGS[p.occupation]["common_questions"]
     pair_list = list()
@@ -104,7 +70,7 @@ def create_common_questions(p: Person):
             ans = p.attributes[feature]
             qa_pair = {'answer': ans, 'questions': list()}
             for pattern in question_patterns:
-                q = format_question(p, pattern)
+                q = pattern 
                 if q:
                     qa_pair['questions'].append(q)
             pair_list.append(qa_pair)
@@ -118,7 +84,10 @@ def process(enum):
     description_tag = soup.find(
             "div", {"id": int(p.doc_id)})  # large description text
     if description_tag:
-        description = description_tag.get_text().replace('\n', '')
+        description = description_tag.get_text().strip().split("\n")[-1]
+        print("DESC: ", description)
+        description = ' '.join(description).translate(str.maketrans('', '', string.punctuation))
+        description = f"<{p.name}>{description}"
         del description_tag
         sentence_tokenizations = sent_tokenize(description)
         person_dict['data'] = list()
@@ -141,7 +110,7 @@ def process(enum):
                     #   else:
                     #      if random.randint(0, 31) == 2:
                     #         desc_list[i] = sentence_tokenizations[i]
-                    q = format_question(p, question_pattern)
+                    q = question_pattern
                     if q:
                         qa_pair['questions'].append(q)
                 if len(qa_pair['questions']) > 0:  # if any relevant qa pair is present
@@ -149,8 +118,11 @@ def process(enum):
                 else:
                     del qa_pair
         if len(person_dict['data']) > 0:
+            out = open("out/data_tokmain_lp.txt", 'a')
             person_dict['description'] = ' '.join(desc_list.values())
+            person_dict['name'] = p.name
             out.write(json.dumps(person_dict, ensure_ascii=False) + ",\n")
+            out.close()
 
         del person_dict
 
