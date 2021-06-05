@@ -469,6 +469,19 @@
 	\noindent
 	\fbox{\parbox{\textwidth}{\textbf{Ground Truth:} Orhan Pamuk hangi ödülleri almıştır?\newline
 			\textbf{Prediction:} Orhan Pamuk'a takdim edilen ödüller nelerdir?}}		
+	\subsubsection{GUI}
+	We had to create a GUI so that users of our system can use our model easily. Before creating the GUI, we have decided to make a web application to develop a web application to reach many users. In this context, we needed a front-end and a back-end application. For the frontend, we used the React.js library developed by Facebook, which many companies around the world use in addition to Javascript. We have tried to design a simple, clear user interface. The design of our frontend application could be found in Figure \ref{ui}. 
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\textwidth]{ui.pdf}
+		\caption{User interface design of our frontend application}
+		\label{ui}
+	\end{figure}
+	
+	There were three different scenarios in our application and these were Add Data, Add Random Test Data and Generate Questions. We have created one panel for adding the data and one panel for showing the generated questions. Besides that, we have added four different call-to-action buttons in adding a data panel to cover these cases. We have connected the frontend application with the backend application with two endpoints. One endpoint is for gathering random test data, and the other endpoint is for generating questions. After generating data through the UI, data is sent to the backend application.
+	\newline \par
+	For the backend, we used the library called Flask, which makes it easy for us to create a REST API in Python. The main reason we preferred Flask was that the QG Model we have created was developed with the Python language. After the request is received for the method of generating questions, the backend application preprocesses the JSON payload for the model. After the preprocessing phase, the deep learning model generates the questions and returns them through the backend application.
 	
 	\subsection{Testing}
 	BLEU or in longer version BiLingual Evaluation Understudy, is a metric for automatically evaluating machine-translated text. The BLEU score is a number between zero and one that measures the similarity of the machine-translated text to a set of high-quality reference translations. A value of 0 means that the machine-translated output has no overlap with the reference translation in other words it is a low-quality output while a value of 1 means there is perfect overlap with the reference translations which means a high-quality output. It has been shown that BLEU scores correlate well with human judgment of translation quality. Note that even human translators do not achieve a perfect score of 1.0. It is the N-gram precision and aims to find what percentage of machine n-grams can be found in the reference translation.
