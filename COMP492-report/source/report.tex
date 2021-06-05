@@ -480,7 +480,7 @@
 	\end{figure}
 	
 
-\begin{table}[h]
+\begin{table}[htb!]
 	\centering
 	\caption{Evaluation results. Whole Paragraph, Delexicalization}
 	\begin{tabular}{l | l | l | l | l | l | l}
@@ -495,8 +495,7 @@
 \label{wp}
 \end{table}
 
-
-\begin{table}[h]
+\begin{table}[htb!]
 	\centering
 	\caption{Evaluation results. First Paragraph, Delexicalization}
 	\begin{tabular}{l | l | l | l | l | l | l}
@@ -511,8 +510,7 @@
 \label{fp}
 \end{table}
 
-
-\begin{table}[h]
+\begin{table}[htb!]
 	\centering
 	\caption{Evaluation results. Last Paragraph, Delexicalization}
 	\begin{tabular}{l | l | l | l | l | l | l}
@@ -527,7 +525,7 @@
 \label{lp}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[htb!]
 	\centering
 	\caption{Evaluation results. Middle Paragraph, Delexicalization}
 	\begin{tabular}{l | l | l | l | l | l | l}
@@ -542,7 +540,7 @@
 \label{mp}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[htb!]
 	\centering
 	\caption{Evaluation results. Whole Paragraph, Non-Delexicalization}
 	\begin{tabular}{l | l | l | l | l | l | l}
@@ -562,7 +560,17 @@ Initially, we have tried to use our dataset without the delexicalization and the
 
 Initially our BLEU score was point three two five which was understandable to good translations. After the applying the method, we have scored point five two four which is very high-quality, adequate, and fluent translations. Also, our average sentence loss and word loss has been decreased significantly as well.
 
+	\pagebreak
 	\section{Results}
+	We started this project aiming to develop a Turkish Question Generation Model. Later on, we realized the lack of appropriate dataset for the training. Therefore, we had to develop our own dataset, which we named TurQuAd.  \newline \par
+	
+	In order to build up a dataset, we utilized Turkish Wikipedia data. This semi structured data presented us the person entities along with their description paragraphs and the attributes of the person. In our dataset, there are 20 occupations in total, and we picked the most frequent ten attributes for each occupation. Results of the analysis that we carried out can be seen from Appendix A.\newline \par
+	
+	The dataset that we created using the Person entities from Turkish Wikipedia enabled us to create +53,000 paragraphs along with the ten attributes each. Consequently, we produced a dataset containing paragraphs from a wide range of persons with numerous attributes with their questions-answer pair. Question Patterns we wrote can be seen in Appendix B. \newline \par
+	
+	Furthermore, we studied the development of Question Generation Model. However, since the dataset was not completed, we did not have the chance to test the system. In the following semester, to evaluate our system rigorously, most popular evaluation metrics such as BLEU will be utilized.
+	\newline \par
+	
 	
 	\section{Conclusion}
 	In this project, we aimed to create a Turkish Question Generation Model. To develop such a model, we had to use a large dataset that would enable us to develop a capable and reliable model. Unfortunately, we realized that such a dataset does not exist in Turkish, and we had to create our own. For these purposes, we develop a system that would generate the paragraph and question pairs given Turkish Wikipedia's content. \newline \par
@@ -622,8 +630,12 @@ Initially our BLEU score was point three two five which was understandable to go
 		\VerbatimInput[breaklines=true, label=attributes.txt\label{attributes}]{./attributes.txt}
 	\end{appendix}
 
+	\begin{appendix}[B: Question Pattern we used to develop TurQuAd]
+	\VerbatimInput[breaklines=true, label=attributes.txt\label{attributes}]{./QuestionPatterns.txt}
+	\end{appendix}
 
-	\begin{appendix}[B: UML Diagrams]
+
+	\begin{appendix}[C: UML Diagrams]
 		\begin{figure}[h!]
 			\centering
 			%\begin{minipage}[c]{0.45\textwidth}
