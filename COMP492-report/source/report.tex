@@ -405,15 +405,15 @@
 	\subsection{Implementation}
 	Similar to the design part, we have developed and implemented each component separately. We have implemented these components with the Python Programming Language.
 	\subsubsection{Dataset}
-	While creating the dataset, we first created our classes according to the data's that we have. The classes have been created according to the data could be found in figure \ref{fig:dataset_person} and figure \ref{fig:dataset_persondataparser}.\\
+	While creating the dataset, we first created our entity classes according to the data we have. The classes have been created according to the data could be found in Figure \ref{fig:dataset_person} and Figure \ref{fig:dataset_persondataparser}.\\
 	
-	As we have mentioned in Section \ref{dataset-design}, we have already decided on the question patterns on the designing phase. In the implementation phase, we have generated around 1700 question patterns by hand. Sample question patterns that we have generated could be found in Figure \ref{qg-patterns}.
+	As mentioned in Section \ref{dataset-design}, we have already decided on the question patterns on the designing phase. In the implementation phase, we have generated around 700 question patterns manually. Sample question patterns that we have generated could be found in Figure \ref{qg-patterns}. Complete list is provided in Appendix B.
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=.5]{qg-patterns}
 		\caption{Sample Question Generation patterns\label{qg-patterns}}
 	\end{figure}
-	After generating the question patterns, we needed to implement a fuzzy search mechanism while searching an attribute in the long description. We have researched and found out that in fuzzy search algorithms, the Lavensthein's distance formula. After that, we found a package that is the implementation of that formula called \textit{fuzzywuzzy}. We pass the long description, and the answer that we want to generate a question from then the method returns us a ratio. We have decided to use 0.7 as the threshold for this ratio. If the ratio is higher than our threshold value, then we generate the questions. In Figure \ref{ilker-basbug}, the questions that have been generated for Ilker Basbug, who is the 26th Chief of the General Staff of Turkey. Wikipedia grouped him as a soldier, thus we have generated the possible questions using the data from the table. \\
+	After generating the question patterns, we needed to ensure the feature (answer of the question) is included in the context (description paragraph). To address this issue, we used a fuzzy search mechanism while searching an attribute in the long description. We have researched and found out that in fuzzy search algorithms, the Lavensthein's distance formula. After that, we found a package that is the implementation of that formula called \textit{fuzzywuzzy}. We pass the long description, and the answer that we want to generate a question from then the method calculates the similarity in the range of 0-1. We have decided to use 0.6 as the threshold. If the ratio is higher than our threshold value, then we generate the questions. In Figure \ref{ilker-basbug}, the questions that have been generated for Ilker Basbug, who is the 26th Chief of the General Staff of Turkey, can be seen. Wikipedia classified him as a army officer, thus, we have generated the possible questions using the data from the table. We name our dataset as TurQuAd.\\
 	
 	\begin{figure}[h!]
 		\centering
@@ -422,10 +422,10 @@
 	\end{figure}
 	
 	
-	Another critical aspect of the implementation part was the speed. There were around fifty-three thousand people in the first data, and the whole Wikipedia data is around five hundred megabytes of data.  Our computers were not sufficient for this processing so we have decided to use cloud services. We have used our previous knowledge on multiprocessing from Operating Systems and tweaked our code to work with multiple CPU's in parallel.
+	Another critical aspect of the implementation part was the performance. There were around 53,000 people in the data, and the whole Wikipedia data is approximately 500 MB. Our computers were not sufficient for this processing so we have decided to use cloud services. We have used our previous knowledge on multiprocessing from Operating Systems and tweaked our code to work with multiple CPU's in parallel.
 	
 	\subsubsection{Question Generation Model}
-	In the last semester, we constructed our custom dataset in a format that is similar to famous SQuAD \cite{rajpurkar2016squad} dataset. Given that most of the question generation models are built on top of SQuAD dataset, we aim to incorporate our dataset as smoothly as possible. \newline \par 
+	In the last semester, we constructed our custom dataset in a format that is similar to famous SQuAD \cite{rajpurkar2016squad} dataset. Given that most of the question generation models, along with the BERT Language model, are built on top of and highly compatible with SQuAD dataset, we aim to format our TurQuAd dataset as closely as possible. \newline \par 
 	
 %	We have started to research several open-source Question Generation projects from GitHub and currently started to work on two of them. Both of them are developed based on the BERT language model. There are existing pre-trained language models based on BERT for Turkish language such as BERTurk \cite{stefan_schweter_2020_3770924}. We are aiming to convert pretrained models already developed on these projects.
 
