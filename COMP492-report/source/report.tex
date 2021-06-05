@@ -183,7 +183,7 @@
 	Use case diagram of our project could be found in Figure \ref{usecases}. We have only one type of user at the moment. User will give a context paragraph to the system; then the system will return the questions generated from this context paragraph.
 	\begin{figure}[ht!]
 		\centering
-		\includegraphics[scale=.22]{use-case-diagram}
+		\includegraphics[width=0.5\textwidth]{use_case.pdf}
 		\caption{Use case diagram of our QG system\label{usecases}}
 	\end{figure}
 	
@@ -566,9 +566,9 @@ Initially our BLEU score was point three two five which was understandable to go
 	
 	In order to build up a dataset, we utilized Turkish Wikipedia data. This semi structured data presented us the person entities along with their description paragraphs and the attributes of the person. In our dataset, there are 20 occupations in total, and we picked the most frequent ten attributes for each occupation. Results of the analysis that we carried out can be seen from Appendix A.\newline \par
 	
-	The dataset that we created using the Person entities from Turkish Wikipedia enabled us to create +53,000 paragraphs along with the ten attributes each. Consequently, we produced a dataset containing paragraphs from a wide range of persons with numerous attributes with their questions-answer pair. Question Patterns we wrote can be seen in Appendix B. \newline \par
+	The dataset that we created using the Person entities from Turkish Wikipedia enabled us to create +53,000 paragraphs along with the ten attributes each. Consequently, we produced a dataset containing paragraphs from a wide range of persons with numerous attributes with their questions-answer pair. Question Patterns we created can be seen in Appendix B. \newline \par
 	
-	Furthermore, we studied the development of Question Generation Model. However, since the dataset was not completed, we did not have the chance to test the system. In the following semester, to evaluate our system rigorously, most popular evaluation metrics such as BLEU will be utilized.
+	Later on, we initiated to development of the Question Generation Model using our custom crafted dataset. During the development stage, we tweaked the datasets according to our needs and to address problems we encountered. Furthermore, we used common methods in Deep Learning and NLP such as delexicalization. Finally, as the results reached to notable level, we implemented a web application which can demonstrate the working model. In the web app, user can manually enter the input data, or retrieve randomly from dataset and obtain the prediction results along with the ground truth, for the comparison purposes.
 	\newline \par
 	
 	
